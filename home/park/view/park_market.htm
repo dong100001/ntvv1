@@ -1,0 +1,47 @@
+<!--{eval $_TPL['titles'] = array('Chơi game cuộc chiến đỗ xe trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<!--{if $_GET['ac'] == 'market'}-->
+<div class="h_status">
+	<!--{loop $cfgCarType $key $value}-->
+	  <a href="parkApp.php?ac=market&type=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->
+	<!--{loop $cfgCarLevel $key $value}-->
+	  <a href="parkApp.php?ac=market&level=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->	
+	<a href="parkApp.php?ac=market">Tất cả</a><span class="pipe">|</span>
+	  <a href="parkApp.php?ac=market&level=$key">$value</a><span class="pipe">|</span>
+	  <span style=" margin-left:50px">Bạn có <b style="color:#FF0000">{$myCredit}</b> vàng</span>
+</div>
+<div class=div_layout>
+	<div class=car_list>
+	<ul>
+	<!--{loop $list $item}-->
+	  <li>
+		  <div class=bg>
+			  <div  style="BORDER-RIGHT: #fcfcfc 1px solid; BORDER-TOP: #fcfcfc 1px solid; BACKGROUND: url({$item[CarImgMid]}) no-repeat left center; BORDER-LEFT: #fcfcfc 1px solid; WIDTH: 172px; BORDER-BOTTOM: #fcfcfc 1px solid; HEIGHT: 90px">
+			  </div>
+			  <div>
+				  <p style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px; HEIGHT: 25px">
+				  <a href="#" target=_top><IMG src="{$item[CarSign]}" align=absMiddle></a> {$item[CarDesc]}
+				  </p>
+				  <p style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px">Giá: {$item[CarPrice]}</p>
+				  <p style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 2px">
+				  <A href="cpPark.php?ac=park&op=buy&sid=$item[CarSID]$urlReq" id="c_edit_$item[CarSID]">Mua xe</a> 
+				  </p>
+			  </div>
+		  </div>
+	  </li>
+   <!--{/loop}-->  	  
+    </ul>
+  </div>
+  <div class="page">$multi[html]</div>    
+</div>
+
+
+<!--{/if}-->
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">Lên đầu trang</a>
+</div>
+<!--{template park/view/park_footer}-->
+<!--{template footer}-->

@@ -1,0 +1,421 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<!--{template cp_header}-->
+
+<div class="l_status c_form">
+	<a href="cp.php?ac=privacy"$cat_actives[base]>Cài đặt cá nhân</a><span class="pipe">|</span>
+	<a href="cp.php?ac=privacy&op=view"$cat_actives[view]>Bộ lọc Feed</a>
+</div>
+
+
+<form method="post" action="cp.php?ac=privacy" class="c_form">
+
+<!--{if empty($_GET['op'])}-->
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Cài đặt cá nhân</h2>
+			<p>Tại đây bạn có thể quản lý profile, hình ảnh, blog, nhóm...</p>
+		</caption>
+		<tr>
+			<th width="150">Quyền xem trang nhà</th>
+			<td><select name="privacy[view][index]">
+				<option value="0"$sels[view][index][0]>Mọi người</option>
+				<option value="1"$sels[view][index][1]>Chỉ bạn bè</option>
+				<option value="2"$sels[view][index][2]>Riêng tư</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Xem danh sách bạn bè</th>
+			<td><select name="privacy[view][friend]">
+				<option value="0"$sels[view][friend][0]>Mọi người</option>
+				<option value="1"$sels[view][friend][1]>Chỉ bạn bè</option>
+				<option value="2"$sels[view][friend][2]>Riêng tư</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Bình luận</th>
+			<td><select name="privacy[view][wall]">
+				<option value="0"$sels[view][wall][0]>Mọi người</option>
+				<option value="1"$sels[view][wall][1]>Chỉ bạn bè</option>
+				<option value="2"$sels[view][wall][2]>Riêng tư</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Feed của tôi</th>
+			<td><select name="privacy[view][feed]">
+				<option value="0"$sels[view][feed][0]>Mọi người</option>
+				<option value="1"$sels[view][feed][1]>Chỉ bạn bè</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Hoạt động/Status</th>
+			<td><select name="privacy[view][doing]">
+				<option value="0"$sels[view][doing][0]>Mọi người</option>
+				<option value="1"$sels[view][doing][1]>Chỉ bạn bè</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.<br> Hoạt động/status của bạn sẽ hiện ở trang chủ Nhà Tui!</td>
+			</td>
+		</tr>
+		<tr>
+			<th>Xem Blog</th>
+			<td><select name="privacy[view][blog]">
+				<option value="0"$sels[view][blog][0]>Mọi người</option>
+				<option value="1"$sels[view][blog][1]>Chỉ bạn bè</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.
+				<br>Bạn có thể thiết lập chế độ "Công cộng" hay "Riêng tư" khi viết blog mới.
+				</td>
+		</tr>
+		<tr>
+			<th>Xem Album</th>
+			<td><select name="privacy[view][album]">
+				<option value="0"$sels[view][album][0]>Mọi người</option>
+				<option value="1"$sels[view][album][1]>Chỉ bạn bè</option>
+				</select>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.
+				<br>Bạn có thể thiết lập quyền xem Album khi bạn tạo ablum hoặc upload ảnh.</td>
+		</tr>
+		<tr>
+			<th>Chia sẻ</th>
+			<td><select name="privacy[view][share]">
+				<option value="0"$sels[view][share][0]>Mọi người</option>
+				<option value="1"$sels[view][share][1]>Chỉ bạn bè</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.
+				<br>Chia sẻ của bạn sẽ được hiên ở trang chủ chia sẻ.
+			</td>
+		</tr>
+		<tr>
+			<th>Sử kiện</th>
+			<td><select name="privacy[view][event]">
+				<option value="0"$sels[view][event][0]>Mọi người</option>
+				<option value="1"$sels[view][event][1]>Chỉ bạn bè</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.
+			</td>
+		</tr>
+		<tr>
+			<th>Bầu chọn</th>
+			<td><select name="privacy[view][poll]">
+				<option value="0"$sels[view][poll][0]>Mọi người</option>
+				<option value="1"$sels[view][poll][1]>Chỉ bạn bè</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				Cài đặt cá nhận sẽ có tác dụng khi ai đó ghé tham trang của bạn.
+			</td>
+		</tr>
+		<tr>
+			<th>Nhóm</th>
+			<td><select name="privacy[view][mtag]">
+				<option value="0"$sels[view][mtag][0]>Mọi người</option>
+				<option value="1"$sels[view][mtag][1]>Chỉ bạn bè</option>
+				<option value="2"$sels[view][mtag][2]>Riêng tư</option>
+				</select></td>
+		</tr>
+		<!--{if $_SCONFIG[videophoto] && $space[videostatus]}-->
+		<tr>
+			<th></th>
+			<td><img src="image/videophoto.gif" align="absmiddle"> Nếu bạn đã xác nhận webcam, bạn có thể chỉnh sửa quyền hạn người dùng</td>
+		</tr>
+		<tr>
+			<th>Xem ảnh xác thực của tôi</th>
+			<td><select name="privacy[view][videoviewphoto]">
+				<option value="0"$sels[view][videoviewphoto][0]>Mặc định</option>
+				<option value="1"$sels[view][videoviewphoto][1]>Chấp nhận</option>
+				<option value="2"$sels[view][videoviewphoto][2]>Không</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Ứng dụng - game</th>
+			<td><select name="privacy[view][videofriend]">
+				<option value="0"$sels[view][videofriend][0]>Mặc định</option>
+				<option value="1"$sels[view][videofriend][1]>Chấp nhận</option>
+				<option value="2"$sels[view][videofriend][2]>Không</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Poke</th>
+			<td><select name="privacy[view][videopoke]">
+				<option value="0"$sels[view][videopoke][0]>Mặc định</option>
+				<option value="1"$sels[view][videopoke][1]>Chấp nhận</option>
+				<option value="2"$sels[view][videopoke][2]>Không</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Bình luận trên tường</th>
+			<td><select name="privacy[view][videowall]">
+				<option value="0"$sels[view][videowall][0]>Mặc định</option>
+				<option value="1"$sels[view][videowall][1]>Chấp nhận</option>
+				<option value="2"$sels[view][videowall][2]>Không</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>Bình luận info</th>
+			<td><select name="privacy[view][videocomment]">
+				<option value="0"$sels[view][videocomment][0]>Mặc định</option>
+				<option value="1"$sels[view][videocomment][1]>Chấp nhận</option>
+				<option value="2"$sels[view][videocomment][2]>Không</option>
+				</select></td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="submit" name="privacysubmit" value="Lưu" class="submit"></td>
+		</tr>
+	</table>
+	
+	<table cellspacing="0" cellpadding="0" class="formtable" id="feed">
+		<caption>
+			<h2>Cài đặt RSS Feed</h2>
+			<p>Hệ thống sẽ hiện thông tin, hoạt động của bạn qua RSS Feed, như thế bạn bè sẽ dễ dàng cập nhật thông tin của bạn.<br></p>
+		</caption>
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][doing]" value="1"$sels[feed][doing]>Status</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][blog]" value="1"$sels[feed][blog]>Blog mới</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][upload]" value="1"$sels[feed][upload]>Upload ảnh</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][share]" value="1"$sels[feed][share]>Thêm chia sẻ</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][poll]" value="1"$sels[feed][poll]>Tạo bầu chọn</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][joinpoll]" value="1"$sels[feed][joinpoll]>Bầu chọn</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][thread]" value="1"$sels[feed][thread]>Tạo thảo luận</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][post]" value="1"$sels[feed][post]>Thảo luận</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][mtag]" value="1"$sels[feed][mtag]>Tham gia nhóm</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][event]" value="1"$sels[feed][event]>Tạo sự kiện</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][join]" value="1"$sels[feed][join]>Tham gia sử kiện</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][friend]" value="1"$sels[feed][friend]>Thêm bạn</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][comment]" value="1"$sels[feed][comment]>Bình luận</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][show]" value="1"$sels[feed][show]>Xếp hạng</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][credit]" value="1"$sels[feed][credit]>Điểm</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][invite]" value="1"$sels[feed][invite]>Mời bạn bè</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][task]" value="1"$sels[feed][task]>Hoàn thành nhiệm vụ</td>
+		</tr>				
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][profile]" value="1"$sels[feed][profile]>Cập nhật profile</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][click]" value="1"$sels[feed][click]>Bày tỏ quan điểm tại blog / ảnh / bài viết</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="submit" name="privacysubmit" value="Lưu" class="submit"></td>
+		</tr>
+	</table>
+	
+<!--{else}-->
+	<!--{eval
+			$iconnames['activity'] = 'Blog';
+			$iconnames['album'] = 'Album';
+			$iconnames['blog'] = 'Blog';
+			$iconnames['comment'] = 'Bình luận';
+			$iconnames['blogcomment'] = 'Bình luận Blog';
+			$iconnames['clickblog'] = 'Bày tỏ quan điểm tại blog ';
+			$iconnames['clickpic'] = 'Bày tỏ quan điểm cho picture';
+			$iconnames['clickthread'] = 'Bày tỏ quan điểm cho topic';
+			$iconnames['piccomment'] = 'Bình luận ảnh';
+			$iconnames['sharecomment'] = 'Bình luận chia sẻ';
+			$iconnames['debate'] = 'Tranh luận';
+			$iconnames['discuz'] = 'Thảo luận';
+			$iconnames['doing'] = 'Status';
+			$iconnames['friend'] = 'Bạn bè';
+			$iconnames['goods'] = 'Goods';
+			$iconnames['mood'] = 'Trạng thái';
+			$iconnames['mtag'] = 'Nhóm';
+			$iconnames['event'] = 'Sự kiện';
+			$iconnames['eventcomment'] = 'Bình luận sự kiện';
+			$iconnames['eventmember'] = 'Tham gia sự kiện';
+			$iconnames['eventmemberstatus'] = 'Trạng thái sự kiện';
+			$iconnames['network'] = 'Duyệt xem';
+			$iconnames['poll'] = 'Bình chọn forum';
+			$iconnames['post'] = 'Gửi bài tại forum';
+			$iconnames['profile'] = 'Cập nhật profile';
+			$iconnames['reward'] = 'Phần thưởng tại Forum';
+			$iconnames['share'] = 'Chia sẻ';
+			$iconnames['sharenotice'] = 'Chia sẻ notice';
+			$iconnames['show'] = 'Top';
+			$iconnames['task'] = 'Nhiệm vụ';
+			$iconnames['thread'] = 'Topic';
+			$iconnames['post'] = 'Trả lời';
+			$iconnames['video'] = 'Video/WebCam';
+			$iconnames['wall'] = 'Vẽ lên tường';
+			$iconnames['credit'] = 'Tiền tệ';
+			$iconnames['poll'] = 'Tạo bầu chọn';
+			$iconnames['pollcomment'] = 'Bầu chọn';
+			$iconnames['pollinvite'] = 'Mời bầu chọn';
+		}-->
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Bạn có muốn bỏ qua Feed</h2>
+			<p>Bạn có thể bỏ qua feed không cần thiết.</p>
+		</caption>
+		<!--{loop $groups $key $value}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td><input type="checkbox" name="privacy[filter_gid][$key]" value="$key"<!--{if isset($space['privacy']['filter_gid'][$key])}--> đã kiểm tra<!--{/if}-->>
+				$value</td>
+		</tr>
+		<!--{/loop}-->
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="Lưu" class="submit">
+			<br>Bạn có thể lựa chọn những người bạn trong nhóm khác nhau để để không cho phép họ cập nhật feed của bạn.  <a href="space.php?do=friend">Danh sách bạn bè</a>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Thiết lập feed từng phần</h2>
+			<p>Click vào logo feed bên dưới, sau đó bạn có thể thiết lập hiển thị hoặc ẩn các feed.<br> Sau đây là danh sách RSS Feed</p>
+		</caption>
+		<!--{if $icons}-->
+		
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>
+			<ul>
+			<!--{loop $icons $key $icon}-->
+			<!--{eval $uid = $uids[$key];$icon_uid="$icon|$uid";}-->
+			<li>
+			<!--{if is_numeric($icon)}-->
+				<img src="http://appicon.manyou.com/icons/{$icon}" align="absmiddle">
+			<!--{else}-->
+				<img src="image/icon/{$icon}.gif" align="absmiddle">
+			<!--{/if}-->
+				<input type="checkbox" name="privacy[filter_icon][$icon_uid]" value="1" checked> 
+				<span class="type_$icon"> <!--{if isset($iconnames[$icon])}-->$iconnames[$icon]<!--{else}-->$icon<!--{/if}--> (<!--{if $users[$uid]}--><a href="space.php?uid=$uid" target="_blank">$users[$uid]</a><!--{else}-->All friends<!--{/if}-->)</span>
+			</li>
+			<!--{/loop}-->
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="Save settings" class="submit">
+			</td>
+		</tr>
+		<!--{else}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>Không có feed nào</td>
+		</tr>
+		<!--{/if}-->
+	</table>
+	<br>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Bỏ qua feed về thông báo từ bạn bè</h2>
+			<p>Click vào icon của danh sách notice dưới đây để thiết lập hiển thị hoặc ẩn các feed.<br>Sau đây là danh sách thông báo và bạn bè đã bị từ bỏ, bạn có thể xóa họ ra khỏi danh sách.</p>
+		</caption>
+		<!--{if $types}-->
+		
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>
+				<ul>
+				<!--{loop $types $key $type}-->
+				<!--{eval $uid = $uids[$key];$type_uid="$type|$uid";}-->
+					<li>
+						<input type="checkbox" name="privacy[filter_note][$type_uid]" value="1" checked>
+						<span class="type_$type"> <!--{if isset($iconnames[$type])}-->$iconnames[$type]<!--{else}-->$type<!--{/if}--> (<!--{if $users[$uid]}--><a href="space.php?uid=$uid" target="_blank">$users[$uid]</a><!--{else}-->All friends<!--{/if}-->)</span>
+					</li>
+				<!--{/loop}-->
+				</ul>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="Save settings" class="submit">
+			</td>
+		</tr>
+		<!--{else}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>Không có feed nào.</td>
+		</tr>
+		<!--{/if}-->
+	</table>
+<!--{/if}-->
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+
+<!--{template footer}-->

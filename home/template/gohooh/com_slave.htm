@@ -1,0 +1,864 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Game siêu thị bạn bè được phát triển bởi GoHooH.CoM. Vui lòng giữ bản quyền Việt hóa của GoHooH.CoM. Cám ơn bạn đã sử dụng sản phẩm của GoHooH.CoM-->
+<!--{eval $_TPL['titles'] = array('Siêu thị Goer - Phát triển bởi GoHooH.CoM');}-->
+<!--{template header}-->
+<link rel="stylesheet" href="components/shared/common.css" type="text/css" />
+<link rel="stylesheet" href="components/slave/common.css" type="text/css" />
+
+<!--{template com_header}-->
+
+<!--{if $op=="action" OR $statusmsg OR $op=="market" OR $op=="rank" }-->
+<div class="h_status">
+	<!--{template com_category}-->
+	<!--{if $statusmsg}-->
+	<BR><font color="green" size=4><B>$statusmsg</B></font>
+	<!--{/if}-->
+
+	<!--{if $op=="market"}-->
+		<table width=100%><tr><td align=right>
+		<form action="sieuthigoer.php?com=slave&op=market&cat=$cat&range=$range&sort=$sort&sex=$sex" name="searchslave" method="post">
+		Tìm Goer: <input type="text" name="username" size="20" onKeyDown="if(event.keyCode==13) event.keyCode=9;"> 
+		<input type="submit" name="submitsearchuser" value="Tìm" class="submit">
+		</form>
+		</td></tr></table>
+	<!--{/if}-->
+
+</div>
+<!--{/if}-->
+
+<!--{if $sidebar == 1}-->
+<div class="side_right">
+	<div class="wide">
+<!--{else}-->
+<div class="c_form" style="padding: 10px;">
+<!--{/if}-->
+
+<!--{if empty($op)}-->
+
+	<!--{if $ustatus!=2}-->
+		<div style="padding: 20px 20px 20px 20px;">Nếu bạn mua được bạn bè thì bạn có thể quản lý họ, thông qua quan hệ qua lại trong game sẽ giúp kéo gần khoảng cách giữa bạn bè với nhau và học được kỹ năng đầu tư quản lý.<BR><BR>
+		<h1>Bạn vẫn chưa khởi động Siêu thị Goer, khởi động bây giờ chứ?</h1>
+		<BR>
+		<a href="?com=slave&op=activate" class="combutton">Khởi động Siêu thi Goer</a>
+		<BR>
+		</div>
+	<!--{else}-->
+	<div class="slave_block">
+
+	<span class="left_col">
+	<!--{if $userinfo}-->
+			<script type="text/javascript" src="components/shared/scripts/progressbar/js/prototype/prototype.js"></script>
+			<script type="text/javascript" src="components/shared/scripts/progressbar/js/bramus/jsProgressBarHandler.js"></script>
+
+			<script type="text/javascript">
+				var defaultOptions = {
+					animate		: true,	
+					showText	: false,
+					width		: 120,	
+					boxImage	: 'components/shared/scripts/progressbar/images/bramus/percentImage.png',	
+					barImage	:  Array(
+												'components/shared/scripts/progressbar/images/bramus/percentImage_back4.png',
+												'components/shared/scripts/progressbar/images/bramus/percentImage_back3.png',
+												'components/shared/scripts/progressbar/images/bramus/percentImage_back2.png',
+												'components/shared/scripts/progressbar/images/bramus/percentImage_back1.png'
+											),
+					height		: 12		
+				}
+			</script>
+
+
+			<table cellpadding="5" cellspacing="3">
+			<tr>
+				<td valign="top">
+					<div class="avatar48"><a href="?com=slave&uid=$userinfo[uid]"><!--{avatar($userinfo[uid],medium)}--></a></div><BR><BR>
+					<!--{if $userinfo[level]==1}-->
+						<center><font size=3 COLOR="GREEN"><B>Tài sản</B></font></center>
+					<!--{/if}-->
+				</td>
+				<td valign="top">
+					<h1>
+					$userinfo[username]
+					<!--{if $userinfo[discount]==1}-->
+						<font color=red>Giảm giá</font>
+					<!--{/if}-->
+					</h1>
+					<ul class="slave">
+					<li>
+					<!--{if $userinfo[nickname]}--><font color=green>Biệt danh: "$userinfo[nickname]"</font><!--{/if}-->
+					<!--{if $userinfo[uplineuid]==$space[uid]}-->
+						<!--{if $userinfo[nickname]}-->
+							<a href="?com=slave&op=changenick&uid=$uid">(Đổi biệt danh)</a>
+						<!--{else}-->
+							<a href="?com=slave&op=changenick&uid=$uid">(Đặt biệt danh cho Goer)</a>
+						<!--{/if}-->
+					<!--{/if}-->
+					</li>
+					<li>Giá trị bản thân: $SConfig[dollar_sign] $userinfo[pvalue]</li>
+					<li>Giá trị thêm vào: $SConfig[dollar_sign] $userinfo[added]</li>
+					<li>Tiền vàng: $SConfig[dollar_sign] $userinfo[cash]</li>
+					<li>Tổng tài sản: $SConfig[dollar_sign] $userinfo[asset]</li>
+					<li>Số Goer: $userinfo[totalslave]</li>
+					<li>Điểm học vấn: <span class="progressBar" id="element1">$userinfo[education]%</span> $userinfo[education]%</li>
+					<li>Điểm kinh nghiệm: <span class="progressBar" id="element2">$userinfo[experience]%</span> $userinfo[experience]%</li>
+					<li>Điểm sức khỏe: <span class="progressBar" id="element3">$userinfo[health]%</span> $userinfo[health]%</li>
+					<li>Điểm trung thành: <span class="progressBar" id="element4">$userinfo[loyalty]%</span> $userinfo[loyalty]%</li>
+					<li>Điểm tâm trạng:<span class="progressBar" id="element5">$userinfo[mood]%</span> $userinfo[mood]%</li>
+					</ul>
+					
+					<!--{if $userinfo[uid]!=$space[uid] AND $userinfo[uplineuid]!=$space[uid]}-->
+						<br>
+						<a href="?com=slave&op=buy&uid=$userinfo[uid]" class="combutton" style="float:right;">Tôi muốn mua $userinfo[username]</a>
+					<!--{elseif $userinfo[uid]!=$space[uid]}-->
+						<a href="?com=slave&op=release&uid=$userinfo[uid]">Phóng thích</a> | 
+						<a href="?com=slave&op=discount&uid=$userinfo[uid]">Giảm giá</a> | 
+						<a href="?com=slave&op=action&uid=$userinfo[uid]">Nhiệm vụ</a> | 
+						<a href="?com=slave&op=collect&uid=$userinfo[uid]">thu nhập</a>
+						<!--{elseif $uplineinfo[username]}-->
+						<br>
+						<a href="?com=slave&op=ransom&uid=$userinfo[uid]" class="combutton" style="float:right;">Tôi muốn chuộc thân</a>
+					<!--{/if}-->
+					<BR>
+				</td>
+				</tr>
+			</table>		
+	<!--{/if}-->	
+
+	<h2>$userinfo[username] nói:</h2>
+	<div class="box feed">
+	<!--{if $space[uid]==$userinfo[uid]}-->
+		<span style="float:right;"><a href="?com=slave&op=editaboutme">Sửa</a></span>
+	<!--{/if}-->
+		<ul id="feed_ul">
+			<li>
+			<!--{if empty($userinfo[aboutme])}-->
+				Tôi là Goer cực tốt luôn nè, mua tôi đi mà, hi hi!
+			<!--{else}-->
+				$userinfo[aboutme]
+			<!--{/if}-->
+			</li>
+		</ul>
+	</div>
+
+	<BR>
+	<h2>Ghi chép lịch sử</h2>
+
+	<div class="box feed">
+		<ul id="feed_ul">
+		<!--{if $historylist}-->
+			<!--{loop $historylist $value}-->
+				<li class="type_blog">$value[message]<span class="time"><!--{date('m-d H:i',$value[created],1)}--></span></li>
+			<!--{/loop}-->
+		<!--{else}-->
+			<li>Không có ghi chép nào</li>
+		<!--{/if}-->
+		</ul>
+	</div>
+
+	</span>
+
+	<span class="right_col">
+		<div>
+			<ul>
+				<li>
+					<div class="slavetitle">
+						<h4><!--{if $userinfo[uid]==$space[uid]}-->Chủ nhân của tôi<!--{else}-->$userinfo[username] <!--{/if}--></h4>
+					</div>
+					<div style="margin:5px 0 5px 0;" id="vote_item_short_$value[count]">
+
+						<!--{if $uplineinfo}-->
+								<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="75%" height="41" valign="top"><table width="95%" border="0" align="right" cellpadding="0" cellspacing="3">
+	      <tr>
+        <td height="2"></td>
+      </tr>
+      <tr>
+        <td><div align="left"><h1><a href="?com=slave&uid=$uplineinfo[uid]">$uplineinfo[username]</a></h1>
+								<!--{if $uplineinfo[nickname]}-->
+									<font color=green><strong>Biệt danh: $uplineinfo[nickname]</strong><BR></font>
+								<!--{/if}-->
+								<!--{if $uplineinfo[discount]==1}-->
+									<font color=red><B>Hàng giảm giá</B></font>
+								<!--{/if}-->			
+								<!--{if $uplineinfo[level]==1}-->
+									<font COLOR="GREEN"><B>Đại tài chủ</B></font>
+								<!--{/if}--></div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Giá trị bản thân: $SConfig[dollar_sign] $uplineinfo[pvalue]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Giá trị thêm vào: $SConfig[dollar_sign] $uplineinfo[added]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Tiền vàng: $SConfig[dollar_sign] $uplineinfo[cash]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Tổng tài sản: $SConfig[dollar_sign] $uplineinfo[asset]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Số Goer: $uplineinfo[totalslave]</div></td>
+      </tr>
+    </table></td>
+    <td width="25%" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="3">
+      <tr>
+        <td><div align="center"><div class="avatar48"><a href="?com=slave&uid=$uplineinfo[uid]"><!--{avatar($uplineinfo[uid],small)}--></a></div></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+						<!--{else}-->
+							Tôi được tự do
+							<BR><BR>
+						<!--{/if}-->
+					</div>
+				</li>
+			</ul>
+		</div>
+<BR><BR>
+		<div>
+			<ul>
+				<li>
+					<div class="slavetitle">
+						<h4><!--{if $userinfo[uid]==$space[uid]}-->Goer của tôi<!--{else}-->$userinfo[username] <!--{/if}--></h4>
+					</div>
+					<!--{if $SConfiglist}-->
+						<!--{loop $SConfiglist $SConfigvalue}-->
+							<div id="vote_item_short_$value[count]" style="margin:5px 0 5px 0;border-bottom:1px solid #ccc; padding:3px 0 5px 0;">	
+							
+							<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="75%" height="41" valign="top"><table width="95%" border="0" align="right" cellpadding="0" cellspacing="3">
+	      <tr>
+        <td height="2"></td>
+      </tr>
+      <tr>
+        <td><div align="left"><h1><a href="?com=slave&uid=$SConfigvalue[uid]">$SConfigvalue[username]</a></h1>
+								<!--{if $SConfigvalue[nickname]}-->
+									<font color=green><strong>Biệt danh: $SConfigvalue[nickname]</strong><BR></font>
+								<!--{/if}-->
+								<!--{if $SConfigvalue[discount]==1}-->
+									<font color=red><B>Hàng giảm giá</B></font>
+		  <!--{/if}--></div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Giá trị bản thân: $SConfig[dollar_sign] $SConfigvalue[pvalue]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Giá trị thêm vào: $SConfig[dollar_sign] $SConfigvalue[added]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Tiền vàng: $SConfig[dollar_sign] $SConfigvalue[cash]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Tổng tài sản: $SConfig[dollar_sign] $SConfigvalue[asset]</div></td>
+      </tr>
+      <tr>
+        <td><div align="left">Số Goer: $SConfigvalue[totalslave]</div></td>
+      </tr>
+    </table></td>
+    <td width="25%" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="3">
+      <tr>
+        <td><div align="center"><div class="avatar48"><a href="?com=slave&uid=$SConfigvalue[uid]"><!--{avatar($SConfigvalue[uid],small)}--></a></div></div></td>
+      </tr>
+	  <!--{if $userinfo[uid]==$space[uid]}-->
+<tr>
+        <td style="padding-right:6px;">
+				<div align="right"><ul class="slaveblocklink">
+										<!--{if $userinfo[uid]==$space[uid]}-->
+										<li> <a href="?com=slave&op=collect&uid=$SConfigvalue[uid]">thu nhập</a></li>
+										<li> <a href="?com=slave&op=release&uid=$SConfigvalue[uid]">Phóng thích</a></li>
+										<li> <a href="?com=slave&op=discount&uid=$SConfigvalue[uid]">Giảm giá</a></li>
+										<li> <a href="?com=slave&op=action&uid=$SConfigvalue[uid]">Nhiệm vụ</a></li>
+										<!--{elseif $SConfigvalue[uid]!=$space[uid]}-->
+										<li> <a href="?com=slave&op=collect&uid=$SConfigvalue[uid]">thu nhập</a></li>
+										<li> <a href="?com=slave&op=buy&uid=$SConfigvalue[uid]">Mua</a></li>
+										
+										  <!--{/if}-->
+							      
+				</ul></div></td>
+      </tr>
+	  <!--{/if}-->
+    </table></td>
+  </tr>
+</table>
+							</div>
+						<!--{/loop}-->
+					<!--{else}-->
+						Bạn chưa mua Goer nào cả
+						<BR><BR>
+					<!--{/if}-->
+					
+				</li>
+			</ul>
+		</div>
+<BR><BR>
+		<div>
+			<ul>
+				<li>
+					<div class="slavetitle">
+						<h4><!--{if $userinfo[uid]==$space[uid]}-->Thu nhập của tôi<!--{else}-->$userinfo[username] <!--{/if}--></h4>
+					</div>
+					<!--{if $collectionlist}-->
+						<!--{loop $collectionlist $collectvalue}-->
+							<div id="vote_item_short_$value[count]" style="margin:5px 0 5px 0;border-bottom:1px solid #ccc; padding:3px 0 5px 0;">	
+							<center>
+								<span style="float:right; margin-left:10px;">
+									<div class="avatar48"><a href="?com=slave&uid=$collectvalue[uid]"><!--{avatar($collectvalue[uid],small)}--></a>
+                                    </div><BR>
+
+									<ul class="slaveblocklink">
+										<!--{if $collectvalue[cuplineuid]==$space[uid]}-->
+										<li><a href="?com=slave&op=removecollect&uid=$collectvalue[uid]">Hủy thu nhập</a></li>
+										<!--{/if}-->
+
+										<!--{if $collectvalue[uplineuid]==$space[uid]}-->
+										<li><a href="?com=slave&op=release&uid=$collectvalue[uid]"> Phóng thích </a></li>
+										<li><a href="?com=slave&op=discount&uid=$collectvalue[uid]"> Giảm giá </a></li>
+										<li><a href="?com=slave&op=action&uid=$collectvalue[uid]"> Nhiệm vụ </a></li>
+										<!--{elseif $collectvalue[uid]!=$space[uid]}-->
+										<li><a href="?com=slave&op=buy&uid=$collectvalue[uid]"> Mua </a></li>
+										<!--{/if}-->
+									</ul>
+								</span>
+							</center>
+
+							
+								<ul style="padding-left:10px;">
+								<li><h1><a href="?com=slave&uid=$collectvalue[uid]">$collectvalue[username]</a></h1>
+								<!--{if $collectvalue[nickname]}-->
+									<font color=green>Biệt danh "$collectvalue[nickname]"<BR></font>
+								<!--{/if}-->
+								<!--{if $collectvalue[discount]==1}-->
+									<font color=red><B>Hàng giảm giá</B></font>
+								<!--{/if}-->								
+								<!--{if $collectvalue[level]==1}-->
+									<font COLOR="GREEN"><B>Ðợi tài chủ</B></font>
+								<!--{/if}-->
+								</li>
+								<li>Giá trị bản thân: $SConfig[dollar_sign] $collectvalue[pvalue]</li>
+								<li>Giá trị thêm vào: $SConfig[dollar_sign] $collectvalue[added]</li>
+								<li>Tiền vàng: $SConfig[dollar_sign] $collectvalue[cash]</li>
+								<li>Tổng tài sản: $SConfig[dollar_sign] $collectvalue[asset]</li>
+								<li>Số Goer: $collectvalue[totalslave]</li>
+								</ul>
+							<BR>
+							</div>
+						<!--{/loop}-->
+					<!--{else}-->
+						Không có thu nhập
+						<BR><BR>
+					<!--{/if}-->
+					
+				</li>
+			</ul>
+		</div>
+
+	</span>
+	</div>
+<!--{/if}-->
+<!--{/if}-->
+
+
+<!--{if $op=='action'}-->
+	<div class="slave_block">
+	<span class="left_col">
+			<table cellpadding="5" cellspacing="3">
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$uid"><!--{avatar($uid,medium)}--></a>
+				</td>
+				<td valign="top">
+					<h1>Nhiệm vụ</h1>
+					<hr size=1>
+					<!--{if $isSlave!=1}-->	
+						Không thể chỉ định nhiệm vụ cho Goer này.
+					<!--{else}-->	
+						<div style="padding:0 0 15px 5px;">
+						<form action="sieuthigoer.php?com=slave" name="slaveform" method="post">
+						<!--{loop $tasklist $value}-->	
+							<label for="$value[id]"><input type=radio id="$value[id]" name="taskid" value="$value[id]"> $value[name]</label><BR>
+						<!--{/loop}-->
+						<BR>
+						<input type="hidden" name="authoruid" value="$space[uid]">
+						<input type="hidden" name="uid" value="$uid">
+						<input type="hidden" name="op" value="submitaction">
+						<input type="submit" name="submitaction" value="Xác nhận" class="submit" onclick="this.disabled=true;slaveform.submit();">
+						</form>
+						</div>
+					<!--{/if}-->	
+				</td>
+			</tr>
+			</table>
+	</span>
+	</div>
+<!--{/if}-->
+
+<!--{if $op == 'buy'}-->
+	<div style="margin:20px 20px 20px 20px;">
+	<form method="post" id="slaveform" name="slaveform" action="sieuthigoer.php?com=slave&op=confirmbuy">
+		<table cellpadding="5" cellspacing="3" width="100%">
+			<tr>
+				<td valign="top">
+					<div class="avatar48"><a href="?com=slave&uid=$userinfo[uid]"><!--{avatar($userinfo[uid],medium)}--></a></div>
+				</td>
+				<td valign="top" width="70%">
+					<h1>Xác nhận mua $userinfo[username] ?</h1>
+					<ul class="slave">
+					<li>Giá trị bản thân: $SConfig[dollar_sign] $userinfo[pvalue]</li>
+					<li>Giá trị thêm vào: $SConfig[dollar_sign] $userinfo[added]</li>
+					<li>Giá mua tiếp: $SConfig[dollar_sign] $userinfo[services_charge]</li>
+					<li>Thuế nhân khẩu: $SConfig[dollar_sign] $userinfo[tax]</li>
+					</ul>
+					<hr size=1>
+					Tổng số: $SConfig[dollar_sign] $userinfo[total]
+					<hr size=1>
+					<BR>
+					<input type="hidden" name="uid" value="$userinfo[uid]">
+					<!--{if $userinfo[uid]!=$space[uid] AND $userinfo[uplineuid]!=$space[uid]}-->
+						<input name="submitslavebuy" type="submit" class="submit" value="Xác nhận mua" onclick="this.disabled=true;slaveform.submit();">
+						<a href="javascript:history.back()" class="combutton" style="margin-left:75px">Hủy</a>
+					<!--{/if}-->
+				</td>
+				</tr>
+			</table>	
+		</form>
+	</div>
+<!--{/if}-->
+
+<!--{if $op == 'ransom'}-->
+	<div style="margin:20px 20px 20px 20px;">
+		<table cellpadding="5" cellspacing="3" width="100%">
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$userinfo[uid]"><!--{avatar($userinfo[uid],medium)}--></a>
+				</td>
+				<td valign="top" width="70%">
+					<h1> Bạn xác nhận muốn chuộc lại sự tự do?</h1>
+					<ul class="slave">
+					<li>Họ tên: $userinfo[username] </li>
+					<li>Giá trị bản thân: $SConfig[dollar_sign] $userinfo[pvalue]</li>
+					<li>Giá trị thêm vào: $SConfig[dollar_sign] $userinfo[added]</li>
+					<li>Giá mua tiếp: $SConfig[dollar_sign] $userinfo[services_charge]</li>
+					<li>Thuế nhân khẩu: $SConfig[dollar_sign] $userinfo[tax]</li>
+					</ul>
+					<hr size=1>
+					Tổng số: <font color=red><b>$SConfig[dollar_sign] $userinfo[total] </b></font>
+					<hr size=1>
+					<BR>
+					<!--{if !$uplineinfo}-->					
+						<a href="?com=slave&op=confirmransom&uid=$userinfo[uid]" class="combutton">Xác nhận chuộc thân</a>
+						
+						<a href="javascript:history.back()" class="combutton" style="margin-left:120px">Hủy</a>
+
+					<!--{/if}-->
+				</td>
+				</tr>
+			</table>		
+	</div>
+<!--{/if}-->
+
+<!--{if $op == 'discount'}-->
+	<div style="margin:20px 20px 20px 20px;">
+		<table cellpadding="5" cellspacing="3" width="100%">
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$userinfo[uid]"><!--{avatar($userinfo[uid],medium)}--></a>
+				</td>
+				<td valign="top" width="70%">
+					<h1>Xác nhận giảm giá $SConfig[discount_rate] để bán $userinfo[username] ?</h1>
+					<ul class="slave">
+					<li>Giá trị: $SConfig[dollar_sign] $userinfo[pvalue]</li>
+					<li>Giảm giá: $SConfig[dollar_sign] $userinfo[discount]</li>
+					</ul>
+					<hr size=1>
+					Tổng số: $SConfig[dollar_sign] $userinfo[discounttotal]
+					<hr size=1>
+					<BR>
+					
+					<!--{if $userinfo[uplineuid]==$space[uid]}-->
+						<a href="?com=slave&op=confirmdiscount&uid=$userinfo[uid]" class="combutton">Xác nhận</a>
+						
+						<a href="javascript:history.back()" class="combutton" style="margin-left:75px">Hủy</a>
+
+					<!--{/if}-->
+				</td>
+				</tr>
+			</table>		
+	</div>
+<!--{/if}-->
+
+<!--{if $op == 'market' OR $op == 'rank' }-->
+		<div class="d_content">
+			<ul class="slave_list" id="friend_ul">
+			<!--{if empty($listusers)}-->
+				<div style="padding:50px 0 100px 20px;">
+				Hiện không có dữ liệu tương ứng
+				</div>
+			<!--{else}-->
+
+				<!--{loop $listusers $value}-->
+				<!--{if $ols[$value[uid]]}-->class="online"<!--{/if}-->
+					<li id="friend_$value[uid]_li" <!--{if $ols[$value[uid]]}-->class="online"<!--{/if}-->>
+					<div class="avatar48"><a href="?com=slave&uid=$value[uid]" class="avatarlink"><!--{avatar($value[uid],middle)}--></a></div>
+					<table cellspacing="0" cellpadding="0" class="infotable" style="table-layout: fixed; width:210px;">
+						<caption style="padding-left:0">
+						<a href="?com=slave&uid=$value[uid]">$value[username]</a>
+							<!--{if $value[discount]==1}-->
+								<font color=red><B>(Hàng giảm giá)<BR></B></font>
+							<!--{/if}-->
+							<!--{if $value[nickname]}-->
+								<font color=green>"$value[nickname]"<BR></font>
+							<!--{/if}-->
+							<!--{if $value[level]==1}-->
+								<font COLOR="GREEN"><B>(đại tài chủ)</B></font>
+							<!--{/if}-->
+						</caption>
+						<tr>
+							<td>Giá trị bản thân: $SConfig[dollar_sign] $value[pvalue]</td>
+						</tr>
+						<tr>
+							<td>Giá trị thêm vào: $SConfig[dollar_sign] $value[added]</td>
+						</tr>
+						<tr>
+							<td>Tiền vàng: $SConfig[dollar_sign] $value[cash]</td>
+						</tr>
+						<tr>
+							<td>Tổng tài sản: $SConfig[dollar_sign] $value[asset]</td>
+						</tr>
+						<tr>
+							<td>Số Goer: $value[totalslave]</td>
+						</tr>
+					</table>
+					<ul class="blocklink">
+						<li><a href="?com=slave&uid=$value[uid]">Xem chi tiết</a></li>
+						<li><a href="?com=slave&uid=$value[uid]&op=buy">Mua</a></li>
+						<li><a href="cp.php?ac=pm&uid=$value[uid]" id="a_pm_$value[count]" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Gửi tin nhắn</a></li>
+						<li><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$value[count]" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Chào hỏi</a></li>
+						<li><a href="?com=slave&op=collect&uid=$value[uid]">thu nhập</a></li>
+					</ul>
+				</li>
+				<!--{/loop}-->
+			<!--{/if}-->
+			</ul>
+
+			<div class="page">$multi</div>
+		</div>
+	
+<!--{/if}-->
+
+<!--{if $op=="release"}-->
+	<div class="slave_block">
+			<table cellpadding="5" cellspacing="3" width=100%>
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$uid"><!--{avatar($uid,medium)}--></a>
+				</td>
+				<td valign="top">
+
+					<h1>Bạn xác nhận muốn phóng thích $user[username] ?</h1>
+					<BR>
+					Chỉ có thể lấy lại 1/3 của $SConfig[dollar_sign] $user[pvalue] khi phóng thích $user[username] là $SConfig[dollar_sign] $user[grandtotal].
+					<BR><BR>
+					<a href="?com=slave&op=confirmrelease&uid=$user[uid]" class="combutton">Xác nhận</a> <a href="javascript:history.back()" class="combutton" style="margin-left:75px">Hủy</a>
+				</td>
+			</tr>
+			</table>
+	</div>
+
+<!--{/if}-->
+
+<!--{if $op=="changenick"}-->
+	<div class="slave_block">
+			<table cellpadding="5" cellspacing="3" width=100%>
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$uid"><!--{avatar($uid,medium)}--></a>
+				</td>
+				<td valign="top">
+					<form action="sieuthigoer.php?com=slave&op=changenick" method="post">
+						<h1>Bạn có thể tùy ý đặt một biệt danh ngộ nghĩnh cho Goer bạn mua, đây là đặc quyền của bạn *^_^*   
+						</h1>
+						<BR>
+						Đặt một biệt danh cho $user[username]:
+						<BR><input type=text name="nickname" value="$user[nickname]" size=40>
+						<BR> (tối đa 20 ký tự)
+						<input type=hidden name=uid value="$uid">
+						<BR><BR>
+						<input type=submit name="submitnick" value="Xác nhận" class="submit">
+						<input type=button name="submit" value="Hủy" class="submit" onclick="javascript:history.back()">
+					</form>
+				</td>
+			</tr>
+			</table>
+	</div>
+
+<!--{/if}-->
+
+<!--{if $op=="editaboutme"}-->
+	<div class="slave_block">
+			<table cellpadding="5" cellspacing="3" width=100%>
+			<tr>
+				<td valign="top">
+					<!--{avatar($space[uid],medium)}-->
+				</td>
+				<td valign="top">
+					<form action="sieuthigoer.php?com=slave&op=editaboutme" method="post">
+						<h1>Chỉnh sửa ghi chú cá nhân
+						</h1>
+						<textarea name="aboutme" rows="3" cols="45">
+							<!--{if empty($user[aboutme])}-->
+								Tôi là Goer cực tốt luôn nè, mua tôi đi mà, hi hi! 
+							<!--{else}-->
+								$user[aboutme]
+							<!--{/if}-->
+						</textarea>
+						<BR>(tối đa 100 ký tự)
+						<BR><BR>
+						<input type=submit name="submitabout" value="Xác nhận" class="submit">
+						<input type=button name="submit" value="Hủy" class="submit" onclick="javascript:history.back()">
+					</form>
+				</td>
+			</tr>
+			</table>
+	</div>
+
+<!--{/if}-->
+
+<!--{if $op=="collect"}-->
+	<div class="slave_block">
+			<table cellpadding="5" cellspacing="3" width=100%>
+			<tr>
+				<td valign="top">
+					<a href="?com=slave&uid=$uid"><!--{avatar($uid,medium)}--></a>
+				</td>
+				<td valign="top">
+
+					<h1>Bạn xác nhận muốn thu nhập $user[username] ?</h1>
+				
+					<BR><BR>
+					<a href="?com=slave&op=confirmcollect&uid=$user[uid]" class="combutton">Xác nhận</a> <a href="javascript:history.back()" class="combutton" style="margin-left:75px">Hủy</a>
+				</td>
+			</tr>
+			</table>
+	</div>
+
+<!--{/if}-->
+
+<!--{if $op=="removecollect"}-->
+	<div class="slave_block">
+			<table cellpadding=					<a href="?com=slave&uid=$uid"><!--{avatar($uid,medium)}--></a>
+				</td>
+				<td valign="top">
+
+					<h1>Bạn xác nhận muốn hủy thu nhập  $user[username] ?</h1>
+				
+					<BR><BR>
+					<a href="?com=slave&op=confirmremovecollect&uid=$user[uid]" class="combutton">Xác nhận</a> <a href="javascript:history.back()" class="combutton" style="margin-left:75px">Hủy</a>
+				</td>
+			</tr>
+			</table>
+	</div>
+
+<!--{/if}-->
+
+<!--{if $op=="setup"}-->
+	<div class="slave_block" style="padding:10px 20px 30px 20px;">
+		<form action="sieuthigoer.php?com=slave&op=setup" method="POST">
+		<h1>Động thái cá nhân</h1>
+		<ul>
+			<li><label for="mfeed"><input id="mfeed" type="checkbox" name="mfeed" <!--{if $user[mfeed]==1}-->checked<!--{/if}-->> Đưa thông tin mua bán Goer vào động thái cá nhân của tôi</label></li>
+			<li><label for="sfeed"><input id="sfeed" type="checkbox" name="sfeed" <!--{if $user[sfeed]==1}-->checked<!--{/if}-->> Đưa nhiệm vụ mà tôi thực thi đối với Goer vào động thái cá nhân của tôi</label></li>
+		</ul>
+		
+		<BR>
+		<h1>Thông báo</h1>
+		<ul>
+			<li><label for="mnotice"><input id="mnotice" type="checkbox" name="mnotice" <!--{if $user[mnotice]==1}-->checked<!--{/if}-->> Khi tôi được mua bán thì thông báo cho tôi</label></li>
+			<li><label for="snotice"><input id="snotice" type="checkbox" name="snotice" <!--{if $user[snotice]==1}-->checked<!--{/if}-->> Khi Goer của tôi được mua bán thì thông báo cho tôi</label></li>
+		</ul>
+
+		<BR>
+		<h1>Hộp thư</h1>
+		<ul>
+			<li><label for="memail"><input id="memail" type="checkbox" name="memail" <!--{if $user[memail]==1}-->checked<!--{/if}-->> Khi tôi được mua bán thì gửi thư cho tôi</label></li>
+			<li><label for="semail"><input id="semail" type="checkbox" name="semail" <!--{if $user[semail]==1}-->checked<!--{/if}-->>  Khi Goer của tôi được mua bán thì gửi thư cho tôi</label></li>
+		</ul>
+		<BR>
+		<h1>Hạn chế</h1>
+		<ul>
+			<li><label for="friend"><input id="friend" type="checkbox" name="friend"<!--{if $user[friend]==1}-->checked<!--{/if}-->> Chỉ có bạn bè mới có thể mua tôi</label></li>
+		
+		</ul>
+		<BR>
+		<input type=submit name="submitsetup" value="Lưu" class="submit">
+		<input type=button name="submit" value="Hủy" class="submit" onclick="javascript:history.back()">
+		</form>
+	</div>
+<!--{/if}-->
+<!--{if $op=="credit"}-->
+<div class="slave_block" style="padding:10px 20px 30px 20px;">
+
+<table cellspacing="0" cellpadding="0" width="100%">
+<tr><td width="100" height="22" align="center">Tiền vàng hiện có:</td>
+<td><span class="money">$SConfig[dollar_sign] $myinfo[cash]</span></td></tr>
+<tr><td width="100" height="22" align="center">Điểm thưởng hiện có:</td>
+<td><span class="num">$space[credit]</span></td></tr>
+<tr><td width="100" height="22" align="center">Quy tắc chuyển đổi</td>
+<td>1 điểm thưởng = $SConfig[changecredits] tiền vàng &nbsp;&nbsp;$SConfig[changecredits] tiền vàng = 1 điểm thưởng</td></tr>
+<form action="sieuthigoer.php?com=slave&op=credit" method="POST">
+<tr><td width="100" height="22" align="center">Điền số lượng:</td>
+<td><input type="text" name="credit" value="1" size="10"> </td></tr>
+<tr><td width="100" height="22" align="center">Loại hình chuyển đổi</td>
+<td><input name="code" type="radio" value="xianjin" checked>Tiền vàng (thêm tiền vàng trừ điểm thưởng)<P><input name="code" type="radio" value="jifen">Điểm thưởng (thêm điểm thưởng trừ tiền vàng, vui lòng điền số lượng là bội số của <font color=red>$SConfig[changecredits]</font>) </td></tr>
+<tr><td width="100" height="22" align="center"> </td>
+<td><input type=submit name="submitcredit" value="Lưu" class="submit">
+<input type=button name="submit" value="Hủy" class="submit" onclick="javascript:history.back()"></td></tr>
+<tr>
+  <td height="55" colspan="2" align="center"><b>Giao dịch điểm thưởng một khi đã xác nhận thì không thể thay đổi, vui lòng xác nhận và tiến hành thao tác, thay đổi điểm thưởng sẽ ảnh hưởng đến cấp độ thành viên của bạn</b></td>
+  </tr>
+  </form>
+</table>
+
+</div>
+<!--{/if}-->
+
+<!--{if $op=="help"}-->
+	<div class="slave_block" style="padding:10px 20px 30px 20px;">
+
+<h1>Giới thiệu trò chơi:</h1>
+<p>Đây là một trò chơi mà bạn có thể mua bán bạn bè, thông qua quan hệ qua lại trong game sẽ giúp kéo gần khoảng cách giữa bạn bè với nhau và học được kỹ năng đầu tư quản lý.</p>
+<br />
+<p>Trong trò chơi chủ yếu lấy việc mua bán Goer làm trung tâm, bạn có thể đem bạn bè mình mua bán, từ đó kiếm được nhiều tiền. Khi bạn dùng một số tiền để mua Goer thì giá trị bản thân Goer này sẽ tăng lên, bạn bè của người này sẽ có thể bỏ ra số tiền lớn hơn để mua Goer này từ tay bạn, phần tiền dư ra sau khi trả thuế nhân khẩu, phí thủ tục và phí Goer thì sẽ chuyển đến cho bạn.</p>
+<br />
+<p>Nếu bạn thích một người bạn nào đó hoặc "thấy ghét" một người bạn nào đó, vậy thì hãy mua Goer đó! Goer càng được mua bán nhiều thì giá trị càng cao.</p>
+
+
+<h1>Cách mua bán Goer:</h1>
+<p>Chỉ cần bạn có đủ tiền vàng, bạn có thể tiến hành mua một người bạn của mình. Nếu người bạn đó hiện đang bị người khác mua, bạn có thể trả giá cao hơn để mua.</p>
+
+<h1>Cách kiếm tiền:</h1>
+	<ul>
+       <li>1.  Mời được 1 người bạn tham gia chơi "Siêu thị Goer" sẽ nhận được $SConfig[dollar_sign] $SConfig[invite_amount];</li>
+       <li>2.  Mỗi ngày đăng nhập vào chơi "Siêu thị Goer", sẽ nhận được $SConfig[dollar_sign] 70;</li>
+       <li>3.  Sau khi Goer mà bạn mua được người khác mua lại, bạn sẽ hưởng phần lớn tiền chênh lệch;</li>
+       <li>4.  Khi đang làm Goer mà bạn được giao dịch 1 lần, bạn sẽ hưởng 1 phần tiền chênh lệch;</li>
+       <li>5.  Phái Goer đi làm công kiếm tiền cho bạn;</li>
+       <li>6.  Những sự kiện xảy ra ngẫu nhiên trong quá trình chơi;</li>
+	</ul>
+
+<h1>Kỹ xảo trong game</h1>
+<p>Trò chơi này chủ yếu lấy việc bán lại Goer để kiếm thêm nhiều tiền, giá trị của Goer càng cao thì lúc bán đi bạn càng kiếm được nhiều tiền. Sau khi bạn mua Goer, có thể giao nhiệm vụ cho Goer để thêm giá trị thêm vào cho Goer, điểm thêm vào của Goer (điểm học vấn, điểm kinh nghiệm, điểm thể lực...) càng cao thì lúc bán đi bạn càng kiếm được nhiều tiền.</p>
+<br />
+<p>Mỗi khi Goer được mua thì giá trị của người đó sẽ tăng lên, vì thế bạn nên chọn mua Goer đắt tiền nhất, tuy nhiên cũng cần chú ý nếu Goer của bạn quá đắt thì có thể sẽ không có ai mua, tiền vàng của bạn sẽ không tăng. Bạn có thể đến chợ Goer để mua Goer mới được mua gần đây nhất để mua lại, tuy nhiên cũng cần chú ý nếu Goer được mua lại quá nhiều lần thì giá sẽ rất cao, từ đó không bán được và bạn sẽ không được hoàn vốn!</p>
+<br />
+<p>Nếu Goer của bạn không được ai mua thì cũng đừng thất vọng, Goer có giá trị càng cao thì khi đi làm công, số tiền kiếm được càng nhiều, mỗi ngày cho Goer đi làm sẽ kiếm được nhiều tiền! Tuy nhiên cần chú ý thể lực và điểm trung thành của nô lwe65, nếu quá thấp thì Goer sẽ bỏ trốn đấy!</p>
+
+
+<h1>Nhiệm vụ và điểm cá nhân:</h1>
+
+<p>Bạn có thể yêu cầu Goer thực hiện nhiệm vụ trong trò chơi, mỗi nhiệm vụ sẽ đưa ra những hiệu quả khác nhau, ảnh hưởng đến điểm cá nhân của Goer như điểm sinh mệnh, điểm kinh nghiệm, điểm thể lực...</p>
+<br />
+<p>Điểm sinh mệnh, điểm kinh nghiệm và điểm thể lực của Goer sẽ ảnh hưởng đến thu nhập của công việc, các điểm này càng cao thì thu nhập càng nhiều.</p>
+<br />
+<p>Khi yêu cầu Goer làm nhiệm vụ, cần chú ý điểm thể lực và trung thành của Goer, nếu các điểm này quá thấp thì Goer sẽ có thể bỏ trốn!
+</p>
+
+<h1>Hướng dẫn khác:</h1>
+<ul>
+<li><b>Giá trị bản thân:</b>Giá bán của bạn, số lần được bán lại càng nhiều thì giá này càng cao.</li>
+<li><b>Giá trị thêm vào: </b>Phụ thuộc vào các điểm cá nhân của bạn như điểm sinh mệnh, điểm kinh nghiệm, điểm thể lực, điểm trung thành và điểm tâm trạng.</li>
+<li><b>Tiền vàng: </b>Tổng số tiền vàng trong trò chơi của bạn.</li>
+<li><b>Tổng tài sản: </b>Là tổng số tiền vàng và giá trị của các Goer mà bạn có.</li>
+
+</ul>
+	</div>
+
+<!--{/if}-->
+
+
+<!--{if $sidebar == 1}-->
+</div>
+	<div class="narrow">
+
+		<!--{if $op == "market"}-->
+		<div class="slave_block">
+		<span class="left_col">
+		<h1>Phạm vi</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $allactive><a href="?com=slave&op=market&cat=all&range=$range&sort=$sort&sex=$sex">Tất cả</a></li>
+			<li $friendsactive><a href="?com=slave&op=market&cat=friends&range=$range&sort=$sort&sex=$sex">Chỉ bạn bè</a></li>
+			<li $discountactive><a href="?com=slave&op=market&cat=discount&range=$range&sort=$sort&sex=$sex">Tài sản nhiều nhất</a></li>
+		</ul>
+
+		<h1>Giá bán</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $rallactive><a href="?com=slave&op=market&cat=$cat&range=all&sort=$sort&sex=$sex">Giá đắt nhất</a></li>
+			<li $raffordableactive><a href="?com=slave&op=market&cat=$cat&range=affordable&sort=$sort&sex=$sex">Tiền vàng nhiều nhất</a></li>
+		</ul>
+		
+		<h1>Sắp xếp</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $expensiveactive><a href="?com=slave&op=market&cat=$cat&range=$range&sort=expensive&sex=$sex">Nhiều Goer nhất</a></li>
+			<li $activeactive><a href="?com=slave&op=market&cat=$cat&range=$range&sort=active&sex=$sex">Được mua gần đây</a></li>
+		</ul>
+
+		<h1>Giới tính</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $sex0active><a href="?com=slave&op=market&cat=$cat&range=$range&sort=$sort&sex=0">Tất cả</a></li>
+			<li $sex2active><a href="?com=slave&op=market&cat=$cat&range=$range&sort=$sort&sex=2">Nữ</a></li>
+			<li $sex1active><a href="?com=slave&op=market&cat=$cat&range=$range&sort=$sort&sex=1">Nam</a></li>	
+		</ul>
+
+		</span>
+		</div>
+		<!--{/if}-->
+
+		<!--{if $op == "rank"}-->
+		<div class="slave_block">
+		<span class="left_col">
+		<h1>Phạm vi</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $allactive><a href="?com=slave&op=rank&cat=all&sort=$sort&sex=$sex">Tất cả</a></li>
+			<li $friendsactive><a href="?com=slave&op=rank&cat=friends&sort=$sort&sex=$sex">Chỉ bạn bè</a></li>
+		</ul>
+		
+		<h1>Sắp xếp</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $assetactive><a href="?com=slave&op=rank&cat=$cat&sort=asset&sex=$sex">Tài sản nhiều nhất</a></li>
+			<li $expensiveactive><a href="?com=slave&op=rank&cat=$cat&sort=expensive&sex=$sex">Giá đắt nhất</a></li>
+			<li $cashactive><a href="?com=slave&op=rank&cat=$cat&sort=cash&sex=$sex">Tiền vàng nhiều nhất</a></li>
+			<li $slaveactive><a href="?com=slave&op=rank&cat=$cat&sort=slave&sex=$sex">Nhiều Goer nhất</a></li>
+			<li $activeactive><a href="?com=slave&op=rank&cat=$cat&sort=active&sex=$sex">Được mua gần đây</a></li>
+		</ul>
+
+		<h1>Giới tính</h1>
+		<hr size=1 color=#2682d5>
+		<ul class="marketsortlink">
+			<li $sex0active><a href="?com=slave&op=rank&cat=$cat&sort=$sort&sex=0">Tất cả</a></li>
+			<li $sex2active><a href="?com=slave&op=rank&cat=$cat&sort=$sort&sex=2">Nữ</a></li>
+			<li $sex1active><a href="?com=slave&op=rank&cat=$cat&sort=$sort&sex=1">Nam</a></li>	
+		</ul>
+
+		</span>
+		</div>
+		<!--{/if}-->
+
+		<!--{ad/rightside}--><!-- �Ҳ������-->
+	</div>
+</div>
+<!--{else}-->
+</div>
+<!--{/if}-->
+<!--giữ nguyên bản quyền sẽ thúc đẩy tớ share tiếp mod, cậu có thể xóa link nhưng phải để lại chữ GoHooH. Không được phép thay bản quyền thành của bạn. Cám ơn cậu sử dụng dịch vụ của GoHooH.CoM-->
+<div style="padding: 0px 0px 0px 0px; font-size: 12px; text-align: right;">Develop by <font color=red><a target="_blank" href="http://www.gohooh.com/">GoHooH.CoM</a></font></div>
+<!--giữ nguyên bản quyền sẽ thúc đẩy tớ share tiếp mod, cậu có thể xóa link nhưng phải để lại chữ GoHooH. Không được phép thay bản quyền thành của bạn. Cám ơn cậu sử dụng dịch vụ của GoHooH.CoM-->
+
+<!--{template footer}-->

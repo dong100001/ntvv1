@@ -1,0 +1,76 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+<h2 class="title"><a href="do.php?ac=stat">Thống kê cộng đồng</a></h2>
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>Thống kê</h2>
+		<p>Thống kê tất cả lượng truy cập hàng hàng của Network theo thời gian thực.</p>
+	</caption>
+	<tr><td>
+	<ul class="line_list">
+		<li>
+			<strong>Cơ bản</strong>
+			<a href="do.php?ac=stat"$actives[all]>Detailed synopsis</a> &nbsp;
+			<!--{loop $cols['login'] $value}-->
+			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
+			<!--{/loop}-->
+		</li>
+		<li>
+			<strong>Thông tin</strong>
+			<!--{loop $cols['add'] $value}-->
+			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
+			<!--{/loop}-->
+		</li>
+		<li>
+			<strong>Bình luận</strong>
+			<!--{loop $cols['comment'] $value}-->
+			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
+			<!--{/loop}-->
+		</li>
+		<li>
+			<strong>Không gian</strong>
+			<!--{loop $cols['space'] $value}-->
+			<a href="do.php?ac=stat&type=$value"$actives[$value]><!--{eval echo cplang("do_stat_$value");}--></a> &nbsp;
+			<!--{/loop}-->
+		</li>
+	</ul>
+	</td></tr>
+</table>
+<br>
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<!--{if $type=='all'}-->
+	<caption>
+		<h2>�ۺϸſ�</h2>
+		<p>
+		���￴������վ����ۺϸſ�չͳ�ơ�(��Ҫ����ͳ��2������Ч)
+		</p>
+	</caption>
+	<tr><td>
+	<ul class="line_list">
+		<li><strong>����û�</strong>��ָ����ÿ����ʱ�վ��Ψһ�û���һ���û����ʶ�Σ�Ҳֻ��һ�Σ�</li>
+		<li><strong>��Ϣ����</strong>��ָ����ÿ�췢����¼����־��ͼƬ�����⡢ͶƱ����ͷ�����������</li>
+		<li><strong>��Ϣ����</strong>��ָ����ÿ�����������Ϣ�������ۺͱ�̬���μ�ͶƱ�������Ļ����������</li>
+		<li><strong>�û�����</strong>��ָ����ÿ���û�֮�以�����ԡ����к�Ļ����������</li>
+	</ul>
+	</td></tr>
+	<!--{else}-->
+	<caption>
+		<h2><!--{eval echo cplang("do_stat_$type");}--></h2>
+	</caption>
+	<!--{/if}-->
+	<tr><td>
+	<div class="borderbox">
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,45,0" width="750" height="300">
+		  <param name="movie" value="image/stat.swf?$statuspara" />
+		  <param name="quality" value="high" />
+		  <embed src="image/stat.swf?$statuspara" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="750" height="300"></embed>
+		</object>
+	</div>
+	</td></tr>
+</table>
+
+<!--{template footer}-->

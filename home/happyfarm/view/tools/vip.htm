@@ -1,0 +1,14 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main">
+	<font color='#ff0000'>Bạn hiện là VIP level {$vipNow}</font>
+	<!--{if $vipNow >= 7}-->
+	Bạn đã là Super Vip
+	<!--{else}-->
+	Nâng cấp lên VIP level {$vipNext} bạn cần {$vipYB} Gee
+	<input type="button" onclick="request('tools/vip.php', 'state');" value="Nâng cấp" />
+	<span id="state"></span>
+	<!--{/if}-->
+</div>
+
+<!--{template happyfarm/view/footer}-->

@@ -1,0 +1,239 @@
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<!--{if $_GET['ac'] == 'set'}-->
+<div class=div_layout>
+<form method="post" action="parkApp.php?ac=set" class="c_form" name="crdit">
+	 <table cellspacing="0" cellpadding="0" class="formtable" style="float:right; width:300px;">
+		<caption>
+			<h2>Tài Sản(Tiền trong thẻ tín dụng:<span style="color:#FF0000">$space[credit]</span>, Số vàng của bạn:<span style="color:#FF0000">$memberinfo[P_credit]</span>)</h2>
+		</caption>	
+		<tr>
+			<th>Đánh giá(1:$cfgStopLimit[ExchangePercent])</th>
+
+		</tr>
+		
+		<tr>
+			<th>Thẻ tín dụng -> Vàng</th>
+			<td>
+				<input type="text" name="creditin">
+			</td>
+		</tr>
+		
+		<tr>
+	     <td></td>		
+			<td >
+			<input type="hidden" name="guidemode" value="1">
+			<input type="submit" name="setinsubmit" value="OK" class="submit" />
+			<input type="reset" name="resetsubmit" value="Reset" class="submit" />
+			</td>
+		</tr>
+
+		<tr>
+			<th>Vàng- > Thẻ tín dụng</th>
+			<td>
+				<input type="text" name="creditout">
+			</td>
+		</tr>
+		<tr>
+	     <td></td>
+			<td >
+			<input type="hidden" name="guidemode" value="1">
+			<input type="submit" name="setoutsubmit" value="OK" class="submit" />
+			<input type="reset" name="resetsubmit" value="Reset" class="submit" />
+			</td>
+		</tr>
+
+	</table>		
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>	
+<form method="post" action="parkApp.php?ac=set" class="c_form">
+
+	<table cellspacing="0" cellpadding="0" class="formtable" style="width:300px; float:left; margin-top:-25px;">
+		<caption>
+			<h2>Tương tác</h2>
+		</caption>
+		<tr>
+			<th style="width:10em;">Sự kiện games</th>
+			<td>
+				<input type="checkbox" value="1" $stopfeed name="stopfeed" />Feed
+				<input type="checkbox" value="1" $stopnote name="stopnote" />Notify
+
+			</td>
+		</tr>
+		<tr>
+			<th style="width:10em;">Vé sự kiện</th>
+			<td>
+				<input type="checkbox" value="1"  $messfeed name="messfeed"  />Feed
+				<input type="checkbox" value="1" $messnote name="messnote" />Notify
+			</td>
+		</tr>
+		<tr>
+			<th>Tin tức sự kiện</th>
+			<td>
+				<input type="checkbox" value="1" $warnfeed name="warnfeed" />Feed
+				<input type="checkbox" value="1" $warnnote name="warnnote" />Notify
+			</td>
+		</tr>
+		
+		<tr>
+			<th>Thẻ sự kiện</th>
+			<td>
+				<input type="checkbox" value="1" $stagefeed  name="stagefeed"/>Feed
+				<input type="checkbox" value="1" $stagenote name="stagenote" />Notify
+			</td>
+		</tr>
+		<tr>
+			<th>Sự kiện mua sắm</th>
+			<td>
+				<input type="checkbox" value="1" $buyfeed name="buyfeed" />Feed
+				<input type="checkbox" value="1" $buynote name="buynote" />Notify
+			</td>
+		</tr>
+	
+      </table>
+	 </table> 
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Thông tin bãi đỗ</h2>
+		</caption>
+		<tr>
+			<th style="width:10em;">Cảnh vật</th>
+			<td>
+			 <!--{loop $cfgBg $url $desc}-->
+			   <li style="float:left">
+			     <img src="park/images/$url" width="100" height="40">
+				 <p>
+			 <!--{if $memberinfo[P_bg]=="park/images/".$url}-->
+			   <input type="radio"  value="$url"  checked="checked" name="bg"   />
+			  <span style="font-weight:bold;color:#FF0000;">$desc</span>			   			   
+			  <!--{else}-->  
+			   <input type="radio"  value="$url"  name="bg"   />
+			 $desc			   
+			  <!--{/if}-->				 
+				 </p>
+			   </li>
+			  <!--{/loop}-->
+
+			</td>
+		</tr>
+		<tr>
+			<th style="width:10em;">Special Port</th>
+			<td>
+			 <!--{loop $arrLot $key $value}-->
+			   <li style="float:left">
+				 <p style="width:100px;">
+				 <!--{if $key == $memberinfo[P_lot_free]}-->
+				   <input type="radio"  value="$key"  checked="checked" name="lotfree"     />
+				  <span style="font-weight:bold;color:#FF0000;">$value</span>
+				  <!--{else}-->  
+				   <input type="radio"  value="$key"   name="lotfree"   />
+				   $value
+				  <!--{/if}--> 
+	
+				 </p>		 
+			   </li>
+			  <!--{/loop}-->
+			</td>
+		</tr>
+		<tr>
+			<th>Hạn chế bởi</th>
+			<td>
+			 <!--{loop $arrLimittype $key $value}-->
+			   <li style="float:left">
+				 <p style="width:100px;">
+				 <!--{if $key == $memberinfo[LimitType]}-->
+				   <input type="radio"  value="$key"  checked="checked" name="limittype"     />
+				  <span style="font-weight:bold;color:#FF0000;">$value</span>
+				  <!--{else}-->  
+				   <input type="radio"  value="$key"   name="limittype"   />
+				   $value
+				  <!--{/if}--> 
+	
+				 </p>		 
+			   </li>
+			  <!--{/loop}-->		   
+
+			</td>
+		</tr>
+		
+		<tr>
+			<th>Màu được phép</th>
+			<td>
+			 <!--{loop $cfgColor $key $color}-->
+			   <li style="float:left">
+				 <p style="width:100px;">
+				 <!--{if $key == $memberinfo[P_lot_color]}-->
+				   <input type="radio"  value="$key"  checked="checked" name="CarColor"     />
+				  <span style="font-weight:bold;color:#FF0000;">$color</span>
+				  <!--{else}-->  
+				   <input type="radio"  value="$key"   name="CarColor"   />
+				   $color
+				  <!--{/if}--> 
+	
+				 </p>		 
+			   </li>
+			  <!--{/loop}-->
+			</td>
+		</tr>
+		<tr>
+			<th>Loại được phép</th>
+			<td>
+			 <!--{loop $cfgCarType $key $cartype}-->
+			   <li style="float:left">
+				 <p style="width:100px;">
+				 <!--{if $key == $memberinfo[P_lot_type]}-->
+				   <input type="radio"  value="$key"  checked="checked" name="CarType"  />
+				  <span style="font-weight:bold;color:#FF0000;">$cartype</span>			   
+				  <!--{else}-->  
+				   <input type="radio"  value="$key"   name="CarType"   />
+				   $cartype			   
+				  <!--{/if}-->
+				 </p>		 
+			   </li>
+			  <!--{/loop}-->
+			</td>
+		</tr>
+		<tr>
+			<th>Cấp độ được phép</th>
+			<td>
+			 <!--{loop $cfgCarLevel $key $carlevel}-->
+			   <li style="float:left">
+				 <p style="width:100px;">
+				 <!--{if $key == $memberinfo[P_lot_level]}-->
+				   <input type="radio"  value="$key"  checked="checked" name="CarLevel"  />
+				  <span style="font-weight:bold;color:#FF0000;">$carlevel</span>			   			   
+				  <!--{else}-->  
+				   <input type="radio"  value="$key"   name="CarLevel"  />
+				    $carlevel			   
+				  <!--{/if}--> 
+	
+				 </p>		 
+			   </li>
+			  <!--{/loop}-->	
+			</td>
+		</tr>
+	
+       </table>
+		<br>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<td></td>
+			<td align="center">
+			<input type="hidden" name="guidemode" value="1">
+			<input type="submit" name="setsubmit" value="Đồng Ý" class="submit" />
+			<input type="reset" name="resetsubmit" value="Mặc định" class="submit" />
+			</td>
+			<td align="right"></td>
+		</tr>
+		</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+</div>
+				  <!--{/if}--> 
+
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">Lên đầu trang</a>
+</div>
+
+<!--{template footer}-->

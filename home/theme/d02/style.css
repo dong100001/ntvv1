@@ -1,0 +1,119 @@
+﻿/*
+[name]Mùa đông[/name]
+Develop by GoHooH.CoM
+*/
+
+body { padding: 0 0 50px; background: #fff url(images/body_bg.jpg) no-repeat top center; color: #978bbb; }
+
+a {
+	color: #978bbb;
+}
+a#i_rss {
+	text-decoration: underline;
+
+}
+#wrap { width: 990px; padding-left: 12px;}
+#header {
+	margin: 0;
+        height: 500px;
+	background: url(images/top_bg.jpg) repeat-x left top;
+	font-size: 12px;
+	font-weight: normal;
+}
+#header a {
+	color: #bc8ce5;
+}
+.headerwarp {
+	height: 500px; background: url(images/header.gif);
+}
+#header .logo a { width: 100px; height: 40px; background: url(images/logo.gif) no-repeat left center; overflow: hidden; display: block; }
+#header .logo a img { margin: -200px; }
+.login_thumb { background-image: url(images/login_bg.gif); }
+#space_page {
+	width: 990px;
+}
+#ubar h2,
+#space_page .feed_header,
+.sidebox h2.title {
+ 	height: 25px;
+	background: #efefef url(images/tab_bg.gif);
+	color: #865379;
+	font-size: 12px;
+	line-height: 25px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #efefef;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #efefef;
+}
+
+.tabs_header{ position: absolute; border: none; margin:-42px 0 0 150px; width: 600px; }
+
+.tabs_header ul.tabs li a, .tabs_header ul.tabs li a span{ background-image: url(images/menu.gif); color: #865379; }
+
+}
+
+#space_page .feed li,
+ #space_page .comments_list li,
+ .line_list li,
+ #footer {
+	border-bottom-color: #efefef;
+}
+#space_page #ubar {
+        width: 184px;
+	border: 1px solid #efefef;
+}
+
+#space_page #obar {
+	width: 184px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-color: #efefef;
+	border-bottom-color: #efefef;
+	border-left-color: #efefef;
+}
+
+#space_page #content {
+	border: 1px solid #efefef;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+background-image: url(images/bg2.gif);
+
+
+background-position: top center ;
+background-repeat: repeat-x;no-repeat ;
+}
+
+
+.space_pagesm {
+	position: absolute;
+	top: 60px;
+}
+.foot {
+	margin-top: 20px;
+	border-top-color: #efefef;
+	color: #CCCCCC;
+}
+.foot a {
+	color: #CCCCCC;
+	font-weight: normal;
+}
+.name_index {
+	color: #FFFFFF;
+}
+.name_url {
+	color: #FFFFFF;
+}
+.name_url a {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+.name_sm {
+	color: #FFFFFF;
+}

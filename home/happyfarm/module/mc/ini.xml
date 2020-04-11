@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<postUrl url = "happyanimal.php?mod=" common="common&m" fbRequest = "cgi_app_buy?" /><!-- http请求地址 -->
+	<loading url="module/loading_v_10.swf" />
+	<folder url = "module/mc/" />
+	<version value = "" loginurl = "http://www.gohooh.com/nhatui" />	
+	<openControl><!-- 功能开放控制 -->
+		<item name = "tool" open = "true" /><!-- 道具 -->
+		<item name = "pack" open = "false" /><!-- 好友背包 -->
+		<item name = "quickshoot" open="true" openlv="1"/><!--快照-->
+	</openControl>
+	<security host="192.168.1.121" port="3333" />
+	<moduleList><!-- 模块列表 -->
+		<module name="main" url="module/mc/Master_v_23.swf?v=1" statusText="Kết nối Nhà Tui..." size="230518">
+			<material url="module/mc/main/farmui1_v_11.swf?v=1" statusText="Kết nối trang trại..." size="234017" />
+			<material url="module/mc/main/farmui2_v_3.swf?v=1" statusText="Tải thông tin nông dân...." size="7464" />
+			<material url="module/mc/main/commonui_v_5.swf?v=1" statusText="Cập nhật vật nuôi..." size="36531" />
+			<material url="module/mc/main/task.swf?v=7" statusText="Cập nhật hàng xóm..." size="51559" />		
+			<material url="module/mc/main/upgrade_v_1.swf?v=1" statusText="Cập nhật trang trại..." size="71325" />
+			<material url="module/mc/main/shopui_v_2.swf?v=2" statusText="Cập nhật nhiệm vụ..." size="159956" />
+			<material url="module/mc/main/shopui2_v_9.swf?v=1" statusText="Cập nhật cửa hàng" size="187480" />
+			<material url="module/mc/main/shopui3_v_3.swf?v=1" statusText="Hoàn thành..." size="53309" />
+		</module>
+	</moduleList>
+	<animals sort="1,2,3,4,5,6,7,8,9,10"><!--hour=time/3600 -->
+		<animal id="1001" name="Gà" childNum="20" product="Trứng" u="A" house="Wo" sound="1">
+			<nextText value="gà con, gà choi, tăng trưởng, phát triển, thành thục, thu hoạch"/>
+			<nextTime value="14400,14400,129600,180,21420,158400"/>
+			<tip>Gà (chicken    ): trên đầu có mồng màu đỏ, cung cấp trứng, thịt.</tip>
+			<info>
+				<l>Mau ăn, chóng lớn</l>
+				<l>Nhà Tui, 4ever!</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Gà mái đẻ trứng.</l>
+				<l>Chip chip</l>
+				<l>Chán quá đi</l>
+				<l>Phi đội gà bay.</l>
+				<l>Tìm gì ăn thôi</l>
+				<l>Tớ sẽ đẻ trứng</l>
+				<l>Hello mọi người</l>
+				<l>Có ai không?</l>
+			</info>
+		</animal>
+		<animal id="1002" name="Thỏ" childNum="12" product="Thịt"  u="Chỉ" house="Wo" v="1" sound="0">
+			<nextText value="thỏ con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="18000,18000,129600,180,28620,165600"/>
+			<tip>Thỏ (rabbit    ): thú có vú, ăn cỏ, tai lớn, chân trước ngắn hơn chân sau, nhảy rất giỏi. Nuôi thỏ để thu hoạch thịt.</tip>
+			<info>
+				<l>Đua không rùa?</l>
+				<l>Tớ muốn ăn cỏ</l>
+				<l>Ôi, đau quá</l>
+				<l>Hai tai thỏ to to</l>
+				<l>Nhảy nào</l>
+				<l>Nghỉ mệt cái đã</l>
+				<l>Đừng xoắn đôi tai tớ</l>
+				<l>Tai dựng đứng lên</l>
+				<l>Thỏ con chiên bánh</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Chào mọi người</l>
+				<l>Tớ xinh chứ?</l>
+				<l>Tai tớ to chứ?</l>
+				<l>Tớ thích cà rốt</l>
+				<l>Hello</l>
+				<l>Buồn quá</l>
+				<l>Đi dạo nào</l>
+				<l>Nắng ấm quá</l>
+				<l>Trời lạnh rồi</l>
+				<l>Kute không?</l>
+			</info>
+		</animal>
+		<animal id="1003" name="Ngỗng" childNum="20" product="Thịt"  u="Một" house="Wo" sound="1">
+			<nextText value="ngỗng con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="16200,16200,151200,180,25020,183600"/>
+			<tip>Ngỗng (goose    ): gia cầm, cổ dài, chân ngắn có màng bơi, ăn ngữ cốc, cá, tôm, lông màu trắng hoặc xám. Ngỗng cung cấp thịt và trứng.</tip>
+			<info>
+				<l>Ngoạc ngoạc……</l>
+				<l>Chào mọi người</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Tớ có phong cách riêng.</l>
+				<l>Đi bơi nhé</l>
+				<l>Đói quá à</l>
+				<l>Có ai đi chơi không?</l>
+				<l>Tớ muốn là thiên nga</l>
+                <l>Xem phim nhé</l>
+                <l>Vui quá</l>
+			</info>
+		</animal>
+		<animal id="1004" name="Mèo" childNum="12" product="Mèo"  u="Một" house="Wo" sound="1">
+			<nextText value="mèo con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="34200,34200,216000,180,32220,284400"/>
+			<tip>Mèo (cat    ): thú có móng vút, răng sắc, bắt chuột giỏi.</tip>
+			<info>
+				<l>Thật tuyệt vời</l>
+				<l>Meo meo meo.</l>
+				<l>Bắt chuột thôi.</l>
+				<l>Tớ thích ăn cá</l>
+				<l>Đi tuần nào.</l>
+				<l>Mắt tớ tinh lắm</l>
+				<l>Đi dạo nhé</l>
+				<l>Nắng ấm quá</l>
+				<l>Tớ là Kitty</l>
+				<l>Cho 1 con cá nhé</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Trể rồi. Dậy mau</l>
+				<l>Kute chứ?</l>
+			</info>
+		</animal>		
+		<animal id="1005" name="Chim Công" childNum="24" product="Chim Công"  u="Root" house="Wo" sound="1">
+			<nextText value="mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="37800,37800,237600,180,43020,313200"/>
+			<tip>Chim Công (peacock    ): có lông vũ đẹp, dược gọi là "Vua của các loài chim". Nuôi để làm kiểng.</tip>
+			<info>
+				<l>Buồn quá</l>
+				<l>Tớ là chim công</l>
+				<l>Tìm người yêu ^^</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Tớ xinh chứ?</l>
+				<l>Vui lên nào.</l>
+				<l>Hello mọi người</l>
+				<l>Đi trên đồng cỏ</l>
+				<l>La la la</l>
+				<l>Tắm nắng thôi</l>
+				<l>Đói quá</l>
+				<l>Đi đâu nhỉ?</l>
+				<l>Buồn ngủ rồi.</l>
+			</info>
+		</animal>		
+		<animal id="1006" name="Chim cánh cụt" childNum="16" product="Chim cánh cụt"  u="Một" house="Wo" sound="1">
+			<nextText value="Mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="41400,41400,259200,180,53820,342000"/>
+			<tip>Chim cánh cụt (penguin    ) sống ở vùng biển đóng băng,đôi khi sống trên đất liền.</tip>
+			<info>
+				<l>Chim cánh cụt kute</l>
+				<l>Nhớ biển quá</l>
+				<l>Tớ đang giảm cân</l>
+				<l>Mau ăn chóng lớn</l>
+				<l>Tớ yêu GoHooH.Com</l>
+				<l>Chào mọi người</l>
+				<l>Cho tớ ăn đi</l>
+				<l>Trang trại NHÀ TUI</l>
+				<l>Tết! Tết! Tết</l>
+				<l>Tắm biển nhé</l>
+			</info>
+		</animal>
+		<animal id="1007" name="Rùa" childNum="12" product="Rùa"  u="Một" house="Wo" sound="0">
+			<nextText value="Rùa con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="27000,27000,216000,180,35820,270000"/>
+			<tip>Rùa (tortoise    ): lưỡng cư, bơi nhanh nhưng đi rất chậm, cơ thể được bao bọc bằng vỏ cứng (mai)</tip>
+			<info>
+				<l>Tớ là rùa</l>
+				<l>Tớ đến từ biển</l>
+				<l>Tớ yêu GoHooH.Com</l>
+				<l>Trang trại NHÀ TUI</l>
+				<l>Thỏ ơi, đua không?</l>
+				<l>Tắm biển nhé!</l>
+				<l>Rùa kute</l>
+				<l>Tắm nắng thôi</l>
+				<l>Ô là la</l>
+				<l>Đói bụng quá</l>
+			</info>
+		</animal>
+		<animal id="1008" name="Sóc" childNum="13" product="Sóc"  u="Một" house="Wo" v="2" sound="1">
+			<nextText value="sóc con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="36000,36000,288000,180,39420,360000"/>
+			<tip>Sóc (squirrel    ):động vật gặm nhấm, đuôi dài rậm rạp, đáng yêu, ngoan ngoan.</tip>
+			<info>
+				<l>Có hạt dẻ không?</l>
+				<l>Tớ yêu GoHooH.Com</l>
+				<l>Trang trại NHÀ TUI</l>
+				<l>Tớ là sóc</l>
+				<l>Leo cây chơi</l>
+				<l>Sóc yêu rừng</l>
+				<l>Ngủ đông</l>
+				<l>Dự trữ thức ăn</l>
+				<l>Chào mọi người</l>
+				<l>Sóc dễ thương</l>
+			</info>
+		</animal>
+		<animal id="1009" name="Mèo Ba tư" childNum="14" product="Mèo Ba tư"  u="Một" house="Wo" sound="1">
+			<nextText value="Mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="37800,37800,302400,180,43020,378000"/>
+			<tip>Mèo Ba tư (persian cat    ): mèo trong quí tộc, cao thượng, thông minh, nhanh nhẹn.</tip>
+			<info>
+				<l>Đi dạo</l>
+				<l>Cười lên cho vui</l>
+				<l>Tôi muốn hạnh phúc</l>
+				<l>Tớ là mèo Ba Tư</l>
+				<l>Tớ là mèo quí tộc</l>	
+				<l>Tớ yêu GoHooH.CoM</l>	
+				<l>Trang trại Nhà Tui</l>	
+				<l>Tắm nắng</l>	
+				<l>Đói quá</l>	
+				<l>Meo meo!</l>			
+			</info>
+		</animal>
+		<animal id="1010" name="Chuột hamster" childNum="16" product="Chuột hamster"  u="Một" house="Wo" v="1" sound="1">
+			<nextText value="Chuột con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="36000,36000,345600,180,43020,417600"/>
+			<tip>Chuột hamster    : thích hợp làm thú cưng, dáng nhỏ, dễ thương và không có mùi hôi.</tip>
+			<info>
+				<l>Vui quá đi</l>
+				<l>GoHooH thú vị quá</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Chào mọi người</l>
+				<l>Chuột kute nhất</l>
+				<l>Tớ là Hamster</l>
+				<l>Tắm nắng nhé</l>
+				<l>Chuột yêu gạo</l>
+				<l>Good luck</l>
+			</info>
+		</animal>
+		<animal id="1011" name="Nhím" childNum="15" product="Nhím"  u="Một" house="Wo" v="1">
+			<nextText value="Nhím con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="41400,41400,403200,180,50220,486000"/>
+			<tip>Nhím (hedgehog    ): cơ thể bao bọc lớp gai, có thể cuộn tròn như banh.</tip>
+			<info>
+				<l>Nhím vui vẻ</l>
+				<l>Tớ thích GoHooH.CoM</l>
+				<l>Chào cả nhà</l>
+				<l>Nhím tròn như banh</l>
+				<l>Gai tớ nhọn lắm</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Tắm nắng thôi</l>
+				<l>Đi dao</l>
+				<l>Đói lắm</l>
+				<l>Tuyệt thật</l>
+			</info>
+		</animal>
+		<animal id="1012" name="Vịt" childNum="14" product="Vịt"  u="Một" house="Wo" sound="1">
+			<nextText value="vịt con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="37800,37800,302400,180,43020,378000"/>
+			<tip>Vịt (duck    ): miêng rộng, cổ ngắn, dáng đi lắc lư, bơi giỏi.</tip>
+			<info>			
+				<l>Cạp cạp cạp</l>
+				<l>Vịt yêu dấu</l>
+				<l>Đi bơi nhé</l>
+				<l>Chào mọi người</l>
+				<l>Tớ yêu Nhà Tui</l>
+				<l>GoHooH.CoM tuyệt quá</l>
+				<l>Vui quá nhỉ</l>
+				<l>Tắm nắng</l>
+				<l>Tớ là vịt</l>
+				<l>Vịt kute</l>
+			</info>
+		</animal>
+		<animal id="1013" name="鼹鼠" childNum="16" product="鼹鼠崽"  u="只" house="窝" sound="1">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="37800,37800,403200,180,50220,478800"/>
+			<tip>鼹鼠（英文：mole    ）属于脊椎动物，哺乳纲，前肢有五爪，都特别强健，掌心向外侧翻转，适于地下掘土生活。</tip>
+			<info>
+				<l>无聊就是无人跟你聊天。</l>
+				<l>人添志气虎添翼，雪舞丰年燕舞春。</l>
+				<l>大地流金万事通，冬去春来万象新。</l>
+				<l>生活中的问题与挫折，都丰富着人生。</l>
+				<l>骑白马的不一定是王子，也可能是唐僧。</l>
+				<l>生活的富有就是让自己拥有的东西物有所值。</l>
+				<l>打洞是我们鼹鼠的专长。</l>
+				<l>把赞美当警惕，把是非当教育。</l>
+				<l>将“福”字倒过来贴，表示“幸福已到”。</l>
+			</info>
+		</animal>
+		<animal id="1014" name="挪威森林猫" childNum="16" product="挪威森林猫崽"  u="只" house="窝" sound="1">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="43200,43200,345600,180,43020,432000"/>
+			<tip>挪威森林猫（英文：Norwegian Forest Cat    ）围颈的鬃毛长且浓密，它们聪明，速度快，趾爪强健，是爬树和捕猎的能手。</tip>
+			<info>
+				<l>新年新春新气象，家和家欢家团圆！</l>
+				<l>福星高照全家福，春光耀辉满堂春。</l>
+				<l>人因自觉而成长，因自满而堕落。</l>
+				<l>你蠢也就罢了，害得我跟你一样蠢。</l>
+				<l>我可是有“能干的狩猎者”的美誉哦！</l>
+				<l>妖就是妖，他不是人，修了千年也成不了人！</l>
+				<l>什么都略懂一点，生活就会更多彩一点。</l>
+				<l>年画，也和春联一样，起源于“门神”。</l>
+			</info>
+		</animal>
+		<animal id="1015" name="乌骨鸡" childNum="12" product="乌骨鸡蛋"  u="个" house="窝" sound="0">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="32400,32400,270000,180,43020,334800"/>
+			<tip>乌骨鸡（英文：black-bone chicken    ）主要因为它的骨骼乌黑而得名，其体态小巧玲珑，细致紧凑，并含有多种营养成份，除可供食用外，药用功效也十分明显。</tip>
+			<info>
+				<l>除夕之夜，终夜不眠待天明，称曰“守岁”。 </l>
+				<l>欢天喜地度佳节，张灯结彩迎新春。</l>
+				<l>路漫漫其修远兮，不如我们打的吧。</l>
+				<l>一个人时，善待自己；两个人时，善待对方。</l>
+				<l>孝顺，是在父母需要你时，能欢喜付出。</l>
+				<l>人若不知足，就永远活在烦恼中。</l>
+				<l>生活中太少如果，太多但是。</l>
+				<l>人生就像卫生纸，没事少扯。</l>
+				<l>福虎生风来进宝。</l>
+			</info>
+		</animal>
+		<animal id="1016" name="美国短毛猫" childNum="15" product="美国短毛猫崽"  u="只" house="窝" sound="0">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="34200,34200,316800,180,39420,385200"/>
+			<tip>美国短毛猫（英文：American Shorthair    ）不但样子漂亮，身体也非常健壮，性格温和，十分适合有小孩子的家庭饲养。</tip>
+			<info>
+				<l>龙腾虎跃人间乐,鸟语花香天下春。</l>
+				<l>迎喜迎春迎富贵，接财接福接平安。</l>
+				<l>压岁钱可压邪祟，“岁”与“祟”谐音。</l>
+				<l>又帅又有车的，那是象棋。</l>
+				<l>主人快回来，我一人忽悠不来。</l>
+				<l>我们先进一段广告，不要回来，马上走开。</l>
+				<l>真金换真话，假话给假钱。</l>
+				<l>假装生气，明天继续将浪漫进行到底。</l>
+				<l>忍得过，看得破；提得起，放得下。</l>
+			</info>
+		</animal>
+		<animal id="1501" name="Cừu" childNum="24" product="Len"  u="Khối lượng" house="Wo" v="1" sound="1">
+			<nextText value="Cừu non, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="27000,27000,172800,180,43020,226800"/>
+			<tip>Cừu (sheep    ): cung cấp thịt, sữa, đặc biệt là lông cừu làm len.</tip>
+			<info>
+				<l>Tớ yêu Nhà Tui</l>
+				<l>Tớ là cừu</l>
+				<l>Cừu luôn yêu đời</l>
+				<l>Chào mọi người</l>
+				<l>GoHooH vui quá</l>
+				<l>Chơi nhảy cừu</l>
+				<l>Cừu kute</l>
+				<l>Đi dạo đồng cỏ</l>
+				<l>Tớ thích cỏ</l>
+				<l>Sữa cừu tuyệt lắm</l>
+			</info>
+		</animal>
+		<animal id="1502" name="Bò" childNum="12" product="Sữa"  u="Chai" house="Wo" v="1" sound="1">
+			<nextText value="bê, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="32400,32400,216000,180,43020,280800"/>
+			<tip>Bò (cow    ): động vật ăn cỏ, cung cấp sữa</tip>
+			<info>
+				<l>Gió mát quá</l>
+				<l>Trời xanh cao</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>GoHooH.CoM vui quá</l>
+				<l>Đi chơi thôi</l>
+				<l>Sữa bò tuyệt lắm</l>
+				<l>Tớ là bò</l>
+				<l>Bò dể thương</l>
+				<l>Chào mọi người</l>
+			</info>
+		</animal>	
+		<animal id="1503" name="Khỉ" childNum="12" product="Khỉ"  u="Một" house="Shed" v="1" sound="0">
+			<nextText value="khỉ con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="36000,36000,216000,180,35820,288000"/>
+			<tip>Khỉ (monkey    ): loài linh trưởng, có tới 200 loài.</tip>
+			<info>
+				<l>Khỉ vui vẻ</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Chào mọi người</l>
+				<l>Tớ là khỉ</l>
+				<l>Khỉ biết xiếc</l>
+				<l>Đi dạo nhé</l>
+				<l>Gió mát</l>
+				<l>Có ai không?</l>
+				<l>Đói quá</l>
+			</info>
+		</animal>
+		<animal id="1504" name="Chuột túi" childNum="12" product="Chuột túi"  u="Một" house="Shed" v="1" sound="1">
+			<nextText value="mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="39600,39600,237600,180,43020,316800"/>
+			<tip>Chuột túi (kangaroo    ): động vất có vú, chủ yếu ỏ Úc, ăn cỏ.</tip>
+			<info>
+				<l>Tớ là chuột túi</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Chào  mọi nguòi</l>
+				<l>Gió mát lắm</l>
+				<l>Chuột to nhất</l>
+				<l>Đi chơi thôi</l>
+				<l>Nhảy thi nào</l>
+				<l>Chuột kute</l>
+				<l>Good luck</l>
+			</info>
+		</animal>
+		<animal id="1505" name="Hươu" childNum="12" product="Hưu"  u="Một" house="Shed" v="1" sound="1">
+			<nextText value="Hưu con, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="32400,32400,216000,180,35820,280800"/>
+			<tip>Hưu (spotted deer     ): là thú quí hiếm, trên da có những dớm trắng.</tip>
+			<info>
+				<l>Bảo vệ hươu</l>
+				<l>Tớ là hươu</l>
+				<l>Hươu vui vẻ</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Tớ yêu GoHooH.Com</l>
+				<l>Thật như hươu</l>
+				<l>Chào mọi người</l>
+				<l>Đi dạo nhé</l>
+				<l>Chạy đua không?</l>
+				<l>Đói quá</l>
+			</info>
+		</animal>
+		<animal id="1507" name="Linh dương" childNum="15" product="Sơn dương"  u="Một" house="Shed" v="1" sound="1">
+			<nextText value="Mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="39600,39600,331200,180,46620,410400"/>
+			<tip>Linh dương (antelope    ): nhanh nhẹn, dáng vóc mảnh khảnh.</tip>
+			<info>
+				<l>Tớ là linh dương</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Chào mọi người</l>
+				<l>Gió mát qua</l>
+				<l>Đi dạo nhé</l>
+				<l>Tớ nhảy rất cao</l>
+				<l>Bảo vệ linh dương</l>
+				<l>Vui quá</l>
+				<l>Đi chơi thôi</l>
+			</info>
+		</animal>
+		<animal id="1508" name="Đà điểu" childNum="17" product="Đà điểu"  u="Một" house="Shed" v="1" sound="1">
+			<nextText value="Mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="43200,43200,432000,180,53820,518400"/>
+			<tip>Đà điểu (ostrich    ): loài chim lớn nhất và không biết bay.</tip>
+			<info>
+				<l>Hugo ơi</l>
+				<l>Cữi đà điểu</l>
+				<l>Tớ chạy nhanh</l>
+				<l>Đà điều kute</l>
+				<l>Chào mọi người</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>GoHooH.CoM tuyệt lắm</l>
+				<l>Gió mát lắm</l>
+				<l>Đi dạo nhé</l>
+				<l>Chạy đua không?</l>
+			</info>
+		</animal>
+		<animal id="1509" name="Gấu trúc mỹ" childNum="16" product="Gấu trúc mỹ"  u="Một" house="Shed" v="1" sound="1">
+			<nextText value="mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="36000,36000,345600,180,43020,417600"/>
+			<tip>gấu trúc Mỹ (raccoon    ): hoat động về đêm, vóc nhỏ nhắn.</tip>
+			<info>
+				<l>Tớ là gấu trúc Mỹ</l>
+				<l>Gấu trúc kute</l>
+				<l>Chào mọi người</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Ngủ nhé</l>
+				<l>Hoạt động về đêm</l>
+				<l>Gió mát lắm</l>
+				<l>Đi chơi thôi</l>
+				<l>Đói quá</l>				
+			</info>
+		</animal>
+		<animal id="1510" name="Hươu cao cổ" childNum="16" product="Hươu cao cổ"  u="Một" house="Shed" sound="0">
+			<nextText value="Mới sinh, tăng trưởng, phát triển, trưởng thành, thành thục, thu hoạch"/>
+			<nextTime value="39600,39600,406800,180,50220,417600"/>
+			<tip>Hươu cao cổ (giraffe    ): cổ dài, tai thính, thường di bộ nhựng chạy cũng nhanh</tip>
+			<info>			
+				<l>Ai cao nào?</l>
+				<l>Tớ yêu GoHooH.CoM</l>
+				<l>Trang trại Nhà Tui</l>
+				<l>Chào mọi người</l>
+				<l>Vui lên nhé</l>
+				<l>Tuyệt quá</l>
+				<l>Đi dạo nhé</l>
+				<l>Đói quá</l>
+				<l>Gió mát thật</l>
+				<l>Good luck</l>		
+			</info>
+		</animal>
+		<animal id="1511" name="丹顶鹤" childNum="16" product="丹顶鹤崽"  u="只" house="棚" sound="1">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="37800,37800,334800,180,50220,410400"/>
+			<tip>丹顶鹤（英文：red-crowned crane    ）生活在沼泽或浅水地带，常被人冠以“湿地之神”的美称，属于国家一级保护动物。</tip>
+			<info>
+				<l>哥是个传说,不要问哥是哪个单位的。</l>
+				<l>爆竹是中国特产，亦称“炮仗”等。</l>
+				<l>虎跃龙腾生紫气，风调雨顺兆丰年。</l>
+				<l>春临大地百花艳，节至人间万象新。</l>
+				<l>我每年要在繁殖地和越冬地之间进行迁徙。</l>
+				<l>我们的关系是没有关系。</l>
+				<l>如果方向错了，停下来就是前进。</l>	
+				<l>一直被模仿，一直被超越。</l>	
+				<l>110的电话号码是多少。</l>	
+				<l>我告诉你，潜规则也是有规则的。</l>		
+			</info>
+		</animal>
+		<animal id="1512" name="貔貅" childNum="20" product="红宝石"  u="个" house="棚" sound="0">
+			<nextText value="幼仔,成长期,生产期,生产期,待产期,收获期"/>
+			<nextTime value="57600,57600,810000,180,53820,925200"/>
+			<tip>貔貅（拼音：pí xiū    ），又名天禄、辟邪，是中国古代神话传说中的一种神兽，龙头、马身、麟脚，形状似狮子。貔貅凶猛威武，有镇宅、辟邪、旺财的作用。</tip>
+			<info>
+				<l>保佑大家阖家平安，招财进宝。</l>
+				<l>我具有镇宅、辟邪、旺财的作用。</l>
+				<l>我是一只威武的瑞兽。</l>
+			</info>
+		</animal>
+	</animals>
+</main>

@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+#farmhead{width:760px; height:46px; overflow:hidden; margin:0px; padding:0px;}
+#farmhead table,td,tr,th{border:0px; margin:0px; padding:0px; font-size:12px;}
+.links{height:46px; width:766px; position:relative;overflow:hidden;}
+links a{float:left; width:104px; height:46px;}
+.links a.link1{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') 0px 0px; }
+.links a.link2{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -104px 0;}
+.links a.link3{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -208px 0;}
+.links a.link4{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -312px 0;}
+.links a.link5{float:left; width:100px; height:46px;background:#FFFFFF url('buttonbg.jpg') -416px 0;}
+.links a.link6{float:left; width:100px; height:46px;background:#FFFFFF url('buttonbg.jpg') -515px 0;}
+.links a.link1:hover ,#head .links a.select1{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') 0px -46px;}
+.links a.link2:hover ,#head .links a.select2{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -104px -46px;}
+.links a.link3:hover ,#head .links a.select3{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -208px -46px;}
+.links a.link4:hover ,#head .links a.select4{float:left; width:104px; height:46px;background:#FFFFFF url('buttonbg.jpg') -312px -46px;}
+.links a.link5:hover ,#head .links a.select5{float:left; width:100px; height:46px;background:#FFFFFF url('buttonbg.jpg') -416px -46px;}
+.links a.link6:hover ,#head .links a.select6{float:left; width:100px; height:46px;background:#FFFFFF url('buttonbg.jpg') -515px -46px;}

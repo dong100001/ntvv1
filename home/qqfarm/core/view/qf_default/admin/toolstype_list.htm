@@ -1,0 +1,38 @@
+<!--{tpl admin/inc_header}-->
+
+<!--{if $toolstype_list}-->
+<div class="list">
+	<table>
+		<tr>
+			<th>Tên</th>
+			<th>Vàng</th>
+			<th>Ycoin</th>
+			<th>Giá VIP</th>
+			<th>Tác dụng</th>
+			<th>Mô tả</th>
+			<th>Đóng mở</th>
+			<th>Sửa</th>
+		</tr>
+		<!--{foreach $toolstype_list as $key=>$toolstype}-->
+		<tr>
+			<td>{:$toolstype['tName']}</td>
+			<td>{:$toolstype['price']}</td>
+			<td>{:$toolstype['FBPrice']}</td>
+			<td>{:$toolstype['YFBPrice']}</td>
+			<td>{:$toolstype['effect']/3600} Giờ</td>
+			<td>{:$toolstype['depict']}</td>
+			<td>{:$toolstype['saleOut'] ? "Đóng" : "Mở"}</td>
+			<td>
+				<a href="admin.php?mod=toolstype_edit&id={:$key}">Sửa</a>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+	</table>
+</div>
+<div id="pages" class="multiPage"></div>
+<!--{else}-->
+<div class="no_hpinfo">Không có thông tin!</div>
+<!--{/if}-->
+
+
+<!--{tpl admin/inc_footer}-->

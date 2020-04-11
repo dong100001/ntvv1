@@ -1,0 +1,65 @@
+<!--{tpl inc_header}-->
+
+<div id="main">
+	<div class="menu">
+		<!--{php $actives[$mod_name.'_'.$type] = ' class="actives"';}-->
+		<a{:$actives[market_nc_index]} href="tools.php?mod=market&act=nc&type=index">农场市场</a>
+		<a{:$actives[market_nc_myitem]} href="tools.php?mod=market&act=nc&type=myitem">农场物品</a>
+		<a{:$actives[market_nc_myproduct]} href="tools.php?mod=market&act=nc&type=myproduct">农场产品</a>
+		<a{:$actives[market_mc_index]} href="tools.php?mod=market&act=mc&type=index">牧场市场</a>
+		<a{:$actives[market_mc_myproduct]} href="tools.php?mod=market&act=mc&type=myproduct">牧场产品</a>
+	</div>
+	<div id="help_tabs"></div>
+	
+	
+<!--{if $package || $tools}-->
+<div class="list" >
+	
+	<table>
+		<tr style=" font-size:12px; height:20px">
+			<th width="40">Id</th>
+			<th width="100">名字</th>
+			<th width="70">样式</th>
+			<th width="40">等级</th>
+			<th width="100">农场售价</th>
+			<th width="100">数量</th>
+			<th width="100">出售单价</th>
+			<th width="100">执行操作</th>
+		</tr>
+		<!--{foreach $package as $key => $value}-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+			<td>{:$cropstype[$key]['cName']}</td>
+			<td><img src="module/ui/farm/icon/{:$key}.png" height="24px" /></td> 
+			<td>{:$cropstype[$key]['cLevel']}</td>
+			<td><font color=red>{:$cropstype[$key]['price']}</font>金币</td>
+			<td><input type='text' id='number{:$key}' size='10' value="{:$value}"/></td>
+			<td><input type='text' id='price{:$key}' size='15' value="{:$cropstype[$key]['price']}"/></td>
+			<td>
+				<input type="button" onclick='request("tools.php?mod=market&act=nc&type=saleitem&mclass=1&cid={:$key}&cName={:$cropstype[$key]['cName']}&number="+SQuery("#number{:$key}").value+"&price="+SQuery("#price{:$key}").value, "state{:$key}");' value='出售' /><span id="state{:$key}"></span>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+		<!--{foreach $tools as $key => $value}-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+						<td>{:$toolstype[30000+$key]['tName']}</td>
+						<td><img src="module/ui/farm/icon/{:$key+30000}.png"/></td> 
+						<td></td>
+			<td><font color=blue>{:$toolstype[30000+$key]['pe']}</font> 金币</td>
+			<td><input type='text' id='number{:30000+$key}' size='10' value="{:$value}"/></td>
+			<td><input type='text' id='price{:30000+$key}' size='15' value="{:$toolstype[30000+$key]['pe']}"/></td>
+			<td>
+				<input type="button" onclick='request("tools.php?mod=market&act=nc&type=saleitem&mclass=2&cid={:$key}&cName={:$toolstype[30000+$key]['tName']}&number="+SQuery("#number{:30000+$key}").value+"&price="+SQuery("#price{:30000+$key}").value, "state{:30000+$key}");' value='出售' /><span id="state{:30000+$key}"></span>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+	</table>
+</div>
+<div id="pages" class="multiPage"></div>
+<!--{else}-->
+<div class="no_hpinfo">没有物品信息！</div>
+<!--{/if}-->
+</div>
+
+<!--{tpl inc_footer}-->

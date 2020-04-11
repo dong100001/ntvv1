@@ -1,0 +1,79 @@
+<!--{eval $_TPL['titles'] = array('Chơi game cuộc chiến đỗ xe trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<style>
+.ttable td{
+  padding-left:10px;;
+  padding-right:10px;
+}
+</style>
+<div class="h_status">
+       <a href="parkApp.php?ac=stage&op=my">Thẻ của tôi</a><span class="pipe">|</span><a href="parkApp.php?ac=stage&op=shop">Cửa hàng</a>
+</div>
+<!--{if $op== 'shop'}-->
+<div class=div_layout style="padding-left:10px;">
+
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH>Tên xe</TH>
+			<TH>Giá</TH>
+			<TH>Hiệu lực</TH>		
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->		  
+		  <TR class=list>
+			<TD>
+			  <DIV style="TEXT-ALIGN: center"><IMG src="$item[StageImg]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[StageName]</DIV></TD>
+			<TD>$item[StagePrice]</TD>
+			<TD>$item[StageIntr]</TD>
+			<TD><A href="cpPark.php?ac=park&op=buystage&stageid=$item[StageID]" target=_top id="c_buystage_$item[StageID]">Mua</A></TD>
+		  </TR>
+   <!--{/loop}-->  	  		  
+		</TBODY>
+	 </TABLE>
+
+  <div class="page">$multi[html]</div>    
+</div>
+<!--{/if}-->
+<!--{if $op== 'my'}-->
+<div class=div_layout style="padding-left:10px;">
+
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH>Tên thẻ</TH>
+			<TH>Giá</TH>
+			<TH>Hiệu lực</TH>
+			<TH>Mua ngày</TH>			
+			<TH>Sử dụng</TH>			
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->		  
+		  <TR class=list>
+			<TD>
+			  <DIV style="TEXT-ALIGN: center"><IMG src="$item[StageImg]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[StageName]</DIV></TD>
+			<TD>$item[StagePrice]</TD>
+			<TD>$item[StageIntr]</TD>
+			<TD>$item[BuyTime]</TD>			
+			<TD>$item[MyUse]</TD>			
+			<!--{if $item[noAjax] == 1}-->
+			<TD><A  id="c_stage_$item[StageID]" href="$item[StageScript]&stageid=$item[StageID]&ID=$item[ID]">Sử dụng</A></TD>
+			<!--{else}-->
+			<TD style="padding:0px"><A id="c_stage_$item[StageID]" href="$item[StageScript]&stageid=$item[StageID]&ID=$item[ID]">Sử dụng</A></TD>		
+            <!--{/if}-->			 
+		  </TR>
+   <!--{/loop}-->  	  
+		  
+		</TBODY>
+	 </TABLE>
+  <div class="page">$multi[html]</div>    
+</div>
+<!--{/if}-->
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">Lên đầu trang</a>
+</div>
+<!--{template park/view/park_footer}-->
+<!--{template footer}-->

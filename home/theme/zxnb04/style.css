@@ -1,0 +1,95 @@
+﻿/*
+[name]Cổ điển[/name]
+Develop by GoHooH.CoM
+*/
+body {
+	background-image: url(zxnb-img/bgr_header.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-top: 0px;
+}
+#header {
+	height: 205px;
+	color: #fa498b;
+}
+#header  .headerwarp {
+	background-color:  transparent;
+	background-image: none;
+	margin: 0px;
+	padding: 0px;
+	height: 205px;
+}
+h3 .feed_header {
+	background-image: url(zxnb-img/title_bg.gif);
+	background-repeat: no-repeat;
+	background-position: 3px 9px;
+	background-color: #fce4ca;
+	color: #d94662;
+}
+
+#header .headerwarp .menu {
+	margin-top: 0px;
+	display: block;
+	margin-left: 20px;
+	padding-left: 0px;
+	background-repeat: no-repeat;
+	width: 700px;
+	padding-top: 0px;
+		padding-top: 200px;}
+#header .headerwarp .menu a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#wrap #space_page {
+	padding-top: 50px;
+}
+#wrap #footer {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	color: #FFFFFF;
+	width: 100%;
+	padding-top: 80px;
+	padding-right: 0px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	display: block;
+	margin-top: 30px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#wrap #space_page #ubar h2 {
+	background-image: url(zxnb-img/bgr_sidebars_h2.png);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+}
+#wrap #footer .r_option {
+	display: none;
+}
+
+#wrap #space_page #ubar h2 a{	color: #FFFFFF;}
+
+#wrap {
+	background-image: url(zxnb-img/bgr_footer.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#wrap #footer a{color: #FFFFFF;}
+#header .headerwarp .nav_account {
+	margin-top: 0px;
+}
+#header .headerwarp .logo {
+	display: none;
+}
+#wrap a{color:#208E41;}
+#append_parent {
+	display: none;
+}
+#header .headerwarp .nav_account {
+	clear: right;
+	margin-top: 0px;
+	padding-top: 25px;
+}

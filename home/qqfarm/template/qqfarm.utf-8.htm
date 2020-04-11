@@ -1,0 +1,58 @@
+<!--{eval $_TPL['titles'] = array($space['username'], 'Nông Trại Vui Vẻ - GoHooH.CoM');}-->
+<!--{template header}-->
+
+
+
+
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="$qf_root/static/style.css" />
+
+<div id="qfwrap">
+	<!--QF Header-->
+	<div id="qfbody">
+		<div class="tabs_header clearfix">
+			<ul class="tabs">
+				<li id="tab0" class="active"><a onclick="return qfMenu(this);" href="$qf_root/core/nmc.php?type=nc"><span>Nông Trại Của Tôi</span></a></li>
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/tools.php?mod=market&act=nc"><span>Chợ Phiên</span></a></li>
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/tools.php?mod=setting"><span>Thiết Lập</span></a></li>
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/tools.php?mod=exchange"><span>Đổi Điểm</span></a></li>
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/tools.php?mod=vip"><span>Nâng Cấp VIP</span></a></li>
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/tools.php?mod=help"><span>Trợ Giúp</span></a></li>
+				<!--{if in_array($_SGLOBAL['supe_uid'], $_QSC['adminer'])}-->
+				<li><a onclick="return qfMenu(this);" href="$qf_root/core/admin.php"><span>Quản Trị</span></a></li>
+				<!--{/if}-->
+				<li><a onclick="return qfMenu(null);" href="#"><span>Toàn Màn Hình</span></a></li>
+			</ul>
+		</div>
+		<div id="qfmain">
+			<iframe id="myfarm" name="myfarm" src="$qf_root/core/nmc.php?type=nc" frameborder="0" scrolling="no" width="800px" height="590px"></iframe>
+		</div>   
+		<script type="text/javascript" src="$qf_root/core/script.php?swfobject"></script>
+		<div id="qfversion"></div>
+	</div>
+	<!--QF FullScreen-->
+	<div id="dlBox1_main" class="dlBox_main">
+		<div id="dlBox1_head" class="dlBox_head">
+			<h1>Nông Trại Vui Vẻ</h1>
+			<a onclick="return dlBox1_Hide();" href="#" title="Đóng">&nbsp;</a>
+		</div>
+		<div id="dlBox1_body" class="dlBox_body">
+			<iframe id="myfarm_full" name="myfarm_full" src="about:blank" frameborder="0" scrolling="no" width="900px" height="560px"></iframe>
+		</div>
+	</div>
+	<!--QF好友列表-->
+	<div id="dlBox2_main" class="dlBox_main">
+		<div id="dlBox2_head" class="dlBox_head">
+			<h1>Danh sách bạn bè</h1>
+			<a onclick="return dlBox2_Hide();" href="#" title="Đóng">&nbsp;</a>
+		</div>
+		<div id="dlBox2_body" class="dlBox_body">Đang tải danh sách bạn bè ...</div>
+		<input type="button" value="Xác nhận" onclick="flowerToFriend();" />
+	</div>
+</div>
+
+<!--附加JS脚本-->
+<script type="text/javascript" charset="utf-8" src="$qf_root/core/script.php?json&squery&dialog"></script>
+<script type="text/javascript" charset="utf-8" src="$qf_root/static/main.js"></script>
+
+<!--{template footer}-->

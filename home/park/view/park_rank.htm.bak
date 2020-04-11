@@ -1,0 +1,198 @@
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<script language="javascript" type="text/javascript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+   var arVersion = navigator.appVersion.split("MSIE")
+   var version = parseFloat(arVersion[1])
+   if ((version >= 5.5) && (document.body.filters)) 
+   {
+      for(var j=0; j<document.images.length; j++)
+      {
+         var img = document.images[j]
+         var imgName = img.src.toUpperCase()
+         if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+         {
+            var imgID = (img.id) ? "id='" + img.id + "' " : ""
+            var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+            var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+            var imgStyle = "display:inline-block;" + img.style.cssText 
+            if (img.align == "left") imgStyle = "float:left;" + imgStyle
+            if (img.align == "right") imgStyle = "float:right;" + imgStyle
+            if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+            var strNewHTML = "<span " + imgID + imgClass + imgTitle
+            + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+            + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+            + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+            img.outerHTML = strNewHTML
+            j = j-1
+         }
+      }
+   }    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<!--{if $_GET['ac'] == 'rank'}-->
+<div class="h_status">
+   <a href="parkApp.php?ac=rank&order=P_credit">Sort by Credits</a>
+  <span class="pipe">|</span>
+   <a href="parkApp.php?ac=rank&order=carprice">Sort by Price</a>
+  <span class="pipe">|</span>
+			<table cellpadding="0" cellspacing="0" class="park_status_form">
+				<tr>
+					<td>
+						<script type="text/javascript" src="source/script_autocomplete.js"></script>
+						<table cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="padding: 0;"><input type="text" id="username" name="username" value="Search" onfocus="if(this.value=='Search')this.value='';" class="t_input" tabindex="1"  style="width: 160px; border-right: none;" /></td>
+								<td style="padding: 0;"><a href="javascript:searchFriend();"><img src="image/search_btn.gif" alt="Search" /></a></td>
+							</tr>
+						</table>
+					
+						<script type="text/javascript">
+							function searchFriend() {
+								var username = $('username').value;
+								if(username == 'Search' || username == '') {
+									alert('Please input the friend name');
+								} else {
+									location.href ='parkApp.php?ac=rank&name='+username;
+								}
+							}
+						</script>
+					</td>
+				</tr>
+			</table>
+</div>
+
+<div class="side_right s_clear">
+	<div class="wide">
+		<!--{if $friends}-->
+		<div class="thumb_list" id="friend_ul">
+			<table cellspacing="6" cellpadding="0">
+				<!--{loop $friends $key $value}-->
+				<tr>
+					<td id="friend_$value[uid]_li" class="thumb <!--{if $ols[$value[uid]]}-->online<!--{/if}-->">
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td class="image"><!--{avatar($value[uid],small)}--></td>
+								<td>
+									<h6>
+										<!--{if $value['sex']==2}-->
+										<img src="image/mm.gif" align="absmiddle">
+										<!--{elseif $value['sex']==1}-->
+										<img src="image/gg.gif" align="absmiddle">
+										<!--{/if}-->
+										<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+										<!--{if $value['username'] && $_SN[$value[uid]]!=$value['username']}--><span class="gray">($value[username])</span><!--{/if}-->
+										<!--{if $value['name'] && $_SN[$value[uid]]!=$value['name']}--><span class="gray">($value[name])</span><!--{/if}-->
+									</h6>
+									<p class="l_status">
+										<!--{if $value['isfriend']}-->
+											<a href="space.php?uid=$value[uid]" target="_blank">Friend's Space</a>
+										<!--{else}-->
+											<!--{if $_GET['view']=='blacklist'}-->
+											<a href="cp.php?ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">Delete from Blacklist</a>
+											<!--{else}-->
+											<img src="image/app_add.gif" alt="+" title="Add friend" align="absmiddle"> <a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Add Friend</a>
+											<!--{/if}-->
+										<!--{/if}-->
+										<span class="pipe">|</span><a href="cp.php?ac=pm&uid=$value[uid]" id="a_pm_$key" onclick="ajaxmenu(event, this.id, 99999, '', -1)">PM</a>
+										<span class="pipe">|</span><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$key" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Poke</a>
+										<span class="pipe">|</span><a href="parkApp.php?ac=index&fId=$value[uid]">His/her Park</a>
+										
+									</p>
+									
+									<div class="quote">
+									<span id="quote" class="q">Owns $value[carnum] cars, <b>$value[P_credit]</b> gold, cars worth <b>$value[carprice]</b> gold</span>
+									</br>
+									</br>
+									  <!--{loop $arrMycar[$key] $carvalue}-->
+									  <embed src="{$carvalue[carimg]}" width="84" height="36" type="application/x-shockwave-flash" ></embed>
+									  <!--{/loop}-->
+									
+									</div>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!--{/loop}-->
+			</table>
+		</div>
+		<div class="page">$multi[html]</div>
+	
+		<!--{else}-->
+		<div class="article c_form">
+			No friend list
+		</div>
+		<!--{/if}-->	
+    </div>
+	
+	<div class="narrow">
+		<div>
+			<h2>Most Wanted TOP12</h2>
+			<ul class="avatar_list s_clear">
+				<!--{loop $arrBlack $value}-->
+				<li>
+					<a href="space.php?uid={$value[uid]}" target="_blank"><img src="{UC_API}/avatar.php?uid={$value[uid]}&size=small" alt="{$value[username]} was reported for {$value[warnnum]} times" /></a>
+					<p style="width:70px;">
+					<a href="parkApp.php?ac=index&fId=$value[uid]">$value[username]</a>
+				   </p>
+				</li>
+				<!--{/loop}-->
+
+			</ul>
+		</div>
+		<div>
+			<h2>Reporter TOP12</h2>
+			<ul class="avatar_list s_clear">
+
+				<!--{loop $arrRed $value}-->
+				<li>
+					<a href="space.php?uid={$value[uid]}" target="_blank"><img src="{UC_API}/avatar.php?uid={$value[uid]}&size=small" alt="{$value[username]} reported for {$value[warnnum]} times" /></a>
+					<p style="width:70px;">
+					<a href="parkApp.php?ac=index&fId=$value[uid]">$value[username]</a>
+				   </p>
+				</li>
+				<!--{/loop}-->
+
+			</ul>
+		</div>	
+		<div>
+			<h2>Hot Park TOP12</h2>
+			<ul class="avatar_list s_clear">
+
+				<!--{loop $arrHot $value}-->
+				<li>
+					<a href="space.php?uid={$value[uid]}" target="_blank"><img src="{UC_API}/avatar.php?uid={$value[uid]}&size=small" alt="{$value[username]} got {$value[parknum]} parkings" /></a>
+					<p style="width:70px;">
+					<a href="parkApp.php?ac=index&fId=$value[uid]">$value[username]</a>
+				   </p>
+				</li>
+				<!--{/loop}-->
+
+			</ul>
+		</div>				
+		<div>
+			<h2>Parking Master TOP12</h2>
+			<ul class="avatar_list s_clear">
+
+				<!--{loop $arrMost $value}-->
+				<li>
+					<a href="space.php?uid={$value[uid]}" target="_blank"><img src="{UC_API}/avatar.php?uid={$value[uid]}&size=small" alt="{$value[username]} parked for {$value[parknum]} times" /></a>
+					<p style="width:70px;">
+					<a href="parkApp.php?ac=index&fId=$value[uid]">$value[username]</a>
+				   </p>
+				</li>
+				<!--{/loop}-->
+
+			</ul>
+		</div>	
+		
+			<!--{ad/rightside}--><!-- ÓÒ²àÀ¸¹ã¸æ-->
+	</DIV>	
+<!--{/if}-->
+
+
+<!--{template footer}-->

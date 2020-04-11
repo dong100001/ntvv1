@@ -1,0 +1,45 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--{template cp_header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+<div class="c_form">
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2><!--{if $space[videostatus]}-->Chụp Avatar bằng webcam<!--{else}-->Kích hoạt ứng dụng webcam<!--{/if}--></h2>
+		<p>
+		<!--{if $space[videostatus]}-->
+Xác nhận thông qua webcam. Nếu hệ thống chấp nhận, bạn có thể <a href="userapp.php?id=1036584"> chạy lại chương trình xác nhận bằng webcam </ a>.
+		<!--{else}-->
+	Yêu cầu bạn phải có webcam. Click vào nút bên dưới để xác nhận bằng WebCam 
+		<!--{/if}-->
+		</p>
+	</caption>
+	<tr>
+		<td>
+			<!--{if $space[videostatus]}-->
+			<img src="$videophoto" id="avatar" alt="" width="400" />
+			<!--{elseif $_SCONFIG['videophoto']}-->
+			<a href="userapp.php?id=1036584&my_suffix=Lw%3D%3D"><img src="image/videophoto_btn.gif" alt=""></a>
+			<!--{/if}-->
+		</td>
+	</tr>
+</table>
+
+<!--{if checkperm('managevideophoto')}-->
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>Cài đặt</h2>
+		<p>Bạn có thể dùng webcam để xác nhận, thiết lập chứng chỉ cá nhân.<br> Sử dụng webcam để kích hoạt bạn sẽ có nhiều tiền/điểm.</p>
+	</caption>
+	<tr>
+		<td>
+			<a href="userapp.php?id=1036584" class="submit">Sửa</a>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->
+	
+</div>
+<!--{template footer}-->

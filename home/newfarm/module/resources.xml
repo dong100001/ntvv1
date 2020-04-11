@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<main>
+<material>
+		<!-- 语言素材 -->
+<file url="module/ui/main/font/font_zh.swf?v=4">
+<item className="ShopDogFood" type="SimpleSprite" width="37.4" height="55.0" />
+<item className="RoseTitle" type="SimpleSprite" width="39.4" height="20" />
+<item className="HelianthusTitle" type="SimpleSprite" width="59.0" height="20" />
+<item className="CarnationTitle" type="SimpleSprite" width="59.1" height="20" />
+<item className="TulipTitle" type="SimpleSprite" width="58.5" height="20.2" />
+<item className="HyacinthTitle" type="SimpleSprite" width="58.9" height="19.8" />
+<item className="DaffodilTitle" type="SimpleSprite" width="58.5" height="19.8" />
+<item className="VioletTitle" type="SimpleSprite" width="58.4" height="19.9" />
+<item className="LilyTitle" type="SimpleSprite" width="58.6" height="19.4" />
+</file>
+
+<file url="module/ui/main/font/font_en.swf?v=4">
+<item className="ShopDogFood_en" type="SimpleSprite" width="37.4" height="55.0" />
+<item className="RoseTitle_en" type="SimpleSprite" width="45.1" height="17.4" />
+<item className="HelianthusTitle_en" type="SimpleSprite" width="48.0" height="21.3" />
+<item className="CarnationTitle_en" type="SimpleSprite" width="89.0" height="17.6" />
+<item className="TulipTitle_en" type="SimpleSprite" width="40.8" height="20.7" />
+<item className="HyacinthTitle_en" type="SimpleSprite" width="75.0" height="20.7" />
+<item className="DaffodilTitle_en" type="SimpleSprite" width="66.2" height="16.4" />
+<item className="VioletTitle_en" type="SimpleSprite" width="49.0" height="16.2" />
+<item className="ExchangeDogFood" type="SimpleButton" width="100.5" height="31.6" />
+<item className="TellFriendFeed" type="SimpleButton" width="133.1" height="28.6" />
+<item className="AskForHelpFeedDog" type="SimpleButton" width="100.5" height="31.6" />
+<item className="LilyTitle_en" type="SimpleSprite" width="26.3" height="20.2" />
+</file>
+
+<file url="module/ui/main/font/font_zh2.swf?v=3">
+<item className="LuckDay_1" type="SimpleSprite" width="302.0" height="209.9" />
+<item className="LuckDay_2" type="SimpleSprite" width="401.4" height="213.3" />
+<item className="LuckDay_3" type="SimpleSprite" width="329.4" height="97.1" />
+<item className="LuckDay_4" type="SimpleSprite" width="257.2" height="224.6" />
+<item className="LuckDay_5" type="SimpleSprite" width="257.2" height="232.6" />
+<item className="LuckDay_6" type="SimpleSprite" width="257.2" height="224.6" />
+<item className="LuckDay_7" type="SimpleSprite" width="347.4" height="215.3" />
+<item className="LuckDay_8" type="SimpleSprite" width="239.9" height="219.6" />
+</file>
+
+<file url="module/ui/main/font/font_en2.swf?v=3">
+<item className="LuckDay_1_en" type="SimpleSprite" width="372.4" height="209.8" />
+<item className="LuckDay_2_en" type="SimpleSprite" width="369.1" height="227.4" />
+<item className="LuckDay_3_en" type="SimpleSprite" width="369.1" height="226.4" />
+<item className="LuckDay_4_en" type="SimpleSprite" width="382.4" height="231.8" />
+<item className="LuckDay_5_en" type="SimpleSprite" width="334.9" height="226.7" />
+<item className="LuckDay_6_en" type="SimpleSprite" width="340.6" height="225.8" />
+<item className="LuckDay_7_en" type="SimpleSprite" width="383.6" height="222.4" />
+<item className="LuckDay_8_en" type="SimpleSprite" width="403.6" height="222.4" />
+</file>
+
+<file url="module/ui/main/font/font_zh3.swf?v=3">
+<item className="LevelAndExperienss" type="SimpleSprite" width="365.9" height="315.9" />
+<item className="LevelAndCharisma" type="SimpleSprite" width="324.9" height="170" />
+</file>
+
+<file url="module/ui/main/font/font_en3.swf?v=3">
+<item className="LevelAndExperienss_en" type="SimpleSprite" width="403.9" height="337.6" />
+<item className="LevelAndCharisma_en" type="SimpleSprite" width="367.9" height="200" />
+</file>
+
+
+<file url="module/ui/main/font/font_zh4.swf?v=4">
+<item className="task1" type="SimpleSprite" width="322.0" height="183.8" />
+<item className="task2" type="SimpleSprite" width="334.4" height="211.8" />
+<item className="task3" type="SimpleSprite" width="316.5" height="195.8" />
+<item className="task4" type="SimpleSprite" width="322.0" height="185.8" />
+<item className="task5" type="SimpleSprite" width="330.4" height="207.8" />
+<item className="task6" type="SimpleSprite" width="329.4" height="207.8" />
+<item className="task7" type="SimpleSprite" width="322.0" height="207.8" />
+<item className="task8" type="SimpleSprite" width="322.0" height="203.8" />
+<item className="task9" type="SimpleSprite" width="322.0" height="173.4" />
+<item className="task10" type="SimpleSprite" width="322.0" height="173.4" />
+<item className="task11" type="SimpleSprite" width="322.0" height="203.8" />
+</file>
+
+<file url="module/ui/main/font/font_en4.swf?v=4">
+<item className="task1_en" type="SimpleSprite" width="344.0" height="201.1" />
+<item className="task2_en" type="SimpleSprite" width="364.6" height="216.6" />
+<item className="task3_en" type="SimpleSprite" width="364.6" height="235.4" />
+<item className="task4_en" type="SimpleSprite" width="365.6" height="240.3" />
+<item className="task5_en" type="SimpleSprite" width="366.6" height="244.3" />
+<item className="task6_en" type="SimpleSprite" width="365.6" height="227.4" />
+<item className="task7_en" type="SimpleSprite" width="365.6" height="224.4" />
+<item className="task8_en" type="SimpleSprite" width="365.6" height="224.4" />
+<item className="task9_en" type="SimpleSprite" width="326.0" height="198.3" />
+<item className="task10_en" type="SimpleSprite" width="365.6" height="207.6" />
+<item className="task11_en" type="SimpleSprite" width="363.6" height="232.4" />
+</file>
+
+		<!-- 支付素材库 -->
+<file url="module/ui/main/pay/xiaoneiPay.swf?v=3">
+<item className="Add_100_Coins" type="SimpleButton" width="150" height="60"  />
+<item className="Add_200_Coins" type="SimpleButton" width="150" height="60" />
+<item className="Add_500_Coins" type="SimpleButton" width="150" height="60" />
+<item className="AddCoins" type="SimpleButton" width="80" height="18.8" />
+</file>
+		<!-- 作物素材库 -->
+<file url="module/ui/main/crops/landcrops/crops1.swf?v=4">
+<item className="Radish" type="LandCrop"/>
+<item className="Carrot" type="LandCrop"/>
+<item className="Maize" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops2.swf?v=4">
+<item className="Potato" type="LandCrop"/>
+<item className="Melongena" type="LandCrop"/>
+<item className="Tomato" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops3.swf?v=3">
+<item className="Pea" type="LandCrop"/>
+<item className="Chili" type="LandCrop"/>
+<item className="Pumpkin" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops4.swf?v=3">
+<item className="Apple" type="LandCrop"/>
+<item className="Strawberry" type="LandCrop"/>
+<item className="Watermelon" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops5.swf?v=3">
+<item className="Banana" type="LandCrop"/>
+<item className="Peach" type="LandCrop"/>
+<item className="Orange" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops6.swf?v=3">
+<item className="Grape" type="LandCrop"/>
+<item className="Pomegranate" type="LandCrop"/>
+<item className="Pomelo" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops7.swf?v=3">
+<item className="Pineapple" type="LandCrop"/>
+<item className="Coconut" type="LandCrop"/>
+<item className="Calabash" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops8.swf?v=3">
+<item className="DragonFruit" type="LandCrop"/>
+<item className="Cherry" type="LandCrop"/>
+<item className="Lichee" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops9.swf?v=3">
+<item className="Kiwi" type="LandCrop"/>
+<item className="HamiMelon" type="LandCrop"/>
+<item className="Lemon" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops10.swf?v=3">
+<item className="Loquat" type="LandCrop"/>
+<item className="SugarCane" type="LandCrop"/>
+<item className="Mushroom" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops11.swf?v=4">
+<item className="Waxberry" type="LandCrop"/>
+<item className="Olive" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops12.swf?v=4">
+<item className="Mango" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/landcrops/crops13.swf?v=0">
+<item className="GhostPumpkin" type="LandCrop"/>
+</file>
+
+<file url="module/ui/main/crops/seed/seed1.swf?v=5">
+<item className="RadishSeed" type="SimpleSprite" width="23.0" height="50"/>
+<item className="CarrotSeed" type="SimpleSprite" width="17.6" height="50"/>
+<item className="MaizeSeed" type="SimpleSprite" width="43.3" height="46.0"/>
+<item className="PotatoSeed" type="SimpleSprite" width="48.0" height="37.5"/>
+<item className="MelongenaSeed" type="SimpleSprite" width="25.2" height="50"/>
+<item className="TomatoSeed" type="SimpleSprite" width="46.8" height="46.0"/>
+<item className="PeaSeed" type="SimpleSprite" width="46.0" height="33.3"/>
+<item className="ChiliSeed" type="SimpleSprite" width="34.5" height="50"/>
+<item className="PumpkinSeed" type="SimpleSprite" width="48.0" height="38.9"/>
+<item className="AppleSeed" type="SimpleSprite" width="46.0" height="46.0"/>
+<item className="StrawberrySeed" type="SimpleSprite" width="46.0" height="58.6"/>
+<item className="WatermelonSeed" type="SimpleSprite" width="46.1" height="42.0"/>
+<item className="BananaSeed" type="SimpleSprite" width="46.7" height="46.0"/>
+<item className="PeachSeed" type="SimpleSprite" width="46.0" height="42.7"/>
+<item className="OrangeSeed" type="SimpleSprite" width="41.9" height="48.0"/>
+<item className="GrapeSeed" type="SimpleSprite" width="34.5" height="50"/>
+<item className="PomegranateSeed" type="SimpleSprite" width="33.3" height="45.0"/>
+<item className="PomeloSeed" type="SimpleSprite" width="38.4" height="48.0"/>
+<item className="PineappleSeed" type="SimpleSprite" width="30.1" height="49.0"/>
+<item className="CoconutSeed" type="SimpleSprite" width="38.4" height="46.0"/>
+<item className="CalabashSeed" type="SimpleSprite" width="27.3" height="50.1"/>
+<item className="DragonFruitSeed" type="SimpleSprite" width="34.4" height="47.0"/>
+<item className="CherrySeed" type="SimpleSprite" width="34.1" height="46.0"/>
+<item className="LicheeSeed" type="SimpleSprite" width="46.0" height="42.4"/>
+<item className="KiwiSeed" type="SimpleSprite" width="33.2" height="45.0"/>
+<item className="HamiMelonSeed" type="SimpleSprite" width="48.0" height="30.4"/>
+<item className="LemonSeed" type="SimpleSprite" width="46.0" height="42.0"/>
+<item className="LoquatSeed" type="SimpleSprite" width="54.5" height="52.1"/>
+<item className="SugarCaneSeed" type="SimpleSprite" width="21.9" height="50.0"/>
+<item className="MushroomSeed" type="SimpleSprite" width="43.0" height="50.0"/>
+<item className="WaxberrySeed" type="SimpleSprite" width="45.8" height="46.0"/>
+</file>
+
+<file url="module/ui/main/crops/seed/seed2.swf?v=4">
+<item className="OliveSeed" type="SimpleSprite" width="46.0" height="41.7"/>
+<item className="MangoSeed" type="SimpleSprite" width="30.0" height="48.0"/>
+<item className="GhostPumpkinSeed" type="SimpleSprite" width="48.0" height="48.8"/>
+</file>
+
+<file url="module/ui/main/crops/warehouse/friut1.swf?v=4">
+<item className="RadishFruits" type="SimpleSprite" width="145.8" height="96.5"/>
+<item className="CarrotFruits" type="SimpleSprite" width="152.8" height="91.2"/>
+<item className="MaizeFruits" type="SimpleSprite" width="145.8" height="112.0"/>
+<item className="PotatoFruits" type="SimpleSprite" width="145.4" height="88.5"/>
+<item className="MelongenaFruits" type="SimpleSprite" width="145.4" height="93.6"/>
+<item className="TomatoFruits" type="SimpleSprite" width="145.8" height="92.5"/>
+<item className="PeaFruits" type="SimpleSprite" width="145.4" height="88.3"/>
+<item className="ChiliFruits" type="SimpleSprite" width="145.4" height="91.0"/>
+<item className="PumpkinFruits" type="SimpleSprite" width="145.4" height="86.9"/>
+<item className="AppleFruits" type="SimpleSprite" width="145.4" height="94.7"/>
+<item className="StrawberryFruits" type="SimpleSprite" width="148.9" height="95.7"/>
+<item className="WatermelonFruits" type="SimpleSprite" width="149.6" height="103.8"/>
+</file>
+
+<file url="module/ui/main/crops/warehouse/friut2.swf?v=3">
+<item className="BananaFruits" type="SimpleSprite" width="145.4" height="97.2"/>
+<item className="PeachFruits" type="SimpleSprite" width="145.4" height="95.0"/>
+<item className="OrangeFruits" type="SimpleSprite" width="145.9" height="95.8"/>
+<item className="GrapeFruits" type="SimpleSprite" width="145.4" height="83.5"/>
+<item className="PomegranateFruits" type="SimpleSprite" width="153.3" height="103.0"/>
+<item className="PomeloFruits" type="SimpleSprite" width="153.9" height="99.7"/>
+<item className="PineappleFruits" type="SimpleSprite" width="149.2" height="107.3" />
+<item className="CoconutFruits" type="SimpleSprite" width="145.4" height="95.4"/>
+<item className="CalabashFruits" type="SimpleSprite" width="151.6" height="100.4"/>
+<item className="DragonFruitFruits" type="SimpleSprite" width="147.4" height="94.8"/>
+<item className="CherryFruits" type="SimpleSprite" width="145.4" height="83.5"/>
+<item className="LicheeFruits" type="SimpleSprite" width="145.4" height="83.5"/>
+</file>
+
+<file url="module/ui/main/crops/warehouse/friut3.swf?v=4">
+<item className="KiwiFruits" type="SimpleSprite" width="145.4" height="86.3"/>
+<item className="HamiMelonFruits" type="SimpleSprite" width="145.4" height="99.1"/>
+<item className="LemonFruits" type="SimpleSprite" width="145.4" height="100.3"/>
+<item className="LoquatFruits" type="SimpleSprite" width="145.4" height="88.9"/>
+<item className="SugarCaneFruits" type="SimpleSprite" width="145.6" height="96.7"/>
+<item className="MushroomFruits" type="SimpleSprite" width="145.4" height="89.8"/>
+<item className="WaxberryFruits" type="SimpleSprite" width="145.4" height="83.8"/>
+<item className="OliveFruits" type="SimpleSprite" width="145.8" height="82.8"/>
+</file>
+
+<file url="module/ui/main/crops/warehouse/friut4.swf?v=3">
+<item className="MangoFruits" type="SimpleSprite" width="145.4" height="85.5" />
+</file>
+
+<file url="module/ui/main/crops/warehouse/friut5.swf?v=0">
+<item className="GhostPumpkinFruits" type="SimpleSprite" width="146.8" height="102.0" />
+</file>
+		
+<file url="module/ui/main/crops/warehouse/LaysChips.swf?v=3">
+<item className="LaysChips" type="SimpleSprite" width="50" height="50" />
+<item className="laysFruits" type="SimpleSprite" width="162.4" height="110.4" />
+</file>
+
+		<!-- 鲜花素材库 -->
+<file url="module/ui/main/flowers/seed/seed1.swf?v=3">
+<item className="RoseWhiteSeed" type="SimpleSprite" width="37.1" height="34.8" />
+<item className="RosePinkSeed" type="SimpleSprite" width="37.1" height="34.8" />
+<item className="RoseRedSeed" type="SimpleSprite" width="37.1" height="34.8" />
+<item className="RoseYellowSeed" type="SimpleSprite" width="37.1" height="34.8" />
+<item className="HelianthusWhiteSeed" type="SimpleSprite" width="42.6" height="35.0" />
+<item className="HelianthusPinkSeed" type="SimpleSprite" width="42.6" height="35.0" />
+<item className="HelianthusYellowSeed" type="SimpleSprite" width="42.6" height="35.0" />
+<item className="HelianthusBeigeSeed" type="SimpleSprite" width="42.6" height="35.0" />
+<item className="CarnationWhiteSeed" type="SimpleSprite" width="37.0" height="33.6" />
+<item className="CarnationPinkSeed" type="SimpleSprite" width="37.0" height="33.6" />
+<item className="CarnationYellowSeed" type="SimpleSprite" width="37.0" height="33.6" />
+<item className="CarnationPurpleSeed" type="SimpleSprite" width="37.0" height="33.6" />
+<item className="TulipWhiteSeed" type="SimpleSprite" width="34.7" height="40.0" />
+<item className="TulipPinkSeed" type="SimpleSprite" width="34.7" height="40.0" />
+<item className="TulipRedSeed" type="SimpleSprite" width="34.7" height="40.0" />
+<item className="TulipPurpleSeed" type="SimpleSprite" width="34.7" height="40.0" />
+<item className="DaffodilWhiteSeed" type="SimpleSprite" width="39.7" height="32.0" />
+<item className="DaffodilPinkSeed" type="SimpleSprite" width="39.7" height="32.0" />
+<item className="DaffodilYellowSeed" type="SimpleSprite" width="39.7" height="32.0" />
+<item className="DaffodilPurpleSeed" type="SimpleSprite" width="39.7" height="32.0" />
+<item className="HyacinthWhiteSeed" type="SimpleSprite" width="39.7" height="37.0" />
+<item className="HyacinthRedSeed" type="SimpleSprite" width="39.7" height="37.0" />
+<item className="HyacinthYellowSeed" type="SimpleSprite" width="39.7" height="37.0" />
+<item className="HyacinthPurpleSeed" type="SimpleSprite" width="39.7" height="37.0" />
+<item className="VioletPinkSeed" type="SimpleSprite" width="31.6" height="30.0" />
+<item className="VioletPurpleSeed" type="SimpleSprite" width="31.6" height="30.0" />
+<item className="VioletWhiteSeed" type="SimpleSprite" width="31.6" height="30.0" />
+<item className="VioletYellowSeed" type="SimpleSprite" width="31.6" height="30.0" />
+</file>
+
+<file url="module/ui/main/flowers/seed/seed2.swf?v=4">
+<item className="LilyPinkSeed" type="SimpleSprite" width="38.0" height="32.1" />
+<item className="LilyRedSeed" type="SimpleSprite" width="38.0" height="32.1" />
+<item className="LilyWhiteSeed" type="SimpleSprite" width="38.0" height="32.1" />
+<item className="LilyYellowSeed" type="SimpleSprite" width="38.0" height="32.1" />
+</file>
+<file url="module/ui/main/flowers/warehouse/flower1.swf?v=3">
+<item className="RoseWhiteFruits" type="SimpleSprite" width="139.6" height="95.0" special="2" />
+<item className="RosePinkFruits" type="SimpleSprite" width="139.4" height="95.0" special="2"  />
+<item className="RoseRedFruits" type="SimpleSprite" width="139.6" height="95.0" special="2"  />
+<item className="RoseYellowFruits" type="SimpleSprite" width="139.4" height="95.0" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower2.swf?v=3">
+<item className="HelianthusWhiteFruits" type="SimpleSprite" width="150.0" height="92.6" special="2"  />
+<item className="HelianthusPinkFruits" type="SimpleSprite" width="150.0" height="92.6" special="2"  />
+<item className="HelianthusYellowFruits" type="SimpleSprite" width="150.0" height="92.6" special="2"  />
+<item className="HelianthusBeigeFruits" type="SimpleSprite" width="150.0" height="92.6" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower3.swf?v=3">
+<item className="CarnationWhiteFruits" type="SimpleSprite" width="130.3" height="95.0" special="2"  />
+<item className="CarnationPinkFruits" type="SimpleSprite" width="130.3" height="95.0" special="2"  />
+<item className="CarnationYellowFruits" type="SimpleSprite" width="130.3" height="95.0" special="2"  />
+<item className="CarnationPurpleFruits" type="SimpleSprite" width="130.3" height="95.0" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower4.swf?v=3">
+<item className="TulipWhiteFruits" type="SimpleSprite" width="140.5" height="95.0" special="2"  />
+<item className="TulipPinkFruits" type="SimpleSprite" width="140.5" height="95.0" special="2"  />
+<item className="TulipRedFruits" type="SimpleSprite" width="140.5" height="95.0" special="2"  />
+<item className="TulipPurpleFruits" type="SimpleSprite" width="140.5" height="95.0" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower5.swf?v=3">
+<item className="DaffodilWhiteFruits" type="SimpleSprite" width="164.8" height="83.9" special="2"  />
+<item className="DaffodilPinkFruits" type="SimpleSprite" width="164.8" height="83.9" special="2"  />
+<item className="DaffodilYellowFruits" type="SimpleSprite" width="164.8" height="83.9" special="2"  />
+<item className="DaffodilPurpleFruits" type="SimpleSprite" width="164.8" height="83.9" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower6.swf?v=3">
+<item className="HyacinthWhiteFruits" type="SimpleSprite" width="170.0" height="76.8" special="2"  />
+<item className="HyacinthRedFruits" type="SimpleSprite" width="170.0" height="76.8" special="2"  />
+<item className="HyacinthYellowFruits" type="SimpleSprite" width="170.0" height="76.8" special="2"  />
+<item className="HyacinthPurpleFruits" type="SimpleSprite" width="170.0" height="76.8" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower7.swf?v=3">
+<item className="VioletPinkFruits" type="SimpleSprite" width="174.8" height="71.2" special="2"  />
+<item className="VioletPurpleFruits" type="SimpleSprite"  width="174.8" height="71.2" special="2"  />
+<item className="VioletWhiteFruits" type="SimpleSprite"  width="174.8" height="71.2" special="2"  />
+<item className="VioletYellowFruits" type="SimpleSprite"  width="174.8" height="71.2" special="2"  />
+</file>
+
+<file url="module/ui/main/flowers/warehouse/flower8.swf?v=3">
+<item className="LilyPinkFruits" type="SimpleSprite" width="155.4" height="85.7" special="2" />
+<item className="LilyRedFruits" type="SimpleSprite"  width="155.4" height="85.7" special="2" />
+<item className="LilyWhiteFruits" type="SimpleSprite" width="155.4" height="85.7" special="2" />
+<item className="LilyYellowFruits" type="SimpleSprite" width="155.4" height="85.7" special="2" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift1.swf?v=4">
+<item className="Rose_101_11" type="SimpleSprite" width="88.7" height="110.0" />
+<item className="Rose_102_11" type="SimpleSprite" width="88.7" height="110.0" />
+<item className="Rose_103_11" type="SimpleSprite" width="88.7" height="110.0" />
+<item className="Rose_104_11" type="SimpleSprite" width="88.7" height="110.0" />
+<item className="Rose_101_33" type="SimpleSprite" width="117.3" height="153.5" />
+<item className="Rose_102_33" type="SimpleSprite" width="117.3" height="153.5" />
+<item className="Rose_103_33" type="SimpleSprite" width="117.3" height="153.5" />
+<item className="Rose_104_33" type="SimpleSprite" width="117.3" height="153.5" />
+<item className="Rose_101_99" type="SimpleSprite" width="126.7" height="150.0" />
+<item className="Rose_102_99" type="SimpleSprite" width="126.7" height="150.0" />
+<item className="Rose_103_99" type="SimpleSprite" width="126.7" height="150.0" />
+<item className="Rose_104_99" type="SimpleSprite" width="126.7" height="150.0" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift2.swf?v=4">
+<item className="Helianthus_105_11" type="SimpleSprite" width="150.0" height="141.3" />
+<item className="Helianthus_106_11" type="SimpleSprite" width="150.0" height="141.3" />
+<item className="Helianthus_107_11" type="SimpleSprite" width="150.0" height="141.3" />
+<item className="Helianthus_108_11" type="SimpleSprite" width="150.0" height="141.3" />
+<item className="Helianthus_105_22" type="SimpleSprite" width="104.7" height="140.0" />
+<item className="Helianthus_106_22" type="SimpleSprite" width="104.7" height="140.0" />
+<item className="Helianthus_107_22" type="SimpleSprite" width="104.7" height="140.0" />
+<item className="Helianthus_108_22" type="SimpleSprite" width="104.7" height="140.0" />
+<item className="Helianthus_105_123" type="SimpleSprite" width="160.0" height="155.9" />
+<item className="Helianthus_106_123" type="SimpleSprite" width="160.0" height="155.9" />
+<item className="Helianthus_107_123" type="SimpleSprite" width="160.0" height="155.9" />
+<item className="Helianthus_108_123" type="SimpleSprite" width="160.0" height="155.9" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift3.swf?v=3">
+<item className="Carnation_109_8" type="SimpleSprite" width="100.1" height="130.1" />
+<item className="Carnation_110_8" type="SimpleSprite" width="100.1" height="130.1" />
+<item className="Carnation_111_8" type="SimpleSprite" width="100.1" height="130.1" />
+<item className="Carnation_112_8" type="SimpleSprite" width="100.1" height="130.1" />
+<item className="Carnation_109_36" type="SimpleSprite" width="104.8" height="127.6" />
+<item className="Carnation_110_36" type="SimpleSprite" width="104.8" height="127.6" />
+<item className="Carnation_111_36" type="SimpleSprite" width="104.8" height="127.6" />
+<item className="Carnation_112_36" type="SimpleSprite" width="104.8" height="127.6" />
+<item className="Carnation_109_88" type="SimpleSprite" width="152.1" height="157.9" />
+<item className="Carnation_110_88" type="SimpleSprite" width="152.1" height="157.9" />
+<item className="Carnation_111_88" type="SimpleSprite" width="152.1" height="157.9" />
+<item className="Carnation_112_88" type="SimpleSprite" width="152.1" height="157.9" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift4.swf?v=3">
+<item className="Tulip_113_12" type="SimpleSprite" width="96.4" height="141.2" />
+<item className="Tulip_114_12" type="SimpleSprite" width="96.4" height="141.2" />
+<item className="Tulip_115_12" type="SimpleSprite" width="96.4" height="141.2" />
+<item className="Tulip_116_12" type="SimpleSprite" width="96.4" height="141.2" />
+<item className="Tulip_113_44" type="SimpleSprite" width="132.4" height="158.3" />
+<item className="Tulip_114_44" type="SimpleSprite" width="132.4" height="158.3" />
+<item className="Tulip_115_44" type="SimpleSprite" width="132.4" height="158.3" />
+<item className="Tulip_116_44" type="SimpleSprite" width="132.4" height="158.3" />
+<item className="Tulip_113_100" type="SimpleSprite" width="141.4" height="153.1" />
+<item className="Tulip_114_100" type="SimpleSprite" width="141.4" height="153.1" />
+<item className="Tulip_115_100" type="SimpleSprite" width="141.4" height="153.1" />
+<item className="Tulip_116_100" type="SimpleSprite" width="141.4" height="153.1" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift5.swf?v=3">
+<item className="Daffodil_117_6" type="SimpleSprite" width="106.0" height="148.2" />
+<item className="Daffodil_118_6" type="SimpleSprite" width="106.0" height="148.2" />
+<item className="Daffodil_119_6" type="SimpleSprite" width="106.0" height="148.2" />
+<item className="Daffodil_120_6" type="SimpleSprite" width="106.0" height="148.2" />
+<item className="Daffodil_117_22" type="SimpleSprite" width="118.1" height="149.8" />
+<item className="Daffodil_118_22" type="SimpleSprite" width="118.1" height="149.8" />
+<item className="Daffodil_119_22" type="SimpleSprite" width="118.1" height="149.8" />
+<item className="Daffodil_120_22" type="SimpleSprite" width="118.1" height="149.8" />
+<item className="Daffodil_117_66" type="SimpleSprite" width="168.0" height="154.6" />
+<item className="Daffodil_118_66" type="SimpleSprite" width="168.0" height="154.6" />
+<item className="Daffodil_119_66" type="SimpleSprite" width="168.0" height="154.6" />
+<item className="Daffodil_120_66" type="SimpleSprite" width="168.0" height="154.6" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift6.swf?v=4">
+<item className="Hyacinth_121_8" type="SimpleSprite" width="120.0" height="149.3" />
+<item className="Hyacinth_122_8" type="SimpleSprite" width="120.0" height="149.3" />
+<item className="Hyacinth_123_8" type="SimpleSprite" width="120.0" height="149.3" />
+<item className="Hyacinth_124_8" type="SimpleSprite" width="120.0" height="149.3" />
+<item className="Hyacinth_121_58" type="SimpleSprite" width="155.0" height="167.1" />
+<item className="Hyacinth_122_58" type="SimpleSprite" width="155.0" height="167.1" />
+<item className="Hyacinth_123_58" type="SimpleSprite" width="155.0" height="167.1" />
+<item className="Hyacinth_124_58" type="SimpleSprite" width="155.0" height="167.1" />
+<item className="Hyacinth_121_88" type="SimpleSprite" width="159.3" height="172.3" />
+<item className="Hyacinth_122_88" type="SimpleSprite" width="159.3" height="172.3" />
+<item className="Hyacinth_123_88" type="SimpleSprite" width="159.3" height="172.3" />
+<item className="Hyacinth_124_88" type="SimpleSprite" width="159.3" height="172.3" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift7.swf?v=3">
+<item className="Violet_125_5" type="SimpleSprite" width="96.3" height="130.4" />
+<item className="Violet_126_5" type="SimpleSprite" width="96.3" height="130.4" />
+<item className="Violet_127_5" type="SimpleSprite" width="96.3" height="130.4" />
+<item className="Violet_128_5" type="SimpleSprite" width="96.3" height="130.4" />
+<item className="Violet_125_20" type="SimpleSprite" width="119.6" height="144.1" />
+<item className="Violet_126_20" type="SimpleSprite" width="119.6" height="144.1" />
+<item className="Violet_127_20" type="SimpleSprite" width="119.6" height="144.1" />
+<item className="Violet_128_20" type="SimpleSprite" width="119.6" height="144.1" />
+<item className="Violet_125_77" type="SimpleSprite" width="161.2" height="165.8" />
+<item className="Violet_126_77" type="SimpleSprite" width="161.2" height="165.8" />
+<item className="Violet_127_77" type="SimpleSprite" width="161.2" height="165.8" />
+<item className="Violet_128_77" type="SimpleSprite" width="161.2" height="165.8" />
+</file>
+
+<file url="module/ui/main/flowers/flowergift/flowergift8.swf?v=3">
+<item className="Lily_129_8" type="SimpleSprite" width="86.4" height="110.0" />
+<item className="Lily_130_8" type="SimpleSprite"  width="86.4" height="110.0" />
+<item className="Lily_131_8" type="SimpleSprite" width="86.4" height="110.0" />
+<item className="Lily_132_8" type="SimpleSprite" width="86.4" height="110.0" />
+<item className="Lily_129_33" type="SimpleSprite" width="99.5" height="129.9" />
+<item className="Lily_130_33" type="SimpleSprite" width="99.5" height="129.9" />
+<item className="Lily_131_33" type="SimpleSprite" width="99.5" height="129.9" />
+<item className="Lily_132_33" type="SimpleSprite" width="99.5" height="129.9" />
+<item className="Lily_129_77" type="SimpleSprite" width="153.4" height="155.1" />
+<item className="Lily_130_77" type="SimpleSprite" width="153.4" height="155.1" />
+<item className="Lily_131_77" type="SimpleSprite" width="153.4" height="155.1" />
+<item className="Lily_132_77" type="SimpleSprite" width="153.4" height="155.1" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops1.swf?v=3">
+<item className="RoseWhite" type="LandCrop" />
+<item className="RosePink" type="LandCrop" />
+<item className="RoseRed" type="LandCrop" />
+<item className="RoseYellow" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops2.swf?v=4">
+<item className="HelianthusWhite" type="LandCrop" />
+<item className="HelianthusBeige" type="LandCrop" />
+<item className="HelianthusPink" type="LandCrop" />
+<item className="HelianthusYellow" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops3.swf?v=3">
+<item className="CarnationWhite" type="LandCrop" />
+<item className="CarnationPink" type="LandCrop" />
+<item className="CarnationYellow" type="LandCrop" />
+<item className="CarnationPurple" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops4.swf?v=3">
+<item className="TulipWhite" type="LandCrop" />
+<item className="TulipPink" type="LandCrop" />
+<item className="TulipRed" type="LandCrop" />
+<item className="TulipPurple" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops5.swf?v=3">
+<item className="DaffodilWhite" type="LandCrop" />
+<item className="DaffodilPink" type="LandCrop" />
+<item className="DaffodilYellow" type="LandCrop" />
+<item className="DaffodilPurple" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops6.swf?v=3">
+<item className="HyacinthWhite" type="LandCrop" />
+<item className="HyacinthRed" type="LandCrop" />
+<item className="HyacinthYellow" type="LandCrop" />
+<item className="HyacinthPurple" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops7.swf?v=4">
+<item className="VioletPink" type="LandCrop" />
+<item className="VioletPurple" type="LandCrop" />
+<item className="VioletWhite" type="LandCrop" />
+<item className="VioletYellow" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/flowers/landcrop/crops8.swf?v=3">
+<item className="LilyPink" type="LandCrop" />
+<item className="LilyRed" type="LandCrop" />
+<item className="LilyWhite" type="LandCrop" />
+<item className="LilyYellow" type="LandCrop" />
+</file>
+
+<file url="module/ui/main/pet/dog1.swf?v=3">
+<item className="Dog_1_move" type="SimpleMvoieClip" width="61.0" height="63.0" />
+<item className="Dog_1_hunger" type="SimpleMvoieClip" width="53.9" height="62.5" />
+<item className="Dog_1_dizzy" type="SimpleMvoieClip" width="48.7" height="80.0" />
+<item className="Dog_1_greet" type="SimpleMvoieClip" width="42.9" height="68.0" />		
+<item className="Dog_1_shop" type="SimpleSprite" width="57.0" height="80.1" />
+</file>
+
+<file url="module/ui/main/pet/dog2.swf?v=3">
+<item className="Dog_2_move" type="SimpleMvoieClip" width="64.8" height="61.8" />
+<item className="Dog_2_hunger" type="SimpleMvoieClip" width="50.4" height="63.3" />
+<item className="Dog_2_dizzy" type="SimpleMvoieClip" width="53.7" height="80.0" />
+<item className="Dog_2_greet" type="SimpleMvoieClip" width="58.0" height="65.0" />		
+<item className="Dog_2_shop" type="SimpleSprite" width="67.5" height="80.0" />
+</file>
+
+<file url="module/ui/main/pet/dog3.swf?v=3">
+<item className="Dog_3_move" type="SimpleMvoieClip" width="62.3" height="63.4" />
+<item className="Dog_3_hunger" type="SimpleMvoieClip" width="59.7" height="63.0" />
+<item className="Dog_3_dizzy" type="SimpleMvoieClip" width="65.2" height="80.1" />
+<item className="Dog_3_greet" type="SimpleMvoieClip" width="62.9" height="65.0" />		
+<item className="Dog_3_shop" type="SimpleSprite" width="68.4" height="80.0" />
+</file>
+
+<file url="module/ui/main/pet/dog4.swf?v=3">
+<item className="Dog_4_move" type="SimpleMvoieClip" width="64.1" height="60.0" />
+<item className="Dog_4_hunger" type="SimpleMvoieClip" width="66.3" height="60.0" />
+<item className="Dog_4_dizzy" type="SimpleMvoieClip" width="66.3" height="65.0" />
+<item className="Dog_4_greet" type="SimpleMvoieClip" width="68.4" height="60.0" />		
+<item className="Dog_4_shop" type="SimpleSprite" width="90.0" height="78.5" />
+</file>
+
+<file url="module/ui/main/pet/dog5.swf?v=3">
+<item className="Dog_5_move" type="SimpleMvoieClip" width="65.7" height="60.0" />
+<item className="Dog_5_hunger" type="SimpleMvoieClip" width="68.6" height="60.0" />
+<item className="Dog_5_dizzy" type="SimpleMvoieClip" width="59.8" height="70.0" />
+<item className="Dog_5_greet" type="SimpleMvoieClip" width="56.3" height="60.0" />		
+<item className="Dog_5_shop" type="SimpleSprite" width="76.1" height="80.0" />
+</file>
+
+<file url="module/ui/main/pet/dog6.swf?v=3">
+<item className="Dog_6_move" type="SimpleMvoieClip" width="74.9" height="64.5" />
+<item className="Dog_6_hunger" type="SimpleMvoieClip" width="76.6" height="69.0" />
+<item className="Dog_6_dizzy" type="SimpleMvoieClip" width="77.9" height="75.0" />
+<item className="Dog_6_greet" type="SimpleMvoieClip" width="72.0" height="63.8" />		
+<item className="Dog_6_shop" type="SimpleSprite" width="90.3" height="80.0" />
+</file>
+
+<file url="module/ui/main/pet/dog7.swf?v=3">
+<item className="Dog_7_move" type="SimpleMvoieClip" width="95.0" height="78.1" />
+<item className="Dog_7_hunger" type="SimpleMvoieClip" width="95.0" height="65.0" />
+<item className="Dog_7_dizzy" type="SimpleMvoieClip" width="85.0" height="89.6" />
+<item className="Dog_7_greet" type="SimpleMvoieClip" width="80.0" height="82.7" />		
+<item className="Dog_7_shop" type="SimpleSprite" width="85.2" height="80.0" />
+</file>
+
+<file url="module/ui/main/pet/dog9.swf?v=0">
+<item className="Dog_9_move" type="SimpleMvoieClip" width="63.0" height="82.0" />
+<item className="Dog_9_hunger" type="SimpleMvoieClip" width="80.5" height="70.0" />
+<item className="Dog_9_dizzy" type="SimpleMvoieClip" width="76.9" height="85.0" />
+<item className="Dog_9_greet" type="SimpleMvoieClip" width="76.7" height="87.6" />		
+<item className="Dog_9_shop" type="SimpleSprite" width="76.7" height="87.6" />
+</file>
+
+<file url="module/ui/main/pet/dog10.swf?v=3">
+<item className="Dog_10_move" type="SimpleMvoieClip" width="150.3" height="104.1" />
+<item className="Dog_10_hunger" type="SimpleMvoieClip" width="147.0" height="99.6" />
+<item className="Dog_10_dizzy" type="SimpleMvoieClip" width="147.0" height="99.6" />
+<item className="Dog_10_greet" type="SimpleMvoieClip" width="147.0" height="99.6" />		
+<item className="Dog_10_shop" type="SimpleSprite" width="147.0" height="99.6" />
+</file>
+
+<file url="module/ui/main/pet/dog11.swf?v=0">
+<item className="Dog_11_move" type="SimpleMvoieClip" width="63.0" height="82.0" />
+<item className="Dog_11_hunger" type="SimpleMvoieClip" width="80.5" height="70.0" />
+<item className="Dog_11_dizzy" type="SimpleMvoieClip" width="76.9" height="85.0" />
+<item className="Dog_11_greet" type="SimpleMvoieClip" width="76.7" height="87.6" />		
+<item className="Dog_11_shop" type="SimpleSprite" width="76.7" height="87.6" />
+</file>
+
+<file url="module/ui/main/pet/dog12.swf?v=3">
+<item className="Dog_12_move" type="SimpleMvoieClip" width="148.0" height="143.4" />
+<item className="Dog_12_hunger" type="SimpleMvoieClip" width="145.9" height="143.3" />
+<item className="Dog_12_dizzy" type="SimpleMvoieClip" width="163.5" height="156.7" />
+<item className="Dog_12_greet" type="SimpleMvoieClip" width="142.3" height="143.3" />		
+<item className="Dog_12_shop" type="SimpleSprite" width="142.3" height="143.3" />
+</file>
+
+<file url="module/ui/main/pet/eidolon.swf?v=0">
+<item className="Dog_8_move" type="SimpleMvoieClip" width="63.0" height="82.0" />
+<item className="Dog_8_hunger" type="SimpleMvoieClip" width="80.5" height="70.0" />
+<item className="Dog_8_dizzy" type="SimpleMvoieClip" width="76.9" height="85.0" />
+<item className="Dog_8_greet" type="SimpleMvoieClip" width="76.7" height="87.6" />		
+<item className="Dog_8_shop" type="SimpleSprite" width="76.7" height="87.6" />
+</file>
+
+<file url="module/ui/main/pet/other.swf?v=3">
+<item className="DogFoodNull" type="SimpleSprite" width="60.0" height="37.7" />
+<item className="DogFood" type="SimpleSprite" width="60.0" height="44.9" />
+<item className="Dog" type="SimpleSprite" width="57.0" height="80.1" />
+<item className="Dizzy_time" type="SimpleMvoieClip" width="113.0" height="36.1" special="1" />
+</file>
+
+		<!-- 魔法作物 -->
+<file url="module/ui/main/toy/toyCat.swf?v=3">
+<item className="ToyCat" type="SimpleSprite" width="69.6" height="114.1" />
+<item className="Cat" type="LandCrop" />
+<item className="CatHead" type="SimpleSprite" width="82.8" height="66.5" />
+</file>
+
+<file url="module/ui/main/toy/toyPig.swf?v=3">
+<item className="ToyPig" type="SimpleSprite" width="62.3" height="110.1" />
+<item className="Pig" type="LandCrop" />
+<item className="PigHead" type="SimpleSprite" width="75.2" height="71.8" />
+</file>
+
+<file url="module/ui/main/toy/toyRabbit.swf?v=3">
+<item className="ToyRabbit" type="SimpleSprite" width="76.4" height="110.0" />
+<item className="Rabbit" type="LandCrop" />
+<item className="RabbitHead" type="SimpleSprite" width="127.8" height="91.9" />
+</file>
+
+<file url="module/ui/main/toy/other.swf?v=3">
+<item className="MysterySeed" type="SimpleSprite" width="41.9" height="45.0" />
+</file>
+
+<file url="module/ui/main/exchang/mooncake.swf?v=3">
+<item className="mysteryCake" type="SimpleSprite" width="85.0" height="74.6" />
+<item className="chaoshiMoonCake" type="SimpleSprite" width="85.0" height="61.8" />
+<item className="guangshiMoonCake" type="SimpleSprite" width="85.0" height="64.4" />
+<item className="sushiMoonCake" type="SimpleSprite" width="85.0" height="62.5" />
+<item className="tanshaoMoonCake" type="SimpleSprite" width="85.0" height="60.6" />
+<item className="bingpiMoonCake" type="SimpleSprite" width="85.0" height="64.8" />
+</file>
+
+<file url="module/ui/main/exchang/Halloween.swf?v=0">
+<item className="Kisses" type="SimpleSprite" width="68.6" height="90.0" />
+<item className="Roll" type="SimpleSprite" width="120.1" height="35.0" />
+<item className="CronCandy" type="SimpleSprite" width="81.5" height="65.0" />
+<item className="BlackCat" type="SimpleSprite" width="70.6" height="90.0" />
+</file>
+</material>
+
+<diy>
+<files type="preview" big="">
+<item id="0" name="module/ui/farm/diy/preview0.jpg?v=1" />
+<item id="2" name="module/ui/farm/diy/preview2.jpg?v=1" />
+<item id="4" name="module/ui/farm/diy/preview4.jpg?v=1" />
+<item id="6" name="module/ui/farm/diy/preview6.jpg?v=1" />
+<item id="7" name="module/ui/farm/diy/preview7.jpg?v=1" />
+<item id="8" name="module/ui/farm/diy/preview8.jpg?v=1" />
+<item id="9" name="module/ui/farm/diy/preview9.jpg?v=1" />
+<item id="10" name="module/ui/farm/diy/preview10.jpg?v=1" />
+<item id="11" name="module/ui/farm/diy/preview11.jpg?v=1" />
+<item id="12" name="module/ui/farm/diy/preview12.jpg?v=1" />
+<item id="13" name="module/ui/farm/diy/preview13.jpg?v=1" />
+<item id="14" name="module/ui/farm/diy/preview14.jpg?v=1" />
+<item id="15" name="module/ui/farm/diy/preview15.jpg?v=1" />
+<item id="16" name="module/ui/farm/diy/preview16.jpg?v=1" />
+<item id="17" name="module/ui/farm/diy/preview17.jpg?v=1" />
+<item id="18" name="module/ui/farm/diy/preview18.jpg?v=1" />
+<item id="19" name="module/ui/farm/diy/preview19.jpg?v=1" />
+<item id="20" name="module/ui/farm/diy/preview20.jpg?v=1" />
+</files>
+
+<files type="preview" big="b">
+<item id="0" name="module/ui/farm/diy/preview0b.jpg?v=1" />
+<item id="2" name="module/ui/farm/diy/preview2b.jpg?v=1" />
+<item id="4" name="module/ui/farm/diy/preview4b.jpg?v=1" />
+<item id="6" name="module/ui/farm/diy/preview6b.jpg?v=1" />
+<item id="7" name="module/ui/farm/diy/preview7b.jpg?v=1" />
+<item id="8" name="module/ui/farm/diy/preview8b.jpg?v=1" />
+<item id="9" name="module/ui/farm/diy/preview9b.jpg?v=1" />
+<item id="10" name="module/ui/farm/diy/preview10b.jpg?v=1" />
+<item id="11" name="module/ui/farm/diy/preview11b.jpg?v=1" />
+<item id="12" name="module/ui/farm/diy/preview12b.jpg?v=1" />
+<item id="13" name="module/ui/farm/diy/preview13b.jpg?v=1" />
+<item id="14" name="module/ui/farm/diy/preview14b.jpg?v=1" />
+<item id="15" name="module/ui/farm/diy/preview15b.jpg?v=1" />
+<item id="16" name="module/ui/farm/diy/preview16b.jpg?v=1" />
+<item id="17" name="module/ui/farm/diy/preview17b.jpg?v=1" />
+<item id="18" name="module/ui/farm/diy/preview18b.jpg?v=1" />
+<item id="19" name="module/ui/farm/diy/preview19b.jpg?v=1" />
+<item id="20" name="module/ui/farm/diy/preview20b.jpg?v=1" />
+</files>
+
+<files type="singleSwf"  big="">
+<item id="1" name="module/ui/farm/diy/1.swf?v=1" />
+<item id="2" name="module/ui/farm/diy/2.swf" />
+<item id="3" name="module/ui/farm/diy/3.swf" />
+<item id="4" name="module/ui/farm/diy/4.swf" />
+<item id="11" name="module/ui/farm/diy/11.swf" />
+<item id="12" name="module/ui/farm/diy/12.swf" />
+<item id="13" name="module/ui/farm/diy/13.swf" />
+<item id="14" name="module/ui/farm/diy/14.swf" />
+<item id="21" name="module/ui/farm/diy/21.swf" />
+<item id="22" name="module/ui/farm/diy/22.swf" />
+<item id="23" name="module/ui/farm/diy/23.swf" />
+<item id="24" name="module/ui/farm/diy/24.swf" />
+<item id="31" name="module/ui/farm/diy/31.swf" />
+<item id="32" name="module/ui/farm/diy/32.swf" />
+<item id="33" name="module/ui/farm/diy/33.swf" />
+<item id="34" name="module/ui/farm/diy/34.swf" />
+<item id="36" name="module/ui/farm/diy/36.swf" />
+<item id="37" name="module/ui/farm/diy/37.swf" />
+<item id="38" name="module/ui/farm/diy/38.swf" />
+<item id="39" name="module/ui/farm/diy/39.swf" />
+<item id="41" name="module/ui/farm/diy/41.swf" />
+<item id="42" name="module/ui/farm/diy/42.swf" />
+<item id="43" name="module/ui/farm/diy/43.swf" />
+<item id="44" name="module/ui/farm/diy/44.swf" />
+<item id="46" name="module/ui/farm/diy/46.swf" />
+<item id="47" name="module/ui/farm/diy/47.swf" />
+<item id="48" name="module/ui/farm/diy/48.swf" />
+<item id="49" name="module/ui/farm/diy/49.swf" />
+<item id="51" name="module/ui/farm/diy/51.swf" />
+<item id="52" name="module/ui/farm/diy/52.swf" />
+<item id="53" name="module/ui/farm/diy/53.swf" />
+<item id="54" name="module/ui/farm/diy/54.swf" />
+<item id="56" name="module/ui/farm/diy/56.swf" />
+<item id="57" name="module/ui/farm/diy/57.swf" />
+<item id="58" name="module/ui/farm/diy/58.swf" />
+<item id="59" name="module/ui/farm/diy/59.swf" />
+<item id="61" name="module/ui/farm/diy/61.swf?v=1" />
+<item id="62" name="module/ui/farm/diy/62.swf" />
+<item id="63" name="module/ui/farm/diy/63.swf" />
+<item id="64" name="module/ui/farm/diy/64.swf" />
+<item id="66" name="module/ui/farm/diy/66.swf" />
+<item id="67" name="module/ui/farm/diy/67.swf" />
+<item id="68" name="module/ui/farm/diy/68.swf" />
+<item id="69" name="module/ui/farm/diy/69.swf" />
+<item id="71" name="module/ui/farm/diy/71.swf" />
+<item id="72" name="module/ui/farm/diy/72.swf" />
+<item id="73" name="module/ui/farm/diy/73.swf" />
+<item id="74" name="module/ui/farm/diy/74.swf" />
+<item id="76" name="module/ui/farm/diy/76.swf" />
+<item id="77" name="module/ui/farm/diy/77.swf" />
+<item id="78" name="module/ui/farm/diy/78.swf" />
+<item id="79" name="module/ui/farm/diy/79.swf" />
+<item id="81" name="module/ui/farm/diy/81.swf?v=1" />
+<item id="82" name="module/ui/farm/diy/82.swf" />
+<item id="83" name="module/ui/farm/diy/83.swf" />
+<item id="84" name="module/ui/farm/diy/84.swf" />
+<item id="85" name="module/ui/farm/diy/85.swf" />
+<item id="86" name="module/ui/farm/diy/86.swf" />
+<item id="87" name="module/ui/farm/diy/87.swf" />
+<item id="88" name="module/ui/farm/diy/88.swf" />
+<item id="89" name="module/ui/farm/diy/89.swf" />
+<item id="90" name="module/ui/farm/diy/90.swf" />
+<item id="91" name="module/ui/farm/diy/91.swf" />
+<item id="92" name="module/ui/farm/diy/92.swf" />
+<item id="93" name="module/ui/farm/diy/93.swf" />
+<item id="94" name="module/ui/farm/diy/94.swf" />
+<item id="95" name="module/ui/farm/diy/95.swf" />
+<item id="96" name="module/ui/farm/diy/96.swf" />
+<item id="97" name="module/ui/farm/diy/97.swf" />
+<item id="98" name="module/ui/farm/diy/98.swf" />
+<item id="99" name="module/ui/farm/diy/99.swf" />
+<item id="100" name="module/ui/farm/diy/100.swf" />			
+</files>
+
+<files type="singleImage" big="b">
+<item id="1" name="module/ui/farm/diy/1b.jpg" />
+<item id="2" name="module/ui/farm/diy/2b.jpg" />
+<item id="3" name="module/ui/farm/diy/3b.jpg" />
+<item id="4" name="module/ui/farm/diy/4b.jpg" />
+<item id="11" name="module/ui/farm/diy/11b.jpg" />
+<item id="12" name="module/ui/farm/diy/12b.jpg" />
+<item id="13" name="module/ui/farm/diy/13b.jpg" />
+<item id="14" name="module/ui/farm/diy/14b.jpg" />
+<item id="21" name="module/ui/farm/diy/21b.jpg" />
+<item id="22" name="module/ui/farm/diy/22b.jpg" />
+<item id="23" name="module/ui/farm/diy/23b.jpg" />
+<item id="24" name="module/ui/farm/diy/24b.jpg" />
+<item id="31" name="module/ui/farm/diy/31b.jpg" />
+<item id="32" name="module/ui/farm/diy/32b.jpg" />
+<item id="33" name="module/ui/farm/diy/33b.jpg" />
+<item id="34" name="module/ui/farm/diy/34b.jpg" />
+<item id="36" name="module/ui/farm/diy/36b.jpg" />
+<item id="37" name="module/ui/farm/diy/37b.jpg" />
+<item id="38" name="module/ui/farm/diy/38b.jpg" />
+<item id="39" name="module/ui/farm/diy/39b.jpg" />
+<item id="41" name="module/ui/farm/diy/41b.jpg" />
+<item id="42" name="module/ui/farm/diy/42b.jpg" />
+<item id="43" name="module/ui/farm/diy/43b.jpg" />
+<item id="44" name="module/ui/farm/diy/44b.jpg" />
+<item id="46" name="module/ui/farm/diy/46b.jpg" />
+<item id="47" name="module/ui/farm/diy/47b.jpg" />
+<item id="48" name="module/ui/farm/diy/48b.jpg" />
+<item id="49" name="module/ui/farm/diy/49b.jpg" />
+<item id="51" name="module/ui/farm/diy/51b.jpg" />
+<item id="52" name="module/ui/farm/diy/52b.jpg" />
+<item id="53" name="module/ui/farm/diy/53b.jpg" />
+<item id="54" name="module/ui/farm/diy/54b.jpg" />
+<item id="56" name="module/ui/farm/diy/56b.jpg" />
+<item id="57" name="module/ui/farm/diy/57b.jpg" />
+<item id="58" name="module/ui/farm/diy/58b.jpg" />
+<item id="59" name="module/ui/farm/diy/59b.jpg" />
+<item id="61" name="module/ui/farm/diy/61b.jpg" />
+<item id="62" name="module/ui/farm/diy/62b.jpg" />
+<item id="63" name="module/ui/farm/diy/63b.jpg" />
+<item id="64" name="module/ui/farm/diy/64b.jpg" />
+<item id="66" name="module/ui/farm/diy/66b.jpg" />
+<item id="67" name="module/ui/farm/diy/67b.jpg" />
+<item id="68" name="module/ui/farm/diy/68b.jpg" />
+<item id="69" name="module/ui/farm/diy/69b.jpg" />
+<item id="71" name="module/ui/farm/diy/71b.jpg" />
+<item id="72" name="module/ui/farm/diy/72b.jpg" />
+<item id="73" name="module/ui/farm/diy/73b.jpg" />
+<item id="74" name="module/ui/farm/diy/74b.jpg" />
+<item id="76" name="module/ui/farm/diy/76b.jpg" />
+<item id="77" name="module/ui/farm/diy/77b.jpg" />
+<item id="78" name="module/ui/farm/diy/78b.jpg" />
+<item id="79" name="module/ui/farm/diy/79b.jpg" />
+<item id="81" name="module/ui/farm/diy/81b.jpg" />
+<item id="82" name="module/ui/farm/diy/82b.jpg" />
+<item id="83" name="module/ui/farm/diy/83b.jpg" />
+<item id="84" name="module/ui/farm/diy/84b.jpg" />	
+<item id="85" name="module/ui/farm/diy/85b.jpg" />
+<item id="86" name="module/ui/farm/diy/86b.jpg" />
+<item id="87" name="module/ui/farm/diy/87b.jpg" />
+<item id="88" name="module/ui/farm/diy/88b.jpg" />	
+<item id="89" name="module/ui/farm/diy/89b.jpg" />
+<item id="90" name="module/ui/farm/diy/90b.jpg" />
+<item id="91" name="module/ui/farm/diy/91b.jpg" />
+<item id="92" name="module/ui/farm/diy/92b.jpg" />	
+<item id="93" name="module/ui/farm/diy/93b.jpg" />
+<item id="94" name="module/ui/farm/diy/94b.jpg" />
+<item id="95" name="module/ui/farm/diy/95b.jpg" />
+<item id="96" name="module/ui/farm/diy/96b.jpg" />	
+<item id="97" name="module/ui/farm/diy/97b.jpg" />
+<item id="98" name="module/ui/farm/diy/98b.jpg" />
+<item id="99" name="module/ui/farm/diy/99b.jpg" />
+<item id="100" name="module/ui/farm/diy/100b.jpg" />
+</files>
+
+<files type="singleImage" big="">
+<item id="1" name="module/ui/farm/diy/1.jpg" />
+<item id="2" name="module/ui/farm/diy/2.jpg" />
+<item id="3" name="module/ui/farm/diy/3.jpg" />
+<item id="4" name="module/ui/farm/diy/4.jpg" />
+<item id="11" name="module/ui/farm/diy/11.jpg" />
+<item id="12" name="module/ui/farm/diy/12.jpg" />
+<item id="13" name="module/ui/farm/diy/13.jpg" />
+<item id="14" name="module/ui/farm/diy/14.jpg" />
+<item id="21" name="module/ui/farm/diy/21.jpg" />
+<item id="22" name="module/ui/farm/diy/22.jpg" />
+<item id="23" name="module/ui/farm/diy/23.jpg" />
+<item id="24" name="module/ui/farm/diy/24.jpg" />
+<item id="31" name="module/ui/farm/diy/31.jpg" />
+<item id="32" name="module/ui/farm/diy/32.jpg" />
+<item id="33" name="module/ui/farm/diy/33.jpg" />
+<item id="34" name="module/ui/farm/diy/34.jpg" />
+<item id="36" name="module/ui/farm/diy/36.jpg" />
+<item id="37" name="module/ui/farm/diy/37.jpg" />
+<item id="38" name="module/ui/farm/diy/38.jpg" />
+<item id="39" name="module/ui/farm/diy/39.jpg" />
+<item id="41" name="module/ui/farm/diy/41.jpg" />
+<item id="42" name="module/ui/farm/diy/42.jpg" />
+<item id="43" name="module/ui/farm/diy/43.jpg" />
+<item id="44" name="module/ui/farm/diy/44.jpg" />
+<item id="46" name="module/ui/farm/diy/46.jpg" />
+<item id="47" name="module/ui/farm/diy/47.jpg" />
+<item id="48" name="module/ui/farm/diy/48.jpg" />
+<item id="49" name="module/ui/farm/diy/49.jpg" />
+<item id="51" name="module/ui/farm/diy/51.jpg" />
+<item id="52" name="module/ui/farm/diy/52.jpg" />
+<item id="53" name="module/ui/farm/diy/53.jpg" />
+<item id="54" name="module/ui/farm/diy/54.jpg" />
+<item id="56" name="module/ui/farm/diy/56.jpg" />
+<item id="57" name="module/ui/farm/diy/57.jpg" />
+<item id="58" name="module/ui/farm/diy/58.jpg" />
+<item id="59" name="module/ui/farm/diy/59.jpg" />
+<item id="61" name="module/ui/farm/diy/61.jpg" />
+<item id="62" name="module/ui/farm/diy/62.jpg" />
+<item id="63" name="module/ui/farm/diy/63.jpg" />
+<item id="64" name="module/ui/farm/diy/64.jpg" />
+<item id="66" name="module/ui/farm/diy/66.jpg" />
+<item id="67" name="module/ui/farm/diy/67.jpg" />
+<item id="68" name="module/ui/farm/diy/68.jpg" />
+<item id="69" name="module/ui/farm/diy/69.jpg" />
+<item id="71" name="module/ui/farm/diy/71.jpg" />
+<item id="72" name="module/ui/farm/diy/72.jpg" />
+<item id="73" name="module/ui/farm/diy/73.jpg" />
+<item id="74" name="module/ui/farm/diy/74.jpg" />
+<item id="76" name="module/ui/farm/diy/76.jpg" />
+<item id="77" name="module/ui/farm/diy/77.jpg" />
+<item id="78" name="module/ui/farm/diy/78.jpg" />
+<item id="79" name="module/ui/farm/diy/79.jpg" />
+<item id="81" name="module/ui/farm/diy/81.jpg" />
+<item id="82" name="module/ui/farm/diy/82.jpg" />
+<item id="83" name="module/ui/farm/diy/83.jpg" />
+<item id="84" name="module/ui/farm/diy/84.jpg" />
+<item id="85" name="module/ui/farm/diy/85.jpg" />
+<item id="86" name="module/ui/farm/diy/86.jpg" />
+<item id="87" name="module/ui/farm/diy/87.jpg" />
+<item id="88" name="module/ui/farm/diy/88.jpg" />
+<item id="89" name="module/ui/farm/diy/89.jpg" />
+<item id="90" name="module/ui/farm/diy/90.jpg" />
+<item id="91" name="module/ui/farm/diy/91.jpg" />
+<item id="92" name="module/ui/farm/diy/92.jpg" />
+<item id="93" name="module/ui/farm/diy/93.jpg" />
+<item id="94" name="module/ui/farm/diy/94.jpg" />
+<item id="95" name="module/ui/farm/diy/95.jpg" />
+<item id="96" name="module/ui/farm/diy/96.jpg" />
+<item id="97" name="module/ui/farm/diy/97.jpg" />
+<item id="98" name="module/ui/farm/diy/98.jpg" />
+<item id="99" name="module/ui/farm/diy/99.jpg" />
+<item id="100" name="module/ui/farm/diy/100.jpg" />
+</files>
+</diy>
+</main>

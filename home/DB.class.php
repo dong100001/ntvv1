@@ -1,0 +1,126 @@
+ï»¿<?php 
+
+/*********************/
+/*                   */
+/*  Version : 1.0.0  */
+/*	GoHooH.CoM		 */
+/*********************/
+
+class DBAccess {
+
+//Ucenter Home ÅäÖÃ²ÎÊý 
+
+private $dbhost= 'localhost';
+
+//·þÎñÆ÷µØÖ· 
+
+private $dbuser= 'username';
+
+//ÓÃ»§ 
+
+private $dbpw= 'password';
+
+ //ÃÜÂë 
+
+private $dbname= 'dbname';
+
+//Êý¾Ý¿â 
+
+public  $con="";
+
+public $result=array();
+
+public $query ;
+
+public $sql;
+
+//__construct(),¹¹Ôìº¯Êý,½¨Á¢Êý¾Ý¿âµÄÁ¬½Ó 
+
+function __construct(){
+
+$this -> con = @mysql_connect ($this -> dbhost,$this -> dbuser, $this -> dbpw);
+
+
+mysql_select_db($this -> dbname,$this->con);
+
+mysql_query("SET NAMES gbk");
+
+
+} 
+
+//__destruct£ºÎö¹¹º¯Êý£¬¶Ï¿ªÁ¬½Ó 
+
+function __destruct(){
+
+mysql_close($this->con);
+
+
+
+
+} 
+
+//Ö´ÐÐÓï¾ä 
+
+function query($sql){
+
+
+return mysql_query($sql);
+
+
+} 
+
+//·µ»Ø½á¹û¼¯ ARRAY 
+
+function fetch_all($sql) {
+
+$arr = array();
+
+$query = $this->query($sql);
+
+while($data = $this->fetch_array($query)) {
+
+$arr[] = $data;
+
+
+} 
+
+return $arr;
+
+
+} 
+
+function fetch_array($query) {
+
+return @mysql_fetch_array($query);
+
+} 
+
+
+
+function fetch_first($sql) {
+
+$query = $this->query($sql);
+
+return $this->fetch_array($query);
+
+
+} 
+
+
+
+function first($sql) {
+
+
+$query = $this->query($sql);
+
+$query = $this->fetch_array($query);
+
+return $query [0];
+
+
+} 
+
+
+} 
+
+?>

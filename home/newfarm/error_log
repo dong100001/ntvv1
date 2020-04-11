@@ -1,0 +1,21 @@
+[02-Mar-2010 23:17:17] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/gohooh/public_html/nhatui/newfarm/config.php on line 111
+[02-Mar-2010 23:18:39] PHP Warning:  Unexpected character in input:  '\' (ASCII=92) state=1 in /home/gohooh/public_html/nhatui/newfarm/config.php on line 111
+[02-Mar-2010 23:21:06] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0
+[02-Mar-2010 23:21:06] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0
+[03-Mar-2010 04:37:28] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0
+[03-Mar-2010 05:12:27] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0
+[03-Mar-2010 05:57:59] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /home/gohooh/public_html/nhatui/newfarm/farm.php on line 416
+[03-Mar-2010 05:58:34] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /home/gohooh/public_html/nhatui/newfarm/farm.php on line 416
+[03-Mar-2010 06:00:10] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /home/gohooh/public_html/nhatui/newfarm/farm.php on line 416
+[03-Mar-2010 06:16:56] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /home/gohooh/public_html/nhatui/newfarm/farm.php on line 416
+[03-Mar-2010 06:30:02] PHP Parse error:  syntax error, unexpected T_STRING, expecting ')' in /home/gohooh/public_html/nhatui/newfarm/farm.php on line 416
+[03-Mar-2010 13:59:30] PHP Warning:  include(./DB.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/gohooh/public_html/nhatui/newfarm/invite.php on line 27
+[03-Mar-2010 13:59:30] PHP Warning:  include(./DB.class.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/gohooh/public_html/nhatui/newfarm/invite.php on line 27
+[03-Mar-2010 13:59:30] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening './DB.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gohooh/public_html/nhatui/newfarm/invite.php on line 27
+[03-Mar-2010 13:59:34] PHP Fatal error:  Call to a member function query() on a non-object in /home/gohooh/public_html/nhatui/newfarm/levelup.php on line 25
+[03-Mar-2010 13:59:35] PHP Fatal error:  Call to a member function query() on a non-object in /home/gohooh/public_html/nhatui/newfarm/levelup.php on line 25
+[03-Mar-2010 13:59:41] PHP Warning:  include_once(./common.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/gohooh/public_html/nhatui/newfarm/newfarm.php on line 10
+[03-Mar-2010 13:59:41] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening './common.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gohooh/public_html/nhatui/newfarm/newfarm.php on line 10
+[03-Mar-2010 13:59:41] PHP Fatal error:  Call to undefined function getspace() in /home/gohooh/public_html/nhatui/newfarm/newfarm.php on line 13
+[03-Mar-2010 16:56:42] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0
+[17-Mar-2010 01:10:35] PHP Warning:  PHP Startup: mm_create(0, /tmp/session_mm_cgi1531) failed, err mm:core: failed to open semaphore file (File exists) in Unknown on line 0

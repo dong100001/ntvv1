@@ -1,0 +1,230 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main_nmc">
+	<div id="myContentnc"></div>
+	<div id="myContentmc" style="display:none;"></div>
+</div>
+
+<div id="getflashplayer" style="display:none;">
+	<div style="text-align:center;padding-top:150px;">
+		<h1>Xin vui lòng tải về các plug-in Flash mới nhất</h1>
+		<img 
+		onclick="var mywindow = window.parent || window; mywindow.location.href = 'http://www.adobe.com/go/getflashplayer'" 
+		style="border:0;cursor:pointer;" alt="Download flash" src="view/images/get_flash_player.gif" 
+		/>
+	</div>
+</div>
+
+<script type="text/javascript" src="view/js/swfobject/swfobject.js"></script>
+<script type="text/javascript">
+	var expressUser;
+	function setExpressUser(user) {
+		expressUser = user;
+	}
+	function getExpressUser(user) {
+		return expressUser;
+	}
+
+	var curModule = 'nc';
+
+	function connectSWF(methodName, arg, module) {
+		module = module || curModule;
+		if(arg) {
+			return $("#myContent" + module)[methodName](arg) || null;
+		}
+		else {
+			return $("#myContent" + module)[methodName]();
+		}
+	}
+
+	var switchfarm = $("#myContentnc") ? function(module) {
+		curModule = module;//更新全局变量
+		var myContentId = "myContent" + module;
+		var flashDir = "";
+		var flashvars = {
+			api_activeitem:"",
+			api_allinfo:"",
+			api_buyseed:"",
+			api_buytool:"",
+			api_chat:"",
+			api_chat_from:1000,
+			api_chat_to:1000,
+			api_clearchat:"",
+			api_clearlog:"",
+			api_deactiveitem:"",
+			api_feedmoney:"",
+			api_friend:"",
+			api_friend_from:0,
+			api_friend_to:999,
+			api_friendStatus:"",
+			api_friendStatus_from:1000,
+			api_friendStatus_to:1000,
+			api_g1_from:0,
+			api_g1_to:999,
+			api_g10_from:0,
+			api_g10_to:999,
+			api_g2_from:0,
+			api_g2_to:999,
+			api_g3_from:0,
+			api_g3_to:999,
+			api_g4_from:0,
+			api_g4_to:999,
+			api_g5_from:0,
+			api_g5_to:999,
+			api_g6_from:0,
+			api_g6_to:999,
+			api_g7_from:0,
+			api_g7_to:999,
+			api_g8_from:0,
+			api_g8_to:999,
+			api_g9_from:0,
+			api_g9_to:999,
+			api_getpackage:"",
+			api_getpackage_from:0,
+			api_getpackage_to:999,
+			api_getpackagelist:"",
+			api_getpackagelist_from:0,
+			api_getpackagelist_to:999,
+			api_gettools:"",
+			api_health:"",
+			api_health_from:0,
+			api_health_to:999,
+			api_item:"",
+			api_item_buy:"",
+			api_item_from:1000,
+			api_item_shop:"",
+			api_item_to:1000,
+			api_levelup:"",
+			api_listFilter:"",
+			api_listFilter_from:1000,
+			api_listFilter_to:1000,
+			api_notice:"",
+			api_reclaim:"",
+			api_reclaimpay:"",
+			api_repertory:"",
+			api_repertory_from:1000,
+			api_repertory_to:1000,
+			api_seedinfo:"",
+			api_sendchat:"",
+			api_task_accept:"",
+			api_task_run:"",
+			api_task_update:"",
+			api_user:"",
+			api_user_from:1000,
+			api_user_to:1000,
+			api_useritems:"",
+			api_userseed:"",
+			api_welcome:"",
+			app_key:"",
+			autoStatus:1,
+			batchStealHour:"5-10,12-13,19-22",
+			buyToolHour:"5-24",
+			buyToolTips:"Mùa đông không thể mua phân bón",
+			cacheDiy:6,
+			cacheSeed:20,
+			domian:"",
+			enter_into:"",
+			enter_into_mod:1000,
+			filterLV:0,
+			filterUrl:"",
+			friend_list:"",
+			friend_list_mod:1000,
+			friend_list_tips:"Máy chủ quá tải, thử lại sau",
+			healthModeTime:"00:00 - 06:00",
+			hmv2CloseTime:1261929600,
+			hmv2level:0,
+			loading:"module/loading_v_10.swf",
+			missionBeginHtml:"",
+			missionBeginTime:"2010-01-28 15:00:00",
+			missionEndTime:"2010-02-01 15:05:00",
+			missionPrepareHtml:"",
+			missionPrepareTime:"2010-01-10 02:00:12",
+			missionTitle:"Nông trại mùa xuân",
+			mode:"",
+			module:module,
+			noFoodTips:"Mùa đông, vận chuyển khó khăn. Không thể mua thức ăn cho chó",
+			pasture_animal:"1001-1002",
+			pasture_animal_mode:1000,
+			pasture_enter:"1001-1002",
+			pasture_enter_mod:1000,
+			pasture_enter_tips:"Nông trại đang nâng cấp, mời bạn quay lại sau hoặc ghé http://www.gohooh.com thư giãn",
+			pasture_friend_list:"1001-1002",
+			pasture_friend_list_mod:1000,
+			pasture_friend_list_tips:"Máy chủ quá tải, thử lại sau",
+			pasture_item:"1001-1002",
+			pasture_item_mode:1000,
+			pasture_recover:"",
+			pasture_steal:"1001-1002",
+			pasture_steal_mod:1000,
+			pasture_steal_tips:"Nông trại đang nâng cấp, mời bạn quay lại sau hoặc ghé http://www.gohooh.com thư giãn",
+			pasture_user:"1001-1002",
+			pasture_user_mode:1000,
+			phpini:"module/nc/ini.xml",
+			phpini2:"module/mc/ini.xml",
+			recover:"",
+			redirect_url:"",
+			reqYellowlevel:1,
+			ShopHeadLink:"GoHooH.CoM|http://www.gohooh.com/",
+			ShopToolLink:"",
+			snowslide:3,
+			steal:"",
+			steal_mod:1000,
+			steal_tips:"Nông trại đang nâng cấp, mời bạn quay lại sau hoặc ghé http://www.gohooh.com thư giãn",
+			steal_tips_other:"Nông trại đang nâng cấp, mời bạn quay lại sau hoặc ghé http://www.gohooh.com thư giãn",
+			uinMode:1,
+			user:"1001-1002",
+			user_mode:1000
+		};
+		if($("#"+myContentId).tagName.toLowerCase() == 'div') {
+			swfobject.embedSWF(
+				"module/happyfarm_v_1.swf?v=1015", 
+				myContentId, 
+				"100%", 
+				"560", 
+				"9.0.124", 
+				"view/js/swfobject/expressInstall.swf",
+				flashvars,
+				{
+					base: flashDir,
+					allowScriptAccess: "always",
+					wmode: "opaque"
+				},
+				{
+					"MredirectURL": "#"
+				},
+				function(e) {
+					if (!e.success) {
+						$("#myContent" + module).innerHTML = $("#getflashplayer").innerHTML;
+					}
+				}
+			);
+		}
+		//切换显示层
+		if(module == 'nc') {
+			$("#myContentnc").style.position = "static";
+			$("#myContentmc").style.height = "0px";
+			$("#myContentnc").style.height = "560px";
+		}
+		else {
+			$("#myContentnc").style.position = "absolute";
+			$("#myContentnc").style.height = "0px";
+			$("#myContentmc").style.height = "560px";
+		}
+	} : function(){};
+
+	/**
+	 * @return (String) 返回图片上传地址
+	 */
+	function getUploadUrl() {
+		$("#myContent" + curModule).setUploadUrl('tools/savepic.php');
+		return 0;
+	}
+
+	//尝试打开农场
+	try {
+		switchfarm('nc');
+	}
+	catch(error) {}
+</script>
+
+<!--{template happyfarm/view/footer}-->

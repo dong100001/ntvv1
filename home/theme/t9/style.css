@@ -1,0 +1,33 @@
+﻿/*
+[name]Weeding[/name]
+Powered by Ucenter Home
+*/
+body { background:#EEF0EB url(image/body.jpg) no-repeat center top; color: #666; }
+	a { color: #333; }
+	#content{margin-top:195px;}
+#mainarea { background:#fff url(image/mainback.jpg) repeat-x left bottom; padding-bottom:100px;color:#465547;}
+.c_header { background:#6F7E70; border-bottom: none; }
+	.c_header h2 { color: #Fff; }
+		.c_header a { color: #000; }
+		.c_header a:hover{color:#333;}
+		.c_header h2 em { color: #fff; }
+.tabs li.active { border-bottom-color: #DDD; }
+	.tabs li.active a { background-color: #DDD; }
+#space_avatar img{border:3px solid #000;}
+.f_status { padding-right: 20px; border: none; background: transparent; }
+
+.box { background: url(image/box.gif) no-repeat 0 0; }
+	.box h3 {height:23px;line-height:23px; border-top: none; background:#EFF1EC url(image/box.gif) no-repeat 1px;padding-left:35px; color: #000; font-size: 1.17em; }
+		.box_action { background: transparent; color: #6A6771; }
+	#space_action, #space_appicon { background: none; }
+.box_content a{color:#6f7e70;}
+.box_content h6 a{color:#8DA179;}
+#space_action .line_list { border-top: 1px solid #BCC5C4; border-bottom: 1px solid #F6F6F6; }
+	#space_action .line_list li { border-top: 1px solid #F6F6F6; border-bottom: 1px solid #BCC5C4; }
+
+.space_wall_post { background: transparent; }
+
+#space_avatar img, .avatar_list img { background: #FFF; }
+
+.title { border-top: none; border-bottom: 1px solid #BCC5C4; background: transparent; }
+.avatar { background: #FFF; }

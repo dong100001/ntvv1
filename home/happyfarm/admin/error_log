@@ -1,0 +1,4 @@
+[25-Feb-2010 18:41:49] PHP Fatal error:  Call to a member function query() on a non-object in /home/gohooh/public_html/nhatui/happyfarm/admin/bed.php on line 3
+[25-Feb-2010 18:42:28] PHP Fatal error:  Call to undefined function FarmMSG() in /home/gohooh/public_html/nhatui/happyfarm/admin/delete.php on line 4
+[25-Feb-2010 18:43:02] PHP Fatal error:  Call to a member function query() on a non-object in /home/gohooh/public_html/nhatui/happyfarm/admin/bed.php on line 3
+[25-Feb-2010 18:43:03] PHP Fatal error:  Call to a member function query() on a non-object in /home/gohooh/public_html/nhatui/happyfarm/admin/bed.php on line 3

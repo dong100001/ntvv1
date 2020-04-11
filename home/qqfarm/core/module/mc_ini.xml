@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<postUrl url = "mymc.php?mod="  fbRequest = "gb&act=buy" /><!-- http请求地址 -->
+	<loading url="module/loading_v_14.swf" />
+	<folder url = "module/mc/" />
+	<version value = "" loginurl = "http://i.qzone.qq.com/" />	
+	<openControl><!-- 功能开放控制 -->
+		<item name = "tool" open = "true" /><!-- 道具 -->
+		<item name = "pack" open = "false" /><!-- 好友背包 -->
+		<item name = "quickshoot" open="true" openlv="1"/><!--快照-->
+		<item name = "harvestall" open="true" openlv="7" time="5|6|7|8|9|10|12|13|19|20|21|22"/><!--一键收获-->
+		<item name = "sprice" open="true" openlv="0" time="5/1/2010 15:00|5/13/2010 15:00"/>
+	</openControl>
+	<security host="192.168.1.121" port="3333" />	
+	<moduleList><!-- 模块列表 -->
+		<module name="main" url="module/Master_v_47.swf" statusText="Kết nối nông trang..." size="193668">
+			<material url="module/mc/main/farmui1_v_20.swf" statusText="Kết nối nông trại..." size="174361" />
+			<material url="module/mc/main/farmui2_v_10.swf" statusText="Tải về thông tin cá nhân..." size="139085" />
+			<material url="module/mc/main/commonui_v_5.swf?v=1" statusText="Cập nhật vật nuôi..." size="36531" />
+			<material url="module/mc/main/shopui_v_4.swf" statusText="Cập nhật hàng xóm..." size="159963" />
+			<material url="module/mc/main/shopui2_v_12.swf?v=1" statusText="Cập nhật nhiệm vụ..." size="104378" />
+			<material url="module/mc/main/shopui3_v_10.swf" statusText="Kết nối nông trang..." size="211622" />
+			<material url="module/mc/main/shopui4_v_7.swf" statusText="Kết nối nông trang..." size="20622" />
+			<material url="module/mc/main/shadow_v_2.swf" statusText="Kết nối nông trang..." size="7000" />
+		</module>
+	</moduleList>
+	<moduleList2><!-- 模块列表2 -->		
+		<module name="task" url="module/mc/main/task_v_1.swf" statusText="Kết nối nông trang" size="51559" />
+		<module name="upgrade" url="module/mc/main/upgrade_v_1.swf?v=1" statusText="Kết nối nông trang" size="71325" />
+	</moduleList2>
+	<game>
+		<game>
+			<![CDATA[Chào ngày mới！]]>
+		</game>
+		<record>20</record>
+		<end>07/14/2099 18:00</end>
+	</game>
+	<animals sort="1,2,3,4,5,6,7,8,9,10"><!--hour=time/3600 -->
+			<animal id="1001" name="Gà" childNum="20" product="Trứng gà" u="con" house="Tổ" sound="1">
+			<nextText value="gà con, gà trưởng thành, đẻ trứng, đẻ trứng, đẻ trứng, lấy thịt"/>
+			<nextTime value="14400,14400,129600,180,21420,158400"/>
+			<tip>Gà (chicken    ): trên đầu có mồng màu đỏ, cung cấp trứng, thịt.</tip>
+			<info>
+				<l>Là loại gia cầm được nuôi phổ biến</l>
+				<l>Trứng gà chứa nhiều canxi</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>Chip chip</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1002" name="Thỏ" childNum="12" product="thỏ"  u="con" house="Tổ" v="3" sound="0">
+			<nextText value="Thỏ con, đang lớn, thời kì đẻ, thời kỳ đẻ, thời kỳ đẻ, thu hoạch"/>
+			<nextTime value="18000,18000,129600,180,28620,165600"/>
+			<tip>Thỏ (rabbit    ): thú có vú, ăn cỏ, tai lớn, chân trước ngắn hơn chân sau, nhảy rất giỏi. Nuôi thỏ để lấy thịt.</tip>
+			<info>
+				<l>Kiếm con rùa đua chơi keke..</l>
+				<l>Thỏ ăn cỏ nhiều quá ngán!</l>
+				<l>Ngồi thuyền mới được.</l>
+				<l>Thật vui vẻ khi có bạn bè ở bên</l>
+				<l>Tình hình là mình không kiếm được con rùa ở đâu hết</l>
+				<l>Các đồng chí hãy nằm xuống...</l>
+				<l>Ước gì có carot ăn chơi...</l>
+				<l>Một củ carot lớn kìa! Phải không ta?</l>
+				<l>Sống là phải biết sống để làm gì!</l>
+				<l>Ước gì mình biết trèo cây như khỉ!</l>
+			</info>
+		</animal>
+		<animal id="1003" name="Ngỗng" childNum="20" product="trứng"  u="con" house="Tổ" sound="1">
+			<nextText value="Ngỗng con, đang lớn, thời kỳ đẻ trứng, thời kỳ đẻ trứng, thời kỳ đẻ, lấy thịt"/>
+			<nextTime value="16200,16200,144000,180,25020,176400"/>
+			<tip>Ngỗng (goose    ): gia cầm, cổ dài, chân ngắn có màng bơi, ăn ngữ cốc, cá, tôm, lông màu trắng hoặc xám. Ngỗng cung cấp thịt và trứng.</tip>
+			<info>
+				<l>Ngoạc ngoạc...</l>
+				<l>Không biết trên báo hôm nay có gì!</l>
+				<l>Ghét cái gì làm cái đó cho bỏ ghét</l>
+				<l>Chăn nuôi là cả một nghệ thuật</l>
+				<l>Ước gì mình đẻ trứng to như trứng đà điểu</l>
+				<l>Chán gì đâu, tối nay còn phải đi học tiếng anh</l>
+				<l>Sao không đặt tên khác, ngỗng nghe sao sao ấy!</l>
+				<l>Ăn gì cho béo, uống gì tăng cân?</l>
+                                <l>Ngỗng không được đi chơi,chán thật</l>
+                                <l>Người ta nói tôi giống như con ngỗng thời kỳ đồ đá, chán...</l>
+			</info>
+		</animal>
+		<animal id="1004" name="Mèo" childNum="12" product="Mèo con"  u="con" house="Tổ" sound="1">
+			<nextText value="Mèo con, phát triển, đẻ con, đẻ con, đẻ con, thu hoạch"/>
+			<nextTime value="34200,34200,216000,180,32220,284400"/>
+			<tip>Mèo (cat    ): thú có móng vút, răng sắc, bắt chuột giỏi.</tip>
+			<info>
+				<l>Muốn coi Tom & Jerry cơ.....</l>
+				<l>Meo meo...</l>
+				<l>Không có cái gì chơi hết chán....chán</l>
+				<l>Tối nay không biết có được ăn cá không?</l>
+				<l>Tối nay có nên đi chơi với anh mèo đen không ta</l>
+				<l>Mài vuốt mới được</l>
+				<l>Em là ai co gái hay nàng tiên?</l>
+				<l>Mèo có khác cọp là mấy, sao không ai sợ mèo như sợ cọp hết?</l>
+				<l>Tối nào cũng thức dậy bắt chuột</l>
+				<l>Don't let it happen. Make it happen! I am catwoman!</l>
+			</info>
+		</animal>		
+		<animal id="1005" name="Công" childNum="24" product="lông công"  u="cọng" house="Tổ" sound="1">
+			<nextText value="chim non, phát triển, cho lông, cho lông, đẻ con, lấy thịt"/>
+			<nextTime value="37800,37800,237600,180,43020,313200"/>
+			<tip>Chim Công (peacock    ): có lông vũ đẹp, dược gọi là "Vua của các loài chim". Nuôi để làm kiểng.</tip>
+			<info>
+				<l>Buồn như con chuồn chuồn</l>
+				<l>Tớ là chim công</l>
+				<l>Ước gì có một chai cồn uống hạ nhiệt chơi</l>
+				<l>Gương kia ngự ở trên tường thế gian ai đẹp được dường như ta? </l>
+				<l>Hello ngày mới</l>
+				<l>Common baby</l>
+				<l>Làm sao để lông luôn đẹp</l>
+				<l>Không biết có ai sợ mình không ta?</l>
+				<l>The Dark Knight hay ghê!</l>
+                                <l>Chỗ nào bạn cảm thấy nhớ khi đi xa đó là nhà bạn!</l>
+			</info>
+		</animal>		
+		<animal id="1006" name="Chim cánh cụt" childNum="16" product="chim cánh cụt con"  u="con" house="Tổ" sound="1">
+			<nextText value="chim non, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="41400,41400,259200,180,53820,342000"/>
+			<tip>Chim cánh cụt (penguin    ) sống ở vùng biển đóng băng,đôi khi sống trên đất liền.</tip>
+			<info>
+				<l>Sao mình có cánh mà không bay được?</l>
+				<l>Ở đây mà là Nam Cực hả</l>
+				<l>Chuyện lạ đây, chim cánh cụt sống ở Việt Nam</l>
+				<l>Xin đừng yêu tôi, mến tôi được rồi</l>
+				<l>Hôm nay là sinh nhật tui đó</l>
+				<l>Mỗi hành động đều được phản hồi tương xứng.</l>
+				<l>Cái gì xuất phát từ trái tim thì sẽ đi đến trái tim.</l>
+				<l>Bình minh chỉ đến với ai tỉnh giấc.</l>
+				<l>Ai cho kẻ khốn cùng là đã cho Thượng đế vay.</l>
+				<l>Ai ghi chép người đó đọc hai lần.</l>
+			</info>
+		</animal>
+		<animal id="1007" name="Rùa" childNum="12" product="rùa con"  u="con" house="Tổ" sound="0">
+			<nextText value="rùa con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="27000,27000,216000,180,35820,270000"/>
+			<tip>Rùa (tortoise    ): lưỡng cư, bơi nhanh nhưng đi rất chậm, cơ thể được bao bọc bằng vỏ cứng (mai)</tip>
+			<info>
+				<l>Ai mà biết nịnh thì cũng biết vu khống.</l>
+				<l>Ai khổ vì yêu hãy yêu hơn nữa. Chết vì yêu là sống trong tình yêu.</l>
+				<l>Ai tìm khổ gặp khổ.</l>
+				<l>Bạn của ta không thể là bạn của mọi người.</l>
+				<l>Âm nhạc cá tính đây!</l>
+				<l>Tắm biển mới được</l>
+				<l>Sau rùa biển sống lâu thế ta?</l>
+				<l>Ước mơ của tôi là trở thành rùa đá!</l>
+				<l>Vì sao con khóc</l>
+				<l>Rùa mà không có mai thì không biết có còn ai nuôi?</l>
+			</info>
+		</animal>
+		<animal id="1008" name="Sóc" childNum="13" product="Sóc con"  u="con" house="Tổ" v="2" sound="1">
+			<nextText value="sóc con,phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="36000,36000,288000,180,43020,360000"/>
+			<tip>Sóc (squirrel    ):động vật gặm nhấm, đuôi dài rậm rạp, đáng yêu, ngoan ngoan.</tip>
+			<info>
+				<l>Phải tập là sóc bay mới được</l>
+				<l>Ohoh</l>
+				<l>Xin đừng hôn em</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1009" name="Mèo Ba Tư" childNum="14" product="mèo con"  u="con" house="Tổ" sound="1">
+			<nextText value="mèo con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="37800,37800,302400,180,43020,378000"/>
+			<tip>Mèo Ba Tư (persian cat    ): mèo trong quí tộc, cao thượng, thông minh, nhanh nhẹn.</tip>
+			<info>
+				<l>Meo, meo, meo....</l>
+				<l>Oh yeah</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>	
+				<l>GoHooH.CoM</l>	
+				<l>GoHooH.CoM</l>	
+				<l>GoHooH.CoM</l>	
+				<l>GoHooH.CoM</l>	
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>				
+			</info>
+		</animal>
+		<animal id="1010" name="Hamster" childNum="16" product="chuột con"  u="con" house="Tổ" v="1" sound="1">
+			<nextText value="hamster con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="36000,36000,345600,180,43020,417600"/>
+			<tip>Chuột hamster    : thích hợp làm thú cưng, dáng nhỏ, dễ thương và không có mùi hôi.</tip>
+			<info>
+				<l>Ở đây có mèo không ta?</l>
+				<l>Rosso</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1011" name="Nhím" childNum="15" product="nhím con"  u="con" house="Tổ" v="1" sound="1">
+			<nextText value="nhím con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="41400,41400,403200,180,50220,486000"/>
+			<tip>Nhím (hedgehog    ): cơ thể bao bọc lớp gai, có thể cuộn tròn như banh.</tip>
+			<info>
+				<l>Sonic đây, chạy như gió luôn hehe</l>
+				<l>Coi chừng bị gai đâm</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1012" name="Vịt" childNum="14" product="trứng vịt"  u="trứng" house="Tổ" sound="1">
+			<nextText value="vịt con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="37800,37800,302400,180,43020,378000"/>
+			<tip>Vịt (duck    ): miêng rộng, cổ ngắn, dáng đi lắc lư, bơi giỏi.</tip>
+			<info>			
+				<l>Ai cũng nói mình giống hệt Donald!</l>
+				<l>Coi chừng té</l>
+				<l>Sài Gòn, Chợ Lớn ...?!</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1013" name="Chuột chũi" childNum="16" product="chuột chũi con"  u="con" house="Tổ" sound="1">
+			<nextText value="chuột chũi con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="37800,37800,403200,180,50220,478800"/>
+			<tip>Chuột chũi （mole    ）làm một loài thuộc họ gâm nhấm, rất khỏe, chi trước có những móng rất lớn, mắt không tốt lắm!</tip>
+			<info>
+				<l>Đất gì mà cứng thế không biết</l>
+				<l>Thật bất công, chuột chũi không bao giờ được cưng</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1014" name="Mèo rừng Na Uy" childNum="16" product="mèo con"  u="con" house="Tổ" sound="1">
+			<nextText value="mèo con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="43200,43200,345600,180,43020,432000"/>
+			<tip>Mèo Na Uy （Norwegian Forest Cat    ）</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1015" name="Gà ác" childNum="12" product="trứng gà ác"  u="trứng" house="Tổ" sound="0">
+			<nextText value="gà con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="32400,32400,270000,180,43020,334800"/>
+			<tip>Gà ác （black-bone chicken    ） là loại gà nhỏ con, thịt ngon bổ dưỡng, thường dùng làm thuốc</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1016" name="Mèo mướp" childNum="15" product="mèo con"  u="con" house="Tổ" sound="0">
+			<nextText value="mèo con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="34200,34200,316800,180,39420,385200"/>
+			<tip>Mèo mướp （American Shorthair    ）là một giống mèo đẹp, thân hình thon thả, di chuyển nhanh</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1017" name="Rùa nước ngọt" childNum="12" product="Rùa con"  u="con" house="Tổ" sound="0">
+			<nextText value="rùa con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="21600,21600,216000,180,35820,259200"/>
+			<tip>Rùa nước ngọt, là một loại rùa nhỏ đễ thương, có thể nuôi như thú cưng</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1018" name="Tê tê" childNum="13" product="tê tê con"  u="con" house="Tổ" sound="0">
+			<nextText value="tê tê con,phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="27000,27000,288000,180,35820,342000"/>
+			<tip>Tê tê（pangolin    ） vẩy cứng từ đầu đến chân, đào bới rất nhanh</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1019" name="Chồn zibelin" childNum="10" product="chồn con" u="con" house="Tổ" sound="1">
+			<nextText value="chồn con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="23400,23400,226800,180,25020,273600"/>
+			<tip>Chồn zibelin（sable    ） chủ yếu bắt mồi ở dưới đất, trèo cây giỏi và nhanh nhẹn</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1020" name="Chồn sương" childNum="14" product="Chồn con" u="Con" house="Tổ" sound="0" sf="0">
+			<nextText value="chồn con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="25200,25200,291600,15,32385,342000"/>
+			<tip>(tiếng Anh: chồn) là một động vật có vú rất dễ thương và dịu dàng</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1021" name="Koala" childNum="16" product="Koala con" u="Con" house="Tổ" sound="0" sf="0">
+			<nextText value="con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="27000,27000,32400,15,35985,378000"/>
+			<tip>(tiếng Anh: Koala) còn được gọi là Koala, koalas</tip>
+			<info>
+					<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1022" name="Gà lôi" childNum="11" product="Lông" u="Con" house="Tổ" sound="0" sf="0">
+			<nextText value="con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="21600,21600,226800,15,25185,270000"/>
+			<tip> (tiếng Anh: lhuysii lophophorus) lông trên cơ thể trong ánh sáng mặt trời giống như một cầu vồng sau cơn mưa, và đuôi được màu xanh lá cây, do đó, được đặt tên, là một loài động vật được bảo vệ quốc gia.</tip>
+			<info>
+					<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1027" name="Sóc" childNum="10" product="Sóc con" u="Con" house="Tổ" sound="1" sf="0">
+			<nextText value="con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="32400,32400,230400,15,18785,295200"/>
+			<tip> (tiếng Anh: Marmota monax), cũng gọi là sóc đồng cỏ, động vật gặm nhấm</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1501" name="Cừu" childNum="24" product="lông cừu"  u="kg"  house="Chuồng"  v="1" sound="1">
+			<nextText value="cừu non, phát triển, sản xuất, sản xuất, sinh đẻ, thu hoạch"/>
+			<nextTime value="27000,27000,172800,180,43020,226800"/>
+			<tip>Cừu （：sheep    ）là thú nuôi chủ yếu để lấy lông.</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1502" name="Bò" childNum="12" product="sữa"  u="chai"  house="Chuồng"  v="1" sound="1">
+			<nextText value="bò con, phát triển, sản xuất, sản xuất, sinh đẻ, thu hoạch"/>
+			<nextTime value="32400,32400,216000,180,43020,280800"/>
+			<tip>Bò （cow    ） một gia súc phổ biến được nuôi để lấy thịt và sữa</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>	
+		<animal id="1503" name="Khỉ" childNum="12" product="khỉ con"  u="con"  house="Chuồng"  v="1" sound="0">
+			<nextText value="khỉ con, phát triển, sinh đẻ, sinh đẻ, sinh đẻ, thu hoạch"/>
+			<nextTime value="36000,36000,216000,180,35820,288000"/>
+			<tip>Khỉ（monkey    ）là loài động vật có vú cấp cao nhất, là họ hàng gần với con người nhất</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1504" name="Kangaroo" childNum="12" product="kangaroo con"  u="con"  house="Chuồng"  v="3" sound="1">
+			<nextText value="kangaroo con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="39600,39600,237600,180,43020,316800"/>
+			<tip>Căng gu ru（kangaroo    ） là động vật chỉ xuất hiện ở châu Đại Dương, có đôi chân sau rất mạnh, di chuyển chủ yếu bằng chân sau</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1505" name="Hươu sao" childNum="12" product="hưu con"  u="con"  house="Chuồng"  v="1" sound="1">
+			<nextText value="hưu con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="32400,32400,216000,180,35820,280800"/>
+			<tip>Hưu sao （spotted deer     ） là loại động vật rất đẹp nhưng quý hiếm đang nằm trong sách đỏ thế giói</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1507" name="Linh dương" childNum="15" product="linh dương con"  u="con"  house="Chuồng"  v="1" sound="1">
+			<nextText value="linh dương con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="39600,39600,331200,180,50220,410400"/>
+			<tip>Linh dương（antelope    ）là một loài động vật phổ biến ở châu Phi</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1508" name="Đà điểu" childNum="17" product="đà điểu"  u="con"  house="Chuồng"  v="1" sound="1">
+			<nextText value="đà điểu con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="43200,43200,432000,180,53820,518400"/>
+			<tip>Đà điểu（ostrich    ） là loài chim lớn nhất thế giới sống hoang dã ở sa mạc, chạy rất nhanh</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1509" name="Gấu trúc Mỹ" childNum="16" product="gấu con"  u="con"  house="Chuồng"  v="1" sound="1">
+			<nextText value="gấu con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="36000,36000,345600,180,43020,417600"/>
+			<tip>Gấu trúc Mỹ （raccoon    ） là loại động vật ngủ ngày, hoạt động đêm</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>		
+			</info>
+		</animal>
+		<animal id="1510" name="Hươu cao cổ" childNum="16" product="Hươu con"  u="con"  house="Chuồng"  sound="0">
+			<nextText value="hưu con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="39600,39600,406800,180,50220,417600"/>
+			<tip>Hưu cao cổ （giraffe    ） là loài động vật cao nhất thế giới, sống ở châu Phi</tip>
+			<info>			
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1511" name="Sếu đầu đỏ" childNum="16" product="sếu con"  u="con"  house="Chuồng"  sound="1">
+			<nextText value="sếu con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="37800,37800,334800,180,46620,410400"/>
+			<tip>Sếu đầu đỏ （red-crowned crane    ） là chim bay cao nhất</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1512" name="Lân" childNum="20" product="hồng ngọc"  u="viên"  house="Chuồng"  sound="0">
+			<nextText value="lân con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="57600,57600,810000,180,53820,925200"/>
+			<tip>Lân（    ） là một loài động vật chỉ tồn tại trong trí tưởng của người phương Đông</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1513" name="Lạc đà 2 bứu" childNum="18" product="lạc đà con"  u="con"  house="Chuồng"  sound="1">
+			<nextText value="lạc đà con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="32400,32400,403200,180,20200,468000"/>
+			<tip>Lạc đà（Bactrian camel    ） thế giới có hai loại lạc đà, lạc đà 2 bứu sống ở châu Á và lạc đà 1 bứu sống ở châu Phi</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1514" name="Tê giác" childNum="19" product="tê giác con"  u="con"  house="Chuồng"  sound="1">
+			<nextText value="tê giác con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="28800,28800,432000,180,53820,489600"/>
+			<tip>Tê giác （rhinoceros    ） là loài động vật có vú nguyên thủy nhất, nhình cơ thể tê giác như mặc một bộ giác</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1515" name="Đười ươi" childNum="13" product="đười ươi con"  u="con"  house="Chuồng"  sound="1">
+			<nextText value="đười ươi con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="30600,30600,259200,180,32220,320400"/>
+			<tip>Đười ươi （orangutan    ）là loài động vật có tuổi thọ rất cao trong các loại động vật có vú. </tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1516" name="Hà mã" childNum="13" product="Hà mã con"  u="con"  house="Chuồng"  sound="1">
+			<nextText value="hà mã con,phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="28800,28800,291600,180,32220,349200"/>
+			<tip>Hà mã （hippopotamus    ）là động vật ăn cỏ, có thân hinh đồ sộ, thích ngâm mình trong nước, và những vùng đầm lầy.</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1517" name="Chim hồng hạc" childNum="11" product="chim hồng hạc con" u="con"  house="Chuồng"  sound="1">
+			<nextText value="chim hồng hạc con, phát triển, sản xuất, sản xuất, đau đẻ, thu hoạch"/>
+			<nextTime value="23400,23400,259200,180,28620,306000"/>
+			<tip>Chim hồng hạc （flamingo    ） là loài chim có bộ lông sặc sỡ như một ngọn lửa.</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1518" name="Bò lông dài" childNum="16" product="Bò con" u="con" house="Chuồng" sound="0" sf="0">
+			<nextText value="Bò con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="41400,41400,374400,15,46785,457200"/>
+			<tip>Bò Yak （yak    ）Sống trên cao nguyên Tây Tạng, Sử dụng cho mục đích nông nghiệp</tip>
+			<info>
+				<l> Tôi sống trên cùng cao nguyên </l>
+				<l> Tôi là một loài động vật có vú </l>
+				<l> Hôm nay là một ngày tươi sáng. </l>
+				<l> Ngày hôm nay thật đẹp. </l>
+				<l> Ước gì được đi biển </l>
+				<l> Ăn hoa quả tốt cho sức khỏe </l>
+				<l> Yeublog thật vui </l>
+			</info>
+		</animal>
+		<animal id="1519" name="Hươu hymalayan" childNum="10" product="Ngựa non" u="con" house="Chuồng" sound="0" sf="0">
+			<nextText value="Hươu con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="28800,28800,194400,15,21585,252000"/>
+			<tip>Hươu hymalayan: Sống ở ở độ cao 2500-3900 mét, thuộc loại thú quý hiếm cần bảo vệ</tip>
+			<info>
+		<l> Thấy tôi có đẹp không  </l>
+		<l> Nụ cười là những giọt nước mắt khô.  </l>
+		<l> Hãy luôn biết giữ lấy hạnh phúc  </l>
+		<l> Tuổi nhỏ làm việc nhỏ có ích cho xã hội </l>
+		<l> Nghèo nhưng lòng giàu niềm vui.  </l>
+		<l> Hãy có niềm tin để cố gắng.  </l>
+			</info>
+		</animal>
+		<animal id="1520" name="Ngựa Ferghana " childNum="13" product="Ngựa con" u="con" house="Chuồng" sound="1" sf="0">
+			<nextText value="Hươu con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="32400,32400,324000,15,28785,252000"/>
+			<tip>Ngựa Ferghana （Ferghana horse    ）Là loài ngựa cổ, nhanh và khỏe như xe BMW</tip>
+			<info>
+				<l> Tôi nhanh như xe BMW vậy  </l>
+<l> Tôi là loài ngựa cổ xưa nhất.  </l>
+<l> Tôi là ngựa của hoàng gia  </l>
+<l> Nên chăm chỉ, đừng tham lam.  </l>
+<l> Học chăm để bảo vệ tổ quốc.  </l>
+			</info>
+		</animal>
+		<animal id="1521" name="Lừa" childNum="15" product="Lừa con" u="Con" house="Chuồng" sound="1" sf="0">
+			<nextText value="con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="18000,18000,108000,15,17985,144000"/>
+			<tip></tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1523" name="Khỉ vàng" childNum="9" product="Khỉ con" u="Con" house="Chuồng" sound="1" sf="0">
+			<nextText value="con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="21600,21600,216000,15,21585,259200"/>
+			<tip>Golden Monkey</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>				
+			</info>
+		</animal>
+		<animal id="1526" name="Heo vòi" childNum="15" product="Con" u="Con" house="Chuồng" sound="0" sf="0">
+			<nextText value="con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="18000,18000,360000,15,35985,396000"/>
+			<tip>Baird's Tapir</tip>
+			<info>
+					<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+		<animal id="1527" name="Lân" childNum="28" product="Ngọc Vàng" u="Viên" house="Chuồng" sound="0" sf="0">
+			<nextText value="con, Phát triển , Sản xuất , Sản xuất, Đau đẻ, Thu hoạch"/>
+			<nextTime value="39600,39600,691200,15,57585,770400"/>
+			<tip>Lân : Con vật truyền thuyết</tip>
+			<info>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+				<l>GoHooH.CoM</l>
+			</info>
+		</animal>
+			
+	</animals>	
+</main>

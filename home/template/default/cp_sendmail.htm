@@ -1,0 +1,81 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<!--{template cp_header}-->
+<form action="cp.php?ac=sendmail&ref" method="post" class="c_form" >
+<!--{if empty($space['emailcheck']) }-->
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<caption>
+				<h2>Trước tiên bạn cần kích hoạt email</h2>
+<p><b>Quan trọng</b>: Hãy điền email mà bạn thường dùng, hệ thống sẽ gửi mail kích hoạt cho bạn. Click vào link để kích hoạt. Nếu bạn không thể mở link thì hãy copy và pase nó vào trình duyệt. 
+<br<br>
+Email kích hoạt sẽ được gửi vào hộp thư đến, nếu không thấy, hãy kiểm tra trong thư mục Spam. Nếu thư từ Nhà tui được xem là Spam hãy chọn "không phải là Spam" để bạn không bỏ lỡ mail nào từ Nhà Tui.</p>
+			</caption>
+			<tr>
+				<td><a href="cp.php?ac=profile&op=contact">Email $space[email]</a></td>
+			</tr>
+		</table>
+<!--{else}-->
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>Cài đặt thông báo email</h2>
+			<p>Hệ thống sẽ gửi email nếu bạn không đăng nhập trong $_SCONFIG[sendmailday] ngày.
+<br><br>
+SelecNội dung email bạn nhận được:</p>
+		</caption>
+		<tr>
+			<td>
+				<div><b>Bạn bè</b> </div>
+				<div ><input type="checkbox" name="sendmail[friend_pm]" value="1" $sendmail[friend_pm]<!--{if !$sendmail}-->checked<!--{/if}--> />Gửi tin nhắn</div>
+				<div ><input type="checkbox" name="sendmail[comment_friend]" value="1" $sendmail[comment_friend]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>
+				<div ><input type="checkbox" name="sendmail[comment_friend_reply]" value="1" $sendmail[comment_friend_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>
+				<div ><input type="checkbox" name="sendmail[poke]" value="1" $sendmail[poke]<!--{if !$sendmail}-->checked<!--{/if}--> />POKE</div>
+				<div ><input type="checkbox" name="sendmail[friend_add]" value="1" $sendmail[friend_add]<!--{if !$sendmail}-->checked<!--{/if}--> />Yêu cầu kết bạn</div>
+				<br />
+				<div><b>Blog</b></div>
+				<div ><input type="checkbox" name="sendmail[blog_comment]"  value="1" $sendmail[blog_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>
+				<div ><input type="checkbox" name="sendmail[blog_comment_reply]"  value="1" $sendmail[blog_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>
+				<br />
+				<div><b>Album</b></div>
+				<div ><input type="checkbox" name="sendmail[photo_comment]"  value="1" $sendmail[photo_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>
+				<div ><input type="checkbox" name="sendmail[photo_comment_reply]"  value="1" $sendmail[photo_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>
+				<br />
+				<div><b>Chia sẻ</b></div>
+				<div ><input type="checkbox" name="sendmail[share_comment]"  value="1" $sendmail[share_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>
+				<div ><input type="checkbox" name="sendmail[share_comment_reply]"  value="1" $sendmail[share_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>
+				<br />
+				<div><b>Topic</b></div>
+				<div ><input type="checkbox" name="sendmail[mtag_reply]"  value="1" $sendmail[mtag_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>				<br />
+				<div><b>Sự kiện</b></div>
+				<div ><input type="checkbox" name="sendmail[event]"  value="1" $sendmail[event]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>						
+				<br />
+				<div><b>Bầu chọn</b></div>
+				<div ><input type="checkbox" name="sendmail[poll_comment]"  value="1" $sendmail[poll_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />Bình luận</div>
+				<div ><input type="checkbox" name="sendmail[poll_comment_reply]"  value="1" $sendmail[poll_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />Trả lời bình luận</div>
+				<br />
+				<div>Tần số gửi mai
+				<select name="sendmail[frequency]">
+				<option value="0">Gửi khi có yêu cầu</option>
+				<option value="86400" $sendmail[frequency][86400]>Gửi hàng ngày</option>
+				<option value="604800" $sendmail[frequency][604800] <!--{if !$sendmail}-->selected<!--{/if}-->>Gửi hàng tuần</option>
+				</select>
+				</div>
+				<br />
+			</td>
+		</tr>
+		<tr><td>
+			<input type="submit" name="setsendemailsubmit" value="Save" class="submit" />
+			<div class="gray">
+				Email nhắc nhở đã gửi tới $space[email].
+				(<a href="cp.php?ac=profile&op=contact">Cập nhật email</a>)
+			</div>
+		</td></tr>
+	</table>
+<!--{/if}-->
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+
+<!--{template footer}-->

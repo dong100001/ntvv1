@@ -1,0 +1,824 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<!--{if $op == 'syn' || $op == 'find' || $op == 'search' || $op == 'group' || $op == 'request'}-->
+<div class="searchbar floatright">
+<form method="get" action="cp.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="Find People" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="ac" value="friend" />
+	<input type="hidden" name="op" value="search" />
+</form>
+</div>
+<h2 class="title"><img src="image/icon/friend.gif">Bạn bè</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="space.php?uid=$space[uid]&do=friend"><span>Bạn của tôi</span></a></li>
+		<li$actives[search]><a href="cp.php?ac=friend&op=search"><span>Tìm bạn</span></a></li>
+		<li$actives[find]><a href="cp.php?ac=friend&op=find"><span>Bạn của bạn</span></a></li>
+		<!--{if empty($_SCONFIG['closeinvite'])}-->
+		<li><a href="cp.php?ac=invite"><span>Mời bạn</span></a></li>
+		<!--{/if}-->
+		<li$actives[request]><a href="cp.php?ac=friend&op=request"><span>Yêu cầu kết bạn</span></a></li>
+		<li><a href="space.php?do=top"><span>Top Goer</span></a></li>
+		<!--{if $op=='group'}-->
+		<li$actives[group]><a href="cp.php?ac=friend&op=group"><span>Nhóm bạn</span></a></li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $op =='ignore'}-->
+
+<h1>Danh sách đen</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="__friendform_{$uid}">
+<form method="post" id="friendform_{$uid}" name="friendform_{$uid}" action="cp.php?ac=friend&op=ignore&uid=$uid&confirm=1">
+	<p>Bạn có chắc muốn bỏ qua người này?</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="friendsubmit" value="true" />
+		<button name="friendsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('friendform_{$uid}', 'friend_delete', 2000)">Tiếp tục</button>
+		<!--{else}-->
+		<button name="friendsubmit" type="submit" class="submit" value="true">Chắc chắc</button>
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op == 'find'}-->
+
+<!--{if $nearlist}-->
+<div class="c_form">
+	<h2 class="l_status title">Oh, họ là hàng xóm của bạn!</h2>
+	<ul class="avatar_list">
+		<!--{loop $nearlist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" target="_blank"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_near_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">Thêm bạn</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $friendlist}-->
+<div class="c_form">
+	<h2 class="l_status title">Dưới đây là danh sách bạn của bạn bè. Hãy kết bạn với họ để tạo nên vòng tròn bạn bè rộng lớn..</h2>
+	<ul class="avatar_list">
+		<!--{loop $friendlist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" target="_blank"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">Thêm bạn</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $onlinelist}-->
+<div class="c_form">
+	<h2 class="l_status title">Những thành viên sau đang online, khi bạn kết bạn với họ, mọi người sẽ tương tác được với nhau..</h2>
+	<ul class="avatar_list">
+		<!--{loop $onlinelist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" target="_blank"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_online_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">Thêm bạn</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{elseif $op == 'search'}-->
+
+<div class="c_form">
+
+	<!--{if !empty($_GET['searchsubmit'])}-->
+	
+	<!--{if empty($list)}-->
+		<div class="c_form">Rất tiếc, không có kết quả nào tìm thấy <a href="cp.php?ac=friend&op=search">Tìm kiếm nâng cao</a></div>
+	<!--{else}-->
+		<div style="padding:0 0 20px 0;">Chúng tôi tìm thấy tối đa 500 kết quả, hãy thử dùng <a href="cp.php?ac=friend&op=search">tìm kiếm nâng cao</a></div>
+		<!--{template space_list}-->
+	<!--{/if}-->
+	
+	<!--{else}-->
+	<table cellspacing="2" cellpadding="2" class="search_table">
+
+<!--{if $_GET['all']}-->
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td align="right">User UID</td><td><input type="text" name="uid" value="" class="t_input"></td></tr>
+		<tr>
+			<td align="right" width="100">Giới tính: </td>
+			<td>
+				<select id="sex" name="sex">
+					<option value="0">Tất cả</option>
+					<option value="1">Nam</option>
+					<option value="2">Nữ</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">Tình trạng hôn nhân</td>
+			<td>
+				<select id="marry" name="marry">
+					<option value="0">Tất cả</option>
+					<option value="1">Độc thân</option>
+					<option value="2">Đã kết hôn</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">Tuổi: </td>
+			<td>
+				<input type="text" name="startage" value="" size="10" class="t_input" /> ~ <input type="text" name="endage" value="" size="10" class="t_input" />
+			</td>
+		</tr>
+		<!--{if $_SCONFIG['videophoto']}-->
+		<tr>
+			<td align="right">Kích hoạt WebCam</td>
+			<td>
+				<input type="checkbox" name="videostatus" value="1">Đã kích hoạt
+			</td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<td align="right">Avatar</td>
+			<td>
+				<input type="checkbox" name="avatar" value="1">Đã có avatar
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">Thành phố:</td>
+			<td id="residecitybox"></td>
+		</tr>
+		
+		<tr>
+			<td align="right">Native Place: </td>
+			<td id="birthcitybox"></td>
+		</tr>
+		
+		<script type="text/javascript" src="source/script_city.js"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('resideprovince', 'residecity', '', 'residecitybox');
+		showcity('residecity', '', 'resideprovince', 'residecitybox');
+		showprovince('birthprovince', 'birthcity', '', 'birthcitybox');
+		showcity('birthcity', '', 'birthprovince', 'birthcitybox');
+		//-->
+		</script>	
+		
+		<tr>
+			<td align="right">Sinh nhật: </td>
+			<td>
+			<select id="birthday" name="birthday">
+				<option value="0">&nbsp;</option>
+				$birthdayhtml
+			</select> ngày
+			<select id="birthmonth" name="birthmonth" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthmonthhtml
+			</select> tháng
+			<select id="birthyear" name="birthyear" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthyeayhtml
+			</select> năm 
+			</td>
+		</tr>
+		
+		<tr><td align="right">Trên trường: </td><td><input type="text" name="title" value="" class="t_input"> <select name="startyear">
+			<option value="">Năm: </option>
+			$yearhtml
+			</select></td></tr>
+		<tr><td align="right">Ngành: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+	
+		<tr><td align="right">Công ty: </td><td><input type="text" name="title" value="" class="t_input"></td></tr>
+		<tr><td align="right">Dept: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			
+		
+		<tr>
+			<td align="right">Blood Type: </td>
+			<td>
+				<select id="blood" name="blood">
+					<option value="">Any</option>
+					$bloodhtml
+				</select>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<td align="right">QQ</td>
+			<td>
+				<input type="text" name="qq" value="" class="t_input" />
+			</td>
+		</tr>
+		<tr>
+			<td align="right">Nich chat</td>
+			<td>
+				<input type="text" name="msn" value="" class="t_input" />
+			</td>
+		</tr>
+	
+		<!--{loop $fields $fkey $fvalue}-->
+		<!--{if $fvalue[allowsearch]}-->
+		<tr>
+			<td align="right">{$fvalue[title]}</td>
+			<td>
+				$fvalue[html]
+			</td>
+		</tr>
+		<!--{/if}-->
+		<!--{/loop}-->
+		
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="all">
+		</form>	
+	</td></tr>
+<!--{else}-->
+	<tr>
+		<th style="border-top: none;"><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('sex');">Tìm theo giới tính</a></th>
+	</tr>
+	<tbody id="s_sex" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="100">Giới tính: </td>
+			<td>
+				<select id="sex" name="sex">
+					<option value="0">Tất cả</option>
+					<option value="1"$sexarr[1]>Nam</option>
+					<option value="2"$sexarr[2]>Nữ</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">Tính trạng hôn nhân:</td>
+			<td>
+				<select id="marry" name="marry">
+					<option value="0">Tất cả</option>
+					<option value="1"$marryarr[1]>Độc thân</option>
+					<option value="2"$marryarr[2]>Đã kết hôn</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">Tuổi: </td>
+			<td>
+				<input type="text" name="startage" value="" size="10" class="t_input" /> ~ <input type="text" name="endage" value="" size="10" class="t_input" />
+			</td>
+		</tr>
+		<!--{if $_SCONFIG['videophoto']}-->
+		<tr>
+			<td align="right" width="100">Kích hoạt WebCam</td>
+			<td>
+				<input type="checkbox" name="videostatus" value="1">Đã kích hoạt
+			</td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<td align="right" width="100">Avatar:</td>
+			<td>
+				<input type="checkbox" name="avatar" value="1">Đã có avatar
+			</td>
+		</tr>
+		<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('reside');">Tìm theo thành phố</a></th>
+	</tr>
+	<tbody id="s_reside" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">Current City��</td>
+			<td id="residecitybox"></td>
+		</tr>
+		<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<script type="text/javascript" src="source/script_city.js"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
+		showcity('residecity', '$space[residecity]', 'resideprovince', 'residecitybox');
+		//-->
+		</script>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('birth');">Tìm theo nơi sinh</a></th>
+	</tr>
+	<tbody id="s_birth" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">Nơi sinh:</td>
+			<td id="birthcitybox"></td>
+		</tr>
+		<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<script type="text/javascript" src="source/script_city.js"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
+		showcity('birthcity', '$space[birthcity]', 'birthprovince', 'birthcitybox');
+		//-->
+		</script>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('birthyear');">Tìm theo ngày sinh</a></th>
+	</tr>
+	<tbody id="s_birthyear" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">Ngày sinh: </td>
+			<td>
+			<select id="birthday" name="birthday">
+				<option value="0">&nbsp;</option>
+				$birthdayhtml
+			</select> ngày
+			<select id="birthmonth" name="birthmonth" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthmonthhtml
+			</select> tháng
+			<select id="birthyear" name="birthyear" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthyeayhtml
+			</select> năm 
+			</td>
+		</tr>
+		<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th>
+			<img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('edu');">Tìm theo học vấn</a>
+		</th>
+	</tr>
+	<tbody id="s_edu" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+			<tr><td align="right" width="150">Trường: </td><td><input type="text" name="title" value="" class="t_input"> <select name="startyear">
+				<option value="">Năm thứ</option>
+				$yearhtml
+				</select></td></tr>
+			<tr><td align="right">Ngành: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+			<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+			<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="edu">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('work');">Tìm theo nghề</a></th>
+	</tr>
+	<tbody id="s_work" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+			<tr><td align="right" width="150">Cơ quan: </td><td><input type="text" name="title" value="" class="t_input"></td></tr>
+			<tr><td align="right">Dept: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			<tr><td align="right">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+			<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+			<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="work">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('name');">Exact Match</a></th>
+	</tr>
+	<tbody id="s_name" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr><td align="right" width="150">Tên: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">Username: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td align="right">Member No./ UID</td><td><input type="text" name="uid" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="Search" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="cp.php?ac=friend&op=search&all=yes">Tìm kiếm nâng cao</a></th>
+	</tr>
+<!--{/if}-->
+
+	</table>
+	<!--{/if}-->
+</div>
+
+<script>
+function showtbody(id) {
+	var obj = $('s_'+id);
+	if(obj.style.display == 'none') {
+		obj.style.display = '';
+	} else {
+		obj.style.display = 'none';
+	}
+}
+<!--{if $_GET['view']}-->showtbody('$_GET[view]');<!--{/if}-->
+</script>
+
+<!--{elseif $op=='changenum'}-->
+
+<h1>Top bảng xếp hạng</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="__changenumform_{$uid}">
+<form method="post" id="changenumform_{$uid}" name="changenumform_{$uid}" action="cp.php?ac=friend&op=changenum&uid=$uid">
+	<p>Tìm theo độ Hot</p>
+	<p>
+		Hot Value: <input type="text" name="num" value="$friend[num]" size="5"> (từ 0~9999)
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<button name="changenumsubmit" type="submit" class="submit" value="true">Xác nhận</button>
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='changegroup'}-->
+
+<h1>Danh mục bạn bè</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="__changegroupform_{$uid}">
+<form method="post" id="changegroupform_{$uid}" name="changegroupform_{$uid}" action="cp.php?ac=friend&op=changegroup&uid=$uid">
+	<p>Tạo danh mục/nhóm bạn bè</p>
+	<table cellspacing="2" cellpadding="2"><tr>
+	<!--{eval $i=0;}-->
+	<!--{loop $groups $key $value}-->
+	<td><input type="radio" name="group" value="$key"$groupselect[$key]> $value</td>
+	<!--{if $i%2==1}--></tr><tr><!--{/if}-->
+	<!--{eval $i++;}-->
+	<!--{/loop}-->
+	</tr></table>
+
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="changegroupsubmit" value="true" />
+		<button name="changegroupsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('changegroupform_{$uid}', 'friend_changegroup', 2000)">Tiếp tục</button>
+		<!--{else}-->
+		<button name="changegroupsubmit" type="submit" class="submit" value="true">Ok</button>
+		<!--{/if}-->
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='group'}-->
+
+<div class="h_status">
+Category of selected friends, heat, number of times you interact with your friends.
+</div>
+
+<div id="content" style="width: 640px;">
+	<form method="post" action="cp.php?ac=friend&op=group&ref">
+<!--{if $list}-->
+	<div class="thumb_list" id="friend_ul">
+		<ul>
+		<!--{loop $list $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<div class="thumbTitle"><input type="checkbox" name="fuids[]" value="$value[uid]" /><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></div>
+				<div class="gray">Độ Hot: $value[num]</div>
+				<div class="gray">$value[group]</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="page">$multi</div>
+	<div style="padding:20px 0 0 0;">
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'fuids')" /><label for="chkall">Lựa chọn</label></td>
+		Nhóm: <select name="group">
+			<!--{loop $groups $key $value}-->
+				<option value="$key">$value</option>
+			<!--{/loop}-->
+			</select>
+			<input type="submit" name="btnsubmit" value="Ok" class="submit" />
+	</div>
+<!--{else}-->
+	<div class="c_form">
+		Không tìm thấy nhóm bạn bè nào.
+	</div>
+<!--{/if}-->
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<input type="hidden" name="groupsubmin" value="true" />
+	</form>
+</div>
+
+<div id="sidebar" style="width: 150px;">
+	<div class="cat">
+	<h3>Nhóm bạn bè</h3>
+	<ul class="post_list line_list">
+		<li<!--{if !isset($_GET[group])}--> class="current"<!--{/if}-->><a href="cp.php?ac=friend&op=group">Tất cả bạn bè</a></li>
+		<!--{loop $groups $key $value}-->
+		<li<!--{if isset($_GET[group]) && $_GET[group]==$key}--> class="current"<!--{/if}-->><a href="cp.php?ac=friend&op=group&group=$key">$value</a></li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+</div>
+
+<!--{elseif $op=='groupname'}-->
+
+<h1>Nhóm bạn bè</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="__groupnameform_{$group}">
+<form method="post" id="groupnameform_{$group}" name="groupnameform_{$group}" action="cp.php?ac=friend&op=groupname&group=$group">
+	<p>Tạo danh mục/nhóm mới</p>
+	<div class="c_form">
+		Tên nhóm: <input type="text" name="groupname" value="$groups[$group]" size="15" class="t_input">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="groupnamesubmit" value="true" />
+		<input type="button" name="groupnamesubmit_btn" value="Tiếp tục" class="submit" onclick="ajaxpost('groupnameform_{$group}', 'friend_changegroupname', 2000)" />
+		<!--{else}-->
+		<input type="submit" name="groupnamesubmit" value="Ok" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+
+<!--{elseif $op=='groupignore'}-->
+
+<h1>Cài dặt RSS Feed</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="$group">
+<form method="post" id="groupignoreform" name="groupignoreform" action="cp.php?ac=friend&op=groupignore&group=$group">
+	<!--{if !isset($space['privacy']['filter_gid'][$group])}-->
+	<p>Không hiện RSS Feed ở trang nhà của tôi.</p>
+	<!--{else}-->
+	<p>Hiên tất cả RSS Feed của danh mục này ở trang nhà của tôi.</p>
+	<!--{/if}-->
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="groupignoresubmit" value="true" />
+		<button name="groupignoresubmit_btn" type="submit" class="submit" value="true">Ok</button>
+		<!--{else}-->
+		<button name="groupignoresubmit" type="submit" class="submit" value="true">Ok</button>
+		<!--{/if}-->
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='request'}-->
+
+<div class="l_status">
+	<div class="r_option">
+		<a href="cp.php?ac=friend&op=ignore&confirm=1&key=$space[key]" onclick="return confirm('Bạn có chắc muốn bỏ qua tất cả yêu cầu kết bạn?');">Bỏ qua yêu cầu kết bạn</a>
+		 | <a href="cp.php?ac=friend&op=addconfirm&key=$space[key]">Chấp nhận tất cả yêu cầu kết bạn</a>
+	</div>
+	<span id="add_friend_div">Trả lời yêu cầu</span>
+	<!--{if $maxfriendnum}-->
+	(Bạn có thể có tối đa $maxfriendnum bạn bè)
+	<p>
+		<!--{if $_SGLOBAL[magic][friendnum]}-->
+		<img src="image/magic/friendnum.small.gif" class="magicicon" />
+		<a id="a_magic_friendnum" href="magic.php?mid=friendnum" onclick="ajaxmenu(event, this.id, 1)">Mở rộng bạn bè</a>
+		(Bạn có thể mua thẻ {$_SGLOBAL[magic][friendnum]} để tăng số lượng bạn bè)
+		<!--{/if}-->
+	</p>
+	<!--{/if}-->
+</div>
+<!--{if $list}-->
+<div class="thumb_list" id="friend_ul">
+<table cellspacing="6" cellpadding="0">
+<!--{loop $list $key $value}-->
+<tbody id="friend_tbody_$value[uid]">
+<tr>
+	<td class="thumb <!--{if $ols[$value[uid]]}-->online<!--{/if}-->">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="image">
+				<div class="ar_r_t"><div class="ar_l_t"><div class="ar_r_b"><div class="ar_l_b">
+				<a href="space.php?uid=$value[uid]" class="avatarlink"><!--{avatar($value[uid],middle)}--></a>
+				</div></div></div></div>
+				</td>
+				<td>
+					<h6 class="l_status">
+						<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+						<!--{if $value['videostatus']}-->
+						<img src="image/videophoto.gif" align="absmiddle"> <span class="gray">Thành viên đã kích hoạt webcam</span>
+						<!--{/if}-->
+					</h6>
+					<div id="friend_$value[uid]">
+					<!--{if $value[note]}--><div class="quote"><span id="quote" class="q">$value[note]</span></div><!--{/if}-->
+					<p><!--{date('m-d H:i',$value[dateline],1)}--></p>
+					<!--{if $value['cfcount']}--><p><a href="cp.php?ac=friend&op=getcfriend&fuid=$value[cfriend]" id="a_cfriend_$key" onclick="ajaxmenu(event, this.id, 1)">Bạn có $value[cfcount] bạn bè</a></p><!--{/if}-->
+					<p style="margin-top:1em;">
+						<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="afr_$value[uid]" onclick="ajaxmenu(event, this.id, 1)" class="submit a">Chập nhận</a>
+						<a href="cp.php?ac=friend&op=ignore&uid=$value[uid]&confirm=1" id="afi_$value[uid]" onclick="ajaxmenu(event, this.id, 1)" class="button a">Từ chối</a>
+					</p>
+					</div>
+				</td>
+			</tr>
+			<tbody id="cf_$value[uid]"></tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+<!--{/loop}-->
+</table>
+</div>
+<div class="page">$multi</div>
+<!--{else}-->
+<div class="c_form">
+	Không có yêu cầu kết bạn nào mới.
+</div>
+<!--{/if}-->
+
+<!--{elseif $op=='getcfriend'}-->
+
+
+<h1>Bạn thân</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="cfriend">
+	<div class="h_status">Hiện tối đa 15 bạn thân.</div>
+	<ul class="avatar_list">
+		<!--{loop $list $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+
+<!--{elseif $op=='add'}-->
+
+<h1>Chập nhận bạn bè</h1>
+<a href="javascript:hideMenu();" title="Đóng" class="float_del">Đóng</a>
+<div class="popupmenu_inner" id="__addform_{$tospace[uid]}">
+<form method="post" id="addform_{$tospace[uid]}" name="addform_{$tospace[uid]}" action="cp.php?ac=friend&op=add&uid=$tospace[uid]">
+	<table cellspacing="0" cellpadding="3">
+		<tr>
+			<th width="52"><a href="space.php?uid=$tospace[uid]"><!--{avatar($tospace[uid],small)}--></th>
+			<td> <strong>{$_SN[$tospace[uid]]}</strong> Nội dung: <br />
+				<input type="text" name="note" value="" size="20" class="t_input" style="width: 300px;"  onkeydown="ctrlEnter(event, 'addsubmit_btn', 1);" />
+				<p class="gray">(Tùy chọn: {$_SN[$tospace[uid]]} sẽ thấy nội dung này (tối đa 50 ký tự))</p>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+				Nhóm: <select name="gid">
+				<!--{loop $groups $key $value}-->
+				<option value="$key">$value</option>
+				<!--{/loop}-->
+				</select>
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+				<input type="hidden" name="addsubmit" value="true" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="button" name="addsubmit_btn" id="addsubmit_btn" value="Continue" class="submit" onclick="ajaxpost('addform_{$tospace[uid]}','',2000)" />
+				<!--{else}-->
+				<input type="submit" name="addsubmit_btn" id="addsubmit_btn" value="Ok" class="submit" />
+				<!--{/if}-->
+			</td>
+	</table>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+
+<!--{elseif $op=='add2'}-->
+
+<h1>Chấp nhận yêu cầu</h1>
+<a href="javascript:hideMenu();" title="Đóng" class="float_del">Đóng</a>
+<div class="popupmenu_inner" id="__addratifyform_{$tospace[uid]}">
+<form method="post" id="addratifyform_{$tospace[uid]}" name="addratifyform_{$tospace[uid]}" action="cp.php?ac=friend&op=add&uid=$tospace[uid]">
+	<table cellspacing="0" cellpadding="3">
+		<tr>
+			<th width="52"><a href="space.php?uid=$tospace[uid]"><!--{avatar($tospace[uid],small)}--></th>
+			<td>
+			<div class="l_status">Chấp nhận yêu cầu của <strong>{$_SN[$tospace[uid]]}</strong> và thêm vào nhóm:</div>
+				<table cellspacing="2" cellpadding="2"><tr>
+				<!--{eval $i=0;}-->
+				<!--{loop $groups $key $value}-->
+				<td><input type="radio" name="gid" id="group_$key" value="$key"$groupselect[$key]> <label for="group_$key">$value</label></td>
+				<!--{if $i%2==1}--></tr><tr><!--{/if}-->
+				<!--{eval $i++;}-->
+				<!--{/loop}-->
+				</tr></table>
+				
+				<p>
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="hidden" name="add2submit" value="true" />
+				<input type="button" name="add2submit_btn" value="Ok" class="submit" onclick="ajaxpost('addratifyform_{$tospace[uid]}', 'myfriend_post', 2000)" />
+				<!--{else}-->
+				<input type="submit" name="add2submit" value="Ok" class="submit" />
+				<!--{/if}-->
+				</p>
+			</td>
+	</table>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

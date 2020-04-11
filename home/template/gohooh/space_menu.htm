@@ -1,0 +1,13 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],small)}--></a></div>
+	<!--{if $_SGLOBAL[refer]}-->
+		<a class="r_option" href="$_SGLOBAL[refer]">&laquo; Trang trước</a>
+	<!--{/if}-->
+	<p style="font-size:14px">{$_SN[$space[uid]]} $_TPL['spacetitle']</p>
+	<a href="space.php?uid=$space[uid]" class="spacelink">Trang nhà {$_SN[$space[uid]]}</a>
+	<!--{if $_TPL['spacemenus']}-->
+		<!--{loop $_TPL['spacemenus'] $value}--> <span class="pipe">&raquo;</span> $value<!--{/loop}-->
+	<!--{/if}-->
+</div>

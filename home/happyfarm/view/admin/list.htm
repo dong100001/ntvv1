@@ -1,0 +1,47 @@
+
+<!--{template happyfarm/view/admin/header}-->
+
+<!--{if $happyfarm_config_list}-->
+<div class="bdrcontent">
+	<table width="100%" cellpadding=5 cellspacing=0>
+		<tr>
+			<th>Tên đăng nhập</th><th>VIP</th><th>Đất trồng</th><th>EXP nông trại</th><th>Level nông trại</th>
+			<th>EXP trang trại</th><th>Level trang trại</th><th>Tiền</th><th>Gee</th><th>Hoạt động</th>
+		</tr>
+		<!--{loop $happyfarm_config_list $key $value}-->
+		<tr>
+			<td>$value[username] <!--{if $value[name]}-->($value[name])<!--{/if}--></td>
+			<td>$value[vip]级</td>
+			<td>$value[reclaim]</td>
+			<td>$value[exp1]</td>
+			<td>$value[nc_exp]级</td>
+			<td>$value[exp2]</td>
+			<td>$value[mc_exp]级</td>
+			<td>$value[money]</td>
+			<td>$value[YB]</td>
+			<td>
+				<a href="admin.php?do=edit&id={$value[uid]}">Sửa</a>
+				&nbsp;
+				<a href='javascript:delUser("{$value[uid]}","Bạn có chắc chắn muốn xoá $value[username] <!--{if $value[name]}-->($value[name])<!--{/if}--> khỏi nông trại vui vẻ?");'>Xóa</a>
+			</td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+</div>
+<div class="page">$multi</div>
+<!--{else}-->
+<div class="no_hpinfo">Không có thông tin người dùng!</div>
+<!--{/if}-->
+
+<script type="text/javascript">
+	function delUser(uid, msg) {
+		if(confirm(msg)) {
+			request(
+				'admin.php?do=delete&id='+uid, null, null, 
+				function(data){alert(data[1]);}
+			);
+		}
+	}
+</script>
+
+<!--{template happyfarm/view/admin/footer}-->

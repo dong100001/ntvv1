@@ -1,0 +1,248 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+﻿<!--{eval $_TPL['titles'] = array('Mời bạn bè - Nông trại vui vẻ trên mạng xã hội Nhà Tui GoHooH.CoM');}-->
+<!--{template header}-->
+<style type="text/css">
+#farmhead{width:100%; height:46px; overflow:hidden; margin:0px; padding:0px;}
+#farmhead table,td,tr,th{border:0px; margin:0px; padding:0px; font-size:12px;}
+.links{height:46px; width:766px; position:relative;overflow:hidden;}
+links a{float:left; width:104px; height:46px;}
+.links a.link1{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') 0px 0px; }
+.links a.link2{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -104px 0;}
+.links a.link3{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -208px 0;}
+.links a.link4{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -312px 0;}
+.links a.link5{float:left; width:100px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -416px 0;}
+.links a.link6{float:left; width:100px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -515px 0;}
+.links a.link1:hover ,#head .links a.select1{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') 0px -46px;}
+.links a.link2:hover ,#head .links a.select2{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -104px -46px;}
+.links a.link3:hover ,#head .links a.select3{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -208px -46px;}
+.links a.link4:hover ,#head .links a.select4{float:left; width:104px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -312px -46px;}
+.links a.link5:hover ,#head .links a.select5{float:left; width:100px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -416px -46px;}
+.links a.link6:hover ,#head .links a.select6{float:left; width:100px; height:46px;background:#FFFFFF url('./newfarm/buttonbg.jpg') -515px -46px;}
+ul,#zoomenu {
+	padding:0;
+	margin:0;
+}
+ul li,#zoomenu li {
+	float:left;
+	list-style:none;
+}
+</style>
+
+<div id="farmhead">
+<table border="1" cellpadding="0" cellspacing="0" >
+  <tr>
+    <td><div class="links">
+        <a href="newfarm.php" class="link1"</a>
+        <a href="mymc.htm" class="link2"> </a>
+        <a href="newfarm.php" class="link3" target="myfarm"></a>
+        <a href="newfarm.php?ac=invite" class="link4"> </a>
+        <a href="newfarm/fb.htm" class="link5" target="myfarm"> </a>
+        <a href="myfarmqp.htm" class="link6" target="_blank" onclick='location.assign("space.php?do=home")'>
+        </div>
+</td>
+    <td>
+    </td>
+  </tr>
+</table>
+</div>
+
+<script language="javascript" type="text/javascript">
+function cball(allcb)
+{
+
+	var fp=document.getElementsByName("fuid[]");
+	var len=fp.length
+	for (var i=0;i<len ;i++ )
+	{
+		fp[i].checked=allcb.checked;
+		document.getElementById('num').value=i+1;
+		document.getElementById('unnum').value=len-i-1;
+	}
+	if(!allcb.checked){
+		document.getElementById('num').value='0';
+	}
+}
+
+function dan(obj)
+{
+	var len = document.getElementsByName(obj.name).length;
+
+	var count=0;
+	for(var i = 0 ; i < len ; i ++ )
+	{
+		if(document.getElementsByName(obj.name)[i].checked==obj.checked)
+		{
+			count++;
+			document.getElementById('num').value=count;
+			document.getElementById('unnum').value=len-count;
+		}
+
+	}
+
+	if(obj.checked==true)
+	{
+
+		if(count == len)
+		{
+			document.getElementById("allfriend").checked=true;
+			document.getElementById('num').value=count;
+			document.getElementById('unnum').value=len-count;
+		}
+	}
+	else
+	{
+		document.getElementById("allfriend").checked=false;
+		document.getElementById('num').value=len-count;
+		document.getElementById('unnum').value=count;
+	}
+
+}
+</script>
+
+<script type="text/javascript" language="javascript">
+function sAlert(str)
+	{
+			var msgw,msgh,bordercolor;
+			msgw=500;				//͡ʾ԰ࠚք࠭׈
+			msgh=150;				//͡ʾ԰ࠚքٟ׈
+			titleheight=25 			//͡ʾ԰ࠚҪٟ͢׈
+			bordercolor="#369";		//͡ʾ԰ࠚքҟ࠲ҕɫ
+			titlecolor="#9cf";		//͡ʾ԰ࠚքҪ͢ҕɫ
+			
+			var sWidth,sHeight;
+			sWidth=document.body.offsetWidth;
+			sHeight=screen.height;
+			var bgObj=document.createElement("div");
+			bgObj.setAttribute('id','bgDiv');
+			bgObj.style.position="absolute";
+			bgObj.style.top="0";
+
+			bgObj.style.filter = "alpha(opacity=5)"; 
+			bgObj.style.left="0";
+			bgObj.style.width=sWidth + "px";
+			bgObj.style.height=sHeight + "px";
+			bgObj.style.zIndex = "10000";
+			document.body.appendChild(bgObj);
+			
+			var msgObj=document.createElement("div")
+			msgObj.setAttribute("id","msgDiv");
+			msgObj.setAttribute("align","center");
+			msgObj.style.background="white";
+			msgObj.style.border="1px solid " + bordercolor;
+	    	msgObj.style.position = "absolute";
+            msgObj.style.left = "50%";
+            msgObj.style.top = "50%";
+            msgObj.style.font="12px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif";
+            msgObj.style.marginLeft = "-225px" ;
+            msgObj.style.marginTop = -75+document.documentElement.scrollTop+"px";
+            msgObj.style.width = msgw + "px";
+            msgObj.style.height =msgh + "px";
+            msgObj.style.textAlign = "center";
+            msgObj.style.lineHeight ="25px";
+            msgObj.style.zIndex = "10001";
+   
+		   var title=document.createElement("h4");
+		   title.setAttribute("id","msgTitle");
+		   title.setAttribute("align","right");
+		   title.style.margin="0";
+		   title.style.padding="3px";
+		   title.style.background=bordercolor;
+		   title.style.filter="progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);";
+		   title.style.opacity="0.75";
+		   title.style.border="1px solid " + bordercolor;
+		   title.style.height="18px";
+		   title.style.font="12px Verdana, Geneva, Arial, Helvetica, sans-serif";
+		   title.style.color="white";
+		   title.style.cursor="pointer";
+		   title.innerHTML="Đóng";
+		   title.onclick=function()
+		   {
+		        document.body.removeChild(bgObj);
+                document.getElementById("msgDiv").removeChild(title);
+                document.body.removeChild(msgObj);
+           }
+		   document.body.appendChild(msgObj);
+		   document.getElementById("msgDiv").appendChild(title);
+		   var txt=document.createElement("p");
+		   txt.style.margin="1em 0"
+		   txt.setAttribute("id","msgTxt");
+		   txt.innerHTML=str;
+           document.getElementById("msgDiv").appendChild(txt);
+	}
+
+
+function CopyUrl(target){ 
+target.value=myrss.value; 
+target.select();   
+js=myrss.createTextRange();   
+js.execCommand("Copy"); 
+document.getElementById("msgTxt").innerHTML="<br />Sao chép thành công, Nhấn ctrl+v để sử dụng!";
+} 
+</script>
+
+<style type="text/css">
+<!--
+.button { background-color:#3b5998; padding:3px 15px 6px 15px; text-align:center; font-size:12px; color:white;	border:1px outset; }
+.num { width:20px; border:0; text-align:center; font-size:12px; padding-bottom:3px; }
+.fontblue { color:#FF0000; }
+.fontgrey { color:#cccccc; }
+.current {
+	BACKGROUND: #f39800;
+	width:30px;
+}
+#pag_nav_links {
+	padding:0;
+	margin:0;
+	display:block;
+}
+#pag_nav_links li { 
+	BORDER: #bbb 1px solid;
+	MARGIN: 10px 4px 0px; 
+	CURSOR: default;
+	LINE-HEIGHT: 19px;
+	HEIGHT: 19px; 
+	TEXT-ALIGN: center;
+	padding:0 5px 0 5px;
+	float:left;
+	list-style:none;
+}
+.copyinput {
+	width:180px;
+}
+-->
+</style>
+<div class="div_layout">
+	<div style="clear:both;width:800px;padding:20px 50px; line-height:28px;color:black;">
+	1. Các lời mời màu tím là lời mời thành công<br />
+	2. Gửi càng nhiều lời mời để có thêm nhiều bạn bè<br />
+	ID của bạn là <!--{$_SGLOBAL[supe_uid]}-->, Bạn có <font style='color:red;'><!--{$invitednum}--></font> lời mời bạn bè!<br /><br /><br />
+	<span style='font-size:14px;font-weight:bold;'>Mời bạn bè tham gia vào Nhà Tui</span>
+	<div style="clear:both;text-align:center;padding:10px;width:600px;"><input type="button" value="Mời" class=button onClick="window.open('http://www.gohooh.com/nhatui/cp.php?ac=invite&op=link')" /> </div>
+	</div>
+	<div style="clear:both;width:800px;padding:20px 50px;">
+		<span style='font-size:14px;font-weight:bold;padding-bottom:20px;color:black;'>Mời bạn bè tham gia vào trang trại</span>
+		<form id="form1" name="form1" action="newfarm.php?ac=invite&act=invite" method="post">
+		<div style="margin-bottom;10px; color:#3b5998; font-size:12px;">
+		<input name="allfriend" type="checkbox" value="0" id="allfriend" onClick="cball(this);" alt="Tất cả" />Chọn&nbsp;&nbsp;(<input type="text" id="num" class="num fontblue" value="0" />)&nbsp;&nbsp;δѡ(<input type="text" id="unnum" class="num fontgrey" value="0" />)
+
+		<div>
+		<div style="clear:both;border:#CCCCCC 1px solid;width:600px;padding-top:10px;">
+		<input id="inviteuid" name="inviteuid" type="hidden" value="<!--{$_SGLOBAL[supe_uid]}-->" />
+		<ul id=invitebox>
+			<!--{loop $invitearr $key $value}-->
+			<li style="width:120px;margin-top:5px;margin-bottom:20px;text-align:center;">
+			<input name='fuid[]' type='checkbox' value='<!--{$value[uid]}-->' onclick='dan(this)' />
+			<span class=avatar48><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" style="cursor:hand" target="_blank"><!--{avatar($value[uid],small)}--></a></span>
+			<div style="line-height:28px;padding-left:20px;"><!--{$value[name]}--></div>
+			</li>
+			<!--{/loop}-->
+		</ul>
+		<div style="font: 0px/0px sans-serif;clear: both;display: block"></div> 
+		</div>
+		<div class="page">$multi</div>
+		<div style="clear:both;text-align:center;padding:10px;width:600px;"><input type="submit" value="Ok" class=button /></div>
+		</form>
+	</div>  
+</div>
+<!--{template footer}-->

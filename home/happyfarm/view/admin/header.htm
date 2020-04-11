@@ -1,0 +1,14 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main">
+
+	<div class="menu">
+		<!--{eval $actives[$do] = ' class="actives"';}-->
+		<a{$actives[home]} href="admin.php?do=home">Quản lý</a>
+		<a{$actives[list]} href="admin.php?do=list">Danh sách</a>
+		<!--{if $id > 0}-->
+		<a{$actives[edit]} href="admin.php?do=edit&id={$id}">Sửa</a>
+		<!--{/if}-->
+	</div>
+
+	<div id="main_admin">

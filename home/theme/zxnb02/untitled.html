@@ -1,0 +1,1205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<meta name="robots" content="follow, all" />
+<title>盛宇的交友空间 - 宁波在线交友社区</title>
+
+<style type="text/css">
+@import url(http://www.zxnb.com/template/default/style.css);
+@import url(http://www.zxnb.com/template/default/space.css);
+
+</style>
+<link rel="shortcut icon" href="image/favicon.ico" />
+<link rel="edituri" type="application/rsd+xml" title="rsd" href="xmlrpc.php?rsd=1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+<div id="header">
+<div class="headerwarp">
+<h1 class="logo"><a href="index.php"><img src="template/blue/image/logo.gif" alt="宁波在线交友社区" /></a></h1>
+<ul class="menu">
+<li><a href="space-home.html">首页</a></li>
+<li><a href="/space-doing-view-all.html" title="微博，记录此刻心情">一句话</a></li>
+<li><a href="space.html">个人主页</a></li>
+<li><a href="space-friend.html">好友</a></li>
+<li><a href="/space-home-view-all.html" title="看看其它人在做什么">动态</a></li>
+<li><a href="network.html">随便看看</a></li>
+
+<li><a target="_blank" href="http://vod.zxnb.com" title="在线影院">在线影院</a></li>
+
+<li><a href="space-pm.html">消息</a></li>
+</ul>
+
+<div class="nav_account">
+<a href="space-1.html" class="login_thumb"><img src="http://center.zxnb.com/data/avatar/000/00/00/01_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a>
+<a href="space-1.html" class="loginName">盛宇</a>
+<a href="cp.php?ac=credit" style="font-size:11px;padding:0 0 0 5px;"><img src="image/credit.gif">755</a>
+<br />
+<a href="cp.php?ac=invite">邀请</a> 
+<a href="cp.php?ac=task">任务</a> 
+<a href="cp.php?ac=magic">道具</a>
+<a href="cp.php">设置</a> 
+<a href="cp.php?ac=common&op=logout&uhash=15d5ca16248b8829fb449a887f141fca">退出</a>
+</div>
+</div>
+</div>
+
+<div id="wrap">
+<script type="text/javascript" src="source/script_swfobject.js"></script>
+
+<div id="space_page">
+
+<div id="ubar">
+
+<div id="space_avatar">
+<div><img src="http://center.zxnb.com/data/avatar/000/00/00/01_avatar_big.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_big.gif'"></div>
+
+</div>
+
+<div class="borderbox">
+<div style="width:100%; overflow:hidden;">
+<img src="image/magic/superstar.small.gif" class="magicicon" />
+<a id="a_magic_superstar" href="magic.php?mid=superstar" onclick="ajaxmenu(event, this.id, 1)">我要变超级明星</a>
+</div>
+</div><br />
+
+<div class="borderbox">
+<ul class="spacemenu_list" style="width:100%; overflow:hidden;">
+<li><a href="cp.php?ac=avatar">我的头像</a></li>
+<li><a href="cp.php?ac=profile">个人资料</a></li>
+<li><a href="cp.php?ac=theme">主页风格</a></li>
+<li><a href="cp.php?ac=credit">我的积分</a></li>
+<li><a href="cp.php?ac=sendmail">邮件提醒</a></li>
+<li><a href="cp.php?ac=privacy">隐私筛选</a></li>
+</ul>
+</div><br />
+
+<div id="space_mymenu">
+<h2>个人菜单</h2>
+<ul class="line_list">
+<li>
+<a href="cp.php?ac=profile" class="r_option" target="_blank">完善</a>
+<img src="image/icon/profile.gif"><a href="javascript:;" onclick="getindex('info');">个人资料</a>
+</li>
+<li>
+<a href="space-doing-view-me.html" class="r_option" target="_blank">记录</a>
+<img src="image/icon/doing.gif"><a href="javascript:;" onclick="getindex('doing');">记录</a><em>(92)</em></li>
+<li>
+<a href="cp.php?ac=blog" class="r_option" target="_blank">发表</a>
+<img src="image/icon/blog.gif"><a href="javascript:;" onclick="getindex('blog');">日志</a><em>(40)</em></li>
+<li><a href="cp.php?ac=upload" class="r_option" target="_blank">上传</a>
+<img src="image/icon/album.gif"><a href="javascript:;" onclick="getindex('album');">相册</a><em>(5)</em></li>
+<li><a href="cp.php?ac=thread" class="r_option" target="_blank">发表</a>
+<img src="image/icon/thread.gif"><a href="javascript:;" onclick="getindex('thread');">话题</a><em>(23)</em></li>
+<li><a href="cp.php?ac=poll" class="r_option" target="_blank">发起</a>
+<img src="image/icon/poll.gif"><a href="javascript:;" onclick="getindex('poll');">投票</a><em>(10)</em></li>
+<li><a href="cp.php?ac=event" class="r_option" target="_blank">发起</a>
+<img src="image/icon/event.gif"><a href="javascript:;" onclick="getindex('event');">活动</a><em>(5)</em></li>
+<li><a href="space-share-view-me.html" class="r_option" target="_blank">添加</a>
+<img src="image/icon/share.gif"><a href="javascript:;" onclick="getindex('share');">分享</a><em>(9)</em></li>
+<li><a href="cp.php?ac=friend&op=search" class="r_option" target="_blank">寻找</a>
+<img src="image/icon/friend.gif"><a href="javascript:;" onclick="getindex('friend');">好友</a><em>(97)</em></li>
+</ul>
+</div>
+<div id="space_app_guide">
+<h2>音乐播放器</h2>
+<ul><li>
+<script language="Javascript" src="http://music.aobo.com/u/1653/js" charset="utf-8"></script></li></ul></div>
+<div id="space_app_guide">
+<h2>应用菜单</h2>
+<ul class="line_list">
+<li id="space_app_profilelink_1002711">
+<a href="cp.php?ac=space&op=delete&appid=1002711&type=profilelink" id="user_app_profile_1002711" class="r_option float_del" style="position: static;" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<img src="http://appicon.manyou.com/icons/1002711"><a href="userapp.php?id=1002711&amp;my_suffix=L2dpZnQucGhwP2FjdGlvbj1yZWNlaXZl">我的礼物 (2个)</a></li>
+<li id="space_app_profilelink_1018840">
+<a href="cp.php?ac=space&op=delete&appid=1018840&type=profilelink" id="user_app_profile_1018840" class="r_option float_del" style="position: static;" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<img src="http://appicon.manyou.com/icons/1018840"><a href="userapp.php?id=1018840&amp;my_suffix=L2luZGV4LnBocA%3D%3D">玩祖玛</a></li>
+</ul>
+</div>
+
+<div id="space_app_1018840">
+<h2>
+<a href="cp.php?ac=space&op=delete&appid=1018840" id="user_app_1018840" class="r_option float_del" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<a href="userapp.php?id=1018840">祖玛</a>
+</h2>
+<div class="box">
+<div class="box_content"><div class="app_content_1018840"><div><a href="userapp.php?id=1018840&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top"><img src="http://dulpi.com/extapp/zuma/images/Zumaplay.jpg" width="200"/></a><div>盛宇在 祖玛 中的最好成绩是：0! 排名：1</div><br/><a href="userapp.php?id=1018840&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">快来加入“祖玛”大军，跟你的朋友一起玩，比一比，谁的分数高！</a> </div></div></div></div>
+</div>
+<div id="space_app_1004186">
+<h2>
+<a href="cp.php?ac=space&op=delete&appid=1004186" id="user_app_1004186" class="r_option float_del" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<a href="userapp.php?id=1004186">朋友买卖</a>
+</h2>
+<div class="box">
+<div class="box_content"><div class="app_content_1004186"><div><div style="float: left; margin-right: 4px;"><a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F187314197" target="_top"><img src="http://uchome.manyou.com/avatar/187314197?thumb"/></a></div><div>主　人：<a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F211432734" target="_top">纸片人</a><br/>现　金：2797<br/>总资产：3823<br/></div><div style="clear: both; background: #EAEAEA; padding: 3px; margin-top: 5px;"><a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F187314197" target="_top">盛宇</a>的奴隶们</div><ul style="overflow: hidden;"><li style="float: left; padding-top: 5px; width: 65px; white-space: nowrap; overflow: hidden; display: inline;"><a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F252559573" target="_top"><img src="http://uchome.manyou.com/avatar/252559573?thumb"/></a><br/><a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F252559573" target="_top">fas15</a></li></ul></div></div></div></div>
+</div>
+
+</div>
+
+<div id="content">
+
+<h3 id="spaceindex_name">
+<a href="space-1.html" style="color:red;">盛宇</a>&nbsp;<em>(用户名: admin)</em>
+
+&nbsp;<img src="image/realname_yes.gif" align="absmiddle" alt="已通过实名认证">
+
+	
+&nbsp; <img src="image/videophoto_no.gif" align="absmiddle" alt="未通过视频认证"> <span class="gray"><a href="cp.php?ac=videophoto">视频未认证</a></span>
+</h3>
+
+
+<div id="spaceindex_note">
+<a href="cp.php?ac=share&type=space&id=1" class="a_share" id="a_share" onclick="ajaxmenu(event, this.id, 1)">分享</a>
+<a href="rss.php?uid=1" id="i_rss" title="订阅 RSS">订阅</a>
+
+<ul class="note_list">
+<li>已有 3662 人次访问, 755 个积分, 1414 个经验 <img src="image/star_level2.gif" align="absmiddle" /><img src="image/star_level2.gif" align="absmiddle" /><img src="image/star_level2.gif" align="absmiddle" /></li>
+<li>用户组别：<a href="cp.php?ac=credit&op=usergroup">站点管理员</a>  <img src="image/group/admin.gif" align="absmiddle"> </li>
+<li>主页地址：<a href="link.php?url=http://shengyu.zxnb.com" onclick="javascript:setCopy('http://shengyu.zxnb.com');return false;" class="spacelink domainurl">http://shengyu.zxnb.com</a></li>
+<li>小窝公告：欢迎大家加入，常来看看！</li>
+
+</ul>
+
+<div id="mood_mystatus">
+准备睡觉，早起上班。</div>
+
+<div id="mood_form">
+<form method="post" action="cp.php?ac=doing" id="mood_addform">
+<div id="mood_statusinput" class="statusinput"><textarea name="message" id="mood_message" onclick="statusFace();" onkeydown="if(event.keyCode == 13 ){ event.returnValue=false;event.cancel = true;$('mood_add').click();$('mood_message').value='';this.blur(); };" >你可以更新状态, 让好友们知道你在做什么...</textarea></div>
+<div class="statussubmit">
+<input type="button" id="mood_add" name="add" value="更新" class="submit" style="display:none;" onclick="ajaxpost('mood_addform', 'reloadMood');$('mood_message').value='';" />
+<input type="hidden" name="addsubmit" value="true" />
+<input type="hidden" name="spacenote" value="true" />
+<input type="hidden" name="formhash" value="f0201f52" />
+</div>
+
+</form>
+</div>
+
+
+<script type="text/javascript">
+function statusFace() {
+if($('mood_message').value == '你可以更新状态, 让好友们知道你在做什么...'){
+$('mood_message').value = '';
+}
+$('mood_statusinput').style.zIndex = '20005';
+$('mood_statusinput').className = 'statusinput2';
+$('mood_add').style.display = 'block';
+
+
+var div = $('mood_face_bg');
+if(div) {
+div.parentNode.removeChild(div);
+}
+div = document.createElement('div');
+div.id = 'mood_face_bg';
+div.style.position = 'absolute';
+div.style.left = div.style.top = '0px';
+div.style.width = '100%';
+div.style.height = document.body.scrollHeight + 'px';
+div.style.backgroundColor = '#000';
+div.style.zIndex = 10000;
+div.style.display = 'none';
+div.style.filter = 'alpha(opacity=0)';
+div.style.opacity = 0;
+div.onclick = function() {
+hiddenstatus();
+}
+$('append_parent').appendChild(div);
+
+
+if($('mood_message_menu') != null) {
+$('mood_message_menu').style.display = '';
+$('mood_add').style.display = '';
+} else {
+var faceDiv = document.createElement("div");
+faceDiv.id = 'mood_message_menu';
+faceDiv.className = 'facebox';
+faceDiv.style.position = 'absolute';
+var faceul = document.createElement("ul");
+for(i=1; i<31; i++) {
+getStatusFace(i, faceul);	
+}
+faceDiv.appendChild(faceul);
+$('append_parent').appendChild(faceDiv);
+}
+//定位菜单
+setMenuPosition('mood_message', 0);
+div.style.display = '';
+}
+
+function hiddenstatus() {
+$('mood_message_menu').style.display = 'none';
+$('mood_face_bg').style.display = 'none';
+$('mood_add').style.display = 'none';
+$('mood_statusinput').className = 'statusinput';
+if($('mood_message').value == ''){
+$('mood_message').value = '你可以更新状态, 让好友们知道你在做什么...';
+}
+$('mood_statusinput').style.zIndex = '1';
+}
+
+function getStatusFace(i, faceul) {
+var faceli = document.createElement("li");
+faceli.innerHTML = '<img src="image/face/'+i+'.gif" style="cursor:pointer; position:relative;" />';
+faceli.getElementsByTagName('img').item(0).onclick = function(){var faceText = '[em:'+i+':]'; if($('mood_message') != null) { insertContent('mood_message', faceText); }};
+faceul.appendChild(faceli);
+}
+
+function reloadMood(showid, result) {
+var x = new Ajax();
+x.get('cp.php?ac=doing&op=getmood', function(s){
+$('mood_mystatus').innerHTML = s;
+});
+//提示获得积分
+showreward();
+hiddenstatus();
+}
+</script>
+</div>
+
+<div id="maincontent">
+
+
+<div id="space_info">
+<h3 class="feed_header">
+<a href="cp.php?ac=profile" class="r_option">完善资料</a>
+个人资料
+</h3>
+<ul class="spacemenu_list">
+<li><em>创建:</em>2008-12-12</li>
+<li><em>登录:</em>3小时前</li>
+<li><em>活跃:</em>现在 (当前在线)</li>
+<li><em>性别:</em><a href="cp.php?ac=friend&op=search&sex=1&searchmode=1">男</a></li>
+<li><em>生日:</em>1985年1月24日</li>
+<li><em>婚恋:</em><a href="cp.php?ac=friend&op=search&marry=1&searchmode=1">单身</a></li>
+<li><em>居住:</em><a href="cp.php?ac=friend&op=search&resideprovince=%E6%B5%99%E6%B1%9F&searchmode=1">浙江</a> <a href="cp.php?ac=friend&op=search&residecity=%E5%AE%81%E6%B3%A2&searchmode=1">宁波</a></li>
+<li><em>家乡:</em><a href="cp.php?ac=friend&op=search&birthprovince=%E6%B5%99%E6%B1%9F&searchmode=1">浙江</a> <a href="cp.php?ac=friend&op=search&birthcity=%E5%AE%81%E6%B3%A2&searchmode=1">宁波</a></li>
+<li><em>手机:</em>13306647042</li>
+</ul>
+<p class="info_more"><a href="javascript:;" onclick="getindex('info');">&raquo; 查看全部个人资料</a></p>
+</div>
+
+<div id="space_feed" class="feed">
+<h3 class="feed_header">
+<span class="r_option">
+<a href="space-1-do-feed-view-me.html" class="action">全部</a>
+</span>
+<span class="entry-title">个人动态</span>
+</h3>
+<div class="box_content">
+<ul>
+<li class="s_clear " id="feed_7984_li" >
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7984" class="float_more" id="a_feed_menu_7984"  onmouseover="feed_menu(7984,1);" onmouseout="feed_menu(7984,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1047370" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1047370" /></a>
+<a href="space-1.html">盛宇</a> 添加了&nbsp;<a href="userapp.php?id=1047370" >地产大亨</a>&nbsp;应用 
+
+<span class="gray">9分钟前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7978_li" onmouseover="feed_menu(7978,1);" onmouseout="feed_menu(7978,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7978" class="float_more" id="a_feed_menu_7978"  onmouseover="feed_menu(7978,1);" onmouseout="feed_menu(7978,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1040890" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1040890" /></a>
+<a href="space-1.html">盛宇</a> 添加了&nbsp;<a href="userapp.php?id=1040890" >楼一幢</a>&nbsp;应用 
+
+<span class="gray">32分钟前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7976_li" onmouseover="feed_menu(7976,1);" onmouseout="feed_menu(7976,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7976" class="float_more" id="a_feed_menu_7976"  onmouseover="feed_menu(7976,1);" onmouseout="feed_menu(7976,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=click" title="只看此类动态"><img src="image/icon/click.gif" /></a>
+<a href="space-1.html">盛宇</a> 送了一个“漂亮”给 <a href="space-2.html">应鹏</a> 的图片 
+
+<span class="gray">40分钟前</span>
+
+
+<div class="feed_content">
+
+	
+
+<a href="space-2-do-album-picid-497.html"><img src="attachment/200912/29/2_1262068333StGS.jpg.thumb.jpg" class="summaryimg" /></a>
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7138_li" onmouseover="feed_menu(7138,1);" onmouseout="feed_menu(7138,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7138" class="float_more" id="a_feed_menu_7138"  onmouseover="feed_menu(7138,1);" onmouseout="feed_menu(7138,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=comment" title="只看此类动态"><img src="image/icon/comment.gif" /></a>
+<a href="space-1.html">盛宇</a> 评论了 <a href="space-2.html">应鹏</a> 的图片 
+
+<span class="gray">46分钟前</span>
+
+
+<div class="feed_content">
+
+	
+
+<a href="space-2-do-album-picid-497.html"><img src="attachment/200912/29/2_1262068333StGS.jpg.thumb.jpg" class="summaryimg" /></a>
+
+
+
+<div class="quote"><span class="q">哥-》 大叔 -》大拜拜。。。</span></div>
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7972_li" onmouseover="feed_menu(7972,1);" onmouseout="feed_menu(7972,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7972" class="float_more" id="a_feed_menu_7972"  onmouseover="feed_menu(7972,1);" onmouseout="feed_menu(7972,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=blog" title="只看此类动态"><img src="image/icon/blog.gif" /></a>
+<a href="space-1.html">盛宇</a> 发表了新日志 
+
+<span class="gray">1小时前</span>
+
+(<a href="javascript:;" onclick="feedcomment_get(7972);" id="feedcomment_a_op_7972">评论</a>)
+
+<div class="feed_content">
+
+	
+
+
+<div class="detail">
+<b><a href="space-1-do-blog-id-160.html">宁波在线影院综艺片更新。。。</a></b><br>综艺片天天更新。。    &nbsp;    最近更新的是最后一集。    &nbsp;    比如康熙来了，没有显示时间，是按集数来的，最后一集是最新的！    &nbsp;    宁波在线影院地</div>
+
+
+</div>
+</div>
+
+<div id="feedcomment_7972" style="display:none;"></div>
+
+</li>
+<li class="s_clear " id="feed_7965_li" onmouseover="feed_menu(7965,1);" onmouseout="feed_menu(7965,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7965" class="float_more" id="a_feed_menu_7965"  onmouseover="feed_menu(7965,1);" onmouseout="feed_menu(7965,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1029889" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1029889" /></a>
+<a href="space-1.html">盛宇</a> 添加了&nbsp;<a href="userapp.php?id=1029889" >开心宝贝</a>&nbsp;应用 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_6642_li" onmouseover="feed_menu(6642,1);" onmouseout="feed_menu(6642,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=6642" class="float_more" id="a_feed_menu_6642"  onmouseover="feed_menu(6642,1);" onmouseout="feed_menu(6642,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1003094" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1003094" /></a>
+<a href="space-1.html">盛宇</a> 今天登录<a href="userapp.php?id=1003094&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">争车位</a>游戏获赠200元游戏币！ 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7953_li" onmouseover="feed_menu(7953,1);" onmouseout="feed_menu(7953,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7953" class="float_more" id="a_feed_menu_7953"  onmouseover="feed_menu(7953,1);" onmouseout="feed_menu(7953,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1040657" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1040657" /></a>
+<a href="space-1.html">盛宇</a> 老板笑里藏刀的将好友拉到自己的<a href="userapp.php?id=1040657&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">夜店</a>里聊天 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+<div class="detail">
+Ta 说：生活就是一个八卦接着另一个八卦，<a href="userapp.php?id=1040657&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">一起八卦请点击</a>。</div>
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7045_li" onmouseover="feed_menu(7045,1);" onmouseout="feed_menu(7045,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7045" class="float_more" id="a_feed_menu_7045"  onmouseover="feed_menu(7045,1);" onmouseout="feed_menu(7045,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1040657" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1040657" /></a>
+<a href="space-1.html">盛宇</a> 老板突然出现在<a href="userapp.php?id=1040657&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">夜店大街</a>，引起一阵喧哗。 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+<div class="detail">
+Ta 回到自己夜店里经营生意，你要不要也试试看 &lt;&lt;<a href="userapp.php?id=1040657&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">夜店大亨</a>&gt;&gt;！</div>
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7951_li" onmouseover="feed_menu(7951,1);" onmouseout="feed_menu(7951,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7951" class="float_more" id="a_feed_menu_7951"  onmouseover="feed_menu(7951,1);" onmouseout="feed_menu(7951,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=wall" title="只看此类动态"><img src="image/icon/wall.gif" /></a>
+<a href="space-1.html">盛宇</a> 在 <a href="space-3874.html">243248002</a> 的留言板留了言 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7949_li" onmouseover="feed_menu(7949,1);" onmouseout="feed_menu(7949,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7949" class="float_more" id="a_feed_menu_7949"  onmouseover="feed_menu(7949,1);" onmouseout="feed_menu(7949,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1048307" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1048307" /></a>
+<a href="space-1.html">盛宇</a>在<a href="userapp.php?id=1048307&amp;my_suffix=L2luZGV4LnBocD9pZD0xMDQ4MzA3Jm15X3N1ZmZpeD1MdyUzRCUzRA%3D%3D" target="_top">有间客栈</a>开了自己的店，非常火爆，快去看看吧 
+
+<span class="gray">1小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7945_li" onmouseover="feed_menu(7945,1);" onmouseout="feed_menu(7945,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7945" class="float_more" id="a_feed_menu_7945"  onmouseover="feed_menu(7945,1);" onmouseout="feed_menu(7945,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=wall" title="只看此类动态"><img src="image/icon/wall.gif" /></a>
+<a href="space-1.html">盛宇</a> 在 <a href="space-3831.html">叶蓓莉</a> 的留言板留了言 
+
+<span class="gray">2小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7943_li" onmouseover="feed_menu(7943,1);" onmouseout="feed_menu(7943,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7943" class="float_more" id="a_feed_menu_7943"  onmouseover="feed_menu(7943,1);" onmouseout="feed_menu(7943,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=doing" title="只看此类动态"><img src="image/icon/doing.gif" /></a>
+<a href="space-1.html">盛宇</a>：伟人每天在干伟大的事。 
+
+<span class="gray">2小时前</span>
+
+(<a href="javascript:;" onclick="docomment_get('docomment_346', 1);" id="do_a_op_346">回复</a>)
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+<div id="docomment_346" style="display:none;"></div>
+
+</li>
+<li class="s_clear " id="feed_7936_li" onmouseover="feed_menu(7936,1);" onmouseout="feed_menu(7936,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7936" class="float_more" id="a_feed_menu_7936"  onmouseover="feed_menu(7936,1);" onmouseout="feed_menu(7936,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=0&icon=1002602" title="只看此类动态"><img src="http://appicon.manyou.com/icons/1002602" /></a>
+<a href="space-1.html">盛宇</a> 做了<a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocA%3D%3D" target="_top">心理测试</a>：<a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzIy" target="_top">是否有知心朋友</a> 
+
+<span class="gray">2小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+<a href="userapp.php?id=1002602&my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzIy"><img src="http://flower.manyou-apps.com/psycho/images/tests/22.jpg" class="summaryimg" /></a>
+
+
+
+<div class="quote"><span class="q">人生得一知友，足矣！交朋友的代价是昂贵的：时间、感情、精力……但即使付出这些，也未必交得到真正的知心朋友。你的付出是否有好的结果呢？下面拟有...</span></div>
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7929_li" onmouseover="feed_menu(7929,1);" onmouseout="feed_menu(7929,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7929" class="float_more" id="a_feed_menu_7929"  onmouseover="feed_menu(7929,1);" onmouseout="feed_menu(7929,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=doing" title="只看此类动态"><img src="image/icon/doing.gif" /></a>
+<a href="space-1.html">盛宇</a>：某宁要请我吃饭看电影了，为了弥补他的错失。。。。 
+
+<span class="gray">2小时前</span>
+
+(<a href="javascript:;" onclick="docomment_get('docomment_344', 1);" id="do_a_op_344">回复</a>)
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+<div id="docomment_344" style="display:none;"></div>
+
+</li>
+<li class="s_clear " id="feed_7839_li" onmouseover="feed_menu(7839,1);" onmouseout="feed_menu(7839,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7839" class="float_more" id="a_feed_menu_7839"  onmouseover="feed_menu(7839,1);" onmouseout="feed_menu(7839,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=comment" title="只看此类动态"><img src="image/icon/comment.gif" /></a>
+<a href="space-1.html">盛宇</a> 评论了 <a href="space-2.html">应鹏</a> 的日志 <a href="space-2-do-blog-id-158.html">潮爆的最高境界，雷到里嫩外焦</a> 
+
+<span class="gray">3小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+<li class="s_clear " id="feed_7909_li" onmouseover="feed_menu(7909,1);" onmouseout="feed_menu(7909,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7909" class="float_more" id="a_feed_menu_7909"  onmouseover="feed_menu(7909,1);" onmouseout="feed_menu(7909,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=doing" title="只看此类动态"><img src="image/icon/doing.gif" /></a>
+<a href="space-1.html">盛宇</a>：标准CD（VCD）是音视频的长度（播放时间）分配空间的，700MB(标准CD-R)只能刻录80分钟音视频。和源文件的大小风马牛不相及！ 
+
+<span class="gray">4小时前</span>
+
+(<a href="javascript:;" onclick="docomment_get('docomment_342', 1);" id="do_a_op_342">回复</a>)
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+<div id="docomment_342" style="display:none;"></div>
+
+</li>
+<li class="s_clear " id="feed_7906_li" onmouseover="feed_menu(7906,1);" onmouseout="feed_menu(7906,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7906" class="float_more" id="a_feed_menu_7906"  onmouseover="feed_menu(7906,1);" onmouseout="feed_menu(7906,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=wall" title="只看此类动态"><img src="image/icon/wall.gif" /></a>
+<a href="space-1.html">盛宇</a> 在 <a href="space-3873.html">清秋梦</a> 的留言板留了言 
+
+<span class="gray">5小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+
+</li>
+<li class="s_clear " id="feed_7901_li" onmouseover="feed_menu(7901,1);" onmouseout="feed_menu(7901,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7901" class="float_more" id="a_feed_menu_7901"  onmouseover="feed_menu(7901,1);" onmouseout="feed_menu(7901,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=doing" title="只看此类动态"><img src="image/icon/doing.gif" /></a>
+<a href="space-1.html">盛宇</a>：下了一张好碟啊，赞。。。 
+
+<span class="gray">5小时前</span>
+
+(<a href="javascript:;" onclick="docomment_get('docomment_339', 1);" id="do_a_op_339">回复</a>)
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+<div id="docomment_339" style="display:none;"></div>
+
+</li>
+<li class="s_clear " id="feed_7139_li" onmouseover="feed_menu(7139,1);" onmouseout="feed_menu(7139,0);">
+<div style="width:100%;overflow:hidden;" >
+<a href="cp.php?ac=feed&op=menu&feedid=7139" class="float_more" id="a_feed_menu_7139"  onmouseover="feed_menu(7139,1);" onmouseout="feed_menu(7139,0);" onclick="ajaxmenu(event, this.id)" title="显示更多选项" style="display:none;">菜单</a>
+<a class="type" href="space.php?uid=&do=feed&view=me&appid=1&icon=wall" title="只看此类动态"><img src="image/icon/wall.gif" /></a>
+<a href="space-1.html">盛宇</a> 在 <a href="space-53.html">于泉</a> 的留言板留了言 
+
+<span class="gray">6小时前</span>
+
+
+<div class="feed_content">
+
+	
+
+
+
+
+</div>
+</div>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+<div id="space_photo">
+<h3 class="feed_header">
+<a href="space-1-do-album-view-me.html" class="r_option">全部</a>
+相册
+</h3>
+<table cellspacing="4" cellpadding="4" width="100%">
+<tr>
+<td width="85" align="center"><a href="space-1-do-album-id-47.html" target="_blank"><img src="attachment/200912/26/1_1261809021LJcM.jpg.thumb.jpg" alt="电影" width="70" /></a></td>
+<td width="165">
+<h6><a href="space-1-do-album-id-47.html" target="_blank" title="电影">电影</a></h6>
+<p class="gray">1 张照片</p>
+<p class="gray">更新于 12-26</p>
+</td>
+<td width="85" align="center"><a href="space-1-do-album-id-45.html" target="_blank"><img src="attachment/200912/25/1_1261717882hG94.jpg.thumb.jpg" alt="活动" width="70" /></a></td>
+<td width="165">
+<h6><a href="space-1-do-album-id-45.html" target="_blank" title="活动">活动</a></h6>
+<p class="gray">6 张照片</p>
+<p class="gray">更新于 12-25</p>
+</td>
+</tr><tr><td width="85" align="center"><a href="space-1-do-album-id-37.html" target="_blank"><img src="attachment/200912/20/1_1261298508i0zL.jpg.thumb.jpg" alt="生活相册" width="70" /></a></td>
+<td width="165">
+<h6><a href="space-1-do-album-id-37.html" target="_blank" title="生活相册">生活相册</a></h6>
+<p class="gray">3 张照片</p>
+<p class="gray">更新于 12-19</p>
+</td>
+<td width="85" align="center"><a href="space-1-do-album-id-35.html" target="_blank"><img src="attachment/200912/19/1_1261239766ZB0X.gif.thumb.jpg" alt="我的相册" width="70" /></a></td>
+<td width="165">
+<h6><a href="space-1-do-album-id-35.html" target="_blank" title="我的相册">我的相册</a></h6>
+<p class="gray">2 张照片</p>
+<p class="gray">更新于 12-16</p>
+</td>
+</tr><tr><td width="85" align="center"><a href="space-1-do-album-id-38.html" target="_blank"><img src="attachment/200912/19/1_12612377029Mav.jpg.thumb.jpg" alt="画" width="70" /></a></td>
+<td width="165">
+<h6><a href="space-1-do-album-id-38.html" target="_blank" title="画">画</a></h6>
+<p class="gray">2 张照片</p>
+<p class="gray">更新于 12-19</p>
+</td>
+</tr>
+</table>
+</div>
+
+<div id="space_blog" class="feed">
+<h3 class="feed_header">
+<a href="space-1-do-blog-view-me.html" class="r_option">全部</a>
+日志
+</h3>
+<ul class="line_list">
+<li>
+
+<h4>
+<span class="gray r_option">1小时前</span>
+<a href="space-1-do-blog-id-160.html" target="_blank">宁波在线影院综艺片更新。。。</a>
+</h4>
+<div class="detail">
+综艺片天天更新。。    &nbsp;    最近更新的是最后一集。    &nbsp;    比如康熙来了，没有显示时间，是按集数来的，最后一集是最新的！    &nbsp;    宁波在线影院地</div>
+</li>
+<li>
+
+<h4>
+<span class="gray r_option">6小时前</span>
+<a href="space-1-do-blog-id-159.html" target="_blank">游客不能浏览主页和其它信息。</a>
+</h4>
+<div class="detail">
+看到一些朋友把自己的一些联系方式挂上去了。    &nbsp;    本站设置实名交友是为了避免一些发广告进入，顺便结识一些真心交友的朋友。    &nbsp;    网络毕竟是</div>
+</li>
+<li>
+
+<h4>
+<span class="gray r_option">12-28 11:39</span>
+<a href="space-1-do-blog-id-156.html" target="_blank">小窝的音乐播放器设置教程（图）</a>
+</h4>
+<div class="detail">
+1，先到下面音乐注册一个帐号。     http://www.aobo.com/          &nbsp;    2，点击我的空间，然后点击添加歌曲。         &nbsp;         &nbsp;    点击添加音乐</div>
+</li>
+<li>
+
+<h4>
+<span class="gray r_option">12-26 14:37</span>
+<a href="space-1-do-blog-id-154.html" target="_blank">某一交友社区的蒙面女郎</a>
+</h4>
+<div class="detail">
+&nbsp;    误入一交友社区。。。    &nbsp;    有些人可能会以为是忍者交友社区，貌似是地方文化不一样。    &nbsp;</div>
+</li>
+<li>
+
+<h4>
+<span class="gray r_option">12-26 14:24</span>
+<a href="space-1-do-blog-id-153.html" target="_blank">女生不敢在男友面前做的几件事</a>
+</h4>
+<div class="detail">
+同居是两人关系迈入新台阶的重要标志，男生害怕Xbox被时尚杂志替代，女生怕隐私受到挖掘。以下为六件女生不敢当着男友的面做的事（非典型性，意在搞出这个话题）</div>
+</li>
+</ul>
+</div>
+
+
+<div id="space_app_1002711" class="appbox">
+<h3 class="feed_header">
+<a href="cp.php?ac=space&op=delete&appid=1002711" id="user_app_1002711" class="r_option float_del" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<a href="userapp.php?id=1002711">礼品店</a>
+</h3>
+<div class="box" style="margin: 0 0 20px;">
+<div class="box_action"><span class="r_option"><a href="userapp.php?id=1002711&amp;my_suffix=L2dpZnQucGhwP2FjdGlvbj1yZWNlaXZl">全部</a></span>好友送给您的礼物</div><div class="box_content"><div class="app_content_1002711"><div><ul class="avatar_list s_clear"><li><a href="userapp.php?id=1002711&amp;my_suffix=L2dpZnQucGhwP2FjdGlvbj1yZWNlaXZl" title="多赚钱，此乃王道" target="_top"><img src="http://u.wolike.com/nowbe/images/lw/41.gif" border="0"/></a><br/>赠送人:<a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F1641106004" target="_top">beili211</a></li><li><a href="userapp.php?id=1002711&amp;my_suffix=L2dpZnQucGhwP2FjdGlvbj1yZWNlaXZl" title="圣诞快乐~忽忽~" target="_top"><img src="http://u.wolike.com/nowbe/images/lw/44.gif" border="0"/></a><br/>赠送人:<a href="link.php?url=http://uchome.manyou.com%2Fprofile%2F1643432329" target="_top">奶糖也疯狂</a></li></ul></div></div></div></div>
+</div>
+<div id="space_app_1003094" class="appbox">
+<h3 class="feed_header">
+<a href="cp.php?ac=space&op=delete&appid=1003094" id="user_app_1003094" class="r_option float_del" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<a href="userapp.php?id=1003094">争车位</a>
+</h3>
+<div class="box" style="margin: 0 0 20px;">
+<div class="box_content"><div class="app_content_1003094"><div><style type="text/css">.app_content_1003094  .myCar {
+    width: 580px;
+    clear: both;
+    overflow: hidden;
+}
+
+.app_content_1003094  .myCar ul, .app_content_1003094  .myCar li, .app_content_1003094  .myCar p {
+    padding: 0;
+    margin: 0;
+}
+
+.app_content_1003094  .myCar li {
+    float: left;
+    width: 260px;
+    margin: 5px;
+}
+
+</style><div class="myCar"><ul><li><div style="height: 150px; width: 160px;"><p style="background: url(http://parking.manyou-apps.com/images/car_img/1/1.gif) no-repeat left bottom; height: 100px; width: 260px; margin-bottom: 10px;">&nbsp;</p><p><img src="http://parking.manyou-apps.com/images/car_category/1.gif" align="absmiddle"/> 二手奥拓 <!-- <label style="margin-left: 10px;"><font style="font-size: 14px;">市值:</font> 16,000</label> --></p></div></li></ul></div></div></div></div></div>
+</div>
+<div id="space_app_1002602" class="appbox">
+<h3 class="feed_header">
+<a href="cp.php?ac=space&op=delete&appid=1002602" id="user_app_1002602" class="r_option float_del" onclick="ajaxmenu(event, this.id)" title="删除">删除</a>
+<a href="userapp.php?id=1002602">心理测试</a>
+</h3>
+<div class="box" style="margin: 0 0 20px;">
+<div class="box_action"><span class="r_option"></span>做过的测试</div><div class="box_content"><div class="app_content_1002602"><div><ul><li style="border-bottom: 1px solid #ecf1f3; padding: 5px 15px 5px 5px;"><div style="float: left; width: 64px; padding: 0;"><img src="http://flower.manyou-apps.com/psycho/images/tests/22.jpg" border="0"/></div><div style="margin: 0pt 0pt 0pt 74px; padding: 0pt;"><h4><a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzIy" target="_top">是否有知心朋友</a></h4><p style="padding: 5px 0px;">人生得一知友，足矣！交朋友的代价是昂贵的：时间、感情、精力……但即使付出这些，也未必交得到真正的知心朋友。你的付出是否有好的结果呢？下面拟有10种处境，选择最能反映你在该处境中的感受或反应。</p></div><div style="clear: both;"></div></li><li style="border-bottom: 1px solid #ecf1f3; padding: 5px 15px 5px 5px;"><div style="float: left; width: 64px; padding: 0;"><img src="http://flower.manyou-apps.com/psycho/images/tests/1212.jpg" border="0"/></div><div style="margin: 0pt 0pt 0pt 74px; padding: 0pt;"><h4><a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzEyMTI%3D" target="_top">你最近运道旺不旺</a></h4><p style="padding: 5px 0px;"></p></div><div style="clear: both;"></div></li><li style="border-bottom: 1px solid #ecf1f3; padding: 5px 15px 5px 5px;"><div style="float: left; width: 64px; padding: 0;"><img src="http://flower.manyou-apps.com/psycho/images/tests/831.jpg" border="0"/></div><div style="margin: 0pt 0pt 0pt 74px; padding: 0pt;"><h4><a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzgzMQ%3D%3D" target="_top">你是个理性投资者吗？</a></h4><p style="padding: 5px 0px;"></p></div><div style="clear: both;"></div></li><li style="border-bottom: 1px solid #ecf1f3; padding: 5px 15px 5px 5px;"><div style="float: left; width: 64px; padding: 0;"><img src="http://flower.manyou-apps.com/psycho/images/tests/637.jpg" border="0"/></div><div style="margin: 0pt 0pt 0pt 74px; padding: 0pt;"><h4><a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzYzNw%3D%3D" target="_top">对方会不满意你哪一点</a></h4><p style="padding: 5px 0px;"></p></div><div style="clear: both;"></div></li><li style="border-bottom: 1px solid #ecf1f3; padding: 5px 15px 5px 5px;"><div style="float: left; width: 64px; padding: 0;"><img src="http://flower.manyou-apps.com/psycho/images/tests/1480.jpg" border="0"/></div><div style="margin: 0pt 0pt 0pt 74px; padding: 0pt;"><h4><a href="userapp.php?id=1002602&amp;my_suffix=L2luZGV4LnBocD9hY3Rpb249dGVzdC92aWV3LzE0ODA%3D" target="_top">你会是别人眼中的怪胎吗</a></h4><p style="padding: 5px 0px;"></p></div><div style="clear: both;"></div></li></ul></div></div></div></div>
+</div>
+
+</div>
+
+<div id="comment" class="comments_list">
+<h3 class="feed_header">
+<a href="space-1-do-wall-view-me.html" class="r_option">全部</a>
+留言板
+</h3>
+
+<div class="box">
+<form action="cp.php?ac=comment" id="quick_commentform_1" name="quick_commentform_1" method="post" style="padding:0 0 0 5px;">
+<a href="###" id="editface" onclick="showFace(this.id, 'comment_message');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
+<a id="a_magic_doodle" href="magic.php?mid=doodle&showid=comment_doodle&target=comment_message" onclick="ajaxmenu(event, this.id, 1)"><img src="image/magic/doodle.small.gif" class="magicicon" />涂鸦板</a>
+<br />
+<textarea name="message" id="comment_message" rows="4" cols="60" style="width:98%;" onkeydown="ctrlEnter(event, 'commentsubmit_btn');"></textarea><br>
+<input type="hidden" name="refer" value="space.php?uid=1" />
+<input type="hidden" name="id" value="1" />
+<input type="hidden" name="idtype" value="uid" />
+<input type="hidden" name="commentsubmit" value="true" />
+<input type="button" id="commentsubmit_btn" name="commentsubmit_btn" class="submit" value="留言" onclick="ajaxpost('quick_commentform_1', 'wall_add')" />
+<span id="__quick_commentform_1"></span>
+<input type="hidden" name="formhash" value="f0201f52" />
+</form>
+</div>
+
+<div class="box_content">
+<ul class="post_list a_list justify_list" id="comment_ul">
+<li id="comment_773_li"><div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<div class="title">
+<div class="r_option">
+
+
+<a href="cp.php?ac=comment&op=delete&cid=773" id="c_773_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=reply&cid=773&feedid=" id="c_773_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=773" id="a_report_773" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+</div>
+
+<a href="space-3831.html" id="author_773">叶蓓莉</a> 
+<span class="gray">2小时前</span>
+
+</div>
+
+<div class="detail" id="comment_773"><div class="quote"><span class="q"><b>盛宇</b>: 应用要玩的人多才好玩啊。<br />
+我放的少是怕太分散了，我现在去开一下。</span></div><img src="image/face/29.gif" class="face">好的，人慢慢加进来<img src="image/face/3.gif" class="face"></div>
+
+</li><li id="comment_771_li"><div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<div class="title">
+<div class="r_option">
+
+
+<a href="cp.php?ac=comment&op=delete&cid=771" id="c_771_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=reply&cid=771&feedid=" id="c_771_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=771" id="a_report_771" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+</div>
+
+<a href="space-3831.html" id="author_771">叶蓓莉</a> 
+<span class="gray">2小时前</span>
+
+</div>
+
+<div class="detail" id="comment_771">老盛，应用多加些进来，那些个小游戏中心搞排名的那些~~~王鹏老抢第一名，NND郁闷<img src="image/face/6.gif" class="face"></div>
+
+</li><li id="comment_770_li"><div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<div class="title">
+<div class="r_option">
+
+
+<a href="cp.php?ac=comment&op=delete&cid=770" id="c_770_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=reply&cid=770&feedid=" id="c_770_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=770" id="a_report_770" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+</div>
+
+<a href="space-3831.html" id="author_770">叶蓓莉</a> 
+<span class="gray">2小时前</span>
+
+</div>
+
+<div class="detail" id="comment_770"><div class="quote"><span class="q"><b>盛宇</b>: 你的头像。。。。炫。</span></div><img src="image/face/17.gif" class="face"><img src="image/face/16.gif" class="face"><img src="image/face/16.gif" class="face">我行，你也行<img src="image/face/18.gif" class="face"></div>
+
+</li><li id="comment_765_li"><div class="avatar48"><a href="space-27.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/27_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<div class="title">
+<div class="r_option">
+
+
+<a href="cp.php?ac=comment&op=delete&cid=765" id="c_765_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=reply&cid=765&feedid=" id="c_765_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=765" id="a_report_765" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+</div>
+
+<a href="space-27.html" id="author_765">吕颖</a> 
+<span class="gray">2小时前</span>
+
+</div>
+
+<div class="detail" id="comment_765"><div class="quote"><span class="q"><b>盛宇</b>: 你的音乐没有设置成自动播放啊？</span></div>改好啦，已经是自动播放啦</div>
+
+</li><li id="comment_761_li"><div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<div class="title">
+<div class="r_option">
+
+
+<a href="cp.php?ac=comment&op=delete&cid=761" id="c_761_delete" onclick="ajaxmenu(event, this.id)">删除</a>
+<a href="cp.php?ac=comment&op=reply&cid=761&feedid=" id="c_761_reply" onclick="ajaxmenu(event, this.id, 1)">回复</a>
+<a href="cp.php?ac=common&op=report&idtype=comment&id=761" id="a_report_761" onclick="ajaxmenu(event, this.id, 1)">举报</a>
+</div>
+
+<a href="space-3831.html" id="author_761">叶蓓莉</a> 
+<span class="gray">3小时前</span>
+
+</div>
+
+<div class="detail" id="comment_761"><div class="quote"><span class="q"><b>盛宇</b>: 记得回踩哦</span></div><img src="image/face/3.gif" class="face">没问题 ，自己人要支持</div>
+
+</li></ul>
+<p class="r_option" style="padding:5px 0 10px 0;"><a href="space-1-do-wall-view-me.html">&raquo; 更多留言</a></p>
+</div>
+</div>
+</div>
+
+<div id="obar">
+<div class="magichongbao" id="div_magic_gift">				
+<a id="a_magic_retrieve" href="cp.php?ac=magic&op=retrieve" onclick="ajaxmenu(event,this.id)">回收埋下的积分</a>
+				
+</div>
+
+
+<div class="sidebox">
+<h2 class="title">
+<a href="space-1-do-friend-view-visitor.html" class="r_option">全部</a>
+最近来访
+</h2>
+<ul class="avatar_list">
+<li>
+<div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3831.html" title="叶蓓莉">叶蓓莉</a></p>
+<p class="gray">2小时前</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3818.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/18_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3818.html" title="张亚波">张亚波</a></p>
+<p class="gray">22小时前</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3809.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/09_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3809.html" title="阮唯珈">阮唯珈</a></p>
+<p class="gray">12月28日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-2.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/02_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-2.html" title="应鹏">应鹏</a></p>
+<p class="gray">12月28日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3837.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/37_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3837.html" title="莫小寒">莫小寒</a></p>
+<p class="gray">12月28日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3771.html"><img src="http://center.zxnb.com/data/avatar/000/00/37/71_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3771.html" title="zxnb">zxnb</a></p>
+<p class="gray">12月27日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3834.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/34_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3834.html" title="奶糖也疯狂">奶糖也疯狂</a></p>
+<p class="gray">12月27日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-27.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/27_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-27.html" title="吕颖">吕颖</a></p>
+<p class="gray">12月26日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3817.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3817.html" title="shmily">shmily</a></p>
+<p class="gray">12月24日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3851.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/51_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3851.html" title="zhangxue">zhangxue</a></p>
+<p class="gray">12月24日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3848.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/48_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3848.html" title="路很长">路很长</a></p>
+<p class="gray">12月24日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-53.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/53_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-53.html" title="于泉">于泉</a></p>
+<p class="gray">12月23日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3832.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/32_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3832.html" title="唯一">唯一</a></p>
+<p class="gray">12月22日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3806.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/06_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3806.html" title="风野">风野</a></p>
+<p class="gray">12月19日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-10.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/10_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-10.html" title="幽城鬼火">幽城鬼火</a></p>
+<p class="gray">12月18日</p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3798.html"><img src="http://center.zxnb.com/data/avatar/000/00/37/98_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3798.html" title="展昭">展昭</a></p>
+<p class="gray">12月18日</p>
+</li>
+</ul>
+</div>
+
+
+<div class="sidebox">
+<h2 class="title">
+<span class="r_option">
+<a href="space-1-do-friend-view-me.html" class="action">全部(97)</a>
+</span>
+好友
+</h2>
+<ul class="avatar_list">
+<li>
+<div class="avatar48"><a href="space-2.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/02_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-2.html">应鹏</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3818.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/18_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3818.html">张亚波</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3834.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/34_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3834.html">奶糖也疯狂</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-27.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/27_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-27.html">吕颖</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-53.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/53_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-53.html">于泉</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3831.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/31_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3831.html">叶蓓莉</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3809.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/09_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3809.html">阮唯珈</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-5.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/05_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-5.html">王鹏</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3864.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/64_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3864.html">merfill</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-49.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/49_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-49.html">叶健迷</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-17.html"><img src="http://center.zxnb.com/data/avatar/000/00/00/17_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-17.html">郭青</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3874.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/74_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p class="online_icon_p"><a href="space-3874.html">╬￣.綄羙﹖</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3837.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/37_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3837.html">莫小寒</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-2435.html"><img src="http://center.zxnb.com/data/avatar/000/00/24/35_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-2435.html">邵玲莺</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-2636.html"><img src="http://center.zxnb.com/data/avatar/000/00/26/36_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-2636.html">胡毕樱子</a></p>
+</li>
+<li>
+<div class="avatar48"><a href="space-3868.html"><img src="http://center.zxnb.com/data/avatar/000/00/38/68_avatar_small.jpg" onerror="this.onerror=null;this.src='http://center.zxnb.com/images/noavatar_small.gif'"></a></div>
+<p><a href="space-3868.html">陈铘</a></p>
+</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="footer">
+
+<p class="r_option">
+<a href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP"><img src="image/top.gif" alt="" style="padding: 5px 6px 6px;" /></a>
+</p>
+
+
+<p>宁波在线交友,做宁波最好的交友聊天平台,500人qq群(1): 47313355  <a href="link.php?url=http://www.zxnb.com%2Fspace-1-do-thread-id-38.html" target="_blank">认证群：9303744</a></p>
+<p>
+宁波在线交友社区 - 
+<a href="mailto:admin@zxnb.com">联系我们</a>
+ - <a href="/links.html" target="_blank">友情连接</a> - <a  href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">浙ICP备06027587号</a> - 
+</p>
+<p>
+Powered by <a  href="http://www.zxnb.com" target="_blank"><strong>宁波在线</strong></a> <span title="20090825">uchome</span>
+&copy; 2005-2009 www.zxnb.com 免费交友,发布照片,交友活动
+</p>
+</div>
+</div>
+<!--/wrap-->
+
+<ul id="ucappmenu_menu" class="dropmenu_drop" style="display:none;">
+<li><a href="link.php?url=http://vod.zxnb.com" title="在线影院" target="_blank">在线影院</a></li>
+</ul>
+
+<ul id="membernotemenu_menu" class="dropmenu_drop" style="display:none;">
+</ul>
+
+</body>
+</html>

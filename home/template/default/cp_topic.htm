@@ -1,0 +1,154 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+<!--{if $_GET['op'] == 'delete'}-->
+
+	<h1>Xóa topic</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+	<div class="popupmenu_inner" id="__topicform_{$topicid}">
+	<form id="topicform_{$topicid}" name="topicform_{$topicid}" method="post" action="cp.php?ac=topic&op=delete&topicid=$topicid">
+		<p>Bạn có chắc muốn xóa Topic này?</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="submit" name="deletesubmit" value="Xóa" class="submit" />
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	</div>
+	
+<!--{elseif $_GET['op'] == 'ignore'}-->
+
+	<h1>Xóa topic</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+	<div class="popupmenu_inner" id="__topicform_{$topicid}">
+	<form id="topicform_{$topicid}" name="topicform_{$topicid}" method="post" action="cp.php?ac=topic&op=join&topicid=$_GET[topicid]&id=$_GET[id]&idtype=$_GET[idtype]">
+		<p>
+			Bạn có chắc muốn xóa Topic này?<br>
+			Hành động này sẽ không xóa ở CSDL thật..
+		</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="hidden" name="newtopicid" value="0">
+			<input type="submit" name="joinsubmit" value="Ok" class="submit" />
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	</div>
+	
+	
+<!--{elseif $_GET['op'] == 'join'}-->
+
+	<h1>Điều chỉnh độ hot</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+	<div class="popupmenu_inner" id="__topicjoinform">
+	<form id="topicjoinform" name="topicjoinform" method="post" action="cp.php?ac=topic&op=join&id=$_GET[id]&idtype=$_GET[idtype]">
+		<p>
+			Độ hot:<br>
+			<select name="newtopicid">
+			<option value="">&nbsp;</option>
+			<!--{loop $tlist $value}-->
+			<option value="$value[topicid]">$value[subject]</option>
+			<!--{/loop}-->
+			</select>
+		</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="submit" name="joinsubmit" value="Ok" class="submit" />
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	</div>
+
+<!--{else}-->
+
+	<h2 class="title"><img src="image/app/topic.gif" />Topic</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li class="active"><a href="cp.php?ac=topic"><span>Thêm topic</span></a></li>
+			<li><a href="space.php?do=topic"><span>Topic</span></a></li>
+		</ul>
+		<!--{if $_SGLOBAL[refer]}-->
+		<div class="r_option">
+			<a  href="$_SGLOBAL[refer]">&laquo; Xem trước</a>
+		</div>
+		<!--{/if}-->
+	</div>
+	
+	<div class="c_form">
+		<form method="post" action="cp.php?ac=topic&topicid=$topicid" enctype="multipart/form-data">
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<th width="100">Tiêu dề</th>
+				<td>
+					<input type="text" name="subject" value="$topic[subject]" size="80" />
+				</td>
+			</tr>
+			<tr>
+				<th>Hình ảnh</th>
+				<td>
+					<table><tr>
+					<!--{if $topic['pic']}-->
+					<td><img src="$topic[pic]" width="150"></td>
+					<!--{/if}-->
+					<td><input type="file" name="pic" value="" /></td>
+					</tr></table>
+				</td>
+			</tr>
+			<tr>
+				<th>Mô tả</th>
+				<td>
+					<textarea name="message" rows="8" cols="80">$topic[message]</textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>Vui lòng chọn</th>
+				<td>
+					<input type="checkbox" name="jointype[]" value="blog"$jointypes[blog]>Blog
+					<input type="checkbox" name="jointype[]" value="pic"$jointypes[pic]>Ảnh
+					<input type="checkbox" name="jointype[]" value="thread"$jointypes[thread]>Topic
+					<input type="checkbox" name="jointype[]" value="poll"$jointypes[poll]>Bầu chọn
+					<input type="checkbox" name="jointype[]" value="event"$jointypes[event]>Sự kiện
+					<input type="checkbox" name="jointype[]" value="share"$jointypes[share]>Chia sẻ
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Level được chấp nhận</th>
+				<td>
+				<!--{eval $i=0;}-->
+				<table><tr>
+				<!--{loop $usergroups $groups}-->
+					<!--{loop $groups $gid $value}-->
+					<td><input type="checkbox" name="joingid[]" value="$gid"$joingids[$gid]>$value[grouptitle]</td>
+					<!--{if $i%4==3}--></tr><tr><!--{/if}-->
+					<!--{eval $i++;}-->
+					<!--{/loop}-->
+				<!--{/loop}-->
+				</tr></table>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>Hạn tham gia</th>
+				<td>
+					<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
+					<input type="text" name="endtime" value="$topic[endtime]" id="endtime" onclick="showcalendar(event,this,1,'$topic[endtime]', '$topic[endtime]')">
+					<br>Hạn tham gia không được để trống. Sau khi hết hạn mọi người có thể xem nhưng không thể tham gia.
+				</td>
+			</tr>
+
+
+			<tr>
+				<th>&nbsp;</th>
+				<td><input type="submit" name="topicsubmit" value="Ok" class="submit" /></td>
+			</tr>
+		</table>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		</form>
+	</div>
+	
+	
+<!--{/if}-->
+
+<!--{template footer}-->

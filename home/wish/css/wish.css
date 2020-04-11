@@ -1,0 +1,70 @@
+.a_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E3CDCD;
+	FONT-SIZE: 11px !important;
+}
+.a_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #EEBBBB;
+}
+.b_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #C0D6B0;
+	FONT-SIZE: 11px !important;
+}
+.b_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #AFC891;
+}
+.c_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D7D2A2;
+	FONT-SIZE: 11px !important;
+}
+.c_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:#C7C17E;
+}.d_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D1CEE8;
+	FONT-SIZE: 11px !important;
+}
+.d_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #BAB5DB;
+}.e_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #A0C7C4;
+	FONT-SIZE: 11px !important;
+}
+.e_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #87BEBB;
+}
+.f_kline {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dddddd;
+	FONT-SIZE: 11px !important;
+}
+.f_ty {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #bbbbbb;
+}

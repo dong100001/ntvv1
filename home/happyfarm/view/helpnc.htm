@@ -1,0 +1,20 @@
+﻿<!--{template happyfarm/view/header}-->
+
+<div id="main">
+	<div>
+		<a href="javascript:;" onclick="return false;">Trang trại</a>
+		<a href="index.php?act=help&nmc=mc">Nông trại</a>
+	</div>
+	<div id="tabs_div"></div>
+	<dl id="content_div"></dl>
+</div>
+
+<script type="text/javascript" src="view/js/help/info_nc.js"></script>
+<script type="text/javascript" src="view/js/help/help.js"></script>
+<script type="text/javascript">
+	generateTabs();
+	tabs[0].style.fontWeight = 'bold';
+	generateContent(0);
+</script>
+
+<!--{template happyfarm/view/footer}-->

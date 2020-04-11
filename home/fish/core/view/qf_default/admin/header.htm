@@ -1,0 +1,20 @@
+<!--Ao cá vui vẻ HappyFish Gold GoHooH -->
+<!--GoHooH.CoM - Trang web chính thức hỗ trợ Discuz!, Ucenter Home tại Việt Nam http://www.gohooh.com/forum/ -->
+<!--{tpl header}-->
+
+<div id="main">
+
+	<div class="menu">
+		<!--{php $actives[$mod_name] = ' class="actives"';}-->
+		<a{:$actives[home]} href="admin.php?mod=home">Home</a>
+		<a{:$actives[quick]} href="admin.php?mod=quick">Quick</a>
+		<a{:$actives[system]} href="admin.php?mod=system">System</a>
+		<a{:$actives[notice]} href="admin.php?mod=notice">Notice</a>
+		<a{:$actives[user_list]} href="admin.php?mod=user_list">List user</a>
+		<!--{if $id > 0}-->
+		<a{:$actives[user_edit]} href="admin.php?mod=user_edit&id={:$id}">Edit</a>
+		<!--{/if}-->
+		<a href="http://www.gohooh.com" target="_blank">GoHooH</a>
+	</div>
+
+	<div id="main_admin">

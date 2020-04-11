@@ -1,0 +1,559 @@
+<!--{template header}-->
+<script language="javascript" type="text/javascript" >
+function buy() {
+//	ajaxget('cpPark.php?ac=park&op=buyend', 'game');
+//	$('game').style.display = 'none';
+}
+function ajaxpost1(formid, showid, func) {
+	showloading();
+	if(ajaxpostHandle != 0) {
+		return false;
+	}
+	var ajaxframeid = 'ajaxframe';
+	var ajaxframe = $(ajaxframeid);
+	if(ajaxframe == null) {
+		if (is_ie && !is_opera) {
+			ajaxframe = document.createElement("<iframe name='" + ajaxframeid + "' id='" + ajaxframeid + "'></iframe>");
+		} else {
+			ajaxframe = document.createElement("iframe");
+			ajaxframe.name = ajaxframeid;
+			ajaxframe.id = ajaxframeid;
+		}
+		//ajaxframe.id = ajaxframeid;
+		ajaxframe.style.display = 'none';
+		$('append_parent').appendChild(ajaxframe);
+
+	}
+	$(formid).target = ajaxframeid;
+	$(formid).action = $(formid).action + '&inajax=1';
+	
+	ajaxpostHandle = [showid, ajaxframeid, formid, $(formid).target, func];
+	if(ajaxframe.attachEvent) {
+		ajaxframe.detachEvent ('onload', ajaxpost_load);
+		ajaxframe.attachEvent('onload', ajaxpost_load);
+	} else {
+		document.removeEventListener('load', ajaxpost_load, true);
+		ajaxframe.addEventListener('load', ajaxpost_load, false);
+	}
+	$(formid).submit();
+    return false;
+}
+function sAutoComplete(objName, showID, ulID, valID, series, func) {
+	this.items = [];
+	this.showObj = $(showID);
+	this.ulObj = $(ulID);
+	this.valObj = $(valID);
+	if (!this.showObj) return;
+	this.obj = objName;
+	this.values = false;
+	this.sVal = null;
+	this.currently = -1;
+	this.series = isUndefined(series) ? 1 : series;
+	this.func = isUndefined(func) ? '': func;
+	this.showObj.childNodes[0].scrollTop = 0;
+	return this;
+};
+
+sAutoComplete.prototype.addItem = function(items) {
+	if(items.indexOf(",") > 0) {
+		var itemArr = items.split(",");
+		for(var i = 0; i < itemArr.length; i++) {
+			this.items.push(itemArr[i]);
+		}
+	} else {
+		this.items.push(items);
+	}
+	this.items.sort();
+};
+sAutoComplete.prototype.doClick = function(vObj) {
+	with(this) {
+		if(typeof vObj == 'undefined') return false; 
+		var val = valObj.value;
+		instance = eval(obj);
+		if(!this.series) {
+			valObj.value = vObj.val;
+		}else if(values) {
+			if(valObj.value.lastIndexOf(",") != valObj.value.length-1) {
+				valObj.value = valObj.value.substring(0, valObj.value.lastIndexOf(",")+1);
+			}
+			valObj.value += vObj.val + ",";
+		} else {
+			instance.values = true;
+			valObj.value = vObj.val + ",";
+		}
+		if(this.func != '') {
+			this.func();
+		}
+		valObj.focus();
+		showObj.style.display = "none";
+	}
+};
+sAutoComplete.prototype.directionKeyDown = function(event) {
+	with(this) {
+		var e = event.keyCode ? event.keyCode : event.which;
+		var allChild = ulObj.childNodes.length;
+
+		if(e == 40) {
+			if(currently+1 >= allChild) currently = allChild - 2;
+			currently++
+			if(currently != 0) showObj.childNodes[0].scrollTop += 16;
+			ulObj.childNodes[currently].childNodes[0].style.cssText = "background: #2782D6; color: #FFF; text-decoration: none;";
+		} else if(e == 38) {
+			if(currently - 1 <= -1) currently = 1;
+			currently--;
+			showObj.childNodes[0].scrollTop -= 16;
+			ulObj.childNodes[currently].childNodes[0].style.cssText = "background: #2782D6; color: #FFF; text-decoration: none;";
+		} else if(e == 13) {
+			instance = eval(obj);
+			instance.doClick(ulObj.childNodes[currently]);
+		}
+		
+	}
+};
+sAutoComplete.prototype.append = function(item, filtrate) {
+	with(this) {
+		instance = eval(obj);
+	 	var liObj = document.createElement("li");
+		liObj.onclick = function(){instance.doClick(this)};
+		liObj.val = item;
+		if(filtrate) {
+			var reg  = new RegExp("(" + sVal + ")","ig");
+			if(sVal) liObj.innerHTML = '<a href="###">' + item.replace(reg , "<strong>$1</strong>") + '</a>';
+		} else {
+			liObj.innerHTML = '<a href="###">' + item + '</a>';
+		}
+		ulObj.appendChild(liObj);
+	}
+};
+sAutoComplete.prototype.handleEvent = function(searchVal, event) {
+	with(this) {
+		var hidden = true;
+		var allVal = 0;
+		var strArr = new Array();
+		var e = event.keyCode ? event.keyCode : event.which;
+		ulObj.innerHTML = "";
+		showObj.style.display = "block";
+		instance = eval(obj);
+		if(searchVal.indexOf(",") > 0) {
+			strArr = searchVal.split(",");
+			allVal = strArr.length;
+			if(strArr[strArr.length-1] != "") {
+				searchVal = strArr[strArr.length-1];
+			} else {
+				searchVal = "";
+			}
+		}
+		if(searchVal != "") {
+			searchVal = addslashes(searchVal);
+			sVal = searchVal;
+			var reg = new RegExp(searchVal, "ig");
+			var itemstr = '';
+			for(var i = 0; i < items.length; i++) {
+				var itemstr = items[i];
+				if(itemstr.match(reg)) {
+					instance.append(itemstr, 1);
+					hidden = false;
+				}
+			}
+		} else {
+			for(var i = 0; i < items.length; i++) {
+				instance.append(items[i], 0);
+				hidden = false;
+			}
+			if(allVal == 0) instance.values = false;
+		}
+		if(hidden) {
+			showObj.style.display = "none";
+		} else if(e == 38 || e == 40 || e == 13) {
+			instance.directionKeyDown(event);
+		}
+	}
+};
+function addslashes(str) {
+	return preg_replace(['\\\\', '\\\'', '\\\/', '\\\(', '\\\)', '\\\[', '\\\]', '\\\{', '\\\}', '\\\^', '\\\$', '\\\?', '\\\.', '\\\*', '\\\+', '\\\|'], ['\\\\', '\\\'', '\\/', '\\(', '\\)', '\\[', '\\]', '\\{', '\\}', '\\^', '\\$', '\\?', '\\.', '\\*', '\\+', '\\|'], str);
+}
+function preg_replace(search, replace, str) {
+	var len = search.length;
+	for(var i = 0; i < len; i++) {
+		re = new RegExp(search[i], "ig");
+		str = str.replace(re, typeof replace == 'string' ? replace : (replace[i] ? replace[i] : replace[0]));
+	}
+	return str;
+}
+
+</script>
+<style>
+.buycar_list{
+  
+}
+.buycar_list ul li{
+  float:left;
+  width:60px;
+}
+</style>
+<!--{if $_GET['op']=='buy'}-->
+<div id="buycar" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="buycarform" name="buycarform" action="cpPark.php?ac=park&op=buyend&sid=$sid">
+	<h1>Mua xe ($carname) - Hãy chọn một màu cho ô tô của bạn</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div class="buycar_list ">
+		<ul>
+		<!--{loop $listcar $itemcar}-->
+		  <li>
+		    <img src="$itemcar[CarImgBig]"  width="110" />
+			<input type="radio" value="$itemcar[CarID]" name="carid" />
+			$itemcar[CarPrice]
+		  </li>
+	   <!--{/loop}-->  	  
+		</ul>
+	   </div>
+        <!--{if $stageid<>0 }-->	     
+		<input type="hidden" name="stageid" value="$stageid" />		
+		<input type="hidden" name="ID" value="$ID" />
+		 <span style="color:#FF0000">Giỏ hàng</span>				
+		<!--{/if}-->
+		<input type="hidden" name="buycarsubmit" value="true" />
+		<input type="button" name="buycarsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('buycarform', 'buycar', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div class="buycar_list ">
+		<ul>
+		<!--{loop $listcar $itemcar}-->
+		  <li>
+		    <img src="$itemcar[CarImgBig]" />
+			<input type="radio" value="$itemcar[CarID]" name="carid" />
+			$itemcar[CarPrice]
+		  </li>
+	   <!--{/loop}-->  	  
+		</ul>
+	   </div>  		
+        <!--{if $stageid<>0 }-->	     
+		<input type="hidden" name="stageid" value="$stageid" />		
+		<input type="hidden" name="ID" value="$ID" />
+		 <span style="color:#FF0000">Giỏ hàng</span>				
+		<!--{/if}-->
+		<input type="submit" name="gamescsubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+<!--{if $op=='buystage'}-->
+<div id="buystage" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="buystageform" name="buystageform" action="cpPark.php?ac=park&op=buystageend">
+	<h1>Mua xe</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="buystagesubmit" value="true" />
+		<input type="button" name="buystagesubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('buystageform', 'buystage', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="submit" name="buystagesubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+<!--{if $op=='sendfriend'}-->
+<div id="sendfriend" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="sendfriendform" name="sendfriendform" action="cpPark.php?ac=park&op=sendfriendend">
+	<h1>Quà tặng cho bạn bè</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div >
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="225">
+						<table cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="padding: 0;"><input type="text" id="username" name="username" value="Tìm Kiếm" onFocus="if(this.value=='Tìm Kiếm')this.value='';" class="t_input" tabindex="1" onClick="auc.handleEvent(this.value ,event);" onKeyUp="auc.handleEvent(this.value ,event);inputKeyDown(event, 1);" onKeyDown="closeOpt(event);inputKeyDown(event);" autocomplete="off" style="width: 160px; border-right: none;" /></td>
+								<td style="padding: 0;"><a href="#"><img src="image/search_btn.gif" alt="Tìm Kiếm" /></a></td>
+							</tr>
+						</table>
+						
+						<div id="username_menu" class="ajax_selector" onClick="$('username_menu').style.display='none';" style="display:none">
+							<div class="ajax_selector_option" style="width: 181px; height: 100px;">
+								<a href="javascript:;" onClick="$('username_menu').style.display='none';" class="float_del" style="margin-right: 5px;">a</a>
+								<ul id="friendlist" class="blocklink"></ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							var close = true;
+							var auc = new sAutoComplete("auc", "username_menu", "friendlist", "username", 0, searchFriend);
+							auc.addItem('$friendstr');
+							function closeOpt(evt) {
+								if(evt.keyCode==9) {
+									$('username_menu').style.display='none';
+								}
+							}
+							function inputKeyDown(event, search) {
+								if(isUndefined(search)) search = 0;
+								if(event.keyCode == 13){
+									if(search) searchFriend();
+									doane(event);
+								}
+							}
+							function searchFriend() {
+		//								var username = $('username').value;
+		//								if(username == 'Search friend to PK' || username == '') {
+		//									alert('Input the friend name');
+		//								} else {
+		//									location.href =''+username;
+		//								}
+							}
+								
+						</script>
+					</td>
+				</tr>
+			</table>  		  
+		</div>
+	    <div style="margin-bottom:10px"><img src="$carinfo[CarImgBig]" /></div>
+		<div style="margin-bottom:10px">Tên xe:$carinfo[CarDesc] Giá hiện tại:$carinfo[CarPrice] Tố độ:$carinfo[CarMaxSpeed]</div>
+		
+		<input type="hidden" name="CarID" value="$CarID" />
+		<input type="hidden" name="sendfriendsubmit" value="true" />
+		<input type="button" name="sendfriendsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('sendfriendform', 'sendfriend', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div >
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="225">
+						<table cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="padding: 0;"><input type="text" id="username" name="username" value="Search Friend to PK" onFocus="if(this.value=='Tìm người bạn muốn gửi xe tới')this.value='';" class="t_input" tabindex="1" onClick="auc.handleEvent(this.value ,event);" onKeyUp="auc.handleEvent(this.value ,event);inputKeyDown(event, 1);" onKeyDown="closeOpt(event);inputKeyDown(event);" autocomplete="off" style="width: 160px; border-right: none;" /></td>
+								<td style="padding: 0;"><a href="#"><img src="image/search_btn.gif" alt="Tìm người bạn muốn gửi xe tới" /></a></td>
+							</tr>
+						</table>
+						
+						<div id="username_menu" class="ajax_selector" onClick="$('username_menu').style.display='none';" style="display:none">
+							<div class="ajax_selector_option" style="width: 181px; height: 100px;">
+								<a href="javascript:;" onClick="$('username_menu').style.display='none';" class="float_del" style="margin-right: 5px;">a</a>
+								<ul id="friendlist" class="blocklink"></ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							var close = true;
+							var auc = new sAutoComplete("auc", "username_menu", "friendlist", "username", 0, searchFriend);
+							auc.addItem('$friendstr');
+							function closeOpt(evt) {
+								if(evt.keyCode==9) {
+									$('username_menu').style.display='none';
+								}
+							}
+							function inputKeyDown(event, search) {
+								if(isUndefined(search)) search = 0;
+								if(event.keyCode == 13){
+									if(search) searchFriend();
+									doane(event);
+								}
+							}
+							function searchFriend() {
+		//								var username = $('username').value;
+		//								if(username == 'Search Friend to PK' || username == '') {
+		//									alert('Input friend name');
+		//								} else {
+		//									location.href =''+username;
+		//								}
+							}
+								
+						</script>
+					</td>
+				</tr>
+			</table>  		  
+		</div>
+	    <div style="margin-bottom:10px"><img src="$carinfo[CarImgBig]" /></div>
+		<div style="margin-bottom:10px">Tên xe:$carinfo[CarDesc] Values:$carinfo[CarPrice] Speed:$carinfo[CarMaxSpeed]</div>
+		
+		<input type="hidden" name="CarID" value="$CarID" />		
+		
+		<input type="submit" name="sendfriendsubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+<!--{if $_GET['op']=='sale'}-->
+<div id="salecar" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="salecarform" name="salecarform" action="cpPark.php?ac=park&op=saleend">
+	<h1>Bán xe ($carname)</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="hidden" name="salecarsubmit" value="true" />
+		<input type="button" name="salecarsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('salecarform', 'salecar', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Gia hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="submit" name="salesubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+<!--{if $_GET['op']=='saleout'}-->
+<div id="salecar" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="salecarform" name="salecarform" action="cpPark.php?ac=park&op=saleoutend">
+	<h1>Bán xe ($carname)</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="hidden" name="salecarsubmit" value="true" />
+		<input type="button" name="salecarsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('salecarform', 'salecar', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="submit" name="salesubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+<!--{if $_GET['op']=='stopsale'}-->
+<div id="salecar" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="salecarform" name="salecarform" action="cpPark.php?ac=park&op=stopsaleend">
+	<h1>Stop selling ($carname)</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="hidden" name="salecarsubmit" value="true" />
+		<input type="button" name="salecarsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('salecarform', 'salecar', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+   
+		<input type="hidden" name="carid" value="$arrCar[CarID]" />
+		<input type="submit" name="salesubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+
+<!--{if $_GET['op']=='buyold'}-->
+<div id="buyold" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="buyoldform" name="buyoldform" action="cpPark.php?ac=park&op=buyoldend">
+	<h1>Mua ($carname)</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+        <!--{if $stageid<>0 }-->	     
+		<input type="hidden" name="stageid" value="$stageid" />		
+		<input type="hidden" name="ID" value="$ID" />
+		 <span style="color:#FF0000">Thẻ giảm giá</span>				
+		<!--{/if}-->		   
+		<input type="hidden" name="myID" value="$myID" />
+		<input type="hidden" name="buyoldcarsubmit" value="true" />
+		<input type="button" name="buyoldcarsubmit_btn" value="Đồng Ý" class="submit" onClick="ajaxpost1('buyoldform', 'buyold', 'buy')" />
+		<input type="button" name="btnclose" value="Hủy Bỏ" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div class="buycar_list ">
+		<ul>
+		  <li>
+		    <img src="$arrCar[CarImgBig]" />
+			<p style=" margin-left:10px; margin-bottom:10px;">Giá ban đầu:$arrCar[CarPrice] <span style="color:#FF0000; margin-left:10px;"> Giá hiện tại:$arrCar[CarPriceNew]</span></p>
+		  </li>
+		</ul>
+	   </div>
+        <!--{if $stageid<>0 }-->	     
+		<input type="hidden" name="stageid" value="$stageid" />		
+		<input type="hidden" name="ID" value="$ID" />
+		 <span style="color:#FF0000">Thẻ giảm giá</span>				
+		<!--{/if}-->		   
+		<input type="hidden" name="myID" value="$myID" />
+		<input type="submit" name="salesubmit" value="Đồng Ý" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+<!--{template footer}-->

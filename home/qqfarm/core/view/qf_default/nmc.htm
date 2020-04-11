@@ -1,0 +1,183 @@
+<!--{tpl inc_header}-->
+
+<div id="main_nmc">
+	<div id="mync"></div>
+	<div id="mymc" style="display:none;"></div>
+	<div id="mykn" style="display:none;"></div>
+	<div id="mymill" style="display:none;"></div>
+</div>
+
+<div id="getflashplayer" style="display:none;">
+	<div style="text-align:center;padding-top:150px;">
+		<h1>Xin vui lòng tải và cài Adobe Flash Player mới nhất</h1>
+		<img 
+		onclick="var mywindow = window.parent || window; mywindow.location.href = 'http://www.adobe.com/go/getflashplayer'" 
+		style="border:0;cursor:pointer;" alt="Xin vui lòng tải và cài Adobe Flash Player mới nhất" src="images/get_flash_player.gif" 
+		/>
+	</div>
+</div>
+
+<script type="text/javascript" src="script.php?swfobject"></script>
+<script type="text/javascript">
+
+	var curModule = '{:$_GET["type"]}';
+	var curSWF = 'module/happyfarm_v_1.swf?v=1023';
+
+
+	function getUploadUrl() {
+		$("#my"+curModule).setUploadUrl('api/savepic.php');
+		return 0;
+	}
+
+
+	function connectSWF(methodName, arg, module) {
+		module = module || curModule;
+		if(arg) {
+			return $("#my"+module)[methodName](arg) || null;
+		}
+		else {
+			return $("#my"+module)[methodName]();
+		}
+	}
+
+
+	function findSWF(id) {
+		var element = window[id] || document[id];
+		return element;
+	}
+
+
+	function flowerToPickFriend() {
+		try { window.parent.dlBox2_Show(); }
+		catch(error) {}
+	}
+
+
+	function getflashvars(module) {
+		return {
+			phpini:"module/ui_ini.xml?v=55",
+			phpini2:"module/mc_ini.xml?v=33",
+			app_key:"",
+			autoStatus:1,
+			batchStealHour:"0-11,12-23", 
+			buyToolHour:"9-22",
+			buyToolTips:"Mùa đông sắp đến, hãy mua Phân bón và Hat giống để dự trữ qua mùa đông!",
+			cacheDiy:6,
+			cacheSeed:20,
+			domian:"",
+			enter_into:"",
+			enter_into_mod:1000,
+			flowerDayTips:"Trong giai đoạn Close Beta, người chơi có thể tặng và nhận hoa với nhau!",
+			flowerYDLevel:-1, 
+			filterLV:0,
+			reqLevel:1,
+			filterUrl:"",
+			healthModeTime:"00:00 - 06:00",
+			hmv2CloseTime:1261929600,
+			hmv2level:0,
+			millLimitYDLevel:7,
+			buyTin:1,
+			loading:"module/loading_v_14.swf",
+			miniFactory:2,
+			miniFactoryText:"神秘的魔法师又来了，这次他又会用什么神奇的魔法把作物变成化肥呢？<font color='#F47600'>红玫瑰 5个 %2B 便便 5个 %2B 金币 1000 %3D 1袋极速化肥</font><br/>赶紧试试吧！",
+			missionTitle:"{:$mission[Title]}",
+			missionPrepareTime:"{:$mission[PrepareTime]}",
+			missionBeginTime:"{:$mission[BeginTime]}",
+			missionEndTime:"{:$mission[EndTime]}",
+			missionPrepareHtml:"{:$mission[PrepareHtml]}",
+			missionBeginHtml:"{:$mission[BeginHtml]}",
+			mode:"",
+			module:module,
+			noFoodTips:"Mùa đông sắp đến, hãy mua thức ăn chó để dự trữ qua mùa đông!",
+			recover:"",
+			redirect_url:"",
+			reqYellowlevel:1,
+			ShopHeadLink:"GoHooH|http://www.gohooh.com/",
+			ShopToolLink:"",
+			snowslide:3,
+			uinMode:1,
+			user:"1001-1002",
+			user_mode:1000
+		};
+	}
+
+
+	var switchfarm = $("#mync") ? function(module) {
+
+		if(module == 'nc') {
+			$("#mync").style.position = "static";
+			$("#mymc").style.position = "absolute";
+			$("#mykn").style.position = "absolute";
+			$("#mymill").style.position = "absolute";
+			$("#mync").style.height = "560px";
+			$("#mymc").style.height = "0px";
+			$("#mykn").style.height = "0px";
+			$("#mymill").style.height = "0px";
+			curSWF = "module/happyfarm_v_1.swf?v=1023";
+		} else if(module == 'mc') {
+			$("#mync").style.position = "absolute";
+			$("#mymc").style.position = "static";
+			$("#mykn").style.position = "absolute";
+			$("#mymill").style.position = "absolute";
+			$("#mync").style.height = "0px";
+			$("#mymc").style.height = "560px";
+			$("#mykn").style.height = "0px";
+			$("#mymill").style.height = "0px";
+			curSWF = "module/happyfarm_v_1.swf?v=1023";
+		} else if(module == 'kn') {
+			$("#mync").style.position = "absolute";
+			$("#mymc").style.position = "absolute";
+			$("#mykn").style.position = "static";
+			$("#mymill").style.position = "absolute";
+			$("#mync").style.height = "0px";
+			$("#mymc").style.height = "0px";
+			$("#mykn").style.height = "560px";
+			$("#mymill").style.height = "0px";
+			curSWF = "module/kxnc.swf";
+		} else if(module == 'mill') {
+			$("#mync").style.position = "absolute";
+			$("#mymc").style.position = "absolute";
+			$("#mykn").style.position = "absolute";
+			$("#mymill").style.position = "static";
+			$("#mync").style.height = "0px";
+			$("#mymc").style.height = "0px";
+			$("#mykn").style.height = "0px";
+			$("#mymill").style.height = "560px";
+			curSWF = "module/workshop/swf/MillLoader.swf";
+		}
+
+		if($("#my"+module).tagName.toLowerCase() == 'div') {
+			var flashDir = "";
+			swfobject.embedSWF(
+				curSWF, 
+				("my"+module), 
+				"100%", 
+				"560", 
+				"9.0.124", 
+				"view/js/swfobject/expressInstall.swf",
+				getflashvars(module),
+				{
+					base: flashDir,
+					allowScriptAccess: "always",
+					wmode: "opaque"
+				},
+				{
+					"MredirectURL": "#"
+				},
+				function(e) {
+					if(!e.success) {
+						$("#my"+module).innerHTML = $("#getflashplayer").innerHTML;
+					}
+				}
+			);
+		}
+
+		curModule = module;
+	} : function(){};
+
+
+	try { switchfarm(curModule); }
+	catch(error) {}
+</script>
+
+<!--{tpl inc_footer}-->

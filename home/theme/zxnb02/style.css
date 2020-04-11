@@ -1,0 +1,86 @@
+﻿/*
+[name]Tranh cuộn[/name]
+Develop by GoHooH.CoM
+*/
+body{background-image: url(zxnb-img/background.jpg);}
+#header{
+	background-image: url(zxnb-img/top.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	height:250px;
+	margin: 0px;
+	padding: 0px;
+}
+.headerwarp {
+	background-color:  transparent;
+	background-image: none;
+	margin: 0px;
+	padding: 0px;
+}
+#wrap #space_page {
+	background-image: url(zxnb-img/bg.jpg);
+	background-position: center;
+}
+#wrap #space_page #ubar {
+	padding: 0px;
+	margin-right: 20px;
+	margin-left: 40px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	margin-top: 0px;
+}
+#wrap #space_page #obar {
+	clear: both;
+	width: 880px;
+	padding-left: 50px;
+	display: none;
+}
+#wrap #footer {
+	background-image: url(zxnb-img/foot.jpg);
+	background-position: center;
+	height: 241px;
+	margin: 0px;
+	padding: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+#wrap #space_page {
+	margin: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}#wrap #space_page #ubar h2 {
+	background-image: url(zxnb-img/bg1.gif);
+	text-indent: 32px;
+	color: #000000;
+}
+#wrap #space_page #content .feed_header {
+	background-image: url(zxnb-img/bg2.gif);
+	background-repeat: repeat-x;
+}
+#header .headerwarp .logo {
+	display: none;
+}
+#header .headerwarp .menu {
+	margin-left: 50px;
+}
+#wrap #footer .r_option {
+	display: none;
+}
+
+
+#wrap #space_page #ubar h2 a{	color: #000000;
+}

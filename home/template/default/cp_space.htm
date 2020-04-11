@@ -1,0 +1,30 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<!--{if $_GET['op'] == 'delete'}-->
+
+<h1>Ẩn ứng dụng</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng</a>
+<div class="popupmenu_inner" id="__userappform_{$_GET[appid]}">
+	<form method="post" id="userappform_{$_GET[appid]}" name="userappform_{$_GET[appid]}" action="cp.php?ac=space&op=">
+		<p>Bạn có chắc muốn ẩn ứng dụng này?</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+			<input type="hidden" name="appid" value="$_GET[appid]" />
+			<input type="hidden" name="type" value="$_GET[type]" />
+			<!--{if $_SGLOBAL[inajax]}-->
+			<input type="hidden" name="delappsubmit" value="true" />
+			<button name="delappsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('userappform_{$_GET[appid]}', 'userapp_delete', 2000)">Submit</button>
+			<!--{else}-->
+			<button name="delappsubmit" type="submit" class="submit" value="true">Ok</button>
+			<!--{/if}-->
+		</p>
+
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+<!--{/if}-->
+
+<!--{template footer}-->

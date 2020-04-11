@@ -1,0 +1,19 @@
+﻿<!--Vui lòng giử bản quyền Việt hóa của GoHooH.CoM, đó sẽ là động lực để tớ share code tiếp-->
+<style type="text/css">
+@import url(game/css/main.css);
+</style>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],small)}--></a></div>
+	<p style="font-size:14px"><strong><!--{$gamename}--></strong></p>
+	$gamename là game rất thú vị được phát triển bởi GoHooH. Chúc các bạn có những giây phút thư giản thoải mái tại Nhà Tui.
+	
+</div>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li{$actives['index']}><a href="gohoohgame.php?ac=index&fgid=<!--{$fgid}-->"><span>Chơi game</span></a></li>
+        <li{$actives['friendorder']}><a href="gohoohgame.php?ac=friendorder&fgid=<!--{$fgid}-->"><span>Bạn bè</span></a></li>
+		<li{$actives['order']}><a href="gohoohgame.php?ac=order&fgid=<!--{$fgid}-->"><span>Xếp hạng</span></a></li>
+		<li{$actives['home']}><a href="gohoohgame.php?ac=home"><span>Trang chủ</span></a></li>
+		
+	</ul>
+</div>

@@ -1,0 +1,52 @@
+<!--{tpl admin/inc_header}-->
+
+<form id="myform" onsubmit="return submits();" class="edit">
+	<table cellpadding=5 cellspacing=0>
+		<tr>
+			<td width="50px;">Item ID</td>
+			<td width="100px;">{:$itemtype_list['itemId']}</td>
+		</tr>
+		<tr>
+			<td width="80px">Tên</td>
+			<td><input type="text" name="itemName" value="{:$itemtype_list['itemName']}"/></td>
+		</tr>
+		<tr>
+			<td width="80px">Mô tả</td>
+			<td><input type="text" name="itemDesc" value="{:$itemtype_list['itemDesc']}"/></td>
+		</tr>
+		<tr>
+			<td width="80px">Hạn dùng</td>
+			<td><input type="text" name="itemValidTime" value="{:$itemtype_list['itemValidTime']/(3600*24)}" size=10/> Ngày</td>
+		</tr>
+		<tr>
+			<td width="80px">Vàng</td>
+			<td><input type="text" name="price" value="{:$itemtype_list['price']}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Ycoin</td>
+			<td><input type="text" name="FBPrice" value="{:$itemtype_list['FBPrice']}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Giá VIP</td>
+			<td><input type="text" name="YFBPrice" value="{:$itemtype_list['YFBPrice']}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">EXP</td>
+			<td><input type="text" name="exp" value="{:$itemtype_list['exp']}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Cấp</td>
+			<td><input type="text" name="level" value="{:$itemtype_list['level']}" />  </td>
+		</tr>
+	</table>
+	<input type="submit" value="Xác nhận" /><span id="state"></span>
+</form>
+
+<script type="text/javascript">
+	function submits(inputId) {
+		request('admin.php?mod=itemtype_edit&submit=1&id={:$id}', 'state', $.getForm('#myform', 1));
+		return false;
+	}
+</script>
+
+<!--{tpl admin/inc_footer}-->

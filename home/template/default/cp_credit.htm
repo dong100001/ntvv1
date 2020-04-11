@@ -1,0 +1,248 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+﻿<!--{template header}-->
+<!--{template cp_header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<div class="l_status c_form">
+	<a href="cp.php?ac=credit"$cat_actives[base]>Thông tin</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=rule"$cat_actives[rule]>Qui định</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=usergroup"$cat_actives[usergroup]>Hệ thống</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=exchange"$cat_actives[exchange]>Trao đổi</a>
+</div>
+
+<!--{eval
+	$_TPL['cycletype'] = array(
+		'0' => '1 lần',
+		'1' => 'Hàng ngày',
+		'2' => 'Ngẫu nhiên',
+		'3' => 'Hàng giờ',
+		'4' => 'Không giới hạn'
+	);
+}-->
+
+<div class="c_form">
+<!--{if empty($_GET['op'])}-->	
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th width="150">Hiện có</th>
+			<td><span style="color:green;font-size:14px;">$space[experience]</span> <!--{eval echo getstar($space[experience]);}--></td>
+		</tr>
+		<tr><th width="150">&nbsp;</th><td class="gray">
+			Cứ mỗi <strong>$_SCONFIG[starcredit]</strong> điểm bạn sẽ được 1 <img src="image/star_level1.gif" align="absmiddle"><br>
+			Tích lũy <strong>$_SCONFIG[starlevelnum]</strong> icon bạn sẽ được lên <strong>1</strong> cấp <br>
+			Cấp bật icon như sau: <!--{eval for($i=1;$i<11;$i++){}--><img src="image/star_level{$i}.gif"><!--{eval }}--></td></tr>
+		<tr>
+			<th width="150">Nhóm người dùng</th>
+			<td>
+				<span<!--{eval g_color($space[groupid]);}-->>$space[grouptitle]</span>
+				<!--{eval g_icon($space[groupid]);}-->
+			</td>
+		</tr>
+		<tr>
+			<th width="150">Đang có</th>
+			<td>
+			<img src="image/credit.gif">
+			<span style="color:red;font-size:14px;">$space[credit]</span>
+			<span class="gray">(<a href="space.php?do=top&view=credit">Xếp hạng</a>)</span>
+			</td>
+		</tr>
+		<tr><th>Khách thăm:</th>
+			<td>$space[viewnum] 
+			<span class="gray">(<a href="space.php?do=top&view=viewnum">Xếp hạng</a>)</span>
+			</td></tr>
+		<tr><th>Tham gia từ:</th><td><!--{date('Y-m-d',$space[dateline],1)}--></td></tr>
+		<tr><th>Ghé thăm </th><td><!--{date('Y-m-d',$space[lastlogin],1)}--></td></tr>
+		<tr><th>Cập nhật mới nhất:</th><td><!--{date('Y-m-d',$space[updatetime],1)}--></td></tr>
+
+		<tr>
+			<th>Thống kê không gian:</th>
+			<td> Đã dùng $maxattachsize trong $space[attachsize]. (chiếm {$percent}%)</td>
+		</tr>
+		<!--{if $space[haveattachsize]}--><tr><th>Đã dùng:</th><td>$space[haveattachsize]</td></tr><!--{/if}-->
+	</table>
+	<br>
+
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>Trung tâm tiền tệ</h2>
+			<p>Bạn có thể kiếm tiền từ các hoạt động sau:</p>
+		</caption>
+		<thead>
+		<tr class="title">
+			<td>Hoạt động</td>
+			<td align="center">Số lần</td>
+			<td align="center">Chu kỳ</td>
+			<td align="center">Điểm</td>
+			<td align="center">Tiền</td>
+			<td align="center">Cập nhật gần đây</td>
+		</tr>
+		</thead>
+		<!--{if $list}-->
+		<!--{loop $list $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td><a href="cp.php?ac=credit&op=rule&rid=$value[rid]">$value[rulename]</a></td>
+			<td align="center">$value[total]</td>
+			<td align="center">$value[cyclenum]</td>
+			<td align="center">$value[credit]</td>
+			<td align="center">$value[experience]</td>
+			<td align="center"><!--{date('m-d H:i',$value[dateline])}--></td>
+		</tr>
+		<!--{/loop}-->
+		<!--{else}-->
+		<tr>
+			<td colspan="6">Bạn chưa nhận điểm nào!</td>
+		</tr>
+		<!--{/if}-->
+		<!--{if $multi}-->
+		<tr>
+			<td colspan="6"><div class="page">$multi</div></td>
+		</tr>
+		<!--{/if}-->
+	</table>
+
+<!--{elseif $_GET['op'] == 'exchange'}-->
+
+	<form method="post" action="cp.php?ac=credit&op=exchange">
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>Trao đổi</h2>
+		<p>Hệ thống trao đổi ngoại tệ của cộng đồng GoHooH.CoM sẽ giúp bạn chuyển đổi tiền giữa mạng xã hội và forum.</p>
+	</caption>
+	<tr><th width="150">Hiện có:</th><td> $space[credit]</td></tr>
+	<tr>
+		<th><label for="password">Mật khẩu</label>:</th>
+		<td><input type="password" name="password" class="t_input" /></td>
+	</tr>
+	<tr>
+		<th>Số tiền muốn đổi:</th>
+		<td><input type="text" id="amount" name="amount" value="0" class="t_input" onkeyup="calcredit();" /></td>
+	</tr>
+	<tr>
+		<th>Trao đổi:</th>
+		<td>
+			<input type="text" id="desamount" value="0" class="t_input" disabled />&nbsp;&nbsp;
+			<select name="tocredits" id="tocredits" onChange="calcredit();">
+			<!--{loop $_CACHE['creditsettings'] $id $ecredits}-->
+				<!--{if $ecredits[ratio]}-->
+					<option value="$id" unit="$ecredits[unit]" title="$ecredits[title]" ratio="$ecredits[ratio]">$ecredits[title]</option>
+				<!--{/if}-->
+			<!--{/loop}-->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Tỷ lệ trao đổi:</th>
+		<td><span class="bold">1</span>&nbsp;<span id="orgcreditunit">���</span><span id="orgcredittitle"></span>&nbsp;�һ�&nbsp;<span class="bold" id="descreditamount"></span>&nbsp;<span id="descreditunit"></span><span id="descredittitle"></span></td>
+	</tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="exchangesubmit" value="Exchange Credits" class="submit"></td></tr>
+	</table>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	<script type="text/javascript">
+		function calcredit() {
+			tocredit = $('tocredits')[$('tocredits').selectedIndex];
+			$('descreditunit').innerHTML = tocredit.getAttribute('unit');
+			$('descredittitle').innerHTML = tocredit.getAttribute('title');
+			$('descreditamount').innerHTML = Math.round(1/tocredit.getAttribute('ratio') * 100) / 100;
+			$('amount').value = $('amount').value.toInt();
+			if($('amount').value != 0) {
+				$('desamount').value = Math.floor(1/tocredit.getAttribute('ratio') * $('amount').value);
+			} else {
+				$('desamount').value = $('amount').value;
+			}
+		}
+		String.prototype.toInt = function() {
+			var s = parseInt(this);
+			return isNaN(s) ? 0 : s;
+		}
+		calcredit();
+	</script>
+
+<!--{elseif $_GET['op'] == 'rule'}-->
+
+	<!--{if $list}-->
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>Tặng thưởng</h2>
+			<p>Hãy thực hiện các hoạt động sau để nhập được các phần thưởng thú vị từ GoHooH.CoM</p>
+		</caption>
+		<tr class="title">
+			<td>Hoạt động</td>
+			<td align="center">Phạm vi</td>
+			<td align="center">Tối đa</td>
+			<td align="center" width="100">Điểm</td>
+		</tr>
+		<!--{loop $list $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td>$value[rulename]</td>
+			<td align="center">$_TPL[cycletype][$value[cycletype]]</td>
+			<td align="center"><!--{if $value[rewardnum]}-->$value[rewardnum]<!--{else}-->Không giới hạn<!--{/if}--></td>
+			<td align="center">$value[credit]</td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	<!--{/if}-->
+	
+	<!--{if $list2}-->
+	<br>
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>Trừ điểm</h2>
+			<p>Các hoạt động sau sẽ trừ điểm của bạn. Hãy tránh các hoạt động này nhé</p>
+		</caption>
+		<tr class="title">
+			<th>Hoạt động</th>
+			<th align="center">Tiền bị trừ</th>
+		</tr>
+		<!--{loop $list2 $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td>$value[rulename]</td>
+			<td align="center" width="100">$value[credit]</td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	<!--{/if}-->
+	
+<!--{elseif $_GET['op'] == 'usergroup'}-->
+
+	<table cellspacing="0" cellpadding="0" class="listtable">
+	<caption>
+		<h2>Thang cấp bậc</h2>
+		<p>Cấp bậc cao hơn thì quyền sẽ nhiều hơn, hãy cố gắng lên cấp nhé.</p>
+	</caption>
+	<tr class="title">
+		<th width="150">Tên nhóm</th>
+		<td>Số tiền</td>
+	</tr>
+	<!--{loop $groups $value}-->
+	<tr>
+		<th><span<!--{eval g_color($value[gid]);}-->>{$value[grouptitle]}</span><!--{eval g_icon($value[gid]);}--></th>
+		<td>$value[explower] ~ $value[exphigher]</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	
+	<table cellspacing="0" cellpadding="0" class="listtable">
+	<caption>
+		<h2>Nhóm vip</h2>
+		<p>Những thành viên đặc việt</p>
+	</caption>
+	<tr class="title">
+		<th width="150">Tên nhóm</th>
+		<td>Kinh nghiệm</td>
+	</tr>
+	<!--{loop $s_groups $value}-->
+	<tr>
+		<th><span<!--{eval g_color($value[gid]);}-->>{$value[grouptitle]}</span><!--{eval g_icon($value[gid]);}--></th>
+		<td>-</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+
+<!--{/if}-->
+
+</div>
+
+<!--{template footer}-->

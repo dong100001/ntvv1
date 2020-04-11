@@ -1,0 +1,43 @@
+<!--{tpl admin/inc_header}-->
+
+<!--{if $farm_list}-->
+<div class="list">
+	<table>
+		<tr>
+			<th>cId</th>
+			<th>Tên</th>
+			<th>Cấp</th>
+			<th>EXP Thu hoạch</th>
+			<th>Dự kiến</th>
+			<th>Thời gian trưởng thành</th>
+			<th>Năng suất</th>
+			<th>Loại quý hiếm</th>
+			<th>Giá mua</th>
+			<th>Giá sán phẩm</th>
+			<th>Sửa</th>
+		</tr>
+		<!--{foreach $farm_list as $farmlist}-->
+		<tr>
+			<td>{:$farmlist['cId']}</td>
+			<td>{:$farmlist['cName']}</td>
+			<td>{:$farmlist['cLevel']}</td>
+			<td>{:$farmlist['cropExp']}</td>
+			<td>{:$farmlist['expect']}</td>
+			<td>{:$farmlist['growthCycle']/3600} 小时</td>
+			<td>{:$farmlist['output']}</td>
+			<td>{:$farmlist['maturingTime']}</td>
+			<td>{:$farmlist['price']}</td>
+			<td>{:$farmlist['sale']}</td>
+			<td>
+				<a href="admin.php?mod=cropstype_edit&id={:$farmlist['cId']}">Sửa</a>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+	</table>
+</div>
+<div id="pages" class="multiPage"></div>
+<!--{else}-->
+<div class="no_hpinfo">Không có thông tin!</div>
+<!--{/if}-->
+
+<!--{tpl admin/inc_footer}-->

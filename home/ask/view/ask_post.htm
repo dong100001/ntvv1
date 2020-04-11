@@ -1,0 +1,86 @@
+﻿<!--{eval $_TPL['titles'] = array('GoHooH Hỏi & Đáp');}-->
+<!--{template header}-->
+<script language="javascript" src="image/editor/editor_function.js"></script>
+<script type="text/javascript">
+function validate() {
+	var subject = $('title');
+	if (subject) {
+		var slen = strlen(subject.value);
+		if (slen < 1 || slen > 80) {
+			alert("Tiêu đề phải từ 1 đến 80 ký tự");
+			subject.focus();
+			return false;
+		}
+	}
+	return true;
+}
+function checkForm() {
+
+	edit_save();
+	if($('score').value=='' ||  isNaN($('score').value)  || parseInt($('score').value) < 1 || parseInt($('score').value) > {$gMaxScore} ) {
+		alert("Điểm thưởng phải nằm trong khoảng 1-{$gMaxScore}");
+		$('score').focus();
+		return false;
+	}
+	if( !validate() ) {
+		return false;
+	}
+	if (empty($_POST['content']))
+	{
+		alert('Xin vui lòng nhập nội dung!');
+		return false;
+	}
+	
+	return true;
+}
+</script>
+
+<div class="h_status">
+<table width="100%">
+<tr><td>
+<h1><!--{if $id}-->Sửa câu hỏi<!--{else}-->Tạo câu hỏi<!--{/if}--> | <a href="gohoohhoidap.php?do=ask">Danh sách câu hỏi</a></h1>
+</td></tr></table>
+</div>
+<STYLE>
+.userData {behavior:url(#default#userdata);}
+</STYLE>
+<div class="d_content">
+	<form method="post" action="gohoohhoidap.php?do=ask&ac=cp&op=post" enctype="multipart/form-data" onsubmit="return checkForm()">
+	<input type="hidden" name="ask_id" id="ask_id" value="$info[id]"  />
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td>
+					Câu hỏi:
+					<input type="text" class="t_input" id="title" name="title" value="$info[title]" size="80" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Hỏi về: <select name="typeid" id="typeid">
+<!--{loop $gEumsType $typeid $typename}-->
+<option value="$typeid" <!--{if $typeid == $info[typeid] }-->selected="selected"<!--{/if}--> >$typename</option>				
+<!--{/loop}-->	
+					</select>
+					&nbsp;&nbsp;
+					Điểm thưởng <input name="score" id="score" title="Điểm sẽ được trừ từ tài khoản của bạn " value="$info[score]" <!--{if $info[score]>0 }-->disabled="disabled" title="Điểm thưởng không thể sửa"<!--{/if}--> />(1-{$gMaxScore} điểm)
+            <br />[Đây là điểm thưởng cho người có đáp án mà bạn thấy hài lòng nhất cho câu hỏi này]</td>
+			</tr>
+			<tr>
+				<td>
+				<textarea class="userData" name="content" id="uchome-ttHtmlEditor" style="height:100%;width:100%;display:none;border:0px">$info[content]</textarea>
+				<iframe src="editor.php?charset=$_SC[charset]&allowhtml=$allowhtml" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="width:100%;border: 1px solid #C5C5C5;" height="400"></iframe>
+				</td>
+			</tr>
+
+		</table>
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+		<tr>
+			<th width="60">&nbsp;</th>
+			<td><input type="submit" id="issuance" value="Đăng câu hỏi" class="submit"  />
+			<a href="gohoohhoidap.php?do=ask">Trở về danh sách</a>
+			</td>
+		</tr>
+	</table>	
+	</form>
+</div>
+<!--{template footer}-->

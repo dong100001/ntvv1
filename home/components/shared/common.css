@@ -1,0 +1,13 @@
+.com_category { overflow: hidden; zoom: 1; }
+	.com_category li { float: left; margin: 6px 0px 0px 6px; border: 1px solid #888; }
+		.com_category a { float: left; padding: 0 10px; height: 20px; background: #2682d5; line-height: 20px; color: #FFF; }
+	.com_category li.active {}
+		.com_category li.active a { border-top-color: #F0F0F0; background: #FFF; color: #333; }
+
+.t_combutton { position: absolute; right: 20px; top: -30px; display: block; padding: 0 10px; height: 20px; border: 1px solid; border-color: #DDD #264F6E #264F6E #DDD; background: #2782D6; color: #FFF; line-height: 20px; }
+
+.combutton { position: absolute; display: block; padding: 0 10px; height: 20px; border: 1px solid; border-color: #DDD #264F6E #264F6E #DDD; background: #2782D6; color: #FFF; line-height: 20px; }
+
+.comtitle { padding: 0.2em 0.5em; border-top: 1px solid #2782D6; border-bottom: 1px solid #DDD; }
+	.comtitle h1 { font-size: 1.17em; color: #333; }
+	.comtitle h4 { padding-top: 2px; font-size: 1.17em; }

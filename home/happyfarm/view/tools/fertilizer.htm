@@ -1,0 +1,15 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main">
+	<div>
+		Tỷ lệ trao đổi: 5 <img src='view/images/bb.jpg' /> + 2 <img src='view/images/blb.jpg' /> = 1 <img src='view/images/hf2.jpg' /> hoặc <img src='view/images/hf1.jpg' />(xác suất 10%)
+	</div>
+	<div>
+		<font color='#ff0000' style='font-size:15px'>Bạn đang có {$bb}<img src='view/images/bb.jpg' /> và {$blb} <img src='view/images/blb.jpg' /> </font>
+		<br />
+		<input type="button" onclick="request('tools/fertilizer.php', 'state');" value="Đổi phân bón" />
+		<span id="state"></span>
+	</div>
+</div>
+
+<!--{template happyfarm/view/footer}-->

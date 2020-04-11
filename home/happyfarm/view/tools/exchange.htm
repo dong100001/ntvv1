@@ -1,0 +1,19 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main">
+	<p>
+		<p>Sử dụng tiền của nông trại, 10 điểm = 1 Gee</p>
+		Số Gee muốn đổi: <input type='text' id='yb' size='15' />
+		<input type="button" onclick='request("tools/exchange.php?act=yb&number="+SQuery("#yb").value, "state1");' value='Đổi Gee' />
+		<span id="state1"></span>
+	</p>
+	<br />
+	<p>
+		<p>Sử dụng điểm của Nhà Tui, 1 điểm = 100 tiền</p>
+		Số tiền muốn đổi: <input type='text' id='jb' size='15' /> x100
+		<input type="button" onclick='request("tools/exchange.php?act=jb&number="+SQuery("#jb").value, "state2");' value='Đổi tiền' />
+		<span id="state2"></span>
+	</p>
+</div>
+
+<!--{template happyfarm/view/footer}-->

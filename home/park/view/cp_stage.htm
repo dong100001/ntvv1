@@ -1,0 +1,137 @@
+<!--{eval $_TPL['titles'] = array('Chơi game cuộc chiến đỗ xe trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+<script language="javascript" type="text/javascript" >
+function buy() {
+//	ajaxget('cpPark.php?ac=park&op=buyend', 'game');
+//	$('game').style.display = 'none';
+}
+function ajaxpost1(formid, showid, func) {
+	showloading();
+	if(ajaxpostHandle != 0) {
+		return false;
+	}
+	var ajaxframeid = 'ajaxframe';
+	var ajaxframe = $(ajaxframeid);
+	if(ajaxframe == null) {
+		if (is_ie && !is_opera) {
+			ajaxframe = document.createElement("<iframe name='" + ajaxframeid + "' id='" + ajaxframeid + "'></iframe>");
+		} else {
+			ajaxframe = document.createElement("iframe");
+			ajaxframe.name = ajaxframeid;
+			ajaxframe.id = ajaxframeid;
+		}
+		//ajaxframe.id = ajaxframeid;
+		ajaxframe.style.display = 'none';
+		$('append_parent').appendChild(ajaxframe);
+
+	}
+	$(formid).target = ajaxframeid;
+	$(formid).action = $(formid).action + '&inajax=1';
+	
+	ajaxpostHandle = [showid, ajaxframeid, formid, $(formid).target, func];
+	if(ajaxframe.attachEvent) {
+		ajaxframe.detachEvent ('onload', ajaxpost_load);
+		ajaxframe.attachEvent('onload', ajaxpost_load);
+	} else {
+		document.removeEventListener('load', ajaxpost_load, true);
+		ajaxframe.addEventListener('load', ajaxpost_load, false);
+	}
+	$(formid).submit();
+    return false;
+}
+</script>
+
+<!--{if $_GET['op']=='changebg'}-->
+<div id="changebg" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="changebgform" name="changebgform" action="cpPark.php?ac=stage&op=changebgend&stageid=$stageinfo[Stageid]">
+	<h1>Sử dụng thẻ Scene</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />		
+		<input type="hidden" name="changestagesubmit" value="true" />
+		<input type="button" name="changestagesubmit_btn" value="OK" class="submit" onclick="ajaxpost1('changebgform', 'changebg', 'buy')" />
+		<input type="button" name="btnclose" value="Cancel" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />				
+		<input type="submit" name="changestagesubmit" value="OK" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+<!--{if $_GET['op']=='nonamewarn'}-->
+<div id="nonamewarn" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="nonamewarnform" name="nonamewarnform" action="cpPark.php?ac=stage&op=nonamewarnend&stageid=$stageinfo[Stageid]">
+	<h1>Sử dụng thẻ Anonymous</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />		
+		<input type="hidden" name="nonamewarnsubmit" value="true" />
+		<input type="button" name="nonamewarnsubmit_btn" value="OK" class="submit" onclick="ajaxpost1('nonamewarnform', 'nonamewarn', 'buy')" />
+		<input type="button" name="btnclose" value="Cancel" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div>
+		   <img src="$stageinfo[StageImg]" /></br>
+		   <span style="margin-left:10px;">$stageinfo[StageName]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />				
+		<input type="submit" name="nonamewarnsubmit" value="OK" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+<!--{if $_GET['op']=='forfeit'}-->
+<div id="forfeit" <!--{if !$_SGLOBAL[inajax]}-->class="inpage"<!--{/if}-->>
+<form method="post" id="forfeitform" name="forfeitform" action="cpPark.php?ac=stage&op=forfeitend&stageid=$stageinfo[Stageid]">
+	<h1>Sử dụng thẻ Confiscate</h1>
+	<div class="c_form">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<div>
+		   <img src="$carinfo[CarImgBig]" /></br>
+		   <p>{$username}'s <span style=" color:#FF0000">$carinfo[CarDesc]</span></p>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />		
+		<input type="hidden" name="myID" value="$myID" />		
+		<input type="hidden" name="forfeitsubmit" value="true" />
+		<input type="button" name="forfeitsubmit_btn" value="OK" class="submit" onclick="ajaxpost1('forfeitform', 'forfeit', 'buy')" />
+		<input type="button" name="btnclose" value="Cancel" class="submit" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<div>
+		   <img src="$carinfo[CarImgBig]" /></br>
+		   <span style="margin-left:10px;">{$username} $carinfo[CarDesc]</span>
+		</div>
+		<input type="hidden" name="StageID" value="$StageID" />
+		<input type="hidden" name="ID" value="$ID" />				
+		<input type="hidden" name="myID" value="$myID" />				
+		<input type="submit" name="nonamewarnsubmit" value="OK" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+<!--{/if}-->
+
+<!--{template footer}-->

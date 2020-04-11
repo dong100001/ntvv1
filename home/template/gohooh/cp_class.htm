@@ -1,0 +1,51 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+<!--{if $_GET['op'] == 'edit'}-->
+
+<h1>Sửa chuyên mục</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Close">Close</a>
+<div class="popupmenu_inner" id="$classid">
+<form id="classform" name="classform" method="post" action="cp.php?ac=class&op=edit&classid=$classid">
+	<p>
+		<label for="classname">New Category:</label>
+		<input type="text" id="classname" name="classname" value="$class[classname]" size="10"></td>
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="editsubmit" value="true">
+		<input type="submit" name="editsubmit_btn" value="Submit" class="submit" />
+		<!--{else}-->
+		<input type="submit" name="editsubmit" value="Publish" class="submit" />
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET['op'] == 'delete'}-->
+
+<h1>Xóa chuyên mục</h1>
+<a href="javascript:hideMenu();" class="float_del" title="Đóng">Đóng/a>
+<div class="popupmenu_inner" id="$classid">
+	<form id="classform" name="classform" method="post" action="cp.php?ac=class&op=delete&classid=$classid">
+	<p>Bạn có chắc muốn xóa? </p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="deletesubmit" value="true" />
+		<input type="submit" name="deletesubmit_btn" value="Tiếp tục" class="submit" />
+		<input type="button" name="btnclose" value="Hủy" onclick="hideMenu();" class="button" />
+		<!--{else}-->
+		<input type="submit" name="deletesubmit" value="Tiếp tục" class="submit" />
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<!--{/if}-->
+
+<!--{template footer}-->

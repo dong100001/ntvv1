@@ -1,0 +1,19 @@
+<!--{tpl inc_header}-->
+
+<div id="main">
+	<p>
+		<p>Đổi 10 Gyns lấy 1 Ycoin</p>
+		Nhập số Ycoin：<input type='text' id='yb' size='15' />
+		<input type="button" onclick='request("tools.php?mod=exchange&do=save&type=yb&number="+SQuery("#yb").value, "state1");' value='Xác nhận' />
+		<span id="state1"></span>
+	</p>
+	<br />
+	<p>
+		<p>Đổi 1 Gyn lấy 100 Vàng</p>
+		Nhập số Gyn：<input type='text' id='jb' size='15' /> x100 = số Vàng nhận được!
+		<input type="button" onclick='request("tools.php?mod=exchange&do=save&type=jb&number="+SQuery("#jb").value, "state2");' value='Xác nhận' />
+		<span id="state2"></span>
+	</p>
+</div>
+
+<!--{tpl inc_footer}-->

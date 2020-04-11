@@ -1,0 +1,12 @@
+Message: MySQL Query Error 
+    URI: /qqfarm/core/nmc.php?type=nc 
+    SQL: SELECT regname,username FROM uchome_qqfarm_user WHERE uid='1' 
+  Errno: 1146 
+  Error: Table 'ruabayco_me.uchome_qqfarm_user' doesn't exist 
+ 
+Message: MySQL Query Error 
+    URI: /qqfarm/core/mync.php?mod=user&act=upgrade&confirm=1 
+    SQL: UPDATE uchome_qqfarm_user set money=money- where uid=1 
+  Errno: 1064 
+  Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where uid=1' at line 1 
+ 

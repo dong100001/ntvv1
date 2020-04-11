@@ -1,0 +1,231 @@
+﻿<!--{eval $_TPL['titles'] = array('Vườn ước nguyện mạng xã hội, chia sẽ cộng đồng GoHooH.CoM');}-->
+<!--{template header}-->
+
+<link href="wish/css/wish.css" rel="stylesheet" type="text/css">
+
+<!--{if $space[self]}-->
+<h2 class="title"><img src="image/app/wish.gif" />Ước Nguyện</h2>
+<div class="tabs_header">
+	<ul class="tabs">		
+		<li$actives[wish]><a href="wishApp.php?&do=$do"><span>Gửi ước nguyện</span></a></li>
+		<li><a href="wishApp.php?do=index"><span>Vước ước nguyện</span></a></li>
+		<li><a href="http://www.gohooh.com"><span>Home</span></a></li>
+	</ul>
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "Vườn ước nguyện mạng xạ hội GoHooH.CoM";
+}-->
+<!--{template space_menu}-->
+<!--{/if}-->
+<form method="post" action="wishApp.php?do=wish" >
+	<div id="content" style="width:520px;">	
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="105" align="left">
+					Chọn màu:
+				</td>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="3">
+              			<tbody>
+              				<tr>
+				                <td width="30"><img src="wish/images/bcolor1.gif" alt="Đỏ" onclick="ChoiceColor('a')" style="cursor: pointer;" width="30" height="28"></td>
+				                <td width="30"><img src="wish/images/bcolor2.gif" alt="Xanh lá" onclick="ChoiceColor('b')" style="cursor: pointer;" width="30" height="28"></td>				                
+				                <td width="30"><img src="wish/images/bcolor3.gif" alt="Vàng" onclick="ChoiceColor('c')" style="cursor: pointer;" width="30" height="28"></td>
+				                <td width="30"><img src="wish/images/bcolor4.gif" alt="Tím" onclick="ChoiceColor('d')" style="cursor: pointer;" width="30" height="28"></td>
+				                <td width="30"><img src="wish/images/bcolor5.gif" alt="Xanh dương" onclick="ChoiceColor('e')" style="cursor: pointer;" width="30" height="28"></td>
+				                <td width="30"><img src="wish/images/bcolor6.gif" alt="Trắng" onclick="ChoiceColor('f')" style="cursor: pointer;" width="30" height="28"></td>
+				            </tr>
+            			</tbody>
+            		</table>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="105" align="left">
+					Chọn tem:
+				</td>
+				<td>
+					<table border="0" cellpadding="0" cellspacing="0" width="95%">
+              			<tbody>
+              				<tr>
+				                <td><img src="wish/images/wp_1.gif" alt="Món quà" onclick="ChoiceImage(1)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_2.gif" alt="Kẹo mút" onclick="ChoiceImage(2)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_3.gif" alt="Trái tim" onclick="ChoiceImage(3)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_4.gif" alt="Kem ống" onclick="ChoiceImage(4)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_5.gif" alt="Búp bê" onclick="ChoiceImage(5)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_6.gif" alt="Kim cương" onclick="ChoiceImage(6)" style="cursor: pointer;" width="30" height="28"></td>
+				                <td><img src="wish/images/wp_7.gif" alt="Hoa hồng" onclick="ChoiceImage(7)" style="cursor: pointer;" width="30" height="28"></td>
+								<td><img src="wish/images/wp_8.gif" alt="Nụ hôn" onclick="ChoiceImage(8)" style="cursor: pointer;" width="30" height="28"></td>
+              				</tr>
+            			</tbody>
+            		</table>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+        	<tbody>
+        		<tr>
+          			<td width="300" align="left">Nhập nội dung: (còn 
+            			<input maxlength="3" size="2" name="freeLength" id="freeLength" value="80" style="border: 0px none ; background-color: transparent;" type="text"> ký tự)
+          			</td>
+        		</tr>
+        		<tr>
+          			<td>
+          				<textarea name="strContent" id="oSource" rows="5" style="width: 80%;" maxlength="80" onkeyup="ChangeContent()"></textarea>
+          			</td>
+        		</tr>
+      		</tbody>
+      	</table>
+      	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="70" align="left">
+					Tớ là:
+				</td>
+				<td><span id="strSenderID" name="strSenderID" onkeyup="Change()">$space[username]</span>
+		  			<input id="strSender" name="strSender" value="$space[username]" type="hidden">
+		  			<input id="strSenderUID" name="strSenderUID" value="$space[uid]" type="hidden">
+          			<input id="oCheckbox" name="oCheckbox" onclick="ChangeSenderOK()" type="checkbox">Giấu tên
+				</td>
+			</tr>
+		</table>
+      	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="70" align="left">
+					Ước cho:
+				</td>
+				<td><span id="myReceiver"><input maxlength="16" size="18" name="strReceiverName" id="strReceiverName" onkeyup="Change()" type="text"></span>
+					<span id="myFriend" style="display:none;">
+					<select id="selectfriend" name="selectfriend" onchange="selectFriend(this.value);">
+					<option value="">Lựa chọn</option>
+					<!--{loop $friends $value}-->
+					<option value="$value['fuid'],$value['fusername']">$value['fusername']</option>
+					<!--{/loop}-->
+					</select>
+					</span>
+          			<input id="oCheckbox_friend" name="oCheckbox_friend" onclick="ChoiceFriend()" type="checkbox">Từ danh sách bạn bè
+          			<span id="myMsg" style="display:none;"><input id="oCheckbox_msg" name="oCheckbox_msg" onclick="ChangeSenderOK()" type="checkbox">Gửi thông báo đến người nhận</span>
+				</td>
+			</tr>
+		</table>
+		
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="70" align="left">
+					Thông tin hoạt động: 
+				</td>
+				<td>		  			
+          			<input id="oCheckFeed" name="oCheckFeed" type="checkbox" checked="checked">Thêm vào trong hoạt động cá nhân
+				</td>
+			</tr>
+		</table>
+		
+		<!--{if checkperm('seccode')}-->
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<!--{if $_SCONFIG['questionmode']}-->
+			<tr>
+				<td width="80" align="left">					
+					Xin vui lòng trả lời câu hỏi
+				</td>
+				<td>
+					<!--{eval question();}-->
+				</td>
+			</tr>
+			<!--{else}-->
+			<tr>
+				<td width="80" align="left">								
+					Xin vui lòng nhập mã bảo mật phía dưới 
+				</td>
+				<td>
+					<script>seccode();</script>
+				</td>
+			</tr>
+			<!--{/if}-->
+			<tr>
+				<td width="80" align="left">
+					&nbsp;
+				</td>
+				<td>
+					<input type="text" id="seccode" name="seccode" value="" size="10" class="t_input">
+				</td>
+			</tr>
+		</table>
+		<!--{/if}-->
+		
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td width="70">&nbsp;</td>
+				<td>
+					<input type="hidden" name="addsubmit" id="addsubmit" value="true" />
+					<input type="submit" value="Gửi ước nguyện" class="submit" />
+				</td>
+			</tr>
+		</table>		
+	</div>
+
+	<div id="sidebar" style="width:270px;">
+	<h2 class="title">Xem trước</h2>
+	<table border="0" cellpadding="0" cellspacing="0" width="260">
+    	<tbody>
+      	<tr>
+	        <td id="BGColor1" name="BGColor1" style="background-image: url(wish/images/b_01.gif);" valign="top" height="41">
+				<input id="strBGColor" name="strBGColor" value="b" type="hidden">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
+	            	<tbody>
+	            		<tr>
+			              <td valign="bottom" width="8%">&nbsp;</td>
+			              <td id="BGColor4" name="BGColor4" class="b_kline" style="padding-left: 7px;" valign="bottom" width="37%" height="34">Điều ước</td>
+			              <td class="b_kline" id="oTime" name="oTime" style="padding-right: 7px;" align="right" valign="bottom" width="50%">2009-12-01 20:34</td>
+			              <td class="gray1" style="cursor: pointer;" align="right" valign="bottom" width="5%">&nbsp;</td>
+			            </tr>
+	        		</tbody>
+	        	</table>
+	        </td>
+      	</tr>
+	      <tr>
+	      	<td id="BGColor2" name="BGColor2" style="background-image: url(wish/images/b_02.gif);">
+	      		<table id="BGColor5" name="BGColor5" class="b_kline" style="margin-bottom: 3px;" align="center" border="0" cellpadding="0" cellspacing="0" width="80%">
+	            	<tbody>
+	            		<tr>
+						  <td width="10">&nbsp;</td>
+			              <td style="padding: 3px;" valign="top" height="80"><span id="ReceiverName" name="ReceiverName" style=""></span><span id="oContent" name="oContent" style=""></span></td>
+			            </tr>
+			        </tbody>
+			 	</table>
+			</td>
+	    </tr>
+  		<tr>
+        	<td id="BGColor3" name="BGColor3" style="background-image: url(wish/images/b_04.gif);" valign="top" height="53">
+        		<table align="center" border="0" cellpadding="0" cellspacing="0" width="78%">
+            		<tbody>
+            			<tr>
+              				<td valign="top" width="45%">
+								<input id="strImage" name="strImage" value="8" type="hidden">
+								<img style="padding-left: 7px;" name="image" id="image" src="wish/images/wp_8.gif" width="30" height="28">
+                			</td>
+              				<td style="padding-right: 7px;" align="right" valign="top" width="55%"><br>
+	                			<table>
+	                				<tbody>
+	                					<tr>
+	                						<td>
+	                							<input id="strSendName" name="strSendName" value="$space[username]" type="hidden">
+	                							<span id="oName" name="oName">$space[username]</span>
+	                						</td>
+	                					</tr>
+	                				</tbody>
+	                			</table>
+                			</td>
+            			</tr>
+        			</tbody>
+        		</table>
+        	</td>
+  		</tr>
+ 		</tbody>
+ 	</table>	
+	</div>
+	<input type="hidden" name="refer" value="$theurl" />
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+<script language="javascript" type="text/javascript" src="wish/js/wish.js"></script>
+<!--{template footer}-->

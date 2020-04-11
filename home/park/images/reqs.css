@@ -1,0 +1,207 @@
+.confirminvite#pagebody #content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; WIDTH: 760px; PADDING-TOP: 0px
+}
+#reqs_standard_status .status {
+	MARGIN-TOP: 10px
+}
+.confirminvite #home_container #home_main {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; WIDTH: 449px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.confirminvite #home_container #home_sidebar {
+	
+}
+.confirm_boxes {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: #fff; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 4px; MARGIN: 0px 0px 5px; PADDING-TOP: 4px; BORDER-RIGHT-WIDTH: 0px
+}
+.confirmcount {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 13px; PADDING-BOTTOM: 2px; MARGIN: 7px 0px 2px; COLOR: #333; PADDING-TOP: 2px; TEXT-ALIGN: left
+}
+.confirm {
+	PADDING-RIGHT: 0px; BORDER-TOP: #d8dfea 1px solid; PADDING-LEFT: 0px; BACKGROUND: white; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 10px
+}
+.status_confirm {
+	BORDER-RIGHT: #cccccc 0px solid; PADDING-RIGHT: 20px; BORDER-TOP: #cccccc 1px solid; DISPLAY: block; PADDING-LEFT: 20px; Z-INDEX: 10; PADDING-BOTTOM: 6px; MARGIN: 0px 0px -1px; BORDER-LEFT: #cccccc 0px solid; WIDTH: 390px; COLOR: #333; LINE-HEIGHT: 1.6; PADDING-TOP: 6px; BORDER-BOTTOM: #cccccc 1px solid; POSITION: relative; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: left
+}
+.status_confirm IMG {
+	MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 4px
+}
+.confirm .image {
+	WIDTH: 110px; TEXT-ALIGN: left
+}
+.confirm LABEL {
+	FONT-WEIGHT: normal; COLOR: black
+}
+.confirm TD {
+	VERTICAL-ALIGN: top
+}
+.confirm TD.info {
+	PADDING-LEFT: 10px; WIDTH: 100%
+}
+.confirm TD.info .tos_portion {
+	FONT-SIZE: 9px; LINE-HEIGHT: 13px; PADDING-TOP: 10px
+}
+.confirm .invite_details {
+	FONT-SIZE: 9px; COLOR: #999
+}
+.confirm .invite_question {
+	MARGIN: 10px 0px
+}
+.addToFLRequests_Link {
+	DISPLAY: none
+}
+.confirm .addToFLRequests_Hidden .add_to_friend_list_widget {
+	DISPLAY: none
+}
+.confirm .add_to_friend_list_widget {
+	PADDING-TOP: 0px
+}
+.confirm .addToFLRequests_Hidden .addToFLRequests_Link {
+	DISPLAY: block
+}
+.confirm .addToFLRequests {
+	PADDING-TOP: 10px
+}
+.limited_profile_container {
+	PADDING-TOP: 10px
+}
+.mutual_friends_container {
+	PADDING-TOP: 10px
+}
+.limited_profile_container INPUT {
+	FLOAT: left
+}
+.limited_profile_container LABEL {
+	FLOAT: left; WIDTH: auto; PADDING-TOP: 2px
+}
+.limited_profile_container LABEL SPAN {
+	FONT-WEIGHT: normal; COLOR: #000
+}
+.buttons {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.aux_actions {
+	FONT-SIZE: 9px; PADDING-TOP: 10px
+}
+.confirminvite .inputsubmit {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 1px; MARGIN-RIGHT: 0px; PADDING-TOP: 1px
+}
+.confirminvite .inputbutton {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 1px; MARGIN-RIGHT: 0px; PADDING-TOP: 1px
+}
+A.profile_link {
+	FONT-WEIGHT: bold
+}
+.personal_msg {
+	PADDING-LEFT: 16px; BACKGROUND: url(../imgs/start_quote_small.gif) no-repeat left top; COLOR: #000
+}
+.personal_msg SPAN {
+	PADDING-RIGHT: 16px; BACKGROUND: url(../imgs/end_quote_small.gif) no-repeat right bottom
+}
+.confirm .suggestion_details {
+	FONT-SIZE: 9px; MARGIN: 12px 0px 0px 4px; COLOR: #999
+}
+.confirm .buttons {
+	MARGIN-LEFT: -2px
+}
+.confirminvite .new_user_action {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+.confirminvite .new_user_action A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; PADDING-BOTTOM: 4px; PADDING-TOP: 2px
+}
+.confirminvite .new_user_action .wall {
+	BACKGROUND: url(../imgs/wall_post.gif) no-repeat left 50%
+}
+.confirminvite .new_user_action .message {
+	BACKGROUND: url(../imgs/message.gif) no-repeat left 50%
+}
+.confirminvite .new_user_action .view_profile {
+	BACKGROUND: url(../imgs/favicon.gif) no-repeat left 50%
+}
+.confirminvite .new_user_action .suggest {
+	BACKGROUND: url(../imgs/friend_suggestion.gif) no-repeat left 50%
+}
+.confirminvite #friend_suggestion_main .whatsthis {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 9px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 3px 7px; PADDING-TOP: 0px
+}
+.mutual_friends_container .feed_item {
+	PADDING-TOP: 0px
+}
+.mutual_friends_container .pictures_container {
+	MARGIN-BOTTOM: 0px
+}
+.mutual_friends_container .pictures_container .pic_container {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.mutual_friends_container .pictures_container .pic_container:hover {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.mutual_friends_container .pictures_container .see_all {
+	TEXT-ALIGN: left; BORDER-BOTTOM-STYLE: none
+}
+.video_confirm_all {
+	PADDING-RIGHT: 20px; BORDER-TOP: #d8dfea 1px solid; PADDING-LEFT: 20px; PADDING-BOTTOM: 15px; PADDING-TOP: 15px; TEXT-ALIGN: left
+}
+.video_confirm_all .confirm_prompt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 0px
+}
+.video_confirm_all .confirm_buttons .inputbutton {
+	MARGIN: 0px
+}
+.confirm_boxes .video_tag_thumb {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 175px; PADDING-TOP: 0px
+}
+.confirm_boxes .video_tag_info {
+	FLOAT: left; WIDTH: 240px
+}
+.confirm_boxes .playing .video_tag_thumb {
+	FLOAT: none; WIDTH: auto
+}
+.confirm_boxes .playing .video_tag_info {
+	FLOAT: none; WIDTH: auto
+}
+.confirm_boxes .video_tag_info .video_tag_request .video_title_link {
+	FONT-WEIGHT: bold
+}
+.confirm_boxes .video_tag_info .video_tag_people {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.confirm_boxes .video_tag_info .video_tag_people .inputcheckbox {
+	MARGIN-RIGHT: 5px
+}
+.reqs_dialog #req_dialog_checkboxes {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 10px
+}
+.reqs_dialog #req_dialog_checkboxes LABEL {
+	FONT-WEIGHT: normal; COLOR: black
+}
+.reqs_dialog #req_dialog_checkboxes INPUT {
+	MARGIN-RIGHT: 5px
+}
+.reqs_dialog #before_clearing {
+	COLOR: #444
+}
+.connect_request_text {
+	PADDING-BOTTOM: 10px
+}
+.connect_request_block {
+	PADDING-LEFT: 5px; FONT-SIZE: 12px
+}
+.phonebook_req TD {
+	VERTICAL-ALIGN: middle
+}
+.phone_privacy_lock .priv_inline A DIV {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../imgs/privacy/lock_sprite.gif) no-repeat 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 10px; PADDING-TOP: 0px; HEIGHT: 10px
+}
+.phone_privacy_lock .priv_inline A:hover {
+	BACKGROUND-POSITION: 0px -15px; CURSOR: pointer
+}
+.confirminvite H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 4px; PADDING-TOP: 0px
+}
+.confirminvite .friend_add {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 8px; PADDING-TOP: 0px
+}
+.home_box_wrapper {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 10px; PADDING-TOP: 0px
+}

@@ -1,0 +1,20 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+﻿<h2 class="title">
+	<img src="image/app/topic.gif" />Topic - <a href="space.php?do=topic&topicid=$topicid">$topic[subject]</a>
+</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="javascript:;"><span>Topic</span></a></li>
+		<li><a href="space.php?do=topic&topicid=$topicid"><span>Xem topic</span></a></li>
+	</ul>
+	<!--{if checkperm('managetopic') || $topic['uid']==$_SGLOBAL[supe_uid]}-->
+	<div class="r_option">
+		<a href="cp.php?ac=topic&op=edit&topicid=$topic[topicid]">Sửa</a> |
+		<a href="cp.php?ac=topic&op=delete&topicid=$topic[topicid]" id="a_delete_$topic[topicid]" onclick="ajaxmenu(event,this.id);">Xóa</a>
+		</p>
+	</div>
+	<!--{/if}-->
+</div>
+
+<!--{template space_topic_inc}-->

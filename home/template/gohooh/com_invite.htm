@@ -1,0 +1,45 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Game siêu thị bạn bè được phát triển bởi GoHooH.CoM. Vui lòng giữ bản quyền Việt hóa của GoHooH.CoM. Cám ơn bạn đã sử dụng sản phẩm của GoHooH.CoM-->
+<!--{eval $_TPL['titles'] = array('Mời bạn bè tham gia Siêu thị Goer - Siêu thị bạn bè - Phát triển bởi GoHooH.CoM');}-->
+<!--{template header}-->
+<link rel="stylesheet" href="components/shared/common.css" type="text/css" />
+
+<div class="c_header a_header">
+</div>
+
+<div class="c_form" style="padding: 0 30px 0 30px;">
+<!--{if empty($_GET[uid])}-->
+<h1 style="font-style: normal; font-weight: 5px; font-size: 16px; color: #2682d5;border-bottom: 1px solid #2682d5;padding:5px 0 8px 0;">Mời bạn bè</h1>
+<BR>
+Nhấn vào link sau để copy và gửi cho bạn bè bàng tin nhắn, mail, nick chat...
+<BR><BR>
+<a href="javascript:void(0)" onclick="javascript:setCopy('$comp[description]\n$url');return false;" class="invitetd">$url</a>
+<BR><BR>
+$comp[success_msg]
+<BR><BR>
+<hr size=1 color="#2682d5">
+<BR>
+<!--{/if}-->
+
+			<table cellpadding="5" cellspacing="3">
+			<tr>
+				<td valign="top">
+					<a href="space.php?uid=$user[uid]"><!--{avatar($user[uid],medium)}--></a>
+				</td>
+				<td valign="top">
+					<h1 style="font-style: normal; font-weight: 5px; font-size: 16px; color: #2682d5;border-bottom: 1px solid #2682d5;padding:5px 0 8px 0;">$comp[title]</h1>
+					<ul style="padding:8px 0px 10px 0;">
+					<li style="font-style: normal; line-height: 25px; font-size:13px">$comp[description]</li>
+					</ul>
+					
+					<div style="padding: 20px; border-width: 1px 0; border-style: solid; border-color: #D2D2D2; background: #F7F7F7; text-align: center">
+					<a href="<!--{if $space[uid]}-->sieuthigoer.php?com=$comp[com]<!--{else}-->do.php?ac=register<!--{/if}-->" style="display: block; margin: 0 auto; width: 100px; border: 1px solid #486B26; background: #76A14F; line-height: 30px; font-size: 14px; text-decoration: none;"><strong style="display: block; border-top: 1px solid #9EBC84; color: #FFF;"><!--{if $space[uid]}-->Tham gia ngay<!--{else}-->Đăng ký<!--{/if}--></strong></a>
+					</div>
+
+					<BR><BR>
+				</td>
+				</tr>
+			</table>		
+</div>
+<!--{template footer}-->

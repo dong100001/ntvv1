@@ -1,0 +1,409 @@
+<!--{eval $_TPL['titles'] = array('Chơi game cuộc chiến đỗ xe trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+
+<style type="text/css">
+@import url(park/css/main.css);
+</style>
+
+<SCRIPT src="park/images/my_package.js" type=text/javascript></SCRIPT>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+	<p style="font-size:14px"><strong>Cuộc chiến đỗ xe hơi</strong></p>
+	<span class="spacelink">Các bãi đỗ xe luôn chật kín người, liệu bạn có thể tìm được chỗ đỗ xe riêng cho mình ?</span>
+</div>
+<div class="tabs_header">
+	<ul class="tabs">
+	    <li><a href="parkApp.php?ac=index" class="t_button"><span>Quay về trang chủ</span></a></li>
+		<li$actives[opcar]><a href="parkApp.php?ac=admin&op=opcar"><span>Quản lý xe</span></a></li>
+		<li$actives[opstage]><a href="parkApp.php?ac=admin&op=opstage"><span>Quản lý pops</span></a></li>
+<!--		<li$actives[opfeed]><a href="parkApp.php?ac=admin&op=opfeed">管理事件</a></li>
+		<li$actives[opcredit]><a href="parkApp.php?ac=admin&op=opcredit">管理积分</a></li>
+-->		<li$actives[addcar]><a href="parkApp.php?ac=admin&op=addcar"><span>Thêm một chiếc xe</span></a></li>		
+		<li$actives[addstage]><a href="parkApp.php?ac=admin&op=addstage"><span>Thêm pops</span></a></li>				
+<!--		<li$actives[sysset]><a href="parkApp.php?ac=admin&op=sysset">系统设置</a></li>	-->					
+	</ul>
+</div>
+<script language="javascript" type="text/javascript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+   var arVersion = navigator.appVersion.split("MSIE")
+   var version = parseFloat(arVersion[1])
+   if ((version >= 5.5) && (document.body.filters)) 
+   {
+      for(var j=0; j<document.images.length; j++)
+      {
+         var img = document.images[j]
+         var imgName = img.src.toUpperCase()
+         if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+         {
+            var imgID = (img.id) ? "id='" + img.id + "' " : ""
+            var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+            var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+            var imgStyle = "display:inline-block;" + img.style.cssText 
+            if (img.align == "left") imgStyle = "float:left;" + imgStyle
+            if (img.align == "right") imgStyle = "float:right;" + imgStyle
+            if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+            var strNewHTML = "<span " + imgID + imgClass + imgTitle
+            + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+            + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+            + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+            img.outerHTML = strNewHTML
+            j = j-1
+         }
+      }
+   }    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<!--{if $_GET['op'] == 'opcar'}-->
+<div class="h_status">
+	<!--{loop $cfgCarType $key $value}-->
+	  <a href="parkApp.php?ac=admin&op=opcar&type=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->
+	<!--{loop $cfgCarLevel $key $value}-->
+	  <a href="parkApp.php?ac=admin&op=opcar&level=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->	
+			<table cellpadding="0" cellspacing="0" class="park_status_form">
+				<tr>
+					<td>
+						<script type="text/javascript" src="source/script_autocomplete.js"></script>
+						<table cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="padding: 0;"><input type="text" id="username" name="username" value="Nhập tên người cần tìm" onfocus="if(this.value=='Nhập tên người cần tìm')this.value='';" class="t_input" tabindex="1"  style="width: 160px; border-right: none;" /></td>
+								<td style="padding: 0;"><a href="javascript:searchFriend();"><img src="image/search_btn.gif" alt="Tìm kiếm" /></a></td>
+							</tr>
+						</table>
+					
+						<script type="text/javascript">
+							function searchFriend() {
+								var username = $('username').value;
+								if(username == 'Tìm kiếm bạn' || username == '') {
+									alert('Nhập tên người cần tìm');
+								} else {
+									location.href ='parkApp.php?ac=rank&name='+username;
+								}
+							}
+						</script>
+					</td>
+				</tr>
+			</table>	   
+</div>
+<div class="div_layout">
+     <div class="thread_list">
+			<table cellspacing="0" cellpadding="0" class="infotable" >
+				<thead>
+				<tr>
+				<td class="subject">Tên xe</td>
+				<td class="subject">Mã số xe</td>
+				<td class="subject">Xe thumbnail</td>
+				<td class="subject">Xe lớn hơn</td>
+				<td class="subject">Xe flag</td>
+				<td class="subject">Màu xe</td>
+				<td class="subject">Giá xe</td>
+				<td class="subject">Ô tô</td>								
+				<td class="subject">Loại xe</td>												
+				<td class="subject">Đánh giá xe</td>												
+				<td class="subject">Tốc độ</td>								
+				<td class="subject">Tích phân</td>
+				<td class="subject">Điều hành</td>																				
+				</tr>
+				</thead>
+			<!--{loop $list $value}-->
+				<tr>
+				<td class="subject">{$value[CarDesc]}</td>
+				<td class="subject">{$value[CarSID]}</td>
+				<td class="subject"><embed src="{$value[CarImg]}" width="84" height="36" type="application/x-shockwave-flash" ></embed></td>
+				<td class="subject"><img src="{$value[CarImgBig]}" width="84" height="36"></td>
+				<td class="subject"><img src="{$value[CarSign]}"></td>
+				<td class="subject">{$value[CarColor]}</td>
+				<td class="subject">{$value[CarPrice]}</td>
+				<td class="subject">{$value[CarNum]}</td>								
+				<td class="subject">{$value[CarType]}</td>												
+				<td class="subject">{$value[CarLevel]}</td>												
+				<td class="subject">{$value[CarMaxSpeed]}</td>								
+				<td class="subject">{$value[CarCredit]}</td>
+				<td class="subject"><a href="parkApp.php?ac=admin&op=editcar&carid=$value[CarID]">Sửa đổi</a></br><a href="parkApp.php?ac=admin&op=delcar&carid=$value[CarID]">Xóa</a>
+				</tr>
+			<!--{/loop}-->
+			</table>
+     </div>
+  <div class="page">$multi[html]</div>  	 
+</div>
+
+<!--{/if}-->
+
+<!--{if $_GET['op'] == 'opstage'}-->
+<div class="h_status">
+       Quản lý props
+</div>
+<div class="div_layout">
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH>Tên props</TH>
+			<TH>Giá</TH>
+			<TH>Chức năng</TH>
+			<TH>Không mở</TH>			
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->
+		  
+		  <TR class=list>
+			<TD>
+			  <DIV style="TEXT-ALIGN: center"><IMG src="$item[StageImg]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[StageName]</DIV></TD>
+			<TD>$item[StagePrice]</TD>
+			<TD>$item[StageIntr]</TD>
+			<TD>$item[noOpen]</TD>			
+			<TD><A  onclick='' href="parkApp.php?ac=admin&op=editstage&stageid=$item[StageID]">Sửa đổi</A></br><A  onclick='' href="">Xóa</A>
+			</TD>
+		  </TR>
+   <!--{/loop}-->  	  
+	  
+		</TBODY>
+	 </TABLE>
+  <div class="page">$multi[html]</div>  
+ </div>
+
+<!--{/if}-->
+
+<!--{if $_GET['op'] == 'editstage'}-->
+<div class="h_status">
+       Chỉnh sửa props
+</div>
+<div class="div_layout">
+	 <form action="parkApp.php?ac=admin" method="post" enctype="multipart/form-data">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th>Props ID</th><td><input type="hidden" name="StageID" value="$stageinfo[StageID]" size="70">$stageinfo[StageID]</td></tr>
+		<tr><th>Tên props</th><td><input type="text" name="StageName" value="$stageinfo[StageName]" size="70"></td></tr>
+		<tr><th>Ảnh props</th><td><img src="$stageinfo[StageImg]"></br><input type="file" name="StageImg" size="58"></td></tr>
+		<tr><th>Giá props</th><td><input type="text" name="StagePrice" value="$stageinfo[StagePrice]" size="70"></td></tr>
+		<tr><th>Giới thiệu props</th><td><textarea name="StageIntr" rows="5" cols="70">$stageinfo[StageIntr]</textarea></td></tr>		
+		<tr><th>Script props</th><td><textarea name="StageScript" rows="5" cols="70">$stageinfo[StageScript]</textarea></td></tr>		
+		<tr><th>Nếu không có ajax</th><td>
+		   <input type="checkbox" value="1" $checked  name="noajax"/>
+		</td></tr>		
+		<tr><th>Không mở</th><td>
+		   <input type="checkbox" value="1" $openchecked  name="noopen"/>
+		</td></tr>				
+		<tr><th>Cách sử dụng</th><td>
+		 <!--{loop $cfgStageType $key $stagetype}-->
+		   <li style="float:left">
+		     <p>
+			 <!--{if $key == $stageinfo[StageType]}-->
+			   <input type="radio"  value="$key"  checked="checked" name="StageType"   />
+			  <span style="font-weight:bold;color:#FF0000;">$stagetype</span>
+			  <!--{else}-->  
+			   <input type="radio"  value="$key"   name="StageType"   />
+			   $stagetype
+			  <!--{/if}--> 
+
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->
+		
+		</td></tr>			
+		<tr><th>Tần số hoặc thời gian</th><td><input type="text" name="StageUse" value="$stageinfo[StageUse]" size="70"></td></tr>
+		</table>	
+	<div class="footactions" style="margin-bottom:10px; padding-left:70px;">
+	     <input type="hidden" name="parkForm" value="update" />
+		<input type="submit" name="stageeditsubmit" value="提交" class="submit">
+		<input type="reset" class="submit" name="reset">
+		<input type="submit" name="bsubmit" value="返回汽车管理" class="submit" onclick="window.location='parkApp.php?ac=stage';">
+	</div>
+      <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />	
+	</form>	
+</div>
+
+<!--{/if}-->
+
+
+<!--{if $_GET['op'] == 'addcar'}-->
+<div class="h_status">
+       Tăng xe
+</div>
+<div class="div_layout">
+	 <form action="parkApp.php?ac=admin" method="post" enctype="multipart/form-data">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th>Auto ID</th><td><input type="text" name="CarSID"  size="70"></td></tr>
+		<tr><th>Tên xe</th><td><input type="text" name="CarDesc" size="70"></td></tr>
+		<tr><th>Xe thumbnail</th><td><input type="file" name="CarImg"  size="58"></td></tr>
+		<tr><th>Xe</th><td><input type="file" name="CarImgMid"  size="58"></td></tr>		
+		<tr><th>Bản đồ tự động lớn</th><td><input type="file" name="CarImgbig" size="58"></td></tr>
+		<tr><th>Xe flag</th><td><input type="file" name="CarSign"  size="58"></td></tr>		
+		<tr><th>汽车颜色</th><td>
+		 <!--{loop $cfgColor $key $color}-->
+		   <li style="float:left">
+		     <p>
+			<input type="radio"  value="$key " name="CarColor"  style=" width:10px;float:left;border:none" />
+			 $color
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->		
+		</td></tr>
+		<tr><th>Giá xe</th><td><input type="text" name="CarPrice" size="70"></td></tr>
+		<tr><th>Số lượng xe ô tô</th><td><input type="text" name="carnum"  size="70"></td></tr>
+		<tr><th>Các loại Auto</th><td>
+		 <!--{loop $cfgCarType $key $cartype}-->
+		   <li style="float:left">
+		     <p>
+			<input type="radio"  value="$key " name="CarType"  style=" width:10px;float:left;border:none" />
+			 $cartype
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->			
+		</td></tr>		
+		<tr><th>Ô to hạng</th><td>
+		 <!--{loop $cfgCarLevel $key $carlevel}-->
+		   <li style="float:left">
+		     <p>
+			<input type="radio"  value="$key " name="CarLevel"  style=" width:10px;float:left;border:none" />
+			 $carlevel
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->			
+		
+		</td></tr>
+		<tr><th>Tốc độ tối đa</th><td><input type="text" name="CarMaxSpeed" size="70"></td></tr>		
+		<tr><th>Điểm dừng</th><td><input type="text" name="CarCredit"  size="70"></td></tr>
+		</table>	
+	<div class="footactions" style="margin-bottom:10px; padding-left:70px;">
+	     <input type="hidden" name="parkForm" value="update" />
+		<input type="submit" name="carsubmit" value="提交" class="submit">
+		<input type="reset" class="submit" name="reset">
+		<input type="submit" name="bsubmit" value="返回汽车管理" class="submit" onclick="window.location='parkApp.php?ac=market';">
+	</div>
+      <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />	
+	</form>		
+	   
+</div>	
+<!--{/if}-->
+
+<!--{if $_GET['op'] == 'editcar'}-->
+<div class="h_status">
+       Đổi xe ô tô
+</div>
+<div class="div_layout">
+	 <form action="parkApp.php?ac=admin&op=editcar&carid={$carinfo[CarID]}" method="post" enctype="multipart/form-data">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th>Auto ID</th><td><input type="hidden" name="CarID" value="$carinfo[CarID]" size="70"></td></tr>
+		<tr><th>Auto ID</th><td><input type="text" name="CarSID" value="$carinfo[CarSID]" size="70"></td></tr>
+		<tr><th>Tên xe</th><td><input type="text" name="CarDesc" value="$carinfo[CarDesc]" size="70"></td></tr>
+		<tr><th>Xe thumbnail</th><td></br>
+		  <input type="file" name="CarImg" value="$carinfo[CarImg]" size="58"></td></tr>	
+		<tr><th>Xe</th><td></br>
+		  <input type="file" name="CarImgMid" value="$carinfo[CarImgMid]" size="58"></td></tr>	
+		
+		<tr><th>汽车大图</th><td><img src="$carinfo[CarImgBig]" ></br><input type="file" name="CarImgbig" value="$carinfo[CarImgBig]" size="58"></td></tr>
+		<tr><th>汽车标志</th><td><img src="$carinfo[CarSign]"></br><input type="file" name="CarSign" value="$carinfo[CarSign]" size="58"></td></tr>		
+		<tr><th>汽车颜色</th><td>
+		 <!--{loop $cfgColor $key $color}-->
+		   <li style="float:left">
+		     <p>
+			 <!--{if $key == $carinfo[CarColor]}-->
+			   <input type="radio"  value="$key"  checked="checked" name="CarColor"  style="  width:10px;float:left;border:none" />
+			  <span style="font-weight:bold;color:#FF0000;">$color</span>
+			  <!--{else}-->  
+			   <input type="radio"  value="$key"   name="CarColor"  style=" width:10px;float:left;border:none" />
+			   $color;
+			  <!--{/if}--> 
+
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->		
+		</td></tr>
+		<tr><th>Giá xe</th><td><input type="text" name="CarPrice" value="$carinfo[CarPrice]" size="70"></td></tr>
+		<tr><th>Số lượng xe ô tô</th><td><input type="text" name="carnum" value="$carinfo[CarNum]" size="70"></td></tr>
+		<tr><th>Các loại auto</th><td>
+		 <!--{loop $cfgCarType $key $cartype}-->
+		   <li style="float:left">
+		     <p>
+			 <!--{if $key == $carinfo[CarType]}-->
+			   <input type="radio"  value="$key"  checked="checked" name="CarType"  style="  width:10px;float:left;border:none" />
+			  <span style="font-weight:bold;color:#FF0000;">$cartype</span>			   
+			  <!--{else}-->  
+			   <input type="radio"  value="$key"   name="CarType"  style=" width:10px;float:left;border:none" />
+ 			   $cartype			   
+			  <!--{/if}-->
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->			
+		</td></tr>		
+		<tr><th>Ô tô hạng</th><td>
+		 <!--{loop $cfgCarLevel $key $carlevel}-->
+		   <li style="float:left">
+		     <p>
+			 <!--{if $key == $carinfo[CarLevel]}-->
+			   <input type="radio"  value="$key"  checked="checked" name="CarLevel"  style="color:#FF0000; width:10px;float:left;border:none" />
+			  <span style="font-weight:bold;color:#FF0000;">$carlevel</span>			   			   
+			  <!--{else}-->  
+			   <input type="radio"  value="$key"   name="CarLevel"  style=" width:10px;float:left;border:none" />
+			 $carlevel			   
+			  <!--{/if}--> 
+
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->			
+		
+		</td></tr>
+		<tr><th>Tốc độ tối đa</th><td><input type="text" name="CarMaxSpeed"value="$carinfo[CarMaxSpeed]" size="70"></td></tr>		
+		<tr><th>Điểm dừng</th><td><input type="text" name="CarCredit" value="$carinfo[CarCredit]" size="70"></td></tr>
+		</table>	
+	<div class="footactions" style="margin-bottom:10px; padding-left:70px;">
+	     <input type="hidden" name="parkForm" value="update" />
+		<input type="submit" name="careditsubmit" value="提交" class="submit">
+		<input type="reset" class="submit" name="reset">
+		<input type="submit" name="bsubmit" value="返回汽车管理" class="submit" onclick="window.location='parkApp.php?ac=amin';">
+	</div>
+      <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />	
+	</form>		
+	   
+	</div>
+</div>	
+<!--{/if}-->
+
+<!--{if $_GET['op'] == 'addstage'}-->
+<div class="h_status">
+       Tăng props
+</div>
+<div class="div_layout">
+	 <form action="parkApp.php?ac=admin" method="post" enctype="multipart/form-data">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th>Tên Props</th><td><input type="text" name="StageName" size="70"></td></tr>
+		<tr><th>Ảnh Props</th><td><input type="file" name="StageImg"  size="58"></td></tr>
+		<tr><th>Giá Props</th><td><input type="text" name="StagePrice" size="70"></td></tr>
+		<tr><th>Giới thiệu Props</th><td><textarea name="StageIntr" rows="5" cols="70"></textarea></td></tr>		
+		<tr><th>道具脚本</th><td><textarea name="StageScript" rows="5" cols="70"></textarea></td></tr>	
+		<tr><th>Nếu không có ajax</th><td>
+		  <input type="checkbox" value="1" $checked  name="noajax"/>
+		 </td></tr>					
+		<tr><th>Không mở</th><td>
+		  <input type="checkbox" value="1" $checked  name="noopen"/>
+		 </td></tr>					
+		 
+		<tr><th>Cách sử dụng</th><td>
+		 <!--{loop $cfgStageType $key $stagetype}-->
+		   <li style="float:left">
+		     <p>
+			<input type="radio"  value="$key " name="StageType"  />
+			 $stagetype
+			 </p>		 
+		   </li>
+		  <!--{/loop}-->		  
+		
+		</td></tr>			 
+		<tr><th>Tần số hoặc thời gian</th><td><input type="text" name="StageUse" value="$stageinfo[StageUse]" size="70"></td></tr>
+		</table>	
+	<div class="footactions" style="margin-bottom:10px; padding-left:70px;">
+	     <input type="hidden" name="parkForm" value="update" />
+		<input type="submit" name="stagesubmit" value="Gửi" class="submit">
+		<input type="reset" class="submit" name="reset">
+		<input type="submit" name="bsubmit" value="Quay lại Quản lý ô tô" class="submit" onclick="window.location='parkApp.php?ac=stage';">
+	</div>
+      <input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />	
+	</form>		
+	   
+</div>	
+<!--{/if}-->
+
+<!--{template footer}-->

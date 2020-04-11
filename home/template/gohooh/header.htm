@@ -1,0 +1,206 @@
+﻿<!--{if empty($_SGLOBAL['inajax'])}-->
+<!--Template Ucenter Home GoHooH V2-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=$_SC[charset]" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<title><!--{if $_TPL['titles']}--><!--{loop $_TPL['titles'] $value}--><!--{if $value}-->$value - <!--{/if}--><!--{/loop}--><!--{/if}--><!--{if $_SN[$space[uid]]}-->{$_SN[$space[uid]]} - <!--{/if}-->$_SCONFIG[sitename] - Powered by GoHooH.CoM</title>
+<meta name="description" content="Mạng xã hội Ucenter Home GoHooH Full - Hack by GoHooH.CoM" />
+<meta http-equiv="EXPIRES" content="0" />
+<meta name="RESOURCE-TYPE" content="DOCUMENT" />
+<meta name="DISTRIBUTION" content="GLOBAL" />
+<meta name="AUTHOR" content="GoHooH.CoM" />
+<script language="javascript" type="text/javascript" src="source/script_cookie.js"></script>
+<script language="javascript" type="text/javascript" src="source/script_common.js"></script>
+<script language="javascript" type="text/javascript" src="source/script_menu.js"></script>
+<script language="javascript" type="text/javascript" src="source/script_ajax.js"></script>
+<script language="javascript" type="text/javascript" src="source/script_face.js"></script>
+<script language="javascript" type="text/javascript" src="source/script_manage.js"></script>
+<link href="template/lanse/css/header.css"  rel="Stylesheet" type="text/css" />
+
+<style type="text/css">
+@import url(newfarm/newfarm.css);
+</style>
+<style type="text/css">
+@import url(template/default/style.css);
+<!--{if $_TPL['css']}-->
+@import url(template/default/{$_TPL[css]}.css);
+<!--{/if}-->
+<!--{if !empty($_SGLOBAL['space_theme'])}-->
+@import url(theme/$_SGLOBAL[space_theme]/style.css);
+<!--{elseif $_SCONFIG[template] != 'default'}-->
+@import url(template/$_SCONFIG[template]/style.css);
+<!--{/if}-->
+<!--{if !empty($_SGLOBAL['space_css'])}-->
+$_SGLOBAL[space_css]
+<!--{/if}-->
+</style>
+<link rel="shortcut icon" href="image/favicon.ico" />
+<link rel="edituri" type="application/rsd+xml" title="rsd" href="xmlrpc.php?rsd=$space[uid]" />
+</head>
+<body>
+
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
+	<div class="fm960 mc clearfix" style=" width:950px; margin:0 auto;">
+    <div class="header">
+	<h1 class="logo"><a href="http://www.gohooh.com/nhatui/" >Mạng xã hội Nhà Tui</a> </h1>
+		
+		<div class="nav_account" style="margin-top:14px;">
+		<!--{if $_SGLOBAL[supe_uid]}-->
+			<a href="space.php?uid=$_SGLOBAL[supe_uid]" class="login_thumb"><!--{avatar($_SGLOBAL[supe_uid])}--></a>
+			<a href="space.php?uid=$_SGLOBAL[supe_uid]" class="loginName">{$_SN[$_SGLOBAL[supe_uid]]}</a>
+			<!--{if $_SGLOBAL[member][credit]}-->
+			<a href="cp.php?ac=credit" style="font-size:11px;padding:0 0 0 5px;"><img src="image/credit.gif">{$_SGLOBAL[member][credit]}</a>
+			<!--{/if}-->
+			<br />
+			<!--{if empty($_SCONFIG['closeinvite'])}-->
+			<a href="cp.php?ac=invite">Mời</a> 
+			<!--{/if}-->
+			<a href="cp.php?ac=task">Kiếm tiền</a> 
+			<a href="cp.php?ac=magic">Shop</a>
+			<a href="cp.php">Cp</a> 
+			<a href="cp.php?ac=common&op=logout&uhash=$_SGLOBAL[uhash]">Thoát</a>
+		<!--{else}-->
+			<a href="do.php?ac=$_SCONFIG[register_action]" class="login_thumb"><!--{avatar($_SGLOBAL[supe_uid])}--></a>
+			<font color="#CC3300">Khách thăm</font><br>
+			<a href="do.php?ac=$_SCONFIG[login_action]">Đăng nhập</a> | 
+			<a href="do.php?ac=$_SCONFIG[register_action]">Đăng ký</a>
+		<!--{/if}-->
+		</div>
+			<!-- ���� -->
+	<div class="header-nav">
+		<div class="nav-content">
+			<map id="menu">
+			<ul>
+				<li >
+				<dl>
+					<dt><a href="space.php?do=home&view=all">Home</a></dt>
+				</dl>
+				</li>
+				<li>
+				<dl class="current" >
+					<dt ><a href="network.php"> <strong>Network</strong></a></dt>
+					
+				</dl>
+				</li>
+				<li>
+				<dl>
+					<dt><a href="space.php" ><strong>Nhà Tui</strong></a></dt>
+					
+				</dl>
+				</li>
+				<li>
+				<dl>
+					<dt><a href="cp.php?ac=friend&op=search" >Tìm kiếm</a></dt>
+				</dl>
+				</li>
+				<li>
+				<dl>
+					<dt><a href="help.php" >Help</a></dt>
+				</dl>
+				</li>
+				<li>
+				<dl>
+					<dt><a target="blank" href="http://www.gohooh.com" target="_blank"><strong>GoHooH</strong></a></dt>
+					
+				</dl>
+				</li>
+				
+			</ul>
+			</map></div>
+	</div></div> <div style="height:10px"></div> 
+	<div id="wrap">
+	<!--{if empty($_TPL['nosidebar'])}-->
+	<div id="main">
+		<div id="app_sidebar"><font size="1">
+		<!--{if $_SGLOBAL[supe_uid]}-->
+			<ul class="app_list" id="default_userapp">
+				<li><img src="image/app/doing.gif"><a href="space.php?do=doing">Status</a></li>
+				<li><img src="image/app/album.gif"><a href="space.php?do=album">Album</a></li>
+				<li><img src="image/app/blog.gif"><a href="space.php?do=blog">Blogs</a></li>
+				<li><img src="image/app/poll.gif"/><a href="space.php?do=poll">Poll</a></li>
+				<li><img src="image/app/mtag.gif"><a href="space.php?do=mtag">Group</a></li>
+				<li><img src="image/app/event.gif"/><a href="space.php?do=event">Event</a></li>
+				<li><img src="image/app/share.gif"><a href="space.php?do=share">Share</a></li>
+				<li><img src="image/app/topic.gif"><a href="space.php?do=topic">Topic</a></li>
+			</ul>
+			
+			<ul class="app_list topline" id="my_defaultapp">
+			<li><img src="image/icon/gohoohfarm.gif"><a href="newfarm.php">New Farm</a></li>
+			<li><img src="image/icon/farm.gif"><a href="qqfarm.php">GoHooH Farm</a></li>
+			<li><img src="image/icon/farm.gif"><a href="happyfarm.php">Happy Farm</a></li>
+			<li><img src="image/icon/fish.gif"><a href="fish.php">Happy Fish</a></li>
+			<li><img src="image/icon/slave.gif"/><a href="sieuthigoer.php?com=slave">Siêu thị Goer</a></li>
+			<li><img src="image/app/drive.gif"><a href="parkApp.php?ac=index">Đỗ Xe</a></li>
+			<li><img src="image/icon/gohoohgamehay.gif"><a href="gohoohgame.php">Game vui</a></li>
+			<li><img src="image/icon/tgq.gif"><a href="tgq.php">Piano</a></li>
+				<!--<li><img src="image/icon/farm.gif"><a target=blank" href="http://www.gohooh.com/nhatui/nong-trai-vui-ve-new-farm.html"><font color=red>Newfarm</font></a></li>-->
+				<!--<li><img src="image/app/qqfarm.gif"><a target=blank" href="http://www.gohooh.com/nhatui/nong-trai-vui-ve.html"><font color=blue>Happy farm</font></a></li>-->
+			</ul>
+			<ul class="app_list topline" id="my_defaultapp">
+			<li><img src="image/icon/gohoohtv.gif"><a href="tv.php">TV online</a></li>
+			<li><img src="image/app/quiz.gif"><a href="quiz.php">Quiz</a></li>
+			<li><img src="image/app/cwa.gif"><a href="cwa.php">Chat</a></li>
+			<li><img src="image/icon/wish.gif"><a href="wishApp.php">Ước nguyện</a></li>
+			<li><img src="image/icon/gift.gif"><a href="gift.php">Quà tặng</a></li>
+			<li><img src="image/app/thinhthay.jpg"/><a href="thayboi.php">Thỉnh thầy</a></li>
+			<li><img src="image/icon/youtube.gif"><a href="youtube.php">Video</a></li>
+			<li><img src="image/icon/gohoohhoidap.gif"><a href="gohoohhoidap.php?do=ask">Hỏi & Đáp</a></li>
+			<!--{if $_SCONFIG['my_status']}-->
+				<!--{loop $_SGLOBAL['userapp'] $value}-->
+				<li><img src="http://appicon.manyou.com/icons/$value[appid]"><a href="userapp.php?id=$value[appid]">$value[appname]</a></li>
+				<!--{/loop}-->
+			<!--{/if}-->
+			</ul>
+			
+			<!--{if $_SCONFIG['my_status']}-->
+			<ul class="app_list topline" id="my_userapp">
+				<!--{loop $_SGLOBAL['my_menu'] $value}-->
+				<li id="userapp_li_$value[appid]"><img src="http://appicon.manyou.com/icons/$value[appid]"><a href="userapp.php?id=$value[appid]" title="$value[appname]">$value[appname]</a></li>
+				<!--{/loop}-->
+			</ul>
+			<!--{/if}-->
+			
+			<!--{if $_SGLOBAL['my_menu_more']}-->
+			<p class="app_more"><a href="javascript:;" id="a_app_more" onclick="userapp_open();" class="off">Tắt</a></p>
+			<!--{/if}-->
+			
+			<!--{if $_SCONFIG['my_status']}-->
+			<div class="app_m">
+				<ul>
+					<li><img src="image/app_add.gif"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist" class="addApp">Ứng dụng</a></li>
+					<li><img src="image/app_set.gif"><a href="cp.php?ac=userapp&op=menu" class="myApp">Quản lý</a></li>
+				</ul>
+			</div>
+			<!--{/if}-->
+		
+		<!--{else}-->
+			<div class="bar_text">
+				<form id="loginform" name="loginform" action="do.php?ac=$_SCONFIG[login_action]&ref" method="post">
+				<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+					<p class="title">Khung đăng nhập</p>
+					<p>Tài khoản</p>
+					<p><input type="text" name="username" id="username" class="t_input" size="15" value="" /></p>
+					<p>Mật khẩu</p>
+					<p><input type="password" name="password" id="password" class="t_input" size="15" value="" /></p>
+					<p><input type="checkbox" id="cookietime" name="cookietime" value="315360000" checked /><label for="cookietime">Nhớ tài khoản</label></p>
+					<p>
+						<input type="submit" id="loginsubmit" name="loginsubmit" value="Đăng nhập" class="submit" />
+						<input type="button" name="regbutton" value="Đăng ký" class="button" onclick="urlto('do.php?ac=$_SCONFIG[register_action]');">
+					</p>
+				</form>
+			</div>
+		<!--{/if}-->
+		</font>
+		</div>
+
+		<div id="mainarea">
+		
+		<!--{if $_SGLOBAL['ad']['contenttop']}--><div id="ad_contenttop"><!--{ad/contenttop}--></div><!--{/if}-->
+	<!--{/if}-->
+
+<!--{/if}-->

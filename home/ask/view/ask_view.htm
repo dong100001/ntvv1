@@ -1,0 +1,239 @@
+﻿<!--{eval $_TPL['titles'] = array($ask['title'], 'GoHooH Hỏi & Đáp');}-->
+<!--{template header}-->
+<!--{template ask/view/ask_header}-->
+<script type="text/javascript">
+var arrids = [$str_ids];
+var total_score = {$ask[score]} ;
+	function closeSide() {
+		if ($('div_main').className == 'side_right') {
+			$('div_main').className = 'side_right side_right_close';
+			$('a_showSide').innerHTML = '&laquo; Open Sidebar';
+			$('a_showSide').className = 'openside';
+		} else {
+			$('div_main').className = 'side_right';
+			$('a_showSide').innerHTML = '&raquo; Close Sidebar';
+			$('a_showSide').className = '';
+		}
+		$('a_showSide').blur();
+	}
+	function show_trace(id) {
+		ajaxget('do.php?ac=ajax&op=trace&blogid='+$id, 'trace_ul');
+		return false;
+	}
+	function show_trace_all() {
+		ajaxget('do.php?ac=ajax&op=traceall&blogid='+$id+'&ajaxdiv=trace_div', 'trace_div');
+		return false;
+	}
+	function reply_reload(cid, result) {
+		$("comment_message").value = "";
+		window.location.reload();
+	}
+	
+	function sum_score() {
+		var has_score = 0;
+		for( id in arrids ) {
+			has_score += parseInt( $("text_score_" + arrids[id]).value );
+		}
+		return has_score;
+	}
+	
+	function show_self(id) {
+		$("alt_msg_" + id ).innerHTML = "Cant give yourself credits";
+		$("alt_msg_" + id ).style.display = 'block';
+	}
+	function hide_it(id) {
+		$("alt_msg_" + id ).style.display = 'none';
+	}
+	function show_score(id) {
+		var has_score = sum_score();
+		var leave_score = {$ask[score]} - has_score;
+		var color = leave_score < 0 ? 'red' : 'blue';
+		$("alt_msg_" + id ).innerHTML = "Điểm thưởng tối đa: {$ask[score]} điểm<br />Thưởng. " + has_score + "<br />Còn lại: <font color="+color+">" + leave_score + "</font>";
+		$("alt_msg_" + id ).style.display = 'block';
+	}
+	function checkForm() {
+		var has_score = sum_score();
+		var leave_score = {$ask[score]} - has_score;
+		if( leave_score > 0 ) {
+			alert("Số điểm bạn thưởng cho người nhận chưa đủ. Xin vui lòng nhập lại!");
+			return false;
+		} else if( leave_score < 0 ) {
+			alert("Điểm thưởng đã vượt mức mà bạn đã định.");
+			return false;			
+		}
+		if( !confirm("Bạn có chắc chắn đóng chủ đề này? Sau khi đóng, bạn sẽ không được chỉnh sửa.") ) {
+			return false;
+		}
+		return true;		
+	}
+</script>
+<div class=div_layout>
+
+<div class="h_status">
+
+</div>
+
+	<div class=left>
+			<div>
+				<div overflow="hidden" height="407" width="560">
+<div class="side_right">
+	<div class="wide">
+		<div class="post_list a_list">
+<table width="570" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="31"><div align="center"><strong>$ask[title]</strong></div></td>
+  </tr>
+  <tr>
+    <td height="1" background="ask/css/bg_line.gif"></td>
+  </tr>
+  <tr>
+    <td height="23"><div align="left">Gửi bởi:<a href="space.php?uid=$ask['uid']">$ask[username]</a> 
+			 <span class="time">
+			 <!--{date('Y-m-d H:i',$ask[dateline],1)}-->
+			 </span> 
+			 <span class="pipe">|</span><br>	
+			Thưởng: <font color="#FF0000">$ask[score] điểm </font>			
+			<span class="pipe">|</span>				
+			Trạng thái: <font color="#FF0000"><strong> $gEumsStatus[$ask[status]] </strong></font>
+			<span class="pipe">|</span>
+			 Xem: $ask[view_count]  <span class="pipe">|</span>	
+			 Trả lời: $ask[reply_count] <span class="pipe">|</span>
+			Chuyên mục: <a href="gohoohhoidap.php?do=ask&type=$ask['typeid']">{$gEumsType[$ask[typeid]]}</a></div></td>
+  </tr>
+  <tr>
+    <td><br>$ask[content]<br></td>
+  </tr>
+    <tr>
+    <td height="1" background="ask/css/bg_line.gif"></td>
+  </tr>
+    <tr>
+    <td><div align="right">	
+				    <!--{if $_SGLOBAL[supe_uid] == $ask['uid']}-->
+				<a href="gohoohhoidap.php?do=ask&ac=post&id=$id&op=edit">Sửa</a><span class="pipe">|</span>
+				<a href="gohoohhoidap.php?do=ask&ac=cp&id=$id&op=delete" id="blog_delete_$blog[blogid]" onclick="ajaxmenu(event, this.id, 99999)">Xóa</a>
+				<!--{elseif $_SGLOBAL[supe_uid] == ADMIN_ID }-->
+				<a href="gohoohhoidap.php?do=ask&ac=cp&id=$id&op=delete" id="blog_delete_$blog[blogid]" onclick="ajaxmenu(event, this.id, 99999)">Xóa</a>
+				<!--{/if}-->	</div> </td>
+  </tr>
+</table>
+		
+		</div>
+	</div>	
+</div>
+</div>			
+			</div>
+<div><br>
+				<div class=info>
+	
+<form action="gohoohhoidap.php?do=ask&ac=cp&op=finish" onsubmit="return checkForm()" method="post">
+<!--{loop $reply $value}-->
+<div style="color:#999999; padding:4px; margin:0px; text-align:left; border:1px dotted #ccc">
+<table width="560" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100"><div align="center">
+    <div class="avatar48" align="left"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div><a href="space.php?uid=$value[uid]" id="author_$value[id]">$value[username]</a><br> <span class="time"><!--{date('Y-m-d H:i',$value[dateline],1)}--></span>
+	<br>
+	<!--{if $value[uid]==$_SGLOBAL[supe_uid]  && false }-->
+			<a href="gohoohhoidap.php" id="c_$value[id]_edit" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Sửa</a>
+			<!--{/if}-->
+			<!--{if  $ask[uid]==$_SGLOBAL[supe_uid]  && $ask[status] == 1  }-->
+				<input type="text" name="score[{$value[id]}]" id="text_score_{$value[id]}" value="0" size="5" <!--{if $ask[uid] == $value[uid] }-->readonly="yes" onmouseover="show_self($value[id]);" <!--{else}-->onmouseover="show_score($value[id]);" onfocus="this.select()" <!--{/if}--> onmouseout="hide_it($value[id])"  onchange="if(/\D/.test(this.value)){this.value='0';}" /> 
+				&nbsp; 
+				<div id="alt_msg_{$value[id]}" class="cls_alt_msg">
+				</div>
+			<!--{/if}-->
+
+			<!--{if $value[uid]==$_SGLOBAL[supe_uid] }-->
+			<a href="gohoohhoidap.php?do=ask&ac=cp&op=replydelete&ask_id={$ask[id]}&id=$value[id]" id="c_$value[id]_delete" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
+			<!--{/if}--></div></td>
+    <td <!--{if $value[score] > 0 }-->width="400"<!--{/if}--> valign="top"><font color="#FF0000">$value[username] trả lời: </font><br>$value[content]
+		</td>
+		<!--{if $value[score] > 0 }-->
+		    <td width="60" valign="top"><table width="60" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><div align="center"><img src="ask/css/win.gif" width="50" height="43" /></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><font color="#006600"><strong>Thưởng: $value[score] điểm</strong></font></div></td>
+  </tr>
+</table>
+
+		</td>
+		<!--{/if}-->
+  </tr>
+</table>
+	</div>	<br>
+<!--{/loop}-->
+	<!--{if count($reply) > 0 }-->
+		
+		<!--{if  $ask[status] == 1 && $ask[uid]==$_SGLOBAL[supe_uid] }-->
+		<input type="submit" id="submit_btn" name="submit_btn" class="submit" value="Kết thúc" />
+		<!--{elseif $ask[status] == 2 }--> 
+		<span >Chủ đề này đã đóng. Tiền cho $ask[msg] </span>
+		<!--{/if}-->
+		
+	<!--{/if}-->	
+		<input type="hidden" name="ask_id" id="ask_id" value="$ask[id]"  />
+		<input type="hidden" name="theurl" value="$theurl"  />
+	</form>
+<br>
+		<form id="commentform" name="commentform" action="gohoohhoidap.php?do=ask&ac=cp&op=reply" method="post" class="quickpost">
+			
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td><textarea id="comment_message" name="content" rows="5" onkeydown="ctrlEnter(event, 'reply_submit_btn');"></textarea></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="hidden" name="refer" value="$theurl" />
+						<input type="hidden" name="ask_id" value="$ask_id">
+						<input type="hidden" name="ask_title" value="$ask[title]"  />
+						<input type="hidden" name="ask_uid" value="$ask[uid]"  />
+						<input type="button" id="reply_submit_btn" name="reply_submit_btn" class="submit" value="Trả lời" onclick="ajaxpost('commentform', 'reply_reload')" />
+
+						<span id="comment_status"></span>
+					</td>
+				</tr>
+			</table>
+		</form>
+
+
+
+				</div>
+
+			</div>
+
+	</div>
+
+<div id="wajinbar">
+
+<div class="sidebox">
+		<h2 class="title">
+			<p class="r_option">
+				
+			</p>
+			Bản quyền
+		</h2>
+		<ul class="wajin_list">
+		<div class="IND_lwide" valign="left">
+	<div class="wdL"></div>
+	<p align="right"><font color="#808080">
+	<span class="fl" valign="left">Ask for Ucenter home 1.5 /2.0</span>	
+	</font></p>
+	<div class="wdR" valign="left">
+		<p align="right"></div>	
+	<p align="right">	
+	<span class="fr" valign="left"><font color="#808080">Việt hóa bởi </font><br /> <a href="http://www.gohooh.com">
+	<font color="#808080">Ucenter Home Việt - GoHooH.CoM</font></a><font color="#808080"> &copy;2010
+	</font> </span>		
+ 
+</div>
+<!--{ad/rightside}--><!-- 右侧栏广告-->
+		</ul>
+  </div>
+
+	
+	
+  </div>
+	</div>	
+<!--{template footer}-->

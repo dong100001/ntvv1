@@ -1,0 +1,75 @@
+<!--{template happyfarm/view/header}-->
+
+<script type="text/javascript">
+var defaultStr = {
+	's1': "Cám ơn bạn nhiều",
+	's2': "Bạn tuyệt lắm",
+	's3': "Thanks nhé",
+	's4': "Đáng ghét",
+	's6': "Chơi xấu quá"
+};
+function setUpdate(id, value) {
+	value = value || SQuery("#word"+id).value;
+	if(value) {
+		request(
+			'tools/setting.php?act=setting&submit=1',
+			'state'+id, '&id='+id +'&value='+value,
+			function(data) {
+			if(data[0] == '1' && data[3]) {
+				//alert(data);
+				SQuery("#word"+id).value = data[3];
+			}
+			}
+		);
+	}
+}
+function setDefault(id) {
+	var sid = 's'+id;
+	if(defaultStr[sid]) {
+		SQuery("#word"+id).value = defaultStr[sid];
+		setUpdate(id, defaultStr[sid]);
+	}
+}
+</script>
+<div id="main">
+	<strong>Cài đặt các thông điệp tại đây - GoHooH.CoM</strong>
+	<ul>
+		<li>
+			<p>Bạn sẽ nói gì với hàng xóm, nếu họ diệt cỏ giúp bạn? (tối đa 12 ký tự)</p>
+			<input id="word1" type="text" value="{$Tips_weed_b}" size="50"  maxlength="12" />
+			<button type="button" onclick="setUpdate(1);" >Ok</button>
+			<button type="button" onclick="setDefault(1);">Mặc định</button>
+			<span id="state1"></span>
+		</li>
+		<li>
+			<p>Bạn sẽ nói gì với hàng xóm, nếu họ trừ sâu giúp bạn? (tối đa 12 ký tự)</p>
+			<input id="word2" type="text" value="{$Tips_pest_b}" size="50"  maxlength="12" />
+			<button type="button" onclick="setUpdate(2);" >Ok</button>
+			<button type="button" onclick="setDefault(2);">Mặc định</button>
+			<span id="state2"></span>
+		</li>
+		<li>
+			<p>Bạn sẽ nói gì với hàng xóm, nếu họ trồng cỏ vào nông trại của bạn? (tối đa 12 ký tự)</p>
+			<input id="word3" type="text" value="{$Tips_weed_a}" size="50"  maxlength="12" />
+			<button type="button" onclick="setUpdate(3);" >Ok</button>
+			<button type="button" onclick="setDefault(3);">Mặc định</button>
+			<span id="state3"></span>
+		</li>
+		<li>
+			<p>Bạn sẽ nói gì với hàng xóm, nếu họ thả sâu vào nông trại của bạn? (tối đa 12 ký tự)</p>
+			<input id="word4" type="text" value="{$Tips_pest_a}" size="50"  maxlength="12" />
+			<button type="button" onclick="setUpdate(4);" >Ok</button>
+			<button type="button" onclick="setDefault(4);">Mặc định</button>
+			<span id="state4"></span>
+		</li>
+		<li>
+			<p>Bạn sẽ nói gì với hàng xóm, nếu họ tưới cây giúp bạn? (tối đa 12 ký tự)</p>
+			<input id="word6" type="text" value="{$Tips_water_b}" size="50"  maxlength="12" />
+			<button type="button" onclick="setUpdate(6);" >Ok</button>
+			<button type="button" onclick="setDefault(6);">Mặc định</button>
+			<span id="state6"></span>
+		</li>
+	</ul>
+</div>
+
+<!--{template happyfarm/view/footer}-->

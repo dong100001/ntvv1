@@ -1,0 +1,82 @@
+ï»¿<?php
+/*
+  $ 2009-4-19ÏÂÎç06:57:46 tomyguan $
+ */
+
+include_once('./common.php');
+include_once(S_ROOT.'./source/function_cp.php');
+
+//ÊÇ·ñ¹Ø±ÕÕ¾µã
+checkclose();
+
+//ÊÇ·ñµÇÂ¼
+checklogin();
+
+//ÓÃ»§Í·Ïñ
+//ckavatar($_SGLOBAL['supe_uid']);
+
+//¿Õ¼äĞÅÏ¢
+$space=getspace($_SGLOBAL['supe_uid']);
+
+//ÔÊĞí¶¯×÷
+$dos = array('index', 'wish');
+$acs = array('install', 'delete');
+
+
+//»ñÈ¡±äÁ¿
+$do = (!empty($_GET['do']) && in_array($_GET['do'], $dos)) ? $_GET['do'] : 'index';
+$ac = (!empty($_GET['ac']) && in_array($_GET['ac'], $acs)) ? $_GET['ac'] : '';
+$view = empty($_GET['view']) ? 'index' : $_GET['view'];
+
+
+//Ñ¡ÖĞµÄÑùÊ½
+if(empty($_GET['view'])){
+    $actives[$do] = ' class=active'; 
+}else{
+    $actives[$view] = ' class=active';
+}
+
+
+if($ac=='install'){   
+   $sql="select count(*) from ".tname('wish_member')." where uid=".$_SGLOBAL['supe_uid'];
+   $query=$_SGLOBAL['db']->query($sql);
+   $intNum = $_SGLOBAL['db']->result($query,0);
+   if($intNum==0){
+      $nowtime=date("Y-m-d H:i:s"); 
+      $arrMember = array(
+      	  "uid" => $_SGLOBAL['supe_uid'],
+   		  "dateline" =>$nowtime
+      );
+      inserttable( "wish_member", $arrMember );	
+	  //ÊÂ¼şfeed
+	  $fs = array();
+	  $fs['icon'] = "wish";
+      $fs['title_template'] = "{actor} Ä‘Ã£ ghÃ© thÄƒm <a href='wishApp.php?do=index'>vÆ°á»n Æ°á»›c nguyá»‡n</a> cá»§a GoHooH.CoM";	
+	  $fs['title_data'] = array();
+	  $fs['body_template'] = '';
+	  $fs['body_data'] = array();	
+	  include_once(S_ROOT.'./source/function_cp.php');
+	  feed_add($fs['icon'], $fs['title_template'], $fs['title_data'], $fs['body_template'], $fs['body_data'], $fs['body_general'],$fs['images'], $fs['image_links'], $fs['target_ids'], $fs['friend']);	
+ 	  showmessage('ThÃ nh cÃ´ng rá»“i, chuyá»ƒn Ä‘áº¿n vÆ°á»n Æ°á»›c nguyá»‡n','wishApp.php?do=index');	
+   }
+   
+}
+
+isOpenWish($_SGLOBAL['supe_uid']);
+
+if($ac == 'delete'){
+    include_once(S_ROOT."./wish/cp_wish.php");
+}else{
+    include_once(S_ROOT."./wish/wish_{$do}.php");
+}
+
+function isOpenWish($uid){
+  global $_SGLOBAL;
+  $sql="select count(*) from ".tname('wish_member')." where uid=".$_SGLOBAL['supe_uid'];
+  $query=$_SGLOBAL['db']->query($sql);
+  $intNum = $_SGLOBAL['db']->result($query,0);
+  if($intNum==0){
+     showmessage('VÆ°á»n Æ°á»›c nguyá»‡n váº«n chÆ°a Ä‘Æ°á»£c báº¡n kÃ­ch hoáº¡t! Báº¡n cÃ³ muá»‘n kÃ­ch hoáº¡t nÃ³ khÃ´ng?<br /><br /><a href="wishApp.php?ac=install" class="submit">CÃ³</a>');    
+  }
+}
+?>

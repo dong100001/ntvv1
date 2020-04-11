@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>积分兑换</title>
+<style>
+a:link { text-decoration: none;color: blue}
+a:active { text-decoration:blink}
+a:hover { text-decoration:underline;color: red} 
+a:visited { text-decoration: none;color: green}
+
+.btn {
+BORDER-LEFT: #ff9966 1px solid;/*左边框*/
+BORDER-RIGHT: #ff9966 1px solid;/*右边框*/
+BORDER-TOP: #ff9966 1px solid;/*上边框*/
+BORDER-BOTTOM: #ff9966 1px solid;/*下边框*/
+PADDING-LEFT: 2px;/*左间隙*/
+PADDING-RIGHT: 2px; /*右间隙*/
+PADDING-TOP: 2px;/*上间隙*/
+PADDING-BOTTOM: 2px;/*下间隙*/
+FONT-SIZE: 12px;/*字号*/
+CURSOR: hand;/*光标类型*/
+COLOR: #000000;/*字色*/
+FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#ff9966);/*滤镜*/
+}
+
+.line{
+BORDER-LEFT-STYLE: none; 
+BORDER-RIGHT-STYLE: none; 
+BORDER-TOP-STYLE: none
+}
+
+</style>
+</head>
+<body>
+<script LANGUAGE="javascript">
+function checkdata()
+{
+ if(document.form1.jf.value == "")
+	{
+		alert("对不起，请您输入兑换数目！");
+		document.form1.jf.focus();
+		return false;
+	}
+	
+	//检查是否数字   
+  var txt = document.form1.jf.value;
+  if(txt.search("^-?\\d+(\\.\\d+)?$")!=0)
+  {
+    alert("请输入一个数字!");
+    document.form1.jf.select();
+    return false;
+  }
+  //检查是否整数
+  txt = document.form1.jf.value;
+  if(txt.search("^-?\\d+$")!=0)
+  {
+    alert("请输入一个整数!");
+    document.form1.jf.select();
+    return false;
+  }
+}	
+</script>
+
+<table width="776" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="776" height="486" background="dhbg.jpg">
+    <table width="362" height="200" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center"> <br /><br />
+    <br /><br />
+    <font color="#ff0000" style="font-size:12px">使用农场金币兑换，100个金币兑换 1点积分</font></td>
+  </tr>
+  <tr>
+    <td align="center"><div>
+  <form id="form1" name="form1" method="post" action="jf.php" OnSubmit="return checkdata()">
+    <font color="#000000" style="font-size:12px">请输入兑换数目：</font><input type="text" id="jf" name="jf" class="line" size="15" value="" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')"/> 
+             <br /><br /><input type="submit" class="btn" title="确定兑换" value="确定兑换" />
+  </form>
+    <div></td>
+  </tr>
+  <tr>
+    <td align="center">
+  </tr>
+</table>
+
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Chơi game nông trại vui vẻ trên mạng xã hội Nhà Tui - GoHooH.CoM</title>
+<link type="text/css" rel="stylesheet" href="view/images/style.css" />
+<script type="text/javascript" src="view/js/squery/squery.js"></script>
+<script type="text/javascript" src="view/js/common.js"></script>
+</head>
+<body>
+<div id="warp">
+
+<!--{if $showMenu}-->
+<div id="broadcast">
+	<a href="http://www.gohooh.com/" target="_blank" id='msg_viewer'>Phát triển bởi GoHooH.CoM</a>
+</div>
+<script type="text/javascript" src="view/js/broadcast.js"></script>
+<div id="toolbar" class="clearfix">
+	<div class="menu">
+		<dl>
+			<!--{eval $actives[$act] = ' class="actives"';}-->
+			<dt><a{$actives[nmc]} href="index.php?act=nmc">Nông trại</a></dt>
+			<dt><a{$actives[setting]} href="tools.php?act=setting">Cài đặt</a></dt>
+			<dt><a{$actives[fertilizer]} href="tools.php?act=fertilizer">Trao đổi</a></dt>
+			<dt><a{$actives[exchange]} href="tools.php?act=exchange">Đổi Gee</a></dt>
+			<dt><a{$actives[vip]} href="tools.php?act=vip">VIP</a></dt>
+			<dt><a{$actives[help]} href="index.php?act=help">Hướng dẫn</a></dt>
+			<!--{if checkperm('managead')}-->
+			<dt><a{$actives[admin]} href="admin.php">Admin</a></dt>
+			<!--{/if}-->
+			
+			<dt><a href="javascript:window.parent.myfarm_full_show();">Full screen</a></dt>
+		</dl>
+	</div>
+	<div class="money">
+		<!--{if $money !== null}-->Tiền: <b>$money</b> đồng<!--{/if}-->
+		<!--{if $yb !== null}-->&nbsp;&nbsp;&nbsp;&nbsp;Gee: <b>$yb</b> đồng<!--{/if}-->
+	</div>
+</div>
+<!--{/if}-->

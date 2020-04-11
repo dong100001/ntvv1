@@ -1,0 +1,60 @@
+<!--{eval $_TPL['titles'] = array($space['username'], 'Chơi game nông trại vui vẻ trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+
+<!--提示: 此文件直接继承UCH的CSS定义-->
+
+<div style="width:100%;">
+	<div style="width:808px;border:1px solid #b3e4eb;">
+		<iframe id="myfarm" name="myfarm" src="happyfarm/index.php?act=nmc" frameborder="0" scrolling="no" width="100%" height="626px"></iframe>
+	</div>
+	<!--{if FARM_BGSOUND}-->
+	<div style="width:500px;padding:2px 0 6px 0;background:url(happyfarm/view/images/mp3player_bottom.jpg) no-repeat bottom;">
+		<div id="mp3Player"></div>
+		<script type="text/javascript" src="happyfarm/view/js/swfobject/swfobject.js"></script>
+		<script type="text/javascript">
+			swfobject.embedSWF(
+				"http://box.baidu.com/widget/flash/list.swf?id=418567&autoPlay=false", 
+				"mp3Player", "500", "83", //83 or 230
+				"9.0.124", "happyfarm/view/js/swfobject/expressInstall.swf",
+				{}, {wmode:"opaque", allowscriptaccess:"always"}
+			);
+		</script>
+	</div>
+	<!--{/if}-->
+	<div style="padding:2px 10px 0 0;text-align:right;color:#ccc;"><a href="http://www.gohooh.com">Nông trại vui vẻ {FARM_VERSION}</a></div>
+</div>
+
+<!--大窗口模式 Start-->
+<div id="dlBox" style="display:none;">
+	<div class="popupmenu_popup">
+		<div id="myfarm_full_handle" style="cursor:move;">
+			<h1>Nông trại</h1>
+			<a href="javascript:myfarm_full_close();" class="float_del" title="Đóng">Đóng</a>
+		</div>
+		<div class="popupmenu_inner">
+			<iframe id="myfarm_full" name="myfarm_full" src="about:blank" frameborder="0" scrolling="no" width="900px" height="560px"></iframe>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="happyfarm/view/js/squery/dialog.js"></script>
+<script type="text/javascript">
+	var myBox = new DialogBox({Boxid: 'dlBox'});
+	myBox.Drag('myfarm_full_handle', 'dlBox');
+	function myfarm_full_show() {
+		var docEl = document.documentElement;
+		if((docEl.clientWidth > 930 && docEl.clientHeight > 620) 
+			|| confirm('Chú ý\r\n    Trình duyệt đang dùng không thích hợp với kích thước mới, bạn có muốn tiếp tục')) {
+			myBox.Show();
+			$('myfarm').src = 'about:blank';
+			$('myfarm_full').src = 'happyfarm/index.php?act=full';
+		}
+	}
+	function myfarm_full_close() {
+		myBox.Close();
+		$('myfarm_full').src = 'about:blank';
+		$('myfarm').src = 'happyfarm/index.php?act=nmc';
+	}
+</script>
+<!--大窗口模式 End-->
+
+<!--{template footer}-->

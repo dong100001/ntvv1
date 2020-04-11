@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+<postUrl url = "happyfarm.php?" fbRequest = "mod=gb&act=buy" /><!-- http请求地址 -->
+<loading url="module/loading_v_10.swf" />
+<folder url = "module/nc/" />
+<cropsFolder url = "module/nc/crops/" />
+<version value = "" loginurl = "http://www.gohooh.com" /><!-- Không được đổi link, nếu không bị lỗi -->
+<openControl><!-- 功能开放控制 -->
+<item name = "tool" open = "true" /><!-- 道具 -->
+<item name = "pack" open = "false" /><!-- 好友背包 -->
+</openControl>
+<security host="192.168.1.121" port="3333" />
+<moduleList><!-- 模块列表 -->
+<module name="main" url="module/nc/Main_v_36.swf" statusText="Kết nối Nhà Tui..." size="167713">
+<material url="module/nc/main/farmui1_v_11.swf" statusText="Kết nối nông trại..." size="238316" />
+<material url="module/nc/main/farmui2_v_3.swf" statusText="Tải thông tin nông dân..." size="84876" />
+<material url="module/nc/main/commonui_v_2.swf" statusText="Cập nhật nông sản..." size="34315" />
+<material url="module/nc/crops/Seeds.swf?v=5" statusText="Cập nhật hàng xóm..." size="121403" />
+<material url="module/nc/crops/Seeds_2.swf?v=4" statusText="Cập nhật trang trại..." size="104972" />
+<material url="module/nc/crops/Seeds_3.swf?v=4" statusText="Cập nhật vật nuôi..." size="15506" />
+<material url="module/nc/crops/Flowers.swf?v=4" statusText="Cập nhật hoa..." size="49838" />
+<material url="module/nc/main/task.swf?v=42" statusText="Cập nhật nhiệm vụ..." size="35155" />
+<material url="module/nc/main/NPC2.swf" statusText="Hoàn thành..." size="10040" />
+
+</module>
+</moduleList>
+<boards>
+<board id="90001" name="Bảng hiệu" url="module/nc/farm/diy/board/1.png" />
+<board id="90002" name="Bảng hiệu" url="module/nc/farm/diy/board/2.png" />
+<board id="90003" name="Bảng hiệu" url="module/nc/farm/diy/board/3.png" />
+<board id="90004" name="Bảng hiệu" url="module/nc/farm/diy/board/4.png" />
+<board id="90005" name="Bảng hiệu" url="module/nc/farm/diy/board/5.png" />
+<board id="90006" name="Bảng hiệu" url="module/nc/farm/diy/board/6.png" />
+<board id="90007" name="Bảng hiệu" url="module/nc/farm/diy/board/7.png" />
+<board id="90008" name="Bảng hiệu" url="module/nc/farm/diy/board/8.png" />
+<board id="90009" name="Bảng hiệu" url="module/nc/farm/diy/board/9.png" />
+<board id="90010" name="Bảng hiệu" url="module/nc/farm/diy/board/10.png" />
+<board id="90011" name="Bảng hiệu" url="module/nc/farm/diy/board/11.png" />
+<board id="90012" name="Bảng hiệu" url="module/nc/farm/diy/board/12.png" />
+</boards>
+
+<crops>
+	<crop id="1"   offsetX="35" offsetY="-60" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|50,10,65,-30,110,-2|50,10,65,-30,110,-2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="14400,28800,46800,64800,86400,2000000000" />
+<tip>Dâu (strawberry): vị ngọt chua, dùng là nước ép, sinh tố. Được gọi là nữ hoàng trái cây.</tip>
+<name>Dâu</name>
+</crop>	
+		<crop id="2"   offsetX="35" offsetY="-63" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|74,8,92,2,109,33|74,8,92,2,109,33|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,36005,2000000000" />
+<tip>Củ cải trắng (radish): là loại củ phổ biến, có vị hơi cay.</tip>
+<name>Củ cải trắng</name>
+</crop>	
+		<crop id="3"   offsetX="35" offsetY="-63" seed="Seed" harvestNum="1" isFood="1" isLock="1">
+<insect position="0,0,0,0,0,0|74,8,92,2,109,33|74,8,92,2,109,33|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,18000,32400,46800,46805,2000000000" />
+<tip>Cà rốt (carrot): loại củ màu đỏ, rất tốt cho sức khỏe. Có thể làm nước ép hoặc sinh tố. Tốt cho mắt và tim, gan.</tip>
+<name>Cà rốt</name>
+</crop>	
+		<crop id="4"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|67,-3,70,-19,112,-3|64,-12,62,-36,117,2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,50400,2000000000" />
+<tip>Bắp - Ngô: (corn): là loại lương thực phổ biến. Có thể nấu chín (luộc) hoặc xào thì ngon tuyệt!</tip>
+<name>Bắp - Ngô</name>
+</crop>	
+		<crop id="5"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|45,0,99,-10,129,-24|45,-5,99,-15,129,-29|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,14400,25200,39600,54000,2000000000" />
+<tip>Khoa tây (potato) là loại củ có thể thay thế gạo, ngô, giàu tinh bột và chất đạm, vitamin nhóm B, vitamin C.</tip>
+<name>Khoai tây</name>
+</crop>	
+		<crop id="6"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|64,-4,45,-19,103,-17|64,-3,48,-17.5,128,-6|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,18000,28800,43200,57600,2000000000" />
+<tip>Cà tím (aubergine): chứa nhiều vitamin P, bảo vệ tim mạch và giảm bệnh ung thư.</tip>
+<name>Cà tím</name>
+</crop>	
+		<crop id="7"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,18000,32400,46800,61200,2000000000" />
+<tip>Cà chua (tomato): là loại rau củ có vitamin C nhiêu nhất. Ngoài ra còn có vitamin B, giảm cân hữu hiệu.</tip>
+<name>Cà chua</name>
+</crop>	
+		<crop id="8"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|65,13,92,-11,120,-15|65,13,92,-11,120,-15|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="10800,21600,32400,46800,64800,2000000000" />
+<tip>Đậu (pea): chứa nhiều chất dinh dưỡng, tăng sức đề kháng và phục hồi các chức năng của cơ thể!</tip>
+<name>Đậu</name>
+</crop>	
+		<crop id="9"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|65,13,92,-11,120,-15|65,13,92,-11,120,-15|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="10800,25200,39600,54000,72000,2000000000" />
+<tip>Ớt (chili): có vị cay, kích thích ăn ngon, giúp tiêu hóa tốt và dốt cháy chất béo giúp giảm cân tốt!</tip>
+<name> ớt</name>
+</crop>	
+		<crop id="10"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|65,13,92,-11,120,-15|65,13,92,-11,120,-15|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="10800,25200,43200,61200,79200,2000000000" />
+<tip>Bí ngô (pumpkin): là thực phẩm giàu chất dinh dưỡng có vị ngọt, tốt cho mắt.</tip>
+<name>Bí ngô</name>
+</crop>	
+		<crop id="11"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|65,13,92,-11,120,-15|65,13,92,-11,120,-15|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="14400,28800,43200,57600,75600,2000000000" />
+<tip>Táo (apple): giàu nhiều vitamin, khoáng chất và thành phần chất dinh dưỡng khác cần thiết cho não bộ có thể làm tăng trí nhớ,còn giúp đẹp da.</tip>
+<name>Táo</name>
+</crop>	
+		<crop id="13"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|65,-13,92,-26,120,-30|65,-13,92,-26,120,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Nho (grape): dùng làm nước ép có vị chua ngọt, uống sẽ giúp cơ thể hấp thu nhanh khi hạ đường huyết.</tip>
+<name>Nho</name>
+</crop>	
+		<crop id="14"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|105,44,70,13,119,13|105,44,70,13,119,13|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="14400,32400,54000,75600,100800,2000000000" />
+<tip>Dưa hấu (watermelon): trái ngọt và thơm, ăn rất mát, có thể ép lấy nước. Thường được chưng trong ngày tết!</tip>
+<name>Dưa hấu</name>
+</crop>	
+		<crop id="15"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|63,-6,80,-30,111,-13|63,-6,80,-30,111,-13|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Chuối (banana): người châu Âu gọi đây là "Trái cây vui vẻ" vì nó giúp bỏ tính trầm cảm. Chuối rất tốt cho sức khỏe.</tip>
+<name>Chuối</name>
+</crop>	
+		<crop id="16"    seed="Seed" harvestNum="2"  >
+<insect position="" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="21600,46800,72000,97200,126000,2000000000" />
+<tip>Seed Mystery</tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="18"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|71,-24,69,-63,116,-53|71,-24,69,-63,116,-53|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Đào (peach): rất giàu dinh dưỡng, tốt cho máu!</tip>
+<name>Đào</name>
+</crop>	
+		<crop id="19"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|60,-7,80,-26,105,-10|60,-7,80,-26,105,-10|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="25200,50400,75600,104400,133200,2000000000" />
+<tip>Cam (orange): có vị chua ngọt, có thể dùng làm nước giải khát, tốt cho da!</tip>
+<name>Cam</name>
+</crop>	
+		<crop id="20"    seed="Seed" harvestNum="3"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="25200,54000,82800,115200,147600,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="21"    seed="Seed" harvestNum="2"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="14400,32400,54000,72000,93600,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="22"    seed="Seed" harvestNum="3"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="32400,64800,100800,136800,176400,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="23"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|55,-30,92,-11,120,-15|55,-30,92,-11,120,-15|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="36000,72000,108000,147600,187200,2000000000" />
+<tip>Lựu (pomegranate): xuất xứ từ Ba Tư, chứa nhiều nước, giàu vitamin.</tip>
+<name>Lựu</name>
+</crop>	
+		<crop id="24"    seed="Seed" harvestNum="3"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="36000,75600,115200,154800,198000,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="25"    seed="Seed" harvestNum="3"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="39600,79200,118800,162000,208800,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="26"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|54,-5,87,-27,130,-21|54,-5,87,-27,130,-21|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="39600,82800,126000,172800,219600,2000000000" />
+<tip>Bưởi (grapefruit): có vị ngọt, chua và hơi đắng. Giàu vitamin C và có chứa nhiều chất dinh dưỡng!</tip>
+<name>Bưởi</name>
+</crop>	
+		<crop id="27"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|68,23,95,25,126,8|68,23,95,25,126,8|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="43200,90000,136800,183600,230400,2000000000" />
+<tip>Dứa (pineapple): ngọt và thơm, chứa nhiều chất dinh dưỡng. Ngoài ra còn co enzym làm kích thích sự thèm ăn.</tip>
+<name>Dứa</name>
+</crop>	
+		<crop id="28"    seed="Seed" harvestNum="4"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="28800,61200,100800,140400,180000,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="29"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|61,-52,96,-30,120,-12|61,-52,96,-30,120,-12|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="36000,75600,115200,154800,198000,2000000000" />
+<tip>Dừa (coconut): là loại đặc sản có nhiều ở Bến Tre hoặc dừa sáp ở Trà Vinh. Dừa tận dụng mọi thứ: nước, cái, vỏ, lá, cây. Nước dừa rất tốt.</tip>
+<name> dừa</name>
+</crop>	
+		<crop id="30"    seed="Seed" harvestNum="4"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="32400,72000,115200,158400,205200,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="31"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="39600,82800,126000,172800,219600,2000000000" />
+<tip>(gourd)</tip>
+<name>gourd</name>
+</crop>	
+		<crop id="32"    seed="Seed" harvestNum="4"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="43200,90000,136800,183600,234000,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="33"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|65,-15,80,-45,120,-34|65,-15,80,-45,120,-34|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="46800,97200,147600,198000,252000,2000000000" />
+<tip>Thanh long (pitaya) giàu chất dinh dưỡng, cung cấp chất xơ, ít calo, có vị chua ngọt.</tip>
+<name>Thanh long</name>
+</crop>	
+		<crop id="34"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="50400,100800,151200,205200,259200,2000000000" />
+<tip>Anh đào (cherry): khi chín có màu đỏ, vị chua ngọt, dùng làm rượu vang, có tác dụng trị bệnh thiếu máu.</tip>
+<name>Anh đào</name>
+</crop>	
+		<crop id="35"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="54000,108000,165600,219600,277200,2000000000" />
+<tip>Vải (litchi): có nhiều vitamin, giúp da mịn và chống lão hóa, ngoài ra còn tốt cho não!</tip>
+<name>Vải</name>
+</crop>	
+		<crop id="36"    seed="Seed" harvestNum="4"  >
+<insect position="" />
+<nextText value=""/>
+<cropGrow value="57600,115200,172800,230400,291600,2000000000" />
+<tip></tip>
+<name>Seed Mystery</name>
+</crop>	
+		<crop id="38"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Đu đủ (papaya): giúp giảm đau họng, táo bón, viêm phế quản mãn tính.</tip>
+<name>Đu đủ</name>
+</crop>	
+		<crop id="39"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|56,-20,80,-58,104,-27|56,-20,80,-58,104,-27|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Khế (carambola): vị chua ngọt, cắt ngang có hình ngôi sao 5 cánh.</tip>
+<name> khế</name>
+</crop>	
+		<crop id="40"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1" isFood="1" isLock="1">
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, trưởng thành, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,21600,28800,28805,2000000000" />
+<tip>Cỏ (pasture): là thức ăn cho vật nuôi.</tip>
+<name>Cỏ</name>
+</crop>	
+		<crop id="41" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="Hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="10800,21600,32400,46800,64800,2000000000" />
+<tip>Hoa hồng đỏ (red rose): tượng trưng cho tình yêu nông nàn, có gai. Hoa hồng đỏ được dùng làm trà hay kem hoa hồng, đôi khi làm gia vị.</tip>
+<name>Hoa hồng đỏ</name>
+</crop>	
+		<crop id="42"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Chanh (lemon): giàu vitamin C, acid citric, acid malic rất hữu ích cho cơ thể.</tip>
+<name>Chanh</name>
+</crop>	
+		<crop id="43"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Lời khuyên:</tip>
+<name>Hình</name>
+</crop>	
+		<crop id="44"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|81,7,90,-43,109,-3|81,7,90,-43,109,-3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Mướp (towel gourd): ngăn ngừa lão hóa da, chứa nhiều vitamin B, C.</tip>
+<name>Mướp</name>
+</crop>	
+		<crop id="45"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Kiwi (kiwifruit): có vị chua, giúp hạ sốt, đau dạ dày, chứa nhiều vitamin C.</tip>
+<name>Kiwi</name>
+</crop>	
+		<crop id="46"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Benevolence (benevolence fruit): trái cây của tình yêu.</tip>
+<name>Benevolence</name>
+</crop>	
+		<crop id="47"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Mía (cane): chứa nhiều đường, giúp chuyển hóa các vitamin.</tip>
+<name>Mía đường</name>
+</crop>	
+		<crop id="48"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|65,-5,80,-35,120,-24|65,-5,80,-35,120,-24|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Waxberry (waxberry): giá trị dinh dưỡng cao, là thực phẩm tốt cho sức khỏe, trái chín nhỏ, dễ thương, được xem là loại trái cây tuyệt vời.</tip>
+<name>Waxberry</name>
+</crop>	
+		<crop id="49"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|54,7,78,-28,98,-3|54,7,78,-28,98,-3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Đâu nành (peanut): bổ sung chất dinh dưỡng và làm tăng tuổi thọ.</tip>
+<name>Đâu nành</name>
+</crop>	
+		<crop id="50"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|64,11,87,-19,104,3|64,11,87,-19,104,3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="25200,50400,79200,108000,108000,2000000000" />
+<tip>Nấm (mushroom): là loại thức ăn lý tưởng, thực phẩm chức năng giúp giảm huyết áp, tăng cường miễn dịch.</tip>
+<name>Nấm</name>
+</crop>	
+		<crop id="51"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|54,-5,79,-44,105,-23|54,-5,79,-44,105,-23|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,18000,28800,43200,57600,2000000000" />
+<tip>Táo Tàu (red jujube) :có chứa chất đạm, chất béo, carbohydrate, acid hữu cơ, vitamin A, vitamin C và chất dinh dưỡng khác. Giúp bồi bổ cho người thể chất yếu sau khi bệnh.</tip>
+<name>Táo Tàu</name>
+</crop>	
+		<crop id="52"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="53"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|58,5,87,-35,104,-4|58,5,87,-35,104,-4|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Nhãn (longan): ngọt, thơm, chưa nhiều chất dinh dưỡng tốt cho máu, não và tim.</tip>
+<name>Nhãn</name>
+</crop>	
+		<crop id="54"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,43200,64800,90000,115200,2000000000" />
+<tip>Lê (pear): quả ngọt, nhiều nước, cung cấp nhiều vitamin.</tip>
+<name>Lê</name>
+</crop>	
+		<crop id="55"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|54,-5,79,-44,105,-23|54,-5,79,-44,105,-23|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Loquat (loquat): vị ngọt chua, thơm ngon được gọi là trái cây hoàng đế.</tip>
+<name>Loquat</name>
+</crop>	
+		<crop id="56"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|66,-11,80,-37,118,-16|66,-11,80,-37,118,-16|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Dưa hấu (cantaloupe): nhiều nước, giúp hạ nhiệt mùa hè.</tip>
+<name>Dưa hấu</name>
+</crop>	
+		<crop id="57"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|57,-9,64,-54,108,-14|57,-9,64,-54,108,-14|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Xoài (mango): chứa nhiều chất đường, đạm, xơ và các chất dinh dưỡng khác. Đặc biệt giàu vitamin A.</tip>
+<name>Xoài </name>
+</crop>	
+		<crop id="58"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|57,-14,80,-48,104,-16|57,-14,80,-48,104,-16|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Sầu riêng (durian): hương rất thơm, giàu protein và chất béo cung chất dinh dưỡng cho cơ thể.</tip>
+<name>Sầu riêng</name>
+</crop>	
+		<crop id="59"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|66,23,86,-10,111,15|66,0,87,-28,105,-2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,50400,2000000000" />
+<tip>Bắp cải (cabbage): nhiều chất xơ, tốt cho tiêu hóa, ngăn ngừa các bệnh ung thư.</tip>
+<name>Bắp cải</name>
+</crop>	
+		<crop id="60"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|60,-5,87,-27,112,-2|60,-5,87,-27,112,-2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,50400,2000000000" />
+<tip>Lúa gạo (paddy): là loại lượng thực chính của Việt Nam, cung cấp nhiều tin bột và vitamin nhóm B.</tip>
+<name>Lúa gạo</name>
+</crop>	
+		<crop id="61"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|60,-5,87,-27,112,-2|60,-5,87,-27,112,-2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,50400,2000000000" />
+<tip>Lúa mì (wheat): rất giàu tinh bột, đạm, chất béo, khoáng chất, canxi, sắt, Thiamin, riboflavin, niacin và vitamin A </tip>
+<name>Lúa mì</name>
+</crop>	
+		<crop id="62"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|64,13,89,-3,114,12|47,4,87,-27,117,2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="14400,28800,46800,64800,82800,2000000000" />
+<tip>Clover (clover): đại diện cho tình yêu, sức khỏe, danh dự, hạnh phúc, đặc biệt phù hợp cho người sử dụng các cựu sinh viên</tip>
+<name>Clover </name>
+</crop>	
+		<crop id="63"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|42,11,87,-12,124,-11|42,11,87,-12,124,-11|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Balsam pear (balsam pear): giúp giảm nhiệt mùa hè.</tip>
+<name>Balsam pear</name>
+</crop>	
+		<crop id="64"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,25200,39600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="66"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,25200,39600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="67"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|49,7,78,-20,118,2|49,7,78,-20,118,2|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,43200,68400,97200,126000,2000000000" />
+<tip>Dưa (muskmelon): trái cây mùa hè giảm nhiệt mùa hè, giá trị dinh dưỡng của nó có thể so sánh với dưa hấu</tip>
+<name>Dưa</name>
+</crop>	
+		<crop id="68"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|48,-7,94,-47,134,-14|48,-7,94,-47,134,-14|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Wax gourd (wax gourd): quả là dẹt hoặc dài tròn, có chứa một số lượng lớn protein và vitamin và khoáng chất, giúp trắng da.</tip>
+<name>Wax gourd</name>
+</crop>	
+		<crop id="69"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="36000,75600,115200,154800,198000,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="70"   offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|71,3,81,-28,113,-3|71,3,81,-28,113,-3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="14400,32400,54000,75600,100800,2000000000" />
+<tip>Đậu tương (soybean) giàu giá trị dinh dưỡng</tip>
+<name>黄豆</name>
+</crop>	
+		<crop id="71"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,25200,39600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="72"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|61,-9,84,-35,109,-10|61,-9,84,-35,109,-10|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Filbert (filbert):  dinh dưỡng phong phú, quả rất giàu protein, caroten, vitamin.</tip>
+<name>Filbert</name>
+</crop>	
+		<crop id="73"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="10800,25200,43200,43200,61200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="74"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|62,-12,83,-48,109,-19|62,-12,83,-48,109,-19|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Kumquat: hoa màu vàng, hương thơm.</tip>
+<name>Kumquat</name>
+</crop>	
+		<crop id="75"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Dâu tằm (mulberry): giúp bổ thận, tốt cho thị lực.</tip>
+<name>Dâu tằm</name>
+</crop>	
+		<crop id="76"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|54,-12,80,-56,119,-20|54,-12,80,-56,119,-20|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Măng cụt (mangosteen): da màu tím dày, thịt trắng, mùi thơm.</tip>
+<name>Măng cụt</name>
+</crop>	
+		<crop id="77"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|62,-5,89,-28,109,-6|62,-5,89,-28,109,-6|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Blueberry (blueberry): quả nhỏ, trái cây xanh màu đẹp mắt, dùng làm nhiều món ăn nhẹ và ẩm thực khác.</tip>
+<name>Blueberry</name>
+</crop>	
+		<crop id="78"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|54,-5,73,-45,109,-19|54,-5,73,-45,109,-19|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Mai apricot</tip>
+<name>Mai</name>
+</crop>	
+		<crop id="79"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|57,-13,71,-42,104,-21|57,-13,71,-42,104,-21|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Ổi (guava): giàu chất dinh dưỡng, vitamin C. Quả có thể điều trị bệnh tiểu đường và giảm đường trong máu hiệu quả, lá cũng có thể được tiêu chảy.</tip>
+<name>Ổi</name>
+</crop>	
+		<crop id="80"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Quả hồng (persimmon): hình tròn, mềm, ngọt và rất nổi tiếng.</tip>
+<name>Quả hồng</name>
+</crop>	
+		<crop id="81"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|71,-13,85,-56,103,-28|71,-13,85,-56,103,-28|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,14400,25200,36000,46800,2000000000" />
+<tip>Cây thông (Christmas tree): dùng làm vật trang trí vào dịp lễ giáng sinh.</tip>
+<name>Cây thông</name>
+</crop>	
+		<crop id="82"   offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|54,-5,89,-44,116,-17|54,-5,89,-44,116,-17|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,75600,104400,133200,2000000000" />
+<tip>Đem lại may mắn trong năm mới</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="83"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,46800,64800,90000,118800,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="84"   offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,39600,57600,79200,104400,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="85"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,43200,64800,93600,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="86"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,43200,61200,82800,108000,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="87"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,43200,64800,86400,108000,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="88"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,39600,57600,79200,104400,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="89"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,39600,57600,79200,104400,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="90"   offsetX="0" offsetY="0" seed="Seed" harvestNum="6"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,39600,57600,82800,108000,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="91"   offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="10800,25200,43200,57600,79200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="92"   offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|54,-5,87,-35,113,-13|54,-5,87,-35,113,-13|0,0,0,0,0,0" />
+<nextText value="hạt , nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Đào tiên: 3 ngàn năm ra hoa, 3 ngàn năm mới kết quả!</tip>
+<name>Đào tiên</name>
+</crop>	
+		<crop id="101" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|68,5,94,-27,113,-9|68,5,94,-27,113,-9|0,0,0,0,0,0" />
+<nextText value="Hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="39600,82800,126000,172800,219600,2000000000" />
+<tip>Hoa cải hương (lavender): hoa tím xanh có hương thơm.</tip>
+<name>Hoa cải hương</name>
+</crop>	
+		<crop id="102" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|54,-2,75,-32,116,-3|54,-2,75,-32,116,-3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, ra hoa, ra quả, thu hoạch"/>
+<cropGrow value="43200,90000,136800,183600,230400,2000000000" />
+<tip>Loa kèn (calla): vẻ đẹp thanh lịch.</tip>
+<name>Loa kèn</name>
+</crop>	
+		<crop id="103" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|54,-2,75,-32,116,-3|54,-2,75,-32,116,-3|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="10800,25200,39600,54000,72000,2000000000" />
+<tip>Goldband lily (goldband lily): mang ý nghĩa ân huệ, phước lành, sang trọng.</tip>
+<name>Goldband lily</name>
+</crop>	
+		<crop id="104" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|52,22,84,-3,113,21|52,22,84,-3,113,21|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="14400,28800,43200,57600,75600,2000000000" />
+<tip>Hoa đồng tiền (African daisy): mang ý nghĩa thanh lịch, đạo đức, ẩn dật, vui vẻ, niềm đam mê và bí ẩn.</tip>
+<name>Hoa đồng tiền</name>
+</crop>	
+		<crop id="105" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|68,5,94,-27,113,-9|68,5,94,-27,113,-9|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="7200,18000,32400,46800,61200,2000000000" />
+<tip>Hoa cúc (daisy): mang ý nghĩa vui vẻ.</tip>
+<name>Hoa cúc</name>
+</crop>	
+		<crop id="106" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|53,1,81,-15,115,5|53,1,81,-15,115,5|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="36000,72000,108000,147600,187200,2000000000" />
+<tip>Tulip (tulip) là một loài hoa nổi tiếng từ Hà Lan, có nhiều màu sắc, tuyệt đẹp. Hoa tulip mang ý nghĩa: tình yêu, chu đáo, thanh lịch, phong phú, có thẩm quyền, thông minh.</tip>
+<name>Hoa tulip</name>
+</crop>	
+		<crop id="107" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|53,-7,86,-48,112,-9|53,-7,86,-48,112,-9|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="21600,43200,64800,90000,115200,2000000000" />
+<tip>Xương rồng (cactus): chịu hạn tốt.</tip>
+<name>Xương rồng</name>
+</crop>	
+		<crop id="108" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|49,3,64,-27,108,-2|43,-3,64,-35,112,-9|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="21600,43200,64800,90000,115200,2000000000" />
+<tip>Lily (lily of the valley): hình chuông nhỏ, mùi thơm, tương trưng cho sự tinh khiết, vui vẻ, may mắn.</tip>
+<name>Lily</name>
+</crop>	
+		<crop id="109" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|60,16,87,-5,122,14|60,16,87,-5,122,14|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="43200,90000,136800,183600,230400,2000000000" />
+<tip>Phong lan (moth orchid): hoa duyên dáng, thanh lịch màu sắc đa dạng.</tip>
+<name>Hoa phong lan</name>
+</crop>	
+		<crop id="110" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="10800,25200,43200,61200,79200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="111" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|48,-8,77,-31,114,-18|48,-8,77,-31,114,-18|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="14400,32400,54000,75600,100800,2000000000" />
+<tip>Hoa hồng (pink rose): tượng trưng cho tình bạn rực rỡ hoặc tình yêu.</tip>
+<name>Hoa hồng</name>
+</crop>	
+		<crop id="112" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|67,3,84,-12,113,-3|59,-9,85,-31,114,-13|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, chồi, nở hoa, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Lục bình (hyacinth): hoa kết thành chùm, màu tím, mang ý nghĩa trang nghiêm.</tip>
+<name>Lục bình</name>
+</crop>	
+		<crop id="113" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="25200,50400,75600,104400,133200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>		
+		<crop id="114" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|53,3,76,-36,109,-10|53,3,76,-36,109,-10|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Hoa hồng xanh (blue rose): tượng trưng cho tình yêu tinh khiết, ấm áp.</tip>
+<name>Hoa hồng xanh</name>
+</crop>	
+		<crop id="115" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,57600,86400,118800,151200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="116" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="117" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="118" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="119" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="120" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="1"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="7200,18000,28800,43200,57600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="121" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="3"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="28800,61200,93600,129600,165600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="122" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="2"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="123" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="54000,108000,165600,219600,277200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="124" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="4"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="21600,43200,64800,90000,115200,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		<crop id="125" isFlower="1"  offsetX="0" offsetY="0" seed="Seed" harvestNum="5"  >
+<insect position="0,0,0,0,0,0|100,-50,78,-19,125,-30|100,-50,80,-24,125,-30|0,0,0,0,0,0" />
+<nextText value="hạt, nảy mầm, lá nhỏ, lá lớn, tăng trường, trưởng thành, thu hoạch"/>
+<cropGrow value="18000,39600,61200,86400,111600,2000000000" />
+<tip>Thông tin</tip>
+<name>Tên</name>
+</crop>	
+		
+</crops>
+</main>

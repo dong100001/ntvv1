@@ -1,0 +1,132 @@
+﻿<!--{eval $_TPL['titles'] = array("Chơi game $gamename trên mạng xã hội Nhà Tui - GoHooH.CoM");}-->
+<!--{template header}-->
+<!--{template game/view/fgame_header}-->
+<div class=div_layout>
+		<div class=left>
+			<div>
+				<div overflow="hidden" height="407" width="570">
+					<object>
+						<embed src="<!--{$flashurl}-->" width="570" height="407" />
+					</object>
+				</div>			
+			</div>
+			
+			<br>	
+			<div class=mycar>
+				<div class=title>		
+				    Hướng dẫn  
+				</div>
+				<div class=info>
+					<!--{$gameoperation}-->
+&nbsp;<br />
+<!--Vui lòng giử bản quyền Việt hóa của GoHooH.CoM, đó sẽ là động lực để tớ share code tiếp-->
+					<p align="right">Việt hóa bởi <a href="http://www.gohooh.com" target="_blank" title="Ucenter home GoHooH.CoM">GoHooH</a></p>				</div>
+		  </div>
+
+
+			<div>
+				<!--{if $reArr}-->
+				<br>
+				<div class="parkmenu">
+						<ul>
+						  <LI>Các thành viên đã chơi game $gamename</LI>
+						</ul>
+				</div>
+					<div class="box">
+						<ul class="avatar_list s_clear">
+							<!--{loop $reArr $key $value}-->
+							<li>
+								<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" target="_blank"><!--{avatar($value[uid],small)}--></a></div>
+								<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+							</li>
+							<!--{/loop}-->	
+									
+							<li>
+								
+								<p></p>
+							</li>
+										  
+						</ul>
+					</div>
+				<!--{/if}-->
+			</div>
+		</div>
+
+		<div id="jinwubar">
+
+			<div class="sidebox">
+				<h2 class="title">
+					<p class="r_option">
+						
+					</p>
+					Thông tin của tôi
+				</h2>
+				<ul class="jinwu_list">
+					<li>Thứ hạng: <!--{$myrk}--> / <!--{$allrk}--></li>
+				
+					<li>Điểm số cao nhất: <font color="#FF6600" style="font-family:Arial, Helvetica, sans-serif; font-size:20px; font-weight:bold"><!--{$score}--></font> điểm</li>
+
+				</ul>
+			</div>
+
+
+
+			<!--{if $dayrktopArr}-->	
+			<div class="sidebox">
+				<h2 class="title">
+					Top trong ngày
+				</h2>
+				<ul class="jinwu_list">
+					<table width="220" align="center"><!--{loop $dayrktopArr $key $value}-->	
+						<tr>
+							<td style="padding-right:6px;"><!--{$key}--></td>
+							<td style="padding-right:6px;"><a href="space.php?uid={$value[uid]}" target="_blank">{$value[username]}</a></td>
+							<td><!--{$value[score]}--> điểm</td>
+						</tr><!--{/loop}-->
+					</table>
+				</ul>
+			  </div>
+			<!--{/if}-->
+
+
+
+			<!--{if $weekrktopArr}-->	
+			<div class="sidebox">
+				<h2 class="title">
+					Top trong tuần
+				</h2>
+				<ul class="jinwu_list">
+					<table width="220" align="center">
+					<!--{loop $weekrktopArr $key $value}-->	
+					<tr>
+						<td style="padding-right:6px;"><!--{$key}--></td>
+						<td style="padding-right:6px;"><a href="space.php?uid={$value[uid]}" target="_blank">{$value[username]}</a></td>
+						<td><!--{$value[score]}--> điểm</td>
+					</tr>
+					<!--{/loop}-->
+					</table>
+				</ul>
+			</div>
+			<!--{/if}-->
+
+
+			<!--{if $mrktopArr}-->	
+			<div class="sidebox">
+				<h2 class="title">
+					Top 3
+				</h2>
+				<ul class="jinwu_list">
+					<table width="220" align="center"><!--{loop $aarktopArr $key $value}-->	
+						<tr>
+							<td style="padding-right:6px;"><!--{$key}--></td>
+							<td style="padding-right:6px;"><a href="space.php?uid={$value[uid]}" target="_blank">{$value[username]}</a></td>
+							<td><!--{$value[score]}--> điểm</td>
+						</tr><!--{/loop}-->
+					</table>
+				</ul>
+			  </div>
+			<!--{/if}-->
+	    </div>
+</div>	
+
+<!--{template footer}-->

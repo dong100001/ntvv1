@@ -1,0 +1,29 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+<form method="post" action="do.php?ac=inputpwd" class="c_form">
+	<table cellpadding="0" cellspacing="0" class="formtable">
+		<caption>
+			<h2>Xác nhận mật khẩu</h2>
+			<p>Nhập vào mật khẩu để tiếp tục</p>
+		</caption>
+		<tr>
+			<th width="100">Mật khẩu</th>
+			<td><input type="password" name="viewpwd" value="" class="t_input" /></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="hidden" name="refer" value="$_SERVER[REQUEST_URI]" />
+			<input type="hidden" name="blogid" value="$invalue[blogid]" />
+			<input type="hidden" name="albumid" value="$invalue[albumid]" />
+			<input type="hidden" name="pwdsubmit" value="true" />
+			<input type="submit" name="submit" value="submit" class="submit" />
+			</td>
+		</tr>
+</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+<!--{template footer}-->

@@ -1,0 +1,23 @@
+<style type="text/css">
+@import url(park/css/main.css);
+</style>
+<SCRIPT src="park/images/my_package.js" type=text/javascript></SCRIPT>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+	<p style="font-size:14px"><strong>Cuộc chiến đỗ xe hơi</strong></p>
+	<span class="spacelink">Các bãi đỗ xe luôn chật kín người, liệu bạn có thể tìm được chỗ đỗ xe riêng cho mình ?</span>
+</div>
+<div class="tabs_header">    
+	<ul class="tabs">
+	<!--{if ADMIN_UID == $_SGLOBAL['supe_uid']}--><li><a href="parkApp.php?ac=admin&op=opcar" class="t_button"><span>quản trị</span></a></li><!--{/if}-->
+		<li$actives[index]><a href="parkApp.php?ac=index"><span>Bãi đỗ của tôi</span></a></li>
+		<li$actives[market]><a href="parkApp.php?ac=market"><span>Cửa hàng</span></a></li>
+		<li$actives[oldmarket]><a href="parkApp.php?ac=oldmarket"><span>Chợ Buôn Xe</span></a></li>	
+		<li$actives[stage]><a href="parkApp.php?ac=stage"><span>Thẻ sự kiện</span></a></li>
+		<li$actives[rank]><a href="parkApp.php?ac=rank"><span>Đánh giá</span></a></li>
+		<li$actives[invite]><a href="cp.php?ac=invite"><span>Mời bạn bè</span></a></li>		
+<!--		<li$actives[add]><a href="parkApp.php?ac=add">Gas Station</a></li>-->				
+		<li$actives[set]><a href="parkApp.php?ac=set"><span>Cài đặt</span></a></li>		
+				
+	</ul>
+</div>

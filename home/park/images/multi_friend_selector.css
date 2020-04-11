@@ -1,0 +1,369 @@
+.inputbutton {
+	BORDER-RIGHT: #0e1f5b 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #d9dfea 1px solid; PADDING-LEFT: 15px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #d9dfea 1px solid; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: #0e1f5b 1px solid; FONT-FAMILY: "lucida grande", tahoma, verdana, arial, sans-serif; BACKGROUND-COLOR: #3b5998; TEXT-ALIGN: center
+}
+.inputsubmit {
+	BORDER-RIGHT: #0e1f5b 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #d9dfea 1px solid; PADDING-LEFT: 15px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #d9dfea 1px solid; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: #0e1f5b 1px solid; FONT-FAMILY: "lucida grande", tahoma, verdana, arial, sans-serif; BACKGROUND-COLOR: #3b5998; TEXT-ALIGN: center
+}
+.inputaux {
+	BORDER-LEFT-COLOR: #e7e7e7; BACKGROUND: #f0f0f0; BORDER-BOTTOM-COLOR: #666; COLOR: #000; BORDER-TOP-COLOR: #e7e7e7; BORDER-RIGHT-COLOR: #666
+}
+.inputtext {
+	BORDER-RIGHT: #bdc7d8 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #bdc7d8 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #bdc7d8 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #bdc7d8 1px solid; FONT-FAMILY: "lucida grande",tahoma,verdana,arial,sans-serif
+}
+.inputpassword {
+	BORDER-RIGHT: #bdc7d8 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #bdc7d8 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #bdc7d8 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #bdc7d8 1px solid; FONT-FAMILY: "lucida grande",tahoma,verdana,arial,sans-serif
+}
+.clearfix_mfs {
+	DISPLAY: inline-block
+}
+#my_multi_friend_selector {
+	FONT-SIZE: 12px; BACKGROUND: #fff; MARGIN: 10px; WIDTH: 580px; POSITION: relative; TEXT-ALIGN: left
+}
+.showborder#my_multi_friend_selector {
+	BORDER-RIGHT: #d2d9e6 10px solid; BORDER-TOP: #d2d9e6 10px solid; MARGIN: 0px; BORDER-LEFT: #d2d9e6 10px solid; BORDER-BOTTOM: #d2d9e6 10px solid
+}
+.num_cols_2 {
+	WIDTH: 368px
+}
+.num_cols_3 {
+	WIDTH: 466px
+}
+#my_multi_friend_selector A:unknown {
+	outline: none
+}
+#my_multi_friend_selector A:hover {
+	outline: none
+}
+#my_multi_friend_selector A:active {
+	outline: none
+}
+#my_multi_friend_selector FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#my_multi_friend_selector_wrapper {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; BACKGROUND: #fff; PADDING-BOTTOM: 12px; WIDTH: 100%; PADDING-TOP: 12px
+}
+.showborder #my_multi_friend_selector_wrapper {
+	BORDER-RIGHT: #8598c0 1px solid; BORDER-TOP: #8598c0 1px solid; BORDER-LEFT: #8598c0 1px solid; BORDER-BOTTOM: #8598c0 1px solid
+}
+#my_multi_friend_selector_notice {
+	BORDER-RIGHT: #ffe222 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: #ffe222 1px solid; PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 13px; Z-INDEX: 99; BACKGROUND: #fff8cc; LEFT: 140px; PADDING-BOTTOM: 8px; BORDER-LEFT: #ffe222 1px solid; WIDTH: 300px; PADDING-TOP: 8px; BORDER-BOTTOM: #ffe222 1px solid; POSITION: absolute; TOP: 170px; TEXT-ALIGN: center
+}
+.num_cols_2 #my_multi_friend_selector_notice {
+	LEFT: 25px
+}
+.num_cols_3 #my_multi_friend_selector_notice {
+	LEFT: 70px
+}
+#my_multi_friend_selector_stats {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; BACKGROUND: #e7ebf5; PADDING-BOTTOM: 6px; PADDING-TOP: 6px
+}
+#my_multi_friend_selector H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 15px; PADDING-BOTTOM: 4px; MARGIN: 0px; COLOR: #222; PADDING-TOP: 0px
+}
+#my_multi_friend_selector H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 8px; MARGIN: 0px; COLOR: #999; PADDING-TOP: 0px; BORDER-BOTTOM: #e0e0e0 1px solid
+}
+#my_multi_friend_selector H3 STRONG {
+	FONT-WEIGHT: normal
+}
+#my_multi_friend_selector H3 .highlight {
+	FONT-WEIGHT: bold; COLOR: #c90000
+}
+#my_multi_friend_selector .multi_friend_status {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 8px; COLOR: #444444; PADDING-TOP: 0px
+}
+.condensed_multi_friend_selector {
+	POSITION: relative
+}
+#my_multi_friend_selector #skip_top {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; FLOAT: right; PADDING-BOTTOM: 3px; MARGIN: 1px 0px 0px; PADDING-TOP: 3px
+}
+.condensed_multi_friend_selector .typeahead_holder .hide {
+	RIGHT: 2px; CURSOR: hand; POSITION: absolute; TOP: 3px
+}
+.condensed_multi_friend_selector .typeahead_holder .hide {
+	DISPLAY: block; BACKGROUND: url(../imgs/x_to_hide.gif) no-repeat left top; FLOAT: left; WIDTH: 13px; MARGIN-RIGHT: 3px; HEIGHT: 14px
+}
+#my_multi_friend_selector .hide {
+	DISPLAY: block; BACKGROUND: url(../imgs/x_to_hide.gif) no-repeat left top; FLOAT: left; WIDTH: 13px; MARGIN-RIGHT: 3px; HEIGHT: 14px
+}
+#my_multi_friend_selector .hide:hover {
+	BACKGROUND-IMAGE: url(../imgs/x_to_hide_hover.gif)
+}
+#my_multi_friend_selector #finder {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; FONT-SIZE: 13px; PADDING-BOTTOM: 14px; COLOR: #555; PADDING-TOP: 8px; POSITION: relative
+}
+#my_multi_friend_selector #finder .hide {
+	LEFT: 354px; POSITION: absolute; TOP: 12px
+}
+.num_cols_2 #my_multi_friend_selector_wrapper #finder .hide {
+	LEFT: 326px; TOP: 36px
+}
+.num_cols_3 #my_multi_friend_selector_wrapper #finder .hide {
+	TOP: 36px
+}
+#my_multi_friend_selector #finder LABEL {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 3px
+}
+#my_multi_friend_selector #finder .inputtext {
+	WIDTH: 250px
+}
+.num_cols_2 #my_multi_friend_selector_wrapper #finder .inputtext {
+	WIDTH: 240px
+}
+#my_multi_friend_selector #finder .friend_list {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; FONT-SIZE: 12px; FLOAT: right; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#my_multi_friend_selector #finder .num_selected {
+	PADDING-RIGHT: 5px; DISPLAY: block; PADDING-LEFT: 5px; FONT-SIZE: 12px; FLOAT: right; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#my_multi_friend_selector .filters {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px; BORDER-BOTTOM: #c1c1c1 0px solid
+}
+#my_multi_friend_selector .filters P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #666; PADDING-TOP: 0px
+}
+#my_multi_friend_selector .filters UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #666; PADDING-TOP: 0px
+}
+#my_multi_friend_selector .filters #fs_networks {
+	FLOAT: left
+}
+#my_multi_friend_selector #max_limit_notice {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FLOAT: right; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+#my_multi_friend_selector #fs_current_filter {
+	BORDER-RIGHT: #c1c1c1 1px solid; PADDING-RIGHT: 7px; PADDING-LEFT: 7px; BACKGROUND: #eee; PADDING-BOTTOM: 5px; BORDER-LEFT: #c1c1c1 1px solid; COLOR: #555; PADDING-TOP: 5px
+}
+#my_multi_friend_selector #fs_current_filter .select {
+	DISPLAY: block; FLOAT: right
+}
+#my_multi_friend_selector #fs_networks .global_menu_arrow_active {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 11px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 5px; POSITION: relative
+}
+#my_multi_friend_selector #fs_filter_links {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 11px; FLOAT: right; PADDING-BOTTOM: 0px; PADDING-TOP: 5px; POSITION: relative
+}
+#my_multi_friend_selector .cols_squeeze #fs_filter_links {
+	MARGIN-TOP: -3px; MARGIN-BOTTOM: 9px
+}
+#my_multi_friend_selector #fs_filter_links A {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+#my_multi_friend_selector #fs_networks .global_menu_arrow_active {
+	BORDER-LEFT-COLOR: #526ea6; BACKGROUND: #7489b7; BORDER-BOTTOM-COLOR: #526ea6; COLOR: #fff; BORDER-TOP-COLOR: #526ea6; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #526ea6
+}
+#my_multi_friend_selector #fs_filter_links A.active {
+	BORDER-LEFT-COLOR: #526ea6; BACKGROUND: #7489b7; BORDER-BOTTOM-COLOR: #526ea6; COLOR: #fff; BORDER-TOP-COLOR: #526ea6; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #526ea6
+}
+#my_multi_friend_selector .navigator_menu {
+	Z-INDEX: 90; RIGHT: 0px; POSITION: absolute; TOP: 28px
+}
+#my_multi_friend_selector .cols_squeeze .navigator_menu {
+	TOP: 26px
+}
+#my_multi_friend_selector #fs_limit_by_list_menu {
+	RIGHT: 104px
+}
+#my_multi_friend_selector .navigator_menu UL {
+	BORDER-RIGHT: #526ea6 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #526ea6 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 11px; Z-INDEX: 92; BACKGROUND: #fff; PADDING-BOTTOM: 3px; MARGIN: 0px; OVERFLOW: auto; BORDER-LEFT: #526ea6 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #526ea6 1px solid; LIST-STYLE-TYPE: none; max-height: 220px; min-width: 140px
+}
+#my_multi_friend_selector .navigator_menu UL LI {
+	MARGIN: 0px
+}
+#my_multi_friend_selector .navigator_menu UL LI A {
+	PADDING-RIGHT: 8px; DISPLAY: block; PADDING-LEFT: 8px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+#my_multi_friend_selector .navigator_menu UL LI A:hover {
+	BACKGROUND: #7489b7; COLOR: #fff; TEXT-DECORATION: none
+}
+#my_multi_friend_selector .filters .selections {
+	FLOAT: left; LIST-STYLE-TYPE: none
+}
+#my_multi_friend_selector .filters .selections LI {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; FLOAT: left; PADDING-BOTTOM: 4px; WIDTH: 100px; PADDING-TOP: 4px; TEXT-ALIGN: center
+}
+#my_multi_friend_selector .filters .selections LI A {
+	COLOR: #627aad
+}
+#my_multi_friend_selector .filters .selections LI A STRONG {
+	COLOR: #3b5998
+}
+#my_multi_friend_selector .filters .selections LI A:hover {
+	COLOR: #3b5998
+}
+#my_multi_friend_selector .filters .selections LI A STRONG {
+	MARGIN: 0px 1px
+}
+#my_multi_friend_selector .filters .selections LI.view_on {
+	BACKGROUND: url(../imgs/multi_friend_selector_view_bg.gif) #fff repeat-x center top; text-shadow: 2px 2px #fff
+}
+#my_multi_friend_selector .filters .selections LI.view_on A {
+	COLOR: #444
+}
+#my_multi_friend_selector .filters .selections LI.view_on A STRONG {
+	COLOR: #444
+}
+#my_multi_friend_selector .filters .selections LI.view_on A:hover {
+	TEXT-DECORATION: none
+}
+#my_multi_friend_selector #friends {
+	BORDER-RIGHT: #c1c1c1 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #c1c1c1 1px solid; PADDING-LEFT: 0px; Z-INDEX: 1; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: auto; BORDER-LEFT: #c1c1c1 1px solid; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: #c1c1c1 1px solid; LIST-STYLE-TYPE: none; HEIGHT: 300px
+}
+#my_multi_friend_selector #friends LI {
+	FLOAT: left; MARGIN: 3px; OVERFLOW: hidden; WIDTH: 134px; CURSOR: hand; HEIGHT: 64px
+}
+#my_multi_friend_selector #friends A {
+	PADDING-RIGHT: 4px; DISPLAY: block; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; HEIGHT: 56px
+}
+#my_multi_friend_selector #friends A:hover {
+	TEXT-DECORATION: none
+}
+#my_multi_friend_selector #friends .square {
+	BORDER-RIGHT: #e0e0e0 1px solid; PADDING-RIGHT: 2px; BACKGROUND-POSITION: 2px 2px; BORDER-TOP: #e0e0e0 1px solid; DISPLAY: block; PADDING-LEFT: 2px; Z-INDEX: 1; FLOAT: left; PADDING-BOTTOM: 2px; BORDER-LEFT: #e0e0e0 1px solid; WIDTH: 50px; CURSOR: hand; MARGIN-RIGHT: 5px; PADDING-TOP: 2px; BORDER-BOTTOM: #e0e0e0 1px solid; BACKGROUND-REPEAT: no-repeat; POSITION: relative; HEIGHT: 50px; BACKGROUND-COLOR: #fff
+}
+#my_multi_friend_selector #friends .square SPAN {
+	BACKGROUND-POSITION: left bottom; DISPLAY: block; LEFT: 2px; WIDTH: 50px; BACKGROUND-REPEAT: no-repeat; POSITION: absolute; TOP: 2px; HEIGHT: 50px
+}
+#my_multi_friend_selector #friends STRONG {
+	DISPLAY: block; FLOAT: left
+}
+#my_multi_friend_selector #friends .network {
+	DISPLAY: block; FLOAT: left
+}
+#my_multi_friend_selector #friends STRONG {
+	MARGIN-TOP: 2px; FONT-WEIGHT: normal; FONT-SIZE: 12px; WIDTH: 65px; CURSOR: hand; COLOR: #222
+}
+#my_multi_friend_selector #friends .network {
+	MARGIN-TOP: 3px; FONT-SIZE: 9px; CURSOR: hand; COLOR: #666; WHITE-SPACE: nowrap
+}
+#my_multi_friend_selector #actions {
+	MARGIN-BOTTOM: 5px
+}
+#my_multi_friend_selector #actions #actions_select_all {
+	PADDING-RIGHT: 7px
+}
+.condensed_multi_friend_selector LABEL SPAN EM {
+	FONT-WEIGHT: bold; BACKGROUND: #dce1e8; COLOR: #000; FONT-STYLE: normal
+}
+#my_multi_friend_selector #friends EM {
+	FONT-WEIGHT: bold; BACKGROUND: #dce1e8; COLOR: #000; FONT-STYLE: normal
+}
+#my_multi_friend_selector #friends .inputcheckbox {
+	DISPLAY: none
+}
+#my_multi_friend_selector #friends A:hover {
+	BACKGROUND: url(../imgs/multi_friend_selector_hover_bg.gif) no-repeat left top
+}
+#my_multi_friend_selector #friends A:hover STRONG {
+	COLOR: #000
+}
+#my_multi_friend_selector #friends A:hover .square {
+	BORDER-LEFT-COLOR: #205c98; BORDER-BOTTOM-COLOR: #205c98; BORDER-TOP-COLOR: #205c98; BORDER-RIGHT-COLOR: #205c98
+}
+#my_multi_friend_selector #friends LI.selected {
+	BACKGROUND: url(../imgs/multi_friend_selector_bg.gif) no-repeat left top
+}
+#my_multi_friend_selector #friends LI.selected STRONG {
+	COLOR: #fff
+}
+#my_multi_friend_selector #friends LI.selected SPAN {
+	COLOR: #c3cddf
+}
+#my_multi_friend_selector #friends LI.selected A:hover {
+	BACKGROUND: url(../imgs/multi_friend_selector_bg.gif) no-repeat left top; COLOR: #e7ebf5
+}
+#my_multi_friend_selector #friends LI.selected A {
+	BACKGROUND: url(../imgs/multi_friend_selector_bg.gif) no-repeat left top; COLOR: #e7ebf5
+}
+#my_multi_friend_selector #friends LI.selected EM {
+	BACKGROUND: #6e84b3; COLOR: #fff
+}
+#my_multi_friend_selector #friends LI.selected A:hover EM {
+	COLOR: #fff
+}
+#my_multi_friend_selector #friends LI.selected A:hover STRONG {
+	COLOR: #fff
+}
+#my_multi_friend_selector #friends LI.selected .square {
+	BORDER-LEFT-COLOR: #b1c1e1; BORDER-BOTTOM-COLOR: #b1c1e1; BORDER-TOP-COLOR: #b1c1e1; BACKGROUND-COLOR: #8497c0; BORDER-RIGHT-COLOR: #b1c1e1
+}
+#my_multi_friend_selector #friends LI.selected .square SPAN {
+	BACKGROUND-IMAGE: url(../imgs/multi_friend_selector_pic_selected_check_mark.gif)
+}
+#my_multi_friend_selector .searching LI {
+	DISPLAY: none
+}
+#my_multi_friend_selector .buttons {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+#my_multi_friend_selector #finder #skip {
+	PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+#my_multi_friend_selector .buttons INPUT {
+	PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+.condensed_multi_friend_selector {
+	BORDER-RIGHT: #bdc7d8 1px solid; BORDER-TOP: #bdc7d8 1px solid; VISIBILITY: hidden; BORDER-LEFT: #bdc7d8 1px solid; BORDER-BOTTOM: #bdc7d8 1px solid
+}
+.condensed_multi_friend_selector .inputtext {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.condensed_multi_friend_selector LABEL {
+	DISPLAY: block; FONT-WEIGHT: normal; MARGIN: 0px; CURSOR: default; COLOR: #000000
+}
+.condensed_multi_friend_selector LABEL INPUT {
+	DISPLAY: block; FLOAT: left
+}
+.condensed_multi_friend_selector SPAN {
+	DISPLAY: block; CURSOR: default; PADDING-TOP: 3px
+}
+.condensed_multi_friend_selector .unselected_list .selected {
+	BACKGROUND: #dce1e8
+}
+.condensed_multi_friend_selector .unselected_list .selected EM {
+	BACKGROUND: white
+}
+.condensed_multi_friend_selector .unselected_list {
+	BORDER-TOP: #bdc7d8 1px solid; OVERFLOW: auto; BORDER-BOTTOM: #bdc7d8 1px solid; HEIGHT: 60px
+}
+.condensed_multi_friend_selector .nobody_selected {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.condensed_multi_friend_selector .toomany_selected {
+	BORDER-RIGHT: #dd3c10 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #dd3c10 1px solid; PADDING-LEFT: 10px; RIGHT: 20px; BACKGROUND: #ffebe8; LEFT: 20px; PADDING-BOTTOM: 10px; BORDER-LEFT: #dd3c10 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #dd3c10 1px solid; POSITION: absolute
+}
+.condensed_multi_friend_selector .selected_list {
+	BORDER-TOP: #bdc7d8 1px solid; MARGIN-TOP: 2px; OVERFLOW: auto; HEIGHT: 60px
+}
+.condensed_multi_friend_selector .selected_list INPUT {
+	DISPLAY: none
+}
+.condensed_multi_friend_selector .selected_list LABEL SPAN {
+	PADDING-LEFT: 20px; PADDING-TOP: 2px
+}
+.condensed_multi_friend_selector .selected_list LABEL {
+	BACKGROUND: url(../imgs/x_to_hide_gray.gif) no-repeat 4px 2px
+}
+.condensed_multi_friend_selector .selected_list LABEL:hover {
+	BACKGROUND: url(../imgs/x_to_hide_dark_blue.gif) no-repeat 4px 2px
+}
+.pagerpro {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.pagerpro LI {
+	DISPLAY: inline; FLOAT: left
+}
+.pagerpro A {
+	PADDING-RIGHT: 3px; DISPLAY: block; PADDING-LEFT: 3px; PADDING-BOTTOM: 2px; PADDING-TOP: 3px
+}
+.pagerpro A:hover {
+	BORDER-LEFT-COLOR: #d8dfea; BACKGROUND: #3b5998; COLOR: white; BORDER-TOP-COLOR: #d8dfea; BORDER-BOTTOM: #3b5998 1px solid; TEXT-DECORATION: none; BORDER-RIGHT-COLOR: #d8dfea
+}
+.pagerpro .current A {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; BORDER-LEFT-COLOR: #3b5998; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #3b5998; BORDER-TOP-COLOR: #3b5998; BORDER-BOTTOM: #3b5998 2px solid; BORDER-RIGHT-COLOR: #3b5998
+}
+.pagerpro .current A:hover {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; BORDER-LEFT-COLOR: #3b5998; BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #3b5998; BORDER-TOP-COLOR: #3b5998; BORDER-BOTTOM: #3b5998 2px solid; BORDER-RIGHT-COLOR: #3b5998
+}

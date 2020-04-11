@@ -1,0 +1,197 @@
+<!--{tpl admin/inc_header}-->
+<style type="text/css">
+#myadd ul li {padding:2px;}
+</style>
+<form id="myform" onsubmit="return submits();" class="edit">
+	<table width="100%" cellpadding=5 cellspacing=0>
+		<tr>
+			<td width="80px">Sửa User</td>
+			<td>{:$value[username]}</td>
+		</tr>
+		<tr>
+			<td width="80px">EXP Trồng trọt</td>
+			<td><input type="text" name="nc_exp" value="{:$value[exp_nc]}" />  {:$value['level_nc']} Cấp</td>
+		</tr>
+		<tr>
+			<td width="80px">EXP Chăn nuôi</td>
+			<td><input type="text" name="mc_exp" value="{:$value[exp_mc]}" />  {:$value['level_mc']} Cấp</td>
+		</tr>
+		<tr>
+			<td width="80px">Số đất</td>
+			<td><input type="text" name="nc_reclaim" value="{:$value[reclaim]}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Đất đỏ</td>
+			<td><input type="text" name="nc_redland" value="{:$value[redland]}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Vàng</td>
+			<td><input type="text" name="money" value="{:$value[money]}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Ycoin</td>
+			<td><input type="text" name="yb" value="{:$value[yb]}" /></td>
+		</tr>
+		<tr>
+			<td width="80px">VIP EXP</td>
+			<td><input type="text" name="vip" value="{:$value[vip][exp]}" />  {:$value[vip][level]} cấp （Ghi chú：1 cấp=0,2 cấp=300,3 cấp=700,4 cấp=1200,5 cấp=1800,6 cấp=2500,7 cấp=3300）</td>
+		</tr>
+		<tr>
+			<td width="80px">Loại VIP</td>
+			<td><input type="text" name="vipstatus" value="{:$value[vip][status]}" /> （Ghi chú：-1=>Hết,0=>Không, 1=>Pay tháng, 2=>Pay năm）</td>
+		</tr>
+		<tr>
+			<td width="80px">VIP Trưởng thành</td>
+			<td><input type="text" name="vipvalid" value="{:$value[vip][valid]}" /> （Ghi chú： Định dạng 2010-03-25）</td>
+		</tr>
+	</table>
+    <input type="submit" value="提 交" /><span id="state"></span>
+</form>
+<script type="text/javascript">
+	function submits(inputId) {
+		request('admin.php?mod=user_edit&submit=1&id={:$id}', 'state', $.getForm('#myform', 1));
+		return false;
+	}
+</script>
+<div>Hàng hóa và sản phẩm：</div>
+<!--{if $package || $tools}-->
+<div class="list" >
+	
+	<table>
+		<tr style=" font-size:12px; height:20px">
+			<th width="40">Id</th>
+            <th width="50">Loại</th>
+			<th width="100">Tên</th>
+             <th width="40">Cấp</th>
+             <th width="80">Số lượng đầu</th>
+			<th width="80">Số sửa đổi</th>
+			<th width="100">Hành động</th>
+		</tr>
+		<!--{foreach $package as $key => $value}-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+            <td><font color="blue">Hạt giống</font></td>
+			<td>{:$cropstype[$key]['cName']}</td>
+                        <td>{:$cropstype[$key]['cLevel']}</td>
+                        <td>{:$value}</td>
+			<td><input type='text' id='number{:$key}' size='10' value="{:$value}"/></td>
+			<td>
+				<input type="button" onclick='request("admin.php?mod=user_edit&type=edititem&id={:$id}&mclass=1&cid={:$key}&number="+SQuery("#number{:$key}").value, "state{:$key}");' value='Sửa' /><span id="state{:$key}"></span>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+		<!--{foreach $tools as $key => $value}-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+            <td><font color="ff00ff"><b>Đạo cụ</b></font></td>
+            <td>{:$toolstype[30000+$key]['tName']}</td>
+            <td>0</td>
+            <td>{:$value}</td>
+			<td><input type='text' id='number{:30000+$key}' size='10' value="{:$value}"/></td>
+			<td>
+				<input type="button" onclick='request("admin.php?mod=user_edit&type=edititem&id={:$id}&mclass=2&cid={:$key}&number="+SQuery("#number{:$key+30000}").value, "state{:$key+30000}");' value='Sửa' /><span id="state{:$key+30000}"></span>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+        <!--{foreach $fruit as $key => $value}-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+            <td><font color="ff0000">Sản phâm</font></td>
+			<td>{:$cropstype[$key]['cName']}</td>
+			<td>{:$cropstype[$key]['cLevel']}</td>
+            <td>{:$value}</td>
+			<td><input type='text' id='number{:$key}' size='10' value="{:$value}"/></td>
+			<td>
+				<input type="button" onclick='request("admin.php?mod=user_edit&type=edititem&id={:$id}&mclass=3&cid={:$key}&number="+SQuery("#number{:$key}").value, "state{:$key}");' value='Sửa' /><span id="state{:$key}"></span>
+			</td>
+		</tr>
+		<!--{/foreach}-->
+        <!--{foreach $fruit2 as $key => $value}-->
+		<!--{if $key != 1506 }-->
+		<tr style=" font-size:12px; height:20px">
+			<td>{:$key}</td>
+            <td><!--{if $key > 10000 }--><font color=black>整只</font><!--{else}--><font color=blue>副产品</font><!--{/if}--></td>
+			<td><!--{if $key > 10000 }-->{:$animaltype[$key-10000]['cName']}<!--{else}-->{:$animaltype[$key]['bName']}<!--{/if}--></td>
+			<td><!--{if $key > 10000 }-->{:$animaltype[$key-10000]['cLevel']}<!--{else}-->{:$animaltype[$key]['cLevel']}<!--{/if}--></td>
+            <td>{:$value}</td>
+			<td>
+            <input type='text' id='number{:$key}' size='10' value="{:$value}"/>
+            </td>
+			<td>
+			<input type="button" onclick='request("admin.php?mod=user_edit&type=edititem&id={:$id}&mclass=4&cid={:$key}&number="+SQuery("#number{:$key}").value, "state{:$key}");' value='Sửa' /><span id="state{:$key}"></span> 
+			</td>
+		</tr>
+		<!--{/if}-->
+		<!--{/foreach}-->
+	</table>
+    <form id="myadd" onsubmit="return submits3();" class="edit">
+    <ul>
+				<li>Tặng sản phẩm Trồng trọt：
+					<select name='add_ncfrid'><option value="">==Lựa chọn==</option>
+						<!--{foreach $cropstype as $key=>$value}-->
+						<option value="{:$key}">{:$value['cName']}</option>
+						<!--{/foreach}-->
+					</select>&nbsp;Số lượng：<input type="text" name='add_ncfrnum' style="width:50px;"/>
+				</li>
+				<li>Tặng hạt giống：
+					<select name='add_ncpaid'><option value="">==Lựa chọn==</option>
+						<!--{foreach $cropstype as $key=>$value}-->
+							<option value="{:$key}">{:$value['cName']}</option>
+						<!--{/foreach}-->
+					</select>&nbsp;Số lượng：<input type="text" name='add_ncpanum' style="width:50px;"/>
+				</li>
+				<li>Tặng đạo cụ：
+					<select name='add_nctlid'><option value="">==Lựa chọn==</option>
+						<!--{foreach $toolstype as $key=>$value}-->
+							<!--{if !in_array($key,array(40001,40003))}-->
+						<option value="{:$key}">{:$value['tName']}</option>
+							<!--{/if}-->
+						<!--{/foreach}-->
+					</select>
+					&nbsp;Số lượng：<input type="text" name='add_nctlnum' style="width:50px;"/>
+				</li>
+				<li>Tặng vật trang trí：
+					<select name='add_nctlid2'><option value="">==Lựa chọn==</option>
+						<!--{foreach $nc_itemtype as $key=>$value}-->
+						<option value="{:$key}">{:$value['itemName']}</option>
+						<!--{/foreach}-->
+					</select>
+				</li>
+				<li>Tặng sản phẩm Chăn nuôi：
+					<select name='add_mcfrid'><option value="">==Lựa chọn==</option>
+						<!--{foreach $animaltype as $key=>$value}-->
+						<option value="{:$key+10000}">{:$value['cName']}</option>
+						<!--{/foreach}-->
+					</select>
+					&nbsp;Số lượng：<input type="text" name='add_mcfrnum' style="width:50px;"/>
+				</li> 
+				<li>Tặng quà Chăn nuôi：
+					<select name='add_toolsid'><option value="">==Lựa chọn==</option>
+						<option value="1">Thường</option>
+						<option value="2">Trung</option>
+						<option value="3">Cao cấp</option>
+					</select>
+					&nbsp;Số lượng：<input type="text" name='add_tools' style="width:50px;"/>
+				</li> 
+				<li>Tặng vật trang trí Chăn nuôi：
+					<select name='add_mctlid'><option value="">==Lựa chọn==</option>
+						<!--{foreach $mc_itemtype as $key=>$value}-->
+						<option value="{:$key}">{:$value['itemName']}</option>
+						<!--{/foreach}-->
+					</select>
+				</li>
+				<li><input type="submit" value="Xác nhận"><span id="sendgift_state"></span></li>
+			</ul> 
+		</form>
+		<script type="text/javascript">
+	function submits3(inputId) {
+		request('admin.php?mod=user_edit&type=additem&submit=1&id={:$id}', 'state3', $.getForm('#myadd', 1));
+		return false;
+	}
+</script>
+</div>
+<div id="pages" class="multiPage"></div>
+<!--{else}-->
+<div class="no_hpinfo">Không có thông tin!</div>
+<!--{/if}-->
+<!--{tpl admin/inc_footer}-->

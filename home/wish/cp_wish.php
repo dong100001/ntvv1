@@ -1,0 +1,47 @@
+ï»¿<?php
+/*
+  $ 2009-5-1ÏÂÎç05:09:57 tomyguan $
+*/
+
+if(!defined('IN_UCHOME')) {
+	exit('Access Denied');
+}
+
+//È¨ÏÞ
+if(!$allowmanage = checkperm('admin')) {
+	showmessage('YÃªu cáº§u khÃ´ng há»£p lá»‡');
+}
+
+if(submitcheck('deletesubmit')) {	
+	if(!empty($_POST['ids']) && deletewishes($_POST['ids'])) {
+		showmessage('XÃ³a thÃ nh cÃ´ng!', "wishApp.php?do=index&view=list");
+	} else {
+		showmessage('ChÆ°a xÃ³a Ä‘Æ°á»£c, hjc ha!', "wishApp.php?do=index&view=list");;
+	}
+}
+
+//É¾³ý
+function deletewishes($wishids) {
+	global $_SGLOBAL;
+
+	//»ñÈ¡ÐíÔ¸ÐÅÏ¢
+	$wishes = $newwishids = array();
+	$allowmanage = checkperm('admin');
+	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('wish_content')." WHERE id IN (".simplode($wishids).")");
+	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
+		if($allowmanage) {
+		    $wishes[] = $value;
+			$newwishids[] = $value['id'];
+		}
+	}
+	if(empty($newwishids)) return array();
+	
+	//Êý¾ÝÉ¾³ý
+	$_SGLOBAL['db']->query("DELETE FROM ".tname('wish_content')." WHERE id IN (".simplode($newwishids).")");
+	
+	//É¾³ý¶¯Ì¬
+		
+	return $wishes;
+}
+
+?>

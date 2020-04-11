@@ -1,0 +1,7 @@
+/*
+[name]¹ÅµäÖ÷Ò³[/name]
+Powered by zxnb.com
+*/
+body{background-image: url(zxnb-img/background.jpg);}
+#header{}
+.headerwarp{background-image: url(zxnb-img/top.jpg);height:500px;}

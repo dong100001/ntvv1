@@ -1,0 +1,78 @@
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<style>
+.ttable td{
+  padding-left:10px;;
+  padding-right:10px;
+}
+</style>
+<div class="h_status">
+       <a href="parkApp.php?ac=stage&op=my">My Cards</a><span class="pipe">|</span><a href="parkApp.php?ac=stage&op=shop">Card Shop</a>
+</div>
+<!--{if $op== 'shop'}-->
+<div class=div_layout style="padding-left:10px;">
+
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH>Card name</TH>
+			<TH>Price</TH>
+			<TH>Effect</TH>		
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->		  
+		  <TR class=list>
+			<TD>
+			  <DIV style="TEXT-ALIGN: center"><IMG src="$item[StageImg]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[StageName]</DIV></TD>
+			<TD>$item[StagePrice]</TD>
+			<TD>$item[StageIntr]</TD>
+			<TD><A href="cpPark.php?ac=park&op=buystage&stageid=$item[StageID]" target=_top id="c_buystage_$item[StageID]">Buy</A></TD>
+		  </TR>
+   <!--{/loop}-->  	  		  
+		</TBODY>
+	 </TABLE>
+
+  <div class="page">$multi[html]</div>    
+</div>
+<!--{/if}-->
+<!--{if $op== 'my'}-->
+<div class=div_layout style="padding-left:10px;">
+
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH>Card name</TH>
+			<TH>Price</TH>
+			<TH>Effect</TH>
+			<TH>Buy date</TH>			
+			<TH>Uses</TH>			
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->		  
+		  <TR class=list>
+			<TD>
+			  <DIV style="TEXT-ALIGN: center"><IMG src="$item[StageImg]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[StageName]</DIV></TD>
+			<TD>$item[StagePrice]</TD>
+			<TD>$item[StageIntr]</TD>
+			<TD>$item[BuyTime]</TD>			
+			<TD>$item[MyUse]</TD>			
+			<!--{if $item[noAjax] == 1}-->
+			<TD><A  id="c_stage_$item[StageID]" href="$item[StageScript]&stageid=$item[StageID]&ID=$item[ID]">Use</A></TD>
+			<!--{else}-->
+			<TD style="padding:0px"><A id="c_stage_$item[StageID]" href="$item[StageScript]&stageid=$item[StageID]&ID=$item[ID]">Use</A></TD>		
+            <!--{/if}-->			 
+		  </TR>
+   <!--{/loop}-->  	  
+		  
+		</TBODY>
+	 </TABLE>
+  <div class="page">$multi[html]</div>    
+</div>
+<!--{/if}-->
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">TOP</a>
+</div>
+
+<!--{template footer}-->

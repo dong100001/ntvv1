@@ -1,0 +1,159 @@
+.generic_dialog {
+	Z-INDEX: 100; LEFT: 0px; OVERFLOW: visible; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 0px
+}
+#generic_dialog_iframe {
+	Z-INDEX: 3; FILTER: alpha(opacity=0); LEFT: 0px; POSITION: absolute; TOP: 0px
+}
+.generic_dialog .generic_dialog_popup {
+	OVERFLOW: visible; POSITION: relative; HEIGHT: 0px
+}
+.generic_dialog DIV.dialog_loading {
+	BORDER-RIGHT: #606060 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #606060 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 24px; PADDING-BOTTOM: 10px; BORDER-LEFT: #606060 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #606060 1px solid; BACKGROUND-COLOR: #f2f2f2
+}
+#generic_dialog_overlay {
+	DISPLAY: block; Z-INDEX: 99; LEFT: 0px; WIDTH: 100%; POSITION: absolute; TOP: 0px
+}
+.dark_dialog_overlay {
+	BACKGROUND-IMAGE: url(/images/overlay.png); BACKGROUND-REPEAT: repeat
+}
+ HTML .dark_dialog_overlay {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/images/overlay.png", sizingMethod="scale"); BACKGROUND-IMAGE: url(/images/blank.gif); BACKGROUND-COLOR: transparent
+}
+TABLE.pop_dialog_table {
+	TABLE-LAYOUT: fixed; MARGIN: auto; WIDTH: 465px; BORDER-COLLAPSE: collapse
+}
+TD.pop_topleft {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; WIDTH: 0px; PADDING-TOP: 5px; HEIGHT: 10px
+}
+TD.pop_topright {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; WIDTH: 0px; PADDING-TOP: 5px; HEIGHT: 10px
+}
+TD.pop_bottomleft {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; WIDTH: 0px; PADDING-TOP: 5px; HEIGHT: 10px
+}
+TD.pop_bottomright {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; WIDTH: 0px; PADDING-TOP: 5px; HEIGHT: 10px
+}
+TD.pop_topleft {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_top_left.png', sizingMethod='crop'); BACKGROUND-IMAGE: none
+}
+TD.pop_topright {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_top_right.png', sizingMethod='crop'); BACKGROUND-IMAGE: none
+}
+TD.pop_bottomleft {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_bottom_left.png', sizingMethod='crop'); BACKGROUND-IMAGE: none
+}
+TD.pop_bottomright {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_bottom_right.png', sizingMethod='scale'); BACKGROUND-IMAGE: none
+}
+TD.pop_border {
+	FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_border.png', sizingMethod='scale'); BACKGROUND-IMAGE: none
+}
+.noshadow TABLE TD.pop_topleft {
+	FILTER: none! important; BACKGROUND-IMAGE: none! important
+}
+.noshadow TABLE TD.pop_topright {
+	FILTER: none! important; BACKGROUND-IMAGE: none! important
+}
+.noshadow TABLE TD.pop_bottomleft {
+	FILTER: none! important; BACKGROUND-IMAGE: none! important
+}
+.noshadow TABLE TD.pop_bottomright {
+	FILTER: none! important; BACKGROUND-IMAGE: none! important
+}
+.noshadow TABLE TD.pop_border {
+	FILTER: none! important; BACKGROUND-IMAGE: none! important
+}
+TD.pop_content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BACKGROUND-COLOR: white
+}
+TD.pop_content H2 {
+	BORDER-RIGHT: #3b5998 1px solid; BORDER-TOP: #3b5998 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: #6d84b4; MARGIN: 0px; BORDER-LEFT: #3b5998 1px solid; COLOR: white; BORDER-BOTTOM: #3b5998 1px solid
+}
+TD.pop_content H2.dialog_loading {
+	PADDING-RIGHT: 40px; BACKGROUND: url(/images/upload_progress.gif) #6d84b4 no-repeat 400px 10px
+}
+TD.pop_content H2 SPAN {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px; PADDING-TOP: 4px
+}
+TD.pop_content .dialog_content {
+	BORDER-RIGHT: #555 1px solid; BORDER-TOP: #555 0px solid; BACKGROUND: #fff; BORDER-LEFT: #555 1px solid; BORDER-BOTTOM: #555 1px solid
+}
+TD.pop_content .dialog_body {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; BORDER-BOTTOM: #ccc 1px solid
+}
+TD.pop_content .dialog_summary {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #f2f2f2; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; BORDER-BOTTOM: #ccc 1px solid
+}
+TD.pop_content .dialog_buttons {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; BACKGROUND: #f2f2f2; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; TEXT-ALIGN: right
+}
+TD.pop_content .dialog_buttons INPUT {
+	MARGIN-LEFT: 5px
+}
+.dialog_content .dialog_buttons .inputaux {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px
+}
+.dialog_content .dialog_buttons .inputsubmit {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px
+}
+TD.pop_content .dialog_buttons_msg {
+	FLOAT: left
+}
+.contextual_dialog .generic_dialog_popup {
+	WIDTH: 360px
+}
+.contextual_dialog .contextual_arrow {
+	BACKGROUND-IMAGE: url(/images/minifeed_dialog_triangle.gif); BACKGROUND-REPEAT: no-repeat; POSITION: relative; TOP: 1px; HEIGHT: 12px
+}
+.contextual_dialog .contextual_arrow_rev {
+	BACKGROUND-IMAGE: url(/images/minifeed_dialog_triangle.gif); BACKGROUND-REPEAT: no-repeat; POSITION: relative; TOP: 1px; HEIGHT: 12px
+}
+.contextual_dialog .contextual_arrow_rev {
+	BACKGROUND-IMAGE: url(/images/minifeed_dialog_triangle_rev.gif)
+}
+.contextual_dialog .contextual_arrow SPAN {
+	DISPLAY: none
+}
+.contextual_dialog .contextual_arrow_rev SPAN {
+	DISPLAY: none
+}
+.contextual_dialog H2 {
+	FONT-SIZE: 11px; PADDING-BOTTOM: 2px; COLOR: black
+}
+.contextual_dialog .contextual_dialog_content {
+	BORDER-RIGHT: #b7b7b7 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #b7b7b7 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #b7b7b7 1px solid; LINE-HEIGHT: 15px; PADDING-TOP: 8px; BORDER-BOTTOM: #3b5998 2px solid; BACKGROUND-COLOR: #f0f0f0
+}
+.contextual_dialog .contextual_dialog_content H2 SPAN {
+	FONT-SIZE: 12px; FONT-FAMILY: '??'
+}
+.contextual_dialog .dialog_buttons {
+	PADDING-TOP: 10px
+}
+.contextual_dialog .dialog_buttons INPUT {
+	MARGIN-RIGHT: 10px
+}
+.contextual_dialog .dialog_buttons_msg {
+	FLOAT: right
+}
+.errorDialog TD.pop_content H2 {
+	BACKGROUND: #ffebe8; COLOR: #333333; BORDER-TOP-STYLE: none; BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none
+}
+.errorDialog TD.pop_content {
+	BORDER-RIGHT: #ee7c90 1px solid; BORDER-TOP: #ee7c90 1px solid; BORDER-LEFT: #ee7c90 1px solid; BORDER-BOTTOM: #ee7c90 1px solid
+}
+.errorDialog TD.pop_content .dialog_content {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.errorDialog TD.pop_content .dialog_content .dialog_body {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 15px; PADDING-TOP: 15px
+}
+.coney_island TD.pop_content .dialog_body {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 375px; TEXT-ALIGN: left
+}
+.inputbutton {
+	BORDER-RIGHT: #0e1f5b 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #d9dfea 1px solid; PADDING-LEFT: 15px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #d9dfea 1px solid; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: #0e1f5b 1px solid; FONT-FAMILY: "lucida grande", tahoma, verdana, arial, sans-serif; BACKGROUND-COLOR: #3b5998; TEXT-ALIGN: center
+}
+.inputsubmit {
+	BORDER-RIGHT: #0e1f5b 1px solid; PADDING-RIGHT: 15px; BORDER-TOP: #d9dfea 1px solid; PADDING-LEFT: 15px; FONT-SIZE: 12px; PADDING-BOTTOM: 3px; BORDER-LEFT: #d9dfea 1px solid; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: #0e1f5b 1px solid; FONT-FAMILY: "lucida grande", tahoma, verdana, arial, sans-serif; BACKGROUND-COLOR: #3b5998; TEXT-ALIGN: center
+}

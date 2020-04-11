@@ -1,0 +1,190 @@
+﻿<!--{template admin/tpl/header}-->
+<!--Game siêu thị bạn bè được phát triển bởi GoHooH.CoM. Vui lòng giữ bản quyền Việt hóa của GoHooH.CoM. Cám ơn bạn đã sử dụng sản phẩm của GoHooH.CoM-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="post" action="admincp.php?ac=slavetask&id=$thevalue[id]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+
+		<div class="topactions"><a href="admincp.php?ac=slavetask">Xem</a> | <a href="admincp.php?ac=slavetask&op=add">Thêm</a></div>
+
+	<div class="page">Trang $multi[html]</div>
+
+<!--{if empty($op)}-->
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>Xóa</th>
+			<th width=200>Nhiệm vụ</th>
+			<th>Phân loại</th>
+			<th>May mắn<BR>Tiền mặt</th>
+			<th>Phạm vi</th>
+			<th>Hàng ngày<BR>Tần số</th>
+			<th>Cơ hội<BR>May mắn</th>
+			<th>Học vấn</th>
+			<th>Kinh nghiệm</th>
+			<th>Sức khỏe</th>
+			<th>Trung thành</th>
+			<th>Tâm trạng</th>
+			<th width="80">Hoạt động</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<input type="hidden" name="rid[{$value[id]}]" value="$value[id]" size="2">
+		<tr>
+			<th><input type="checkbox" name="delete[{$value[id]}]"></th>
+			<th><input type="text" name="name[{$value[id]}]" value="$value[name]" size="28"></th>
+			<th><a href=admincp.php?ac=slavetask&catid=$value[catid]>$value[catname]</a></th>
+			<th><input type="text" name="mcash[{$value[id]}]" value="$value[mcash]" size="4"></th>
+			<th><input type="text" name="range[{$value[id]}]" value="$value[range]" size="4"></th>
+			<th><input type="text" name="perday[{$value[id]}]" value="$value[perday]" size="2"></th>
+			<th><input type="text" name="scash[{$value[id]}]" value="$value[scash]" size="4"></th>
+			<th><input type="text" name="education[{$value[id]}]" value="$value[education]" size="2"></th>
+			<th><input type="text" name="experience[{$value[id]}]" value="$value[experience]" size="2"></th>
+			<th><input type="text" name="health[{$value[id]}]" value="$value[health]" size="2"></th>
+			<th><input type="text" name="loyalty[{$value[id]}]" value="$value[loyalty]" size="2"></th>
+			<th><input type="text" name="mood[{$value[id]}]" value="$value[mood]" size="2"></th>
+			<td width="80">
+			<a href="admincp.php?ac=slavetask&op=edit&id=$value[id]">Sửa</a> | 
+			<a href="admincp.php?ac=slavetask&op=delete&id=$value[id]" onclick="return confirm('Bạn có chắc muốn xóa?');">Xóa</a></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+		<BR>
+		<div class="page">Trang $multi[html]</div>
+	</div>
+
+	<div class="footactions">
+		<div>
+			<input type="submit" name="deletesubmit" value="Xóa nhiệm vụ" class="submit">
+			<input type="submit" name="renewsubmit" value="Cập nhật nhiệm vụ" class="submit">
+		</div>
+		
+	</div>
+	
+	</form>
+	
+<!--{elseif $op=="add" OR $op=="edit"}-->
+		
+		<table cellspacing="0" cellpadding="8">
+		<tr><th style="width:10em;">Tên nhiệm vụ</th>
+			<td>
+				<input type="text" name="task[name]" value="$task[name]" size="50">
+			</td>
+		</tr>
+		<tr><th>Nhiệm vụ</th><td>
+			<select name=task[catid]>
+				<!--{loop $catlist $value}-->
+					<option value="$value[id]" <!--{if $value[id]==$task[catid]}-->Đã chọn<!--{/if}-->>$value[catname]</option>				
+				<!--{/loop}-->
+			</select>
+		</td></tr>
+		<tr>
+			<th valign=top>Lịch sử Goer mua</th>
+			<td>
+				<textarea name="task[mastertext]" cols="50" rows="5">$task[mastertext]</textarea><BR>
+				Thêm vào máy chủ thông tin về Goer mua<BR>
+				Ví dụ: [master] gửi [slave] đi quét dọn kiếm được [money]<BR>
+				Tiền [money] là giá trị tiền mặt của Goer bị mua<BR>
+	
+			</td>
+		</tr>
+		<tr>
+			<th valign=top>Lịch sử Goer bị mua</th>
+			<td>
+				<textarea name="task[slavetext]" cols="50" rows="5">$task[slavetext]</textarea><BR>
+				Thêm vào máy chủ thông tin về Goer bị mua<BR>
+				Ví dụ: [master] gửi [slave] đi quét dọn kiếm được [money]<BR>
+				Tiền [money] là giá trị tiền mặt của Goer bị mua<BR>
+			</td>
+		</tr>
+		<tr><th valign=top>Tiền mặt</th>
+			<td>
+				<input type="text" name="task[mcash]" size="5" value="$task[mcash]"><BR>
+				Giá trị tiền mặt nhận được<BR>
+				Mặc dịnh là 500<BR>
+				Nếu đây là nhiêm vụ làm việc thì thu nhập sẽ là tiền lương cộng với gia trị tiền mặt.
+			</td>
+		</tr>
+		<tr><th valign=top>Phạm vi</th>
+			<td>
+				<input type="text" name="task[range]" size="5" value="$task[range]"><BR>
+				Dùng để tăng tính linh hoạt của trò chơi, tăng phạm vi cho tiền mặt<BR>
+				Nếu tiền mặt là 500, phạm vi là 200 thì tiền mặt sẽ dao động từ 300 - 700<BR>
+				Để tiền mặt dao động từ 500 - 1000 thì bạn nên thiết lập tiền mặt 750, phạm vi 250<BR>
+				Biến động về hệ thống một mức độ ngẫu nhiên<BR>
+				Phạm vi nên nhỏ hơn giá trị tiền mặt<BR>
+			</td>
+		</tr>
+		<tr><th valign=top>Số lần may mắn</th>
+			<td>
+				<input type="text" name="task[perday]" size="5" value="$task[perday]"><BR>
+				Số lần may mắn xuất hiện trong ngày, đặt 0 là vô hạn.
+			</td>
+		</tr>
+		<tr><th valign=top>Tiền mặt Goer bị mua</th>
+			<td>
+				<input type="text" name="task[scash]" size="5" value="$task[scash]"><BR>
+				Giá trị tiền mặt mà Goer bị mua nhận được, nếu là số âm thì sẽ bị trừ tiền.<BR>
+				Để số 0 nghĩa là không tăng không giảm<BR>
+			</td>
+		</tr>
+		<tr><th valign=top>Học vấn</th>
+			<td>
+				<input type="text" name="task[education]" size="5" value="$task[education]"><BR>
+				Giá trị may mắn của người dùng trong học vấn<BR>
+				Giá trị âm sẽ làm giảm giá trị học vấn
+			</td>
+		</tr>
+		<tr><th valign=top>Kinh nghiệm</th>
+			<td>
+				<input type="text" name="task[experience]" size="5" value="$task[experience]"><BR>
+				Điểm kinh nghiệm gia tăng do may mắn<BR>
+				Giá trị âm sẽ làm giảm điểm kinh nghiệm
+			</td>
+		</tr>
+		<tr><th valign=top>Sức khỏe</th>
+			<td>
+				<input type="text" name="task[health]" size="5" value="$task[health]"><BR>
+				Giá trị sức khỏe tăng<BR>
+				Giá trị âm sẽ làm giảm điểm sức khỏe
+			</td>
+		</tr>
+		<tr><th valign=top>Trung thành</th>
+			<td>
+				<input type="text" name="task[loyalty]" size="5" value="$task[loyalty]"><BR>
+				Giá trị trung thành tăng<BR>
+				Giá trị âm sẽ làm giảm điểm trung thành
+			</td>
+		</tr>
+		<tr><th valign=top>Trạng thái</th>
+			<td>
+				<input type="text" name="task[mood]" size="5" value="$task[mood]"><BR>
+				Giá trị trạng thái tăng<BR>
+				Giá trị âm sẽ làm giảm điểm trạng thái
+			</td>
+		</tr>
+		
+		</table>
+	</div>
+		
+	<div class="footactions">
+		<!--{if $op=="edit"}-->
+			<input type="hidden" name="task[id]" value="$id">
+			<input type="submit" name="editsubmit" value="Sửa" class="submit">
+		<!--{else}-->
+			<input type="submit" name="addsubmit" value="Thêm" class="submit">
+		<!--{/if}-->
+	</div>
+	
+	</form>
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

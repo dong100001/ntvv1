@@ -1,0 +1,25 @@
+﻿<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--Game siêu thị bạn bè được phát triển bởi GoHooH.CoM. Vui lòng giữ bản quyền Việt hóa của GoHooH.CoM. Cám ơn bạn đã sử dụng sản phẩm của GoHooH.CoM-->
+<style type="text/css">
+@import url(components/slave/com_main.css);
+</style>
+<div class="c_header a_header">
+	<div class="avatar48"><!--{avatar($space[uid],small)}--></a></div>
+	<p style="font-size:14px"><strong>$SConfig[gamename]</strong></p>
+	Tiền mặt: $SConfig[dollar_sign] $myinfo[cash]    Điểm: $space[credit]
+</div>
+<div class="tabs_header">
+        <ul class="tabs">
+                <li $active[main]><a href="?com=slave"><span>Home</span></a></li>
+				<!--{if $op=="action"}-->
+					<li class="active"><a href="?com=slave&op=action&uid=$uid"><span>Nhiệm vụ</span></a></li>
+				<!--{/if}-->
+                <li $active[market]><a href="?com=slave&op=market"><span>Siêu thị</span></a></li>
+                <li $active[rank]><a href="?com=slave&op=rank"><span>Xếp hạng</span></a></li>
+                <li $active[setup]><a href="?com=slave&op=setup"><span>Thiết lập</span></a></li>
+				<li $active[credit]><a href="?com=slave&op=credit"><span>Tiền tệ</span></a></li>
+                <li $active[help]><a href="?com=slave&op=help"><span>Hướng dẫn</span></a></li>
+				<li class="null"><a href="?com=invite&app=slave" class="t_button">Mời (đã mời $SConfig[dollar_sign] $invite_amount)</a></li>
+        </ul>
+</div>

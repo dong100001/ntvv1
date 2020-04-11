@@ -1,0 +1,21 @@
+<!--{template happyfarm/view/header}-->
+
+<div id="main">
+	<div class="menu">
+		<!--{eval $actives[$type] = ' class="actives"';}-->
+		<a{$actives[nc]} href="index.php?act=help&type=nc">Nông trại</a>
+		<a{$actives[mc]} href="index.php?act=help&type=mc">Trang trại</a>
+	</div>
+	<div id="help_tabs"></div>
+	<dl id="help_content"></dl>
+</div>
+
+<script type="text/javascript" src="view/js/help/info_{$type}.js"></script>
+<script type="text/javascript" src="view/js/help/help.js"></script>
+<script type="text/javascript">
+	generateTabs();
+	tabs[0].style.fontWeight = 'bold';
+	generateContent(0);
+</script>
+
+<!--{template happyfarm/view/footer}-->

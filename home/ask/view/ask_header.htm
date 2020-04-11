@@ -1,0 +1,17 @@
+﻿<style type="text/css">
+@import url(ask/css/ask_main.css);
+</style>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$uid"><!--{avatar($_SGLOBAL[supe_uid])}--></a></div>
+	<p style="font-size:14px"><strong>GoHooH Hỏi & Đáp</strong></p>
+	Tham gia GoHooH Hỏi & Đáp để giải đáp mọi thắc mắc trong cuộc sống.
+</div>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li $actives[0]><a href="gohoohhoidap.php?do=ask"><span>Tất cả</span></a></li>
+<!--{loop $gEumsType $typeid $typename}-->		
+		<li $actives[$typeid] ><a href="gohoohhoidap.php?do=ask&type={$typeid}"><span>{$typename}</span></a></li>
+<!--{/loop}-->
+<li class="null"><a href="gohoohhoidap.php?do=ask&ac=post"><strong>Gửi câu hỏi</strong></a></li>
+	</ul>
+</div>

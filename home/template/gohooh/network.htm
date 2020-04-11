@@ -1,0 +1,319 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Template Ucenter Home GoHooH V2-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--Please keep copy right Comsenz & GoHooH.CoM-->
+<!--{eval $_TPL['nosidebar']=1;}-->
+<!--{template header}-->
+	<link href="template/lanse/css/framework.css"  rel="Stylesheet" type="text/css" />
+	<link href="template/lanse/css/hf.css"  rel="Stylesheet" type="text/css" />
+	<link href="template/lanse/css/header.css"  rel="Stylesheet" type="text/css" />
+	<link href="template/lanse/css/reset.css"  rel="Stylesheet" type="text/css" />
+	<link href="template/lanse/css/space/style.css"  rel="Stylesheet" type="text/css" />
+	<link href="template/lanse/css/dialog.css"  rel="Stylesheet" type="text/css" />
+
+
+   <script type="text/javascript" src="template/lanse/js/jquery-1.2.6.js"></script>
+   
+    	<div class="fm950 mt8 clearfix" >
+        <div class="fm230 fl mr10" regid="100062">
+			<div class="feike_space space_bg01">
+				<div class="main_text">
+					<div class="">
+						                        <a href ="space.php?do=home"  target="_blank" class="feikelogin">
+                        <input type="submit" name="button" id="Submit1" value="" class="inon01 injoin01" /></a>
+                                                					</div>
+				</div>
+				<div class="tin_text blue tb tc">Mạng xã hội Nhà Tui</div>
+				<div class="pt5 pl48">
+					<div class="pt10 tgrey"><span class="pr5 t_inon01 inon01">|</span><span class="tb"><a href="do.php?ac=$_SCONFIG[register_action]">Đăng ký</a></span> Người dùng</div><div class="pt10 tgrey"><span class="pr5 t_inon02 inon01">|</span><span class="tb">Xây</span> nhà mới</div></div>
+				<div class="b_text orange">Thêm bạn càng thêm vui</div>
+				</div>
+		</div>
+		<div class="fm430 fl mr10" >
+				<div class="space_rot">
+					<div class="srot_title space_bg01">
+						<h5 class="blue tb pl10 fl">Chức năng thú vị</h5>
+					</div>
+					<div class="srot_flash">
+					<ul>
+						<div class="flash_img flash_con">
+							<div id="TitText" class="flash_img grey ts14 tc"></div>
+							<div id="Pic_btn">
+								<div class="flash_link fl" ><span class="link_t11 flash_img"></span></div>
+								<div class="flash_link01 fl" ><span class="link_t02 flash_img"></span></div>
+								<div class="flash_link02 fl" ><span class="link_t03 flash_img"></span></div>
+								<div class="flash_link fr" ><span class="link_t04 flash_img"></span></div>
+							</div>
+						</div>
+					</ul>
+				</div>
+					<div class="srot_foot space_bg01"></div>
+				</div>
+		</div>
+		<div class="fm270 fr">
+			<div class="new_main">
+				<div class="new_title space_bg01">
+					<h5 class="tb grey pl10">Hoạt động thành viên</h5>
+				</div>
+				<div class="new_lm3_01 lhei01" >
+					<div class="lm3">
+						<ul><!--{loop $feedlist $value}-->
+				<li><a href="space.php?uid=$value[uid]">$value[title_template]
+
+</li>
+			<!--{/loop}-->
+                    
+
+						</ul>
+					</div>
+				</div>
+				<div class="new_foot space_bg01"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="fm950 clearfix mt10">
+		<div class="fm670 fl">
+			<div class="space_star">
+				<div class="star_title01 space_bg01">
+					<h5 class="blue tb pl10 fl">Goer<span class="red">hot</span></h5>
+					<span class="fr more inon01"><a href="space.php?do=top"  target="_blank">Top Goer</a></span></div>
+				<div class="star_cont">
+					<div class="search_im0_01 pl20 clearfix">
+						<div class="im0 clearfix">
+                        <!--{loop $showlist $value}-->
+                        <!--{if $key < 7}-->
+                              <div class="pictxt fl mlr15 mt15" regid="100068">
+<div class="pic"><a href="space.php?uid=$value[uid]" target="_blank" ><!--{avatar($value[uid],small)}--></a></div>
+<div class="txt pt5"><a href="space.php?uid=$value[uid]" target="_blank" class="blue">{$_SN[$value[uid]]}</a></div>
+<div class="txt pt5 wgrey">
+$value[note]
+</div>
+</div>
+<!--{/if}-->
+<!--{/loop}-->
+
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="star_search space_bg01">
+						<div class="txt ml15 color_gray_410">
+                        <form action="cp.php" method="get">
+							Tìm kiếm&nbsp;&nbsp;tuổi<input name="startage" size="5" class="t_input" type="text"> ~ <input name="endage" size="5" class="t_input" type="text"> &nbsp;&nbsp;giới tính<select id="sex" name="sex">
+<option selected="selected" value="0">Bất kỳ</option>
+<option value="1">Nam</option>
+<option value="2">Nữ</option>
+</select> &nbsp;&nbsp;Hôn nhân<select id="marry" name="marry">
+<option selected="selected" value="0">Bất kỳ</option>
+<option value="1">Độc thân</option>
+<option value="2">Kết hôn</option>
+</select>
+							<input type="submit" name="button" id="button" value="" class="inon01 injoin"/></form>
+						</div>
+					</div>
+				</div>
+				<div class="star_foot01 space_bg01"></div>
+			</div>
+		</div>
+		<div class="fm270 fr">
+			<div class="new_rot">
+				<div class="new_title space_bg01">
+					<h5 class="grey tb pl10 fl">Chia sẻ</h5>
+					<span class="fr more inon01"><a href="space.php?do=share&view=all"  target="_blank">Tất cả</a></span></div>
+				<div class="new_lm3_01 lhei02">
+					<div class="lm3">
+						<ul>
+                        <!--{loop $threadlist $key $value}-->
+                        <!--{if $key < 4}-->
+                            <li class="inon01" ><a href="space.php?uid=$value[uid]" target="_blank" >Thêm {$_SN[$value[uid]]} </a><em><a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]" target="_blank" class="blue">$value[subject]</a> </em></li>
+                             <!--{/if}-->
+                            <!--{/loop}-->
+
+
+						</ul>
+					</div>
+				</div>
+				<div class="new_foot space_bg01"></div>
+			</div>
+			<div class="clear"></div>
+			
+
+
+
+
+
+
+		</div>
+	</div>
+	<div class="fm950 mt10">
+		<div class="photo_titl01 space_bg01">
+			<h5 class="tb grey pl10 fl "><a href="space.php?do=blog" target="_blank"><span class="blue">Blog</span></a> | <a href="space.php?do=event" target="_blank"><span class="red">Sự kiện</span></a></h5>
+	  <span class="fr more inon01" regid="100093"><a href="brilliantblog"  target="_blank"></a></span> </div>
+		<div class="clear"></div>
+		<div class="article_con pt15  space_bg01">
+			<div class="article_lword fl ml25">
+				<div class="article_im6_12">
+					<div class="im6">
+						<div class="pictxt">
+         <!--{loop $eventlist $key $value}--> 
+         <!--{if $key == 0}-->              
+<div class="pic fl"><a href="<h6><a href="space.php?do=event&id=$value[eventid]" target="_blank">$value[title]</a></h6>
+<p class="wgrey pt5"><a space.php?do=event&id=$value[eventid]"  target="_blank"><img src="$value[pic]"  title="" alt=""/></a></div>
+<div class="txt fl">
+Ngày: <!--{date('n-j H:i',$value[starttime])}--> - <!--{date('n-j H:i',$value[endtime])}--><br />
+Địa điểm: $value[province] $value[city] $value[location]</p>
+</p>
+<a href="space.php?do=event&id=$value[eventid]"  target="_blank" class="fr more orange" style="color:#ff5700;">có $value[membernum] thành viên<span class="pipe">|</span>$value[follownum] quan tâm</a>
+</div>
+<!--{/if}-->
+<!--{/loop}-->
+</div>
+
+					</div>
+				</div>
+				<div class="artext_lm0_13 pt10">
+					<div class="lm0">
+						<ul>
+						   <!--{loop $bloglist $key $value}-->
+                            <!--{if $key < 3}-->
+                            <li class="inon01" regid="100089"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]" target="_blank" class="grey">$value[subject]</a></li>
+                             <!--{/if}-->
+                            <!--{/loop}-->
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="article_lword fl ml20">
+				<div class="article_im6_12">
+					<div class="im6">
+						<div class="pictxt">
+         <!--{loop $eventlist $key $value}--> 
+         <!--{if $key == 1}-->               
+<div class="pic fl"><a href="space.php?do=event&id=$value[eventid]"  target="_blank"><img src="$value[pic]"  title="" alt=""/></a></div>
+<div class="txt fl">
+<h6><a href="space.php?do=event&id=$value[eventid]" target="_blank">$value[title]</a></h6>
+<p class="wgrey pt5">Thời gian: <!--{date('n-j H:i',$value[starttime])}--> - <!--{date('n-j H:i',$value[endtime])}--><br />
+Địa điểm: $value[province] $value[city] $value[location]</p>
+</p>
+<a href="space.php?do=event&id=$value[eventid]"  target="_blank" class="fr more orange" style="color:#ff5700;">có $value[membernum] thành viên<span class="pipe">|</span>$value[follownum] quan tâm</a>
+</div>
+<!--{/if}-->
+<!--{/loop}-->
+</div>
+
+					</div>
+				</div>
+				<div class="artext_lm0_13 pt10">
+					<div class="lm0">
+						<ul>
+                        
+                        <!--{loop $bloglist $key $value}-->
+                       <!--{if $key > 2&&$key < 6 }-->
+                           <li class="inon01" regid="100089"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]" target="_blank" class="grey">$value[subject]</a></li>
+                          <!--{/if}-->
+                            <!--{/loop}-->
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="photo_foot01 space_bg01"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="fm950 clearfix mt7" regid="100094">
+			<div class="adv_img01"><a title="Mạng xã hội Nhà Tui GoHooH.CoM" href="http://www.gohooh.com/nhatui/"  target="_blank"><img alt="Mạng xã hội Nhà Tui GoHooH.CoM" src="template/lanse/img/banner.jpg"  /></a></div>	
+	</div>
+	<div class="fm950 mt10">
+		<div class="photo_titl01 space_bg01">
+			<h5 class="tb grey pl10 inon01">Album<span class="red tb ml10" >TOP</span></h5>
+		</div>
+		<div class="photo_im0_01"> 
+			<div class="im0 clearfix">
+            <!--{loop $piclist $key $value}-->
+             <!--{if $key < 12 }-->
+                <div class="pictxt fl mlr10 space_bg01 mt8">
+	<div class="pic"><a href="space.php?uid={$value[uid]}&do=album&picid={$value[picid]}" target="_blank"><img src="$value[pic]" alt="$value[albumname]" /></a></div>
+	<div class="txt"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></div>
+</div>
+<!--{/if}-->
+	<!--{/loop}-->
+
+			</div>
+		</div>
+		<div class="photo_foot01 space_bg01"></div>
+	</div>
+	<script type="text/javascript" language="javascript">
+	    function search() {
+	        var gender = $('input[name=selGender][type=radio][checked]').val();
+	        var horoscope = $("#selHoroscope").val();
+	        var age = $("#selAge").val();
+	        location.href = "conditionsearch/1-flag=1&age=" + encodeURIComponent(age) + "&gender=" + gender + "&horoscope=" + horoscope;
+	    }
+	</script>
+	
+<script type="text/javascript">
+    var TitArray = new Array();
+    var Page = 0;
+    var _loc1 = 0;
+    //var Page_num;
+    var Zp;
+    var Speed = 3000;
+    TitArray[0] = "Chia sẽ những suy nghĩ của bạn về cuộc sống";
+    TitArray[1] = "Giữ lại những khoảnh khắc đáng nhớ";
+    TitArray[2] = "Tham gia bang hôi, thảo luận chủ đề yêu thích";
+    TitArray[3] = "Kết bạn và trò chuyện thoải mái";
+
+    $(".flash_img").ready(function() {
+        $("#TitText").addClass("titl0" + (Page + 1))
+        $("#TitText").text(TitArray[Page]);
+        var _loc1 = $("#Pic_btn div").length;
+        for (var i = 0; i < _loc1; i++) {
+            MoseMove(i);
+        }
+        Zp = setInterval(Move, Speed)
+    })
+    function Move() {
+        _loc1 = Page;
+        Page++;
+        Page > 3 ? Page = 0 : "";
+        $("#TitText").removeClass("titl0" + (_loc1 + 1));
+        $("#TitText").addClass("titl0" + (Page + 1))
+        $("#TitText").text(TitArray[Page]);
+        $("#Pic_btn div:eq(" + _loc1 + ")").find("span").removeClass("link_t1" + (_loc1 + 1));
+        $("#Pic_btn div:eq(" + _loc1 + ")").find("span").addClass("link_t0" + (_loc1 + 1));
+        $("#Pic_btn div:eq(" + Page + ")").find("span").removeClass("link_t0" + (Page + 1));
+        $("#Pic_btn div:eq(" + Page + ")").find("span").addClass("link_t1" + (Page + 1));
+    }
+    function MoseMove(i) {
+    	$("#Pic_btn div:eq(" + i + ")").hover(
+			function() {
+				clearInterval(Zp)
+				$("#TitText").removeClass("titl0" + (Page + 1));
+				$("#Pic_btn div:eq(" + Page + ")").find("span").removeClass("link_t1" + (Page + 1));
+				$("#Pic_btn div:eq(" + Page + ")").find("span").addClass("link_t0" + (Page + 1));
+				Page = i;
+				$("#TitText").addClass("titl0" + (i + 1))
+				$("#TitText").text(TitArray[i]);
+				$("#Pic_btn div:eq(" + i + ")").find("span").removeClass("link_t0" + (i + 1));
+				$("#Pic_btn div:eq(" + i + ")").find("span").addClass("link_t1" + (i + 1));
+			},
+			function() {
+				Zp = setInterval(Move, Speed)
+			}
+		);
+    }
+</script>
+
+
+    <div class="clear"></div>
+    </div>
+
+<script type="text/javascript" src="template/lanse/js/hf.js" ></script>
+<script type="text/javascript" src="template/lanse/js/dialog.js" ></script>
+
+<!--{template footer}-->

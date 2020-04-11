@@ -1,0 +1,122 @@
+﻿<!--{eval $_TPL['titles'] = array('GoHooH Hỏi & Đáp');}-->
+<!--{template header}-->
+<!--{template ask/view/ask_header}-->
+<div class=div_layout>
+
+<div class="h_status">
+Trạng thái: 
+<!--{if empty($status) }--><strong>Tất cả</strong><!--{else}--><a href="gohoohhoidap.php?do=ask&type={$type}&status=0">Tất cả</a><!--{/if}--> &nbsp;
+<!--{if $status == 1 }--><strong>Còn mở</strong><!--{else}--><a href="gohoohhoidap.php?do=ask&type={$type}&status=1">Còn mở</a><!--{/if}--> &nbsp;
+<!--{if $status == 2 }--><strong>Đã đóng</strong><!--{else}--><a href="gohoohhoidap.php?do=ask&type={$type}&status=2">Đã đóng</a><!--{/if}--> &nbsp;
+
+</div>
+
+	<div class=left>
+			<div>
+				<div overflow="hidden" height="407" width="560">
+<div class="side_right">
+	<div class="wide">
+		<div class="post_list a_list">
+		<!--{if $list}-->
+<table width="558" border="0" cellspacing="0" cellpadding="0">
+	<!--{loop $list $value}-->
+  <tr>
+    <td width="12%" rowspan="3"><div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div></td>
+    <td width="88%"><h4>·<a href="gohoohhoidap.php?do=ask&ac=view&id=$value[id]">$value[title]</a></h4></td>
+  </tr>
+  <tr>
+    <td><a href="space.php?uid=$value[uid]">$value[username]</a> <span class="time"><!--{date('m-d H:i',$value[dateline],1)}--></span><br>Thưởng: <font color="#FF0000">$value[score] điểm</font></td>
+  </tr>
+  <tr>
+    <td><!--{if $value[typename]}-->Chuyên mục:  <a href="gohoohhoidap.php?do=ask&type=$value['typeid']">{$value[typename]}</a><span class="pipe">|</span><!--{/if}-->
+						<!--{if $value[view_count]}--><a href="gohoohhoidap.php?do=ask&ac=view&id=$value[id]">$value[view_count] lược xem</a><span class="pipe">|</span><!--{/if}-->
+						<!--{if $value[reply_count]}--><a href="gohoohhoidap.php?do=ask&ac=view&id=$value[id]">$value[reply_count] Replies</a><!--{else}-->No reply<!--{/if}-->
+						<span class="pipe">|</span>	
+						Trạng thái: <font color="#FF0000">$gEumsStatus[$value[status]]</font></td>
+  </tr>
+    <tr>
+    <td height="6" colspan="2">&nbsp;</td>
+  </tr>
+    <tr>
+    <td height="1" colspan="2" background="ask/css/bg_line.gif"></td>
+  </tr>
+  <tr>
+    <td height="6" colspan="2">&nbsp;</td>
+  </tr>
+  <!--{/loop}-->
+</table>
+		<!--{else}-->
+			<div class="article c_form">
+			Không có câu hỏi nào!
+			<!--{if $space[self]}-->Hãy là người đầu tiên <a href="gohoohhoidap.php?do=ask&ac=post">gửi câu hỏi</a> cùng GoHooH giải đáp.<!--{/if}-->
+			</div>
+		<!--{/if}-->
+		</div>
+		<div class="page">$multi</div>
+	</div>
+		
+
+</div>
+				</div>			
+			</div><br>	
+<div class=mycar>
+				<div class=title>		
+				     Lưu ý:	  
+				</div>
+				<div class=info>
+					1.Để hỏi bạn phải trả một số điểm, số tiền đó sẽ được trả cho những người trả lời câu hỏi của bạn.<br>
+				2.Bạn có thể đóng câu hỏi khi có được đáp án hài lòng. Số điểm sẽ thưởng cho người có đáp án bạn hài lòng nhất.<br>
+				3. Câu hỏi đã giải quyết thì bạn không thể trả lời.
+				</div>
+
+			</div>
+
+	</div>
+
+<div id="wajinbar">
+
+<div class="sidebox">
+		<h2 class="title">
+			<p class="r_option">
+				
+			</p>
+			Top chưa giải đáp
+		</h2>
+		<ul class="wajin_list">
+		<!--{loop $hotask $key $val}-->
+				<li><!--{eval echo $key +1 }-->. <a href="gohoohhoidap.php?do=ask&ac=view&id=$val[id]">$val[title]</a> ({$val[score]} điểm)</li>
+		<!--{/loop}-->
+		</ul>
+  </div>
+
+<div class="sidebox">
+		<h2 class="title">
+			<p class="r_option">
+				
+			</p>
+			Bản quyền
+		</h2>
+		<ul class="wajin_list">
+		<div class="IND_lwide" valign="left">
+	<div class="wdL"></div>
+	<p align="right"><font color="#808080">
+	<span class="fl" valign="left">Ask for Ucenter home 1.5 /2.0</span>	
+	</font></p>
+	<div class="wdR" valign="left">
+		<p align="right"></div>	
+	<p align="right">	
+	<span class="fr" valign="left"><font color="#808080">Việt hóa bởi </font><br /> <a href="http://www.gohooh.com">
+	<font color="#808080">Ucenter Home Việt - GoHooH.CoM</font></a><font color="#808080"> &copy;2010
+	</font> </span>		
+ 
+</div>
+
+<!--{ad/rightside}--><!-- 右侧栏广告-->
+		</ul>
+  </div>
+
+	
+	
+  </div>
+	</div>	
+<!--{template footer}-->

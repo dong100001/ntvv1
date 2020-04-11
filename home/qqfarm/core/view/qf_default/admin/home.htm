@@ -1,0 +1,14 @@
+<!--{tpl admin/inc_header}-->
+
+<div>
+	<strong>Tham số máy chủ</strong>
+	<ul>
+		<!--{foreach $farmTest as $key=>$value}-->
+		<!--{php is_bool($value[0]) && $value[0] =  $value[0] ? 'Hỗ trợ' : 'Không hỗ trợ';}-->
+		<!--{php $value[1] =  $value[1] ? '<span>'.$value[1].'</span>' : '';}-->
+		<li> {:$key} : {:$value[0]} {:$value[1]} </li>
+		<!--{/foreach}-->
+	<ul>
+<div>
+
+<!--{tpl admin/inc_footer}-->

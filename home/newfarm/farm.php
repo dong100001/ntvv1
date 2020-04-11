@@ -1,0 +1,676 @@
+<?php
+//Ucenter Home GoHooH Full (full mod, full game, full skin) hack by GoHooH.CoM
+//More mod, skin, game, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/
+$levelups = array(
+				"200" => array( "eDesc" => "2 Bắp ngô", "eType" => "1", "eParam" => "4", "eNum" => "2", "name" => "Bắp ngô", "level" => 1 ),
+				"600" => array( "eDesc" => "2 Phân bón", "eType" => "3", "eParam" => "1", "eNum" => "2", "name" => "Phân bón", "level" => 2 ),
+				"1200" => array( "eDesc" => "2 Cà tím Seed", "eType" => "1", "eParam" => "6", "eNum" => "2", "name" => "Cà tím", "level" => 3 ),
+				"2000" => array( "eDesc" => "2 Cà chua Seed", "eType" => "1", "eParam" => "7", "eNum" => "2", "name" => "Cà chua", "level" => 4 ),
+				"3000" => array( "eDesc" => "2 Powerful insecticides", "eType" => "3", "eParam" => "6", "eNum" => "2", "name" => "Powerful insecticides", "level" => 5 ),
+				"4200" => array( "eDesc" => "2 Peper Seed", "eType" => "1", "eParam" => "9", "eNum" => "2", "name" => "Pepper ", "level" => 6 ),
+				"5600" => array( "eDesc" => "2 Devil Pumpkin Seed", "eType" => "1", "eParam" => "10", "eNum" => "2", "name" => "Devil Pumpkin", "level" => 7 ),
+				"7200" => array( "eDesc" => "2 Apple Seed", "eType" => "1", "eParam" => "11", "eNum" => "2", "name" => "Apple", "level" => 8 ),
+				"9000" => array( "eDesc" => "2 Strawberry Seed", "eType" => "1", "eParam" => "1", "eNum" => "2", "name" => "Strawberry", "level" => 9 ),
+				"11000" => array( "eDesc" => "1 Chó Poodle", "eType" => "4", "eParam" => "3", "eNum" => "1", "name" => "Chó Poodle", "level" => 10 ),
+				"13200" => array( "eDesc" => "2 Chuối Seed", "eType" => "1", "eParam" => "15", "eNum" => "2", "name" => "Chuối", "level" => 11 ),
+				"15600" => array( "eDesc" => "2 Peach Seed", "eType" => "1", "eParam" => "18", "eNum" => "2", "name" => "Peach", "level" => 12 ),
+				"18200" => array( "eDesc" => "2 Cam Seed", "eType" => "1", "eParam" => "19", "eNum" => "2", "name" => "Cam", "level" => 13 ),
+				"21000" => array( "eDesc" => "2 Nho Seed", "eType" => "1", "eParam" => "13", "eNum" => "2", "name" => "Nho", "level" => 14 ),
+				"24000" => array( "eDesc" => "2 Gene fertilizer", "eType" => "3", "eParam" => "9", "eNum" => "2", "name" => "Gene fertilizer", "level" => 15 ),
+				"27200" => array( "eDesc" => "2 Grapefruit Seed", "eType" => "1", "eParam" => "26", "eNum" => "2", "name" => "Grapefruit", "level" => 16 ),
+				"30600" => array( "eDesc" => "2 Pineapple Seed", "eType" => "1", "eParam" => "27", "eNum" => "2", "name" => "Pineapple", "level" => 17 ),
+				"34200" => array( "eDesc" => "2 Friendly Fertilizer", "eType" => "3", "eParam" => "4", "eNum" => "2", "name" => "Friendly Fertilizer", "level" => 18 ),
+				"38000" => array( "eDesc" => "2 Gourd Seed", "eType" => "1", "eParam" => "31", "eNum" => "2", "name" => "Gourd", "level" => 19 ),
+				"42000" => array( "eDesc" => "Timber kennel", "eType" => "2", "eParam" => "49", "eNum" => "1", "name" => "Timber kennel", "level" => 20 ),
+				"46200" => array( "eDesc" => "Wood fence", "eType" => "2", "eParam" => "48", "eNum" => "1", "name" => "Wood fence", "level" => 21 ),
+				"50600" => array( "eDesc" => "Windmill house", "eType" => "2", "eParam" => "47", "eNum" => "1", "name" => "Windmill house", "level" => 22 ),
+				"55200" => array( "eDesc" => "Golden wilderness", "eType" => "2", "eParam" => "46", "eNum" => "1", "name" => "Golden wilderness", "level" => 23 ),
+				"60000" => array( "eDesc" => "10 Da Goubang", "eType" => "3", "eParam" => "5", "eNum" => "10", "name" => "Da Goubang", "level" => 24 ),
+				"65000" => array( "eDesc" => "2 Lemon Seed", "eType" => "1", "eParam" => "16", "eNum" => "2", "name" => "Lemon", "level" => 25 ),
+				"70200" => array( "eDesc" => "2 Loquat Seed", "eType" => "1", "eParam" => "17", "eNum" => "2", "name" => "Loquat", "level" => 26 ),
+				"75600" => array( "eDesc" => "2 Sugarcane Seed", "eType" => "1", "eParam" => "20", "eNum" => "2", "name" => "Sugarcane", "level" => 27 ),
+				"81200" => array( "eDesc" => "2 Mushroom Seed", "eType" => "1", "eParam" => "21", "eNum" => "2", "name" => "Mushroom", "level" => 28 ),
+				"87000" => array( "eDesc" => "2 Bayberry Seed", "eType" => "1", "eParam" => "22", "eNum" => "2", "name" => "Bayberry", "level" => 29 ),
+				"93000" => array( "eDesc" => "2 Olive Seed", "eType" => "1", "eParam" => "24", "eNum" => "2", "name" => "Olive", "level" => 30 )
+);
+
+$timeout = array( "1" => array("1" => 5184000, "2" => 5184000, "3" => 5184000, "4" => 5184000, "5" => 10368000, "6" => 10368000, "7" => 10368000, "8" => 10368000, "9" => 15552000, "10" => 15552000, "11" => 15552000, "0" => 15552000 ), "2" => array( "1" =>10368000), "3" => array( "1" =>15552000) );  // ����2����С����1-4����4�����л�ƿ��5-8����6���´����9-12������4���¡�6���� �ڷ�ʱ��
+
+$tudiarr = array(
+				"6" => array( "level" => 5, "money" => 10000 ),
+				"7" => array( "level" => 7, "money" => 20000 ),
+				"8" => array( "level" => 9, "money" => 30000 ),
+				"9" => array( "level" => 11, "money" => 50000 ),
+				"10" => array( "level" => 13, "money" => 70000 ),
+				"11" => array( "level" => 15, "money" => 90000 ),
+				"12" => array( "level" => 17, "money" => 120000 ),
+				"13" => array( "level" => 19, "money" => 150000 ),
+				"14" => array( "level" => 21, "money" => 180000 ),
+				"15" => array( "level" => 23, "money" => 230000 ),
+				"16" => array( "level" => 25, "money" => 300000 ),
+				"17" => array( "level" => 27, "money" => 500000 )
+);
+$crops = array(
+				"40" => array( "cId" => 40, "cName" => "Cỏ ", "cType" => "1", "growthCycle" => "28800", "maturingTime" => "1", "expect" => 150, "output" => "50", "sale" => "1", "price" => "120", "cLevel" => "0", "cropExp" => "10", "cCharm" => "0", "cropChr" => "0" ),
+				"2" => array( "cId" => 2, "cName" => "Củ cải trắng ", "cType" => "1", "growthCycle" => "36000", "maturingTime" => "1", "expect" => 272, "output" => "16", "sale" => "17", "price" => "125", "cLevel" => "0", "cropExp" => "15", "cCharm" => "0", "cropChr" => "0" ),
+				"3" => array( "cId" => 3, "cName" => "Cà rốt ", "cType" => "1", "growthCycle" => "46800", "maturingTime" => "1", "expect" => 357, "output" => "17", "sale" => "21", "price" => "163", "cLevel" => "0", "cropExp" => "18", "cCharm" => "0", "cropChr" => "0" ),
+				"4" => array( "cId" => 4, "cName" => "Bắp ", "cType" => "1", "growthCycle" => "50400", "maturingTime" => "1", "expect" => 391, "output" => "17", "sale" => "23", "price" => "175", "cLevel" => "3", "cropExp" => "19", "cCharm" => "0", "cropChr" => "0" ),
+				"5" => array( "cId" => 5, "cName" => "Khoai tây ", "cType" => "1", "growthCycle" => "54000", "maturingTime" => "1", "expect" => 432, "output" => "18", "sale" => "24", "price" => "188", "cLevel" => "4", "cropExp" => "20", "cCharm" => "0", "cropChr" => "0" ),
+				"6" => array( "cId" => 6, "cName" => "Cà tím ", "cType" => "1", "growthCycle" => "57600", "maturingTime" => "1", "expect" => 500, "output" => "20", "sale" => "25", "price" => "237", "cLevel" => "5", "cropExp" => "21", "cCharm" => "0", "cropChr" => "0" ),
+				"7" => array( "cId" => 7, "cName" => "Cà chua ", "cType" => "1", "growthCycle" => "61200", "maturingTime" => "1", "expect" => 546, "output" => "21", "sale" => "26", "price" => "251", "cLevel" => "6", "cropExp" => "22", "cCharm" => "0", "cropChr" => "0" ),
+				"8" => array( "cId" => 8, "cName" => "Đậu ", "cType" => "1", "growthCycle" => "64800", "maturingTime" => "1", "expect" => 594, "output" => "22", "sale" => "27", "price" => "266", "cLevel" => "7", "cropExp" => "23", "cCharm" => "0", "cropChr" => "0" ),
+				"9" => array( "cId" => 9, "cName" => "Ớt ", "cType" => "1", "growthCycle" => "72000", "maturingTime" => "1", "expect" => 672, "output" => "24", "sale" => "28", "price" => "296", "cLevel" => "8", "cropExp" => "25", "cCharm" => "0", "cropChr" => "0" ),
+				"10" => array( "cId" => 10, "cName" => "Bí Hallowen ", "cType" => "1", "growthCycle" => "79200", "maturingTime" => "1", "expect" => 750, "output" => "25", "sale" => "30", "price" => "325", "cLevel" => "9", "cropExp" => "27", "cCharm" => "0", "cropChr" => "0" ),
+				"11" => array( "cId" => 11, "cName" => "Táo ", "cType" => "1", "growthCycle" => "75600", "maturingTime" => "2", "expect" => 1104, "output" => "23", "sale" => "24", "price" => "518", "cLevel" => "10", "cropExp" => "20", "cCharm" => "0", "cropChr" => "0" ),
+				"1" => array( "cId" => 1, "cName" => "Dâu tây ", "cType" => "1", "growthCycle" => "86400", "maturingTime" => "2", "expect" => 1296, "output" => "24", "sale" => "27", "price" => "605", "cLevel" => "10", "cropExp" => "23", "cCharm" => "0", "cropChr" => "0" ),
+				"14" => array( "cId" => 14, "cName" => "Dưa hấu ", "cType" => "1", "growthCycle" => "100800", "maturingTime" => "2", "expect" => 1566, "output" => "27", "sale" => "29", "price" => "708", "cLevel" => "11", "cropExp" => "26", "cCharm" => "0", "cropChr" => "0" ),
+				"15" => array( "cId" => 15, "cName" => "Chuối ", "cType" => "1", "growthCycle" => "111600", "maturingTime" => "2", "expect" => 1856, "output" => "29", "sale" => "32", "price" => "900", "cLevel" => "12", "cropExp" => "28", "cCharm" => "0", "cropChr" => "0" ),
+				"18" => array( "cId" => 18, "cName" => "Đào ", "cType" => "1", "growthCycle" => "151200", "maturingTime" => "2", "expect" => 2560, "output" => "32", "sale" => "40", "price" => "1200", "cLevel" => "13", "cropExp" => "35", "cCharm" => "0", "cropChr" => "0" ),
+				"19" => array( "cId" => 19, "cName" => "Cam ", "cType" => "1", "growthCycle" => "133200", "maturingTime" => "3", "expect" => 3198, "output" => "26", "sale" => "41", "price" => "1587", "cLevel" => "14", "cropExp" => "28", "cCharm" => "0", "cropChr" => "0" ),
+				"13" => array( "cId" => 13, "cName" => "Nho ", "cType" => "1", "growthCycle" => "165600", "maturingTime" => "3", "expect" => 4089, "output" => "29", "sale" => "47", "price" => "1978", "cLevel" => "15", "cropExp" => "34", "cCharm" => "0", "cropChr" => "0" ),
+				"23" => array( "cId" => 23, "cName" => "Lưu ", "cType" => "1", "growthCycle" => "187200", "maturingTime" => "3", "expect" => 4860, "output" => "30", "sale" => "54", "price" => "2425", "cLevel" => "16", "cropExp" => "37", "cCharm" => "0", "cropChr" => "0" ),
+				"26" => array( "cId" => 26, "cName" => "Bưởi ", "cType" => "1", "growthCycle" => "219600", "maturingTime" => "3", "expect" => 5742, "output" => "33", "sale" => "58", "price" => "2855", "cLevel" => "17", "cropExp" => "43", "cCharm" => "0", "cropChr" => "0" ),
+				"27" => array( "cId" => 27, "cName" => "Dứa ", "cType" => "1", "growthCycle" => "230400", "maturingTime" => "3", "expect" => 6510, "output" => "35", "sale" => "62", "price" => "3480", "cLevel" => "18", "cropExp" => "44", "cCharm" => "0", "cropChr" => "0" ),
+				"29" => array( "cId" => 29, "cName" => "Dừa ", "cType" => "1", "growthCycle" => "198000", "maturingTime" => "4", "expect" => 7020, "output" => "27", "sale" => "65", "price" => "3720", "cLevel" => "19", "cropExp" => "36", "cCharm" => "0", "cropChr" => "0" ),
+				"31" => array( "cId" => 31, "cName" => "Bầu hồ lô ", "cType" => "1", "growthCycle" => "219600", "maturingTime" => "4", "expect" => 8520, "output" => "30", "sale" => "71", "price" => "4742", "cLevel" => "20", "cropExp" => "40", "cCharm" => "0", "cropChr" => "0" ),
+				"33" => array( "cId" => 33, "cName" => "Thanh long ", "cType" => "1", "growthCycle" => "252000", "maturingTime" => "4", "expect" => 9856, "output" => "32", "sale" => "77", "price" => "5356", "cLevel" => "21", "cropExp" => "39", "cCharm" => "0", "cropChr" => "0" ),
+				"34" => array( "cId" => 34, "cName" => "Anh đào ", "cType" => "1", "growthCycle" => "259200", "maturingTime" => "4", "expect" => 10296, "output" => "33", "sale" => "78", "price" => "5527", "cLevel" => "22", "cropExp" => "41", "cCharm" => "0", "cropChr" => "0" ),
+				"35" => array( "cId" => 35, "cName" => "Vải ", "cType" => "1", "growthCycle" => "277200", "maturingTime" => "4", "expect" => 11696, "output" => "34", "sale" => "86", "price" => "6588", "cLevel" => "23", "cropExp" => "43", "cCharm" => "0", "cropChr" => "0" ),
+				"36" => array( "cId" => 36, "cName" => "Kiwi ", "cType" => "1", "growthCycle" => "291600", "maturingTime" => "4", "expect" => 12512, "output" => "34", "sale" => "92", "price" => "6975", "cLevel" => "24", "cropExp" => "45", "cCharm" => "0", "cropChr" => "0" ),
+				"12" => array( "cId" => 12, "cName" => "Dưa gang ", "cType" => "1", "growthCycle" => "93600", "maturingTime" => "2", "expect" => 2500, "output" => "25", "sale" => "50", "price" => "1388", "cLevel" => "25", "cropExp" => "19", "cCharm" => "0", "cropChr" => "0" ),
+				"16" => array( "cId" => 16, "cName" => "Chanh ", "cType" => "1", "growthCycle" => "126000", "maturingTime" => "2", "expect" => 3420, "output" => "30", "sale" => "57", "price" => "1875", "cLevel" => "26", "cropExp" => "25", "cCharm" => "0", "cropChr" => "0" ),
+				"17" => array( "cId" => 17, "cName" => "Hồng ", "cType" => "1", "growthCycle" => "140400", "maturingTime" => "2", "expect" => 3720, "output" => "30", "sale" => "62", "price" => "2063", "cLevel" => "27", "cropExp" => "28", "cCharm" => "0", "cropChr" => "0" ),
+				"20" => array( "cId" => 20, "cName" => "Mía ", "cType" => "1", "growthCycle" => "147600", "maturingTime" => "3", "expect" => 5208, "output" => "28", "sale" => "62", "price" => "2888", "cLevel" => "28", "cropExp" => "26", "cCharm" => "0", "cropChr" => "0" ),
+				"21" => array( "cId" => 21, "cName" => "Nấm ", "cType" => 1, "growthCycle" => 212400, "maturingTime" => 4, "expect" => 10152, "output" => 47, "sale" => 54, "price" => 5434, "FBPrice" => 0, "cLevel" => 29, "cropExp" => 37, "cCharm" => 0, "cropChr" => 0 ),
+				"22" => array( "cId" => 22, "cName" => "Chôm chôm ", "cType" => "1", "growthCycle" => "234000", "maturingTime" => "4", "expect" => 10296, "output" => "39", "sale" => "66", "price" => "5544", "FBPrice" => 0, "cLevel" => "30", "cropExp" => "38", "cCharm" => "0", "cropChr" => "0" ),
+				"24" => array( "cId" => 24, "cName" => "Olive ", "cType" => "1", "growthCycle" => "208800", "maturingTime" => "3", "expect" => 7392, "output" => "32", "sale" => "77", "price" => "4050", "FBPrice" => 0, "cLevel" => "31", "cropExp" => "36", "cCharm" => "0", "cropChr" => "0" ),
+				"25" => array( "cId" => "25", "cName" => "Xoài ", "cType" => "1", "growthCycle" => "223200", "maturingTime" => "3", "expect" => "7722", "output" => "33", "sale" => "78", "price" => "4275", "FBPrice" => "0", "cLevel" => "32", "cropExp" => "38", "cCharm" => "0", "cropChr" => "0" ),
+				"101" => array( "cId" => 101, "cName" => "Hoa hồng (đỏ) ", "cType" => "2", "growthCycle" => "57600", "maturingTime" => "1", "expect" => 352, "output" => "2", "sale" => "176", "price" => "54", "cLevel" => "0", "cropExp" => "21", "cCharm" => "0", "cropChr" => "2" ),
+				"102" => array( "cId" => 102, "cName" => "Hoa hồng (hồng) ", "cType" => "2", "growthCycle" => "57600", "maturingTime" => "1", "expect" => 352, "output" => "2", "sale" => "176", "price" => "54", "cLevel" => "0", "cropExp" => "21", "cCharm" => "0", "cropChr" => "2" ),
+				"103" => array( "cId" => 103, "cName" => "Hoa hồng (trắng) ", "cType" => "2", "growthCycle" => "57600", "maturingTime" => "1", "expect" => 352, "output" => "2", "sale" => "176", "price" => "54", "cLevel" => "0", "cropExp" => "21", "cCharm" => "0", "cropChr" => "2" ),
+				"104" => array( "cId" => 104, "cName" => "Hoa hồng (vàng) ", "cType" => "2", "growthCycle" => "57600", "maturingTime" => "1", "expect" => 352, "output" => "2", "sale" => "176", "price" => "54", "cLevel" => "0", "cropExp" => "21", "cCharm" => "0", "cropChr" => "2" ),
+				"105" => array( "cId" => 105, "cName" => "Hướng dương (vàng) ", "cType" => "2", "growthCycle" => "86400", "maturingTime" => "1", "expect" => 524, "output" => "2", "sale" => "262", "price" => "78", "cLevel" => "0", "cropExp" => "30", "cCharm" => "0", "cropChr" => "3" ),
+				"106" => array( "cId" => 106, "cName" => "Hướng dương (hồng) ", "cType" => "2", "growthCycle" => "86400", "maturingTime" => "1", "expect" => 524, "output" => "2", "sale" => "262", "price" => "78", "cLevel" => "0", "cropExp" => "30", "cCharm" => "0", "cropChr" => "3" ),
+				"107" => array( "cId" => 107, "cName" => "Hướng dương (trắng) ", "cType" => "2", "growthCycle" => "86400", "maturingTime" => "1", "expect" => 524, "output" => "2", "sale" => "262", "price" => "78", "cLevel" => "0", "cropExp" => "30", "cCharm" => "0", "cropChr" => "3" ),
+				"108" => array( "cId" => 108, "cName" => "Hướng dương (Xanh xám) ", "cType" => "2", "growthCycle" => "86400", "maturingTime" => "1", "expect" => 524, "output" => "2", "sale" => "262", "price" => "78", "cLevel" => "0", "cropExp" => "30", "cCharm" => "0", "cropChr" => "3" ),
+				"109" => array( "cId" => 109, "cName" => "Cẩm chướng (trắng) ", "cType" => "2", "growthCycle" => "93600", "maturingTime" => "1", "expect" => 270, "output" => "2", "sale" => "135", "price" => "80", "cLevel" => "0", "cropExp" => "33", "cCharm" => "180", "cropChr" => "3" ),
+				"110" => array( "cId" => 110, "cName" => "Cẩm chướng (hồng) ", "cType" => "2", "growthCycle" => "93600", "maturingTime" => "1", "expect" => 270, "output" => "2", "sale" => "135", "price" => "80", "cLevel" => "0", "cropExp" => "33", "cCharm" => "180", "cropChr" => "3" ),
+				"111" => array( "cId" => 111, "cName" => "Cẩm chướng (vàng) ", "cType" => "2", "growthCycle" => "93600", "maturingTime" => "1", "expect" => 270, "output" => "2", "sale" => "135", "price" => "80", "cLevel" => "0", "cropExp" => "33", "cCharm" => "180", "cropChr" => "3" ),
+				"112" => array( "cId" => 112, "cName" => "Cẩm chướng (tím) ", "cType" => "2", "growthCycle" => "93600", "maturingTime" => "1", "expect" => 270, "output" => "2", "sale" => "135", "price" => "80", "cLevel" => "0", "cropExp" => "33", "cCharm" => "180", "cropChr" => "3" ),
+				"113" => array( "cId" => 113, "cName" => "Tulip (tím)) ", "cType" => "2", "growthCycle" => "97200", "maturingTime" => "1", "expect" => 280, "output" => "2", "sale" => "140", "price" => "82", "cLevel" => "0", "cropExp" => "35", "cCharm" => "440", "cropChr" => "3" ),
+				"114" => array( "cId" => 114, "cName" => "Tulip (đỏ) ", "cType" => "2", "growthCycle" => "97200", "maturingTime" => "1", "expect" => 280, "output" => "2", "sale" => "140", "price" => "82", "cLevel" => "0", "cropExp" => "35", "cCharm" => "440", "cropChr" => "3" ),
+				"115" => array( "cId" => 115, "cName" => "Tulip (hồng) ", "cType" => "2", "growthCycle" => "97200", "maturingTime" => "1", "expect" => 280, "output" => "2", "sale" => "140", "price" => "82", "cLevel" => "0", "cropExp" => "35", "cCharm" => "440", "cropChr" => "3" ),
+				"116" => array( "cId" => 116, "cName" => "Tulip (trắng) ", "cType" => "2", "growthCycle" => "97200", "maturingTime" => "1", "expect" => 280, "output" => "2", "sale" => "140", "price" => "82", "cLevel" => "0", "cropExp" => "35", "cCharm" => "440", "cropChr" => "3" ),
+				"117" => array( "cId" => 117, "cName" => "Thủy tiên (trắng)", "cType" => "2", "growthCycle" => "100800", "maturingTime" => "1", "expect" => 348, "output" => "2", "sale" => "174", "price" => "67", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "16", "cCharm" => "800", "cropChr" => "4" ),
+				"118" => array( "cId" => 118, "cName" => "Thủy tiên (vàng)", "cType" => "2", "growthCycle" => "100800", "maturingTime" => "1", "expect" => 348, "output" => "2", "sale" => "174", "price" => "67", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "16", "cCharm" => "800", "cropChr" => "4" ),
+				"119" => array( "cId" => 119, "cName" => "Thủy tiên (hồng)", "cType" => "2", "growthCycle" => "100800", "maturingTime" => "1", "expect" => 348, "output" => "2", "sale" => "174", "price" => "67", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "16", "cCharm" => "800", "cropChr" => "4" ),
+				"120" => array( "cId" => 120, "cName" => "Thủy tiên (tím)", "cType" => "2", "growthCycle" => "100800", "maturingTime" => "1", "expect" => 348, "output" => "2", "sale" => "174", "price" => "67", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "16", "cCharm" => "800", "cropChr" => "4" ),
+				"121" => array( "cId" => 121, "cName" => "Lục bình (trắng)", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "2", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"122" => array( "cId" => 122, "cName" => "Lục bình (tím)", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "2", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"123" => array( "cId" => 123, "cName" => "Lục bình (đỏ)", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "2", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"124" => array( "cId" => 123, "cName" => "Lục bình (vàng)", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "2", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"125" => array( "cId" => 125, "cName" => "Violet (tím)", "cType" => "2", "growthCycle" => "115200", "maturingTime" => "1", "expect" => 412, "output" => "2", "sale" => "206", "price" => "109", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "39", "cCharm" => "2000", "cropChr" => "6" ),
+				"126" => array( "cId" => 126, "cName" => "Violet (trắng)", "cType" => "2", "growthCycle" => "115200", "maturingTime" => "1", "expect" => 412, "output" => "2", "sale" => "206", "price" => "109", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "39", "cCharm" => "2000", "cropChr" => "6" ),
+				"127" => array( "cId" => 127, "cName" => "Violet (hồng)", "cType" => "2", "growthCycle" => "115200", "maturingTime" => "1", "expect" => 412, "output" => "2", "sale" => "206", "price" => "109", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "39", "cCharm" => "2000", "cropChr" => "6" ),
+				"128" => array( "cId" => 128, "cName" => "Violet (vàng)", "cType" => "2", "growthCycle" => "115200", "maturingTime" => "1", "expect" => 412, "output" => "2", "sale" => "206", "price" => "109", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "39", "cCharm" => "2000", "cropChr" => "6" ),
+				"129" => array( "cId" => 129, "cName" => "Lily (trắng)", "cType" => "2", "growthCycle" => "129600", "maturingTime" => "1", "expect" => 522, "output" => "2", "sale" => "261", "price" => "149", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "42", "cCharm" => "2800", "cropChr" => "7" ),
+				"130" => array( "cId" => 130, "cName" => "Lily (hồng)", "cType" => "2", "growthCycle" => "129600", "maturingTime" => "1", "expect" => 522, "output" => "2", "sale" => "261", "price" => "149", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "42", "cCharm" => "2800", "cropChr" => "7" ),
+				"131" => array( "cId" => 131, "cName" => "Lily (đỏ)", "cType" => "2", "growthCycle" => "129600", "maturingTime" => "1", "expect" => 522, "output" => "2", "sale" => "261", "price" => "149", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "42", "cCharm" => "2800", "cropChr" => "7" ),
+				"132" => array( "cId" => 132, "cName" => "Lily (vàng)", "cType" => "2", "growthCycle" => "129600", "maturingTime" => "1", "expect" => 522, "output" => "2", "sale" => "261", "price" => "149", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "42", "cCharm" => "2800", "cropChr" => "7" ),
+				"2001" => array( "cId" => 124, "cName" => "Mystery Toy", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "1", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"2002" => array( "cId" => 124, "cName" => "Mystery Toy", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "1", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" ),
+				"2003" => array( "cId" => 124, "cName" => "Mystery Toy", "cType" => "2", "growthCycle" => "108000", "maturingTime" => "1", "expect" => 402, "output" => "1", "sale" => "201", "price" => "77", "FBPrice" => 0, "cLevel" => "0", "cropExp" => "23", "cCharm" => "1300", "cropChr" => "5" )
+);
+$cropstime = array(
+				"1" => array( 14400, 28800, 46800, 64800, 86405, 90000000 ),
+				"40" => array( 7200, 14400, 21600, 28800, 28805, 90000000 ),
+				"2" => array( 7200, 14400, 25200, 36000, 36005, 90000000 ),
+				"3" => array( 7200, 18000, 32400, 46800, 46805, 90000000 ),
+				"4" => array( 7200, 14400, 25200, 36000, 50405, 90000000 ),
+				"5" => array( 7200, 14400, 25200, 39600, 54005, 90000000 ),
+				"6" => array( 7200, 18000, 28800, 43200, 57605, 90000000 ),
+				"7" => array( 7200, 18000, 32400, 46800, 61205, 90000000 ),
+				"8" => array( 10800, 21600, 32400, 46800, 64805, 90000000 ),
+				"9" => array( 10800, 25200, 39600, 54000, 72005, 90000000 ),
+				"10" => array( 7200, 14400, 25200, 36000, 36005, 90000000 ),
+				"11" => array( 14400, 28800, 43200, 57600, 75605, 90000000 ),
+				"12" => array( 14400, 32400, 54000, 72000, 93600, 90000000 ),
+				"13" => array( 28800, 61200, 93600, 129600, 165605, 90000000 ),
+				"14" => array( 14400, 32400, 54000, 75600, 100805, 90000000 ),
+				"15" => array( 18000, 39600, 61200, 86400, 111605, 90000000 ),
+				"16" => array( 21600, 46800, 72000, 97200, 126005, 90000000 ),
+				"17" => array( 25200, 54000, 82800, 111600, 140405, 90000000 ),
+				"18" => array( 28800, 57600, 86400, 118800, 151205, 90000000 ),
+				"19" => array( 25200, 50400, 75600, 104400, 133205, 90000000 ),
+				"20" => array( 28800, 72000, 129600, 187200, 234005, 90000000 ),
+				"21" => array( 32400, 68400, 104400, 158400, 212405, 90000000 ),
+				"22" => array( 28800, 72000, 129600, 187200, 234005, 90000000 ),
+				"23" => array( 36000, 72000, 108000, 147600, 187205, 90000000 ),
+				"24" => array( 39600, 79200, 118800, 162000, 208805, 90000000 ),
+				"25" => array( 43200, 86400, 129600, 172800, 223205, 90000000 ),
+				"26" => array( 39600, 82800, 126000, 172800, 219605, 90000000 ),
+				"27" => array( 43200, 90000, 136800, 183600, 230405, 90000000 ),
+				"29" => array( 36000, 75600, 115200, 154800, 198005, 90000000 ),
+				"31" => array( 39600, 82800, 126000, 172800, 219605, 90000000 ),
+				"33" => array( 46800, 97200, 147600, 198000, 252005, 90000000 ),
+				"34" => array( 50400, 100800, 151200, 205200, 259205, 90000000 ),
+				"35" => array( 54000, 108000, 165600, 219600, 277205, 90000000 ),
+				"36" => array( 57600, 115200, 172800, 230400, 291605, 90000000 ),
+				"101" => array( 7200, 18000, 28800, 43200, 57605, 90000000 ),
+				"102" => array( 7200, 18000, 28800, 43200, 57605, 90000000 ),
+				"103" => array( 7200, 18000, 28800, 43200, 57605, 90000000 ),
+				"104" => array( 7200, 18000, 28800, 43200, 57605, 90000000 ),
+				"105" => array( 10800, 25200, 43200, 64800, 86405, 90000000 ),
+				"106" => array( 10800, 25200, 43200, 64800, 86405, 90000000 ),
+				"107" => array( 10800, 25200, 43200, 64800, 86405, 90000000 ),
+				"108" => array( 10800, 25200, 43200, 64800, 86405, 90000000 ),
+				"109" => array( 10800, 25200, 46800, 68400, 93605, 90000000 ),
+				"110" => array( 10800, 25200, 46800, 68400, 93605, 90000000 ),
+				"111" => array( 10800, 25200, 46800, 68400, 93605, 90000000 ),
+				"112" => array( 10800, 25200, 46800, 68400, 93605, 90000000 ),
+				"113" => array( 10800, 25200, 46800, 68400, 97205, 90000000 ),
+				"114" => array( 10800, 25200, 46800, 68400, 97205, 90000000 ),
+				"115" => array( 10800, 25200, 46800, 68400, 97205, 90000000 ),
+				"116" => array( 10800, 25200, 46800, 68400, 97205, 90000000 ),
+				"117" => array( 14400, 28800, 54000, 75600, 100805, 90000000 ),
+				"118" => array( 14400, 28800, 54000, 75600, 100805, 90000000 ),
+				"119" => array( 14400, 28800, 54000, 75600, 100805, 90000000 ),
+				"120" => array( 14400, 28800, 54000, 75600, 100805, 90000000 ),
+				"121" => array( 14400, 32400, 50400, 79200, 108005, 90000000 ),
+				"122" => array( 14400, 32400, 50400, 79200, 108005, 90000000 ),
+				"123" => array( 14400, 32400, 50400, 79200, 108005, 90000000 ),
+				"124" => array( 14400, 32400, 50400, 79200, 108005, 90000000 ),
+				"125" => array( 14400, 32400, 54000, 82800, 115205, 90000000 ),
+				"126" => array( 14400, 32400, 54000, 82800, 115205, 90000000 ),
+				"127" => array( 14400, 32400, 54000, 82800, 115205, 90000000 ),
+				"128" => array( 14400, 32400, 54000, 82800, 115205, 90000000 ),
+				"129" => array( 7200, 32400, 61200, 93600, 129605, 90000000 ),
+				"130" => array( 7200, 32400, 61200, 93600, 129605, 90000000 ),
+				"131" => array( 7200, 32400, 61200, 93600, 129605, 90000000 ),
+				"132" => array( 7200, 32400, 61200, 93600, 129605, 90000000 ),
+				"1002" => array( 18000, 36000, 54000, 72000, 90005, 9000000 ),
+				"2001" => array( 7200, 25200, 50400, 79200, 144000, 90000000 ),
+				"2002" => array( 7200, 25200, 50400, 79200, 144000, 90000000 ),
+				"2003" => array( 7200, 25200, 50400, 79200, 144000, 90000000 )
+);
+$tools = array(
+				"1" => array(
+								"tId" => 1,
+								"tName" => "Phân bón",
+								"list" => array(
+												"1" => array( "price" => 50, "FBPrice" => 0 ),
+												"10" => array( "price" => 450, "FBPrice" => 0 ),
+												"100" => array( "price" => 4000, "FBPrice" => 0 )
+								),
+								"timeLimit" => "0",
+								"effect" => "3600",
+								"depict" => "Mỗi giai đoạn chỉ sử dụng phân bón 1 lần, giúp giảm thời gian trồng trọt 1 giờ.",
+								"type" => 3
+				),
+				"2" => array(
+								"tId" => 2,
+								"tName" => "Phân bón 1 sao",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 2 ),
+												"10" => array( "price" => 0, "FBPrice" => 12 ),
+												"100" => array( "price" => 0, "FBPrice" => 100 )
+								),
+								"timeLimit" => "0",
+								"effect" => "9000",
+								"depict" => "Mỗi giai đoạn chỉ sử dụng phân bón 1 lần, giúp giảm thời gian trồng trọt 2,5 giờ.",
+								"type" => 3
+				),
+				"3" => array(
+								"tId" => 3,
+								"tName" => "Phân bón 2 sao",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 5 ),
+												"10" => array( "price" => 0, "FBPrice" => 30 ),
+												"100" => array( "price" => 0, "FBPrice" => 250 )
+								),
+								"timeLimit" => "0",
+								"effect" => "19800",
+								"depict" => "Mỗi giai đoạn chỉ sử dụng phân bón 1 lần, giúp giảm thời gian trồng trọt 5,5 giờ.",
+								"type" => 3
+				),
+				"7" => array(
+								"tId" => 7,
+								"tName" => "Phân bón 3 sao",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 8 ),
+												"10" => array( "price" => 0, "FBPrice" => 72 ),
+												"100" => array( "price" => 0, "FBPrice" => 640 )
+								),
+								"timeLimit" => "0",
+								"effect" => "21600",
+								"depict" => "Mỗi giai đoạn chỉ sử dụng phân bón 1 lần, giúp giảm thời gian trồng trọt 8 giờ.",
+								"type" => 3
+				),
+				"8" => array(
+								"tId" => 8,
+								"tName" => "Phân bón 4 sao",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 9 ),
+												"10" => array( "price" => 0, "FBPrice" => 81 ),
+												"100" => array( "price" => 0, "FBPrice" => 720 )
+								),
+								"timeLimit" => "0",
+								"effect" => "28800",
+								"depict" => "Mỗi giai đoạn chỉ sử dụng phân bón 1 lần, giúp giảm thời gian trồng trọt 6 giờ.",
+								"type" => 3
+				),
+				"4" => array(
+								"tId" => 4,
+								"tName" => "Friendly Fertilizer",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 2 ),
+												"10" => array( "price" => 0, "FBPrice" => 12 ),
+												"100" => array( "price" => 0, "FBPrice" => 100 )
+								),
+								"timeLimit" => "0",
+								"effect" => "5400",
+								"depict" => "Giúp cho cây trồng của hàng xóm giúp giảm thời gian trồng trọt 1,5 giờ.",
+								"type" => 3
+				),
+				"5" => array(
+
+                                   "tId" => 5,
+                                   "tName" => "Da Goubang",
+                                   "list" => array(
+                                                  "1" => array( "price" => 0, "FBPrice" => 2 ),
+                                                  "10" => array( "price" => 0, "FBPrice" => 12 ),
+                                                  "100" => array( "price" => 0, "FBPrice" => 100 )
+                                  ),
+                                  "timeLimit" => "0",
+                                  "effect" => "180",
+                                  "depict" => "Chó giúp canh nông trại không bị hái trộm!",
+                                  "type" => 3
+
+                 ),
+				"9" => array(
+								"tId" => 9,
+								"tName" => "Đổi màu phân bón",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 2 ),
+												"10" => array( "price" => 0, "FBPrice" => 12 ),
+												"100" => array( "price" => 0, "FBPrice" => 100 )
+								),
+								"timeLimit" => "0",
+								"effect" => "0",
+								"depict" => "Đổi màu ngẩu nhiên cho phân bón!",
+								"type" => 3
+				),
+				"6" => array(
+								"tId" => 6,
+								"tName" => "Super thuốc trừ sâu",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 2 ),
+												"10" => array( "price" => 0, "FBPrice" => 12 ),
+												"100" => array( "price" => 0, "FBPrice" => 100 )
+								),
+								"timeLimit" => "0",
+								"effect" => "3",
+								"depict" => "Hiệu quả hơn thuốc trừ sâu thường nhưng chỉ có tác dụng đối với sâu lớn!",
+								"type" => 3
+				),
+				"3006" => array(
+								"tId" => 3006,
+								"tName" => "Candy Corn",
+								"list" => array(
+												"1" => array( "price" => 500, "FBPrice" => 0 ),
+												"10" => array( "price" => 4500, "FBPrice" => 0 ),
+												"100" => array( "price" => 40000, "FBPrice" => 0 )
+								),
+								"timeLimit" => "0",
+								"effect" => "0",
+								"depict" => "Tặng kẹo kể tạo quan hệ tốt với hàng xóm.",
+								"type" => 3
+				),
+				"3007" => array(
+								"tId" => 3007,
+								"tName" => "Chocolate",
+								"list" => array(
+												"1" => array( "price" => 500, "FBPrice" => 0 ),
+												"10" => array( "price" => 4500, "FBPrice" => 0 ),
+												"100" => array( "price" => 40000, "FBPrice" => 0 )
+								),
+								"timeLimit" => "0",
+								"effect" => "0",
+								"depict" => "Tặng Chocolate kể tạo quan hệ tốt với hàng xóm",
+								"type" => 3
+				),
+				"3009" => array(
+								"tId" => 3009,
+								"tName" => "Mèo đen Pumpkin",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 10 ),
+												"10" => array( "price" => 0, "FBPrice" => 60 ),
+												"100" => array( "price" => 0, "FBPrice" => 500 )
+								),
+								"timeLimit" => "0",
+								"effect" => "0",
+								"depict" => "Gửi tặng hàng xóm Mèo đen Pumpkin để đem lại may mắn.",
+								"type" => 3
+				),
+				"501" => array(
+								"tId" => 501,
+								"tName" => "Thức ăn cho chó",
+								"list" => array(
+												"1" => array( "price" => 0, "FBPrice" => 2 ),
+												"10" => array( "price" => 0, "FBPrice" => 15 ),
+												"100" => array( "price" => 0, "FBPrice" => 130 )
+								),
+								"timeLimit" => "0",
+								"effect" => "0",
+								"depict" => "Đừng để thú nuôi bị đói vì khi đó nó sẽ canh gác không tốt",
+								"type" => 3
+				)
+);
+$dogs = array(
+				"1" => array(
+								"tId" => 1,
+								"tName" => "Chó Husky",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "9", "gouliang" => "3" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 3 túi thức ăn",
+								"type" => 4
+				),
+				"2" => array(
+								"tId" => 2,
+								"tName" => "Chó Retriever vàng",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "19", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 10 túi thức ăn",
+								"type" => 4
+				),
+				"3" => array(
+								"tId" => 3,
+								"tName" => "Chó Poodle",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "29", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 15 túi thức ăn",
+								"type" => 4
+				),
+				"4" => array(
+								"tId" => 4,
+								"tName" => "Chó Dalmatian",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "39", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 20 túi thức ăn",
+								"type" => 4
+				),
+				"5" => array(
+								"tId" => 5,
+								"tName" => "Chó Trung Quốc",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "49", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 10 túi thức ăn",
+								"type" => 4
+				),
+				"6" => array(
+								"tId" => 6,
+								"tName" => "Chó Silky Úc",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "49", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 10 túi thức ăn,",
+								"type" => 4
+				),
+				"7" => array(
+								"tId" => 7,
+								"tName" => "Chó sói",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "59", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Giúp canh gác nông trại sẽ không bí hái trộm. Tặng thêm 10 túi thức ăn",
+								"type" => 4
+				),
+				"8" => array(
+								"tId" => 8,
+								"tName" => "Chó ma",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "35", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Món quà thú vị cho Halloween, canh gác nông trại giùm bạn. Tặng thêm 10 túi thức ăn",
+								"type" => 4
+				),
+				"9" => array(
+								"tId" => 9,
+								"tName" => "Cọp",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "80", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Với cọp thì không ai có thể hái trộm nông sản của bạn. Tặng thêm 10 túi thức ăn.",
+								"type" => 4
+				),
+				"10" => array(
+								"tId" => 10,
+								"tName" => "Cọp răng kiếm",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "100", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Loài cọp hung dữ đảm bảo an toàn cho nông trại. Tặng thêm 10 túi thức ăn.",
+								"type" => 4
+				),
+				"11" => array(
+								"tId" => 11,
+								"tName" => "Sư tử",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "120", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Chúa sơn lâm đích thực giúp nông trại an toàn! Tặng thêm 10 túi thức ăn.",
+								"type" => 4
+				),
+				"12" => array(
+								"tId" => 12,
+								"tName" => "Khủng long",
+								"list" => array(
+												"1" => array( "price" => "0", "FBPrice" => "150", "gouliang" => "10" )
+								),
+								"effect" => "",
+								"depict" => "Con vật từ thời tiền sử giữ nông trại là số 1. Tặng thêm 10 túi thức ăn.",
+								"type" => 4
+				)
+);
+$decorative = array(
+				"61" => array( "itemId" => "61", "itemName" => "NoName", "itemDesc" => "Autumn Scene", "itemType" => "1", "itemValidTime" => "2592000", "price" => "30888", "FBPrice" => "31", "setId" => "12" ),
+				"62" => array( "itemId" => "62", "itemName" => "Harvest Red House", "itemDesc" => "Autumn Scene", "itemType" => "2", "itemValidTime" => "2592000", "price" => "20999", "FBPrice" => "21", "setId" => "12" ),
+				"63" => array( "itemId" => "63", "itemName" => "Autumn Mulan", "itemDesc" => "Autumn Scene", "itemType" => "3", "itemValidTime" => "2592000", "price" => "12999", "FBPrice" => "13", "setId" => "12" ),
+				"64" => array( "itemId" => "64", "itemName" => "Forage nest", "itemDesc" => "Autumn Scene", "itemType" => "4", "itemValidTime" => "2592000", "price" => "9999", "FBPrice" => "10", "setId" => "12" ),
+				"56" => array( "itemId" => "56", "itemName" => "Imagine Crater", "itemDesc" => "Lunar exploration scenario", "itemType" => "1", "itemValidTime" => "2592000", "price" => "30888", "FBPrice" => "31", "setId" => "11" ),
+				"57" => array( "itemId" => "57", "itemName" => "Blue electric energy house", "itemDesc" => "Lunar exploration scenario", "itemType" => "2", "itemValidTime" => "2592000", "price" => "20999", "FBPrice" => "21", "setId" => "11" ),
+				"58" => array( "itemId" => "58", "itemName" => "Laser Defense Bar", "itemDesc" => "Lunar exploration scenario", "itemType" => "3", "itemValidTime" => "2592000", "price" => "12999", "FBPrice" => "13", "setId" => "11" ),
+				"59" => array( "itemId" => "59", "itemName" => "Radar-yong dog cabin", "itemDesc" => "Lunar exploration scenario", "itemType" => "4", "itemValidTime" => "2592000", "price" => "9999", "FBPrice" => "10", "setId" => "11" ),
+				"51" => array( "itemId" => "51", "itemName" => "Phantom of the Opera on fans", "itemDesc" => "Gothic Scene", "itemType" => "1", "itemValidTime" => "2592000", "price" => "23888", "FBPrice" => "23", "setId" => "10" ),
+				"52" => array( "itemId" => "52", "itemName" => "Magic Night of faith", "itemDesc" => "Gothic Scene", "itemType" => "2", "itemValidTime" => "2592000", "price" => "15999", "FBPrice" => "16", "setId" => "10" ),
+				"53" => array( "itemId" => "53", "itemName" => "Dark taboo", "itemDesc" => "Gothic Scene", "itemType" => "3", "itemValidTime" => "2592000", "price" => "9888", "FBPrice" => "10", "setId" => "10" ),
+				"54" => array( "itemId" => "54", "itemName" => "Behind guardian", "itemDesc" => "Gothic Scene", "itemType" => "4", "itemValidTime" => "2592000", "price" => "7888", "FBPrice" => "8", "setId" => "10" ),
+				"11" => array( "itemId" => "11", "itemName" => "Spring Windmill Background", "itemDesc" => "Netherlands sunflower family", "itemType" => "1", "itemValidTime" => "2592000", "price" => "14499", "FBPrice" => "14", "setId" => "2" ),
+				"12" => array( "itemId" => "12", "itemName" => "Green roof cottage", "itemDesc" => "Netherlands sunflower family", "itemType" => "2", "itemValidTime" => "2592000", "price" => "9999", "FBPrice" => "9", "setId" => "2" ),
+				"13" => array( "itemId" => "13", "itemName" => "Love wooden fence", "itemDesc" => "Netherlands sunflower family", "itemType" => "3", "itemValidTime" => "2592000", "price" => "5999", "FBPrice" => "5", "setId" => "2" ),
+				"14" => array( "itemId" => "14", "itemName" => "Wooden small kennel", "itemDesc" => "Netherlands sunflower family", "itemType" => "4", "itemValidTime" => "2592000", "price" => "4999", "FBPrice" => "4", "setId" => "2" ),
+				"21" => array( "itemId" => "21", "itemName" => "Warmth of spring to the background", "itemDesc" => "Warmth of spring sets", "itemType" => "1", "itemValidTime" => "2592000", "price" => "25999", "FBPrice" => "25", "setId" => "4" ),
+				"22" => array( "itemId" => "22", "itemName" => "Spring to cabin", "itemDesc" => "Warmth of spring sets", "itemType" => "2", "itemValidTime" => "2592000", "price" => "17999", "FBPrice" => "17", "setId" => "4" ),
+				"23" => array( "itemId" => "23", "itemName" => "Blocks White Fence ", "itemDesc" => "Warmth of spring sets", "itemType" => "3", "itemValidTime" => "2592000", "price" => "10999", "FBPrice" => "10", "setId" => "4" ),
+				"24" => array( "itemId" => "24", "itemName" => "Green wooden kennel", "itemDesc" => "Warmth of spring sets", "itemType" => "4", "itemValidTime" => "2592000", "price" => "8888", "FBPrice" => "8", "setId" => "4" ),
+				"31" => array( "itemId" => "31", "itemName" => "Featuring a variety of backgrounds", "itemDesc" => "Summer Beach Set", "itemType" => "1", "itemValidTime" => "2592000", "price" => "28888", "FBPrice" => "28", "setId" => "6" ),
+				"32" => array( "itemId" => "32", "itemName" => "Summer Beach Set", "itemDesc" => "Summer Beach Set", "itemType" => "2", "itemValidTime" => "2592000", "price" => "19999", "FBPrice" => "19", "setId" => "6" ),
+				"33" => array( "itemId" => "33", "itemName" => "Koshiro wave fence", "itemDesc" => "Summer Beach Set", "itemType" => "3", "itemValidTime" => "2592000", "price" => "11999", "FBPrice" => "11", "setId" => "6" ),
+				"34" => array( "itemId" => "34", "itemName" => "Waterfront small kennel", "itemDesc" => "Summer Beach Set", "itemType" => "4", "itemValidTime" => "2592000", "price" => "9999", "FBPrice" => "9", "setId" => "6" ),
+				"36" => array( "itemId" => "36", "itemName" => "Mediterranean style", "itemDesc" => "Mediterranean style suite", "itemType" => "1", "itemValidTime" => "2592000", "price" => "27888", "FBPrice" => "27", "setId" => "7" ),
+				"37" => array( "itemId" => "37", "itemName" => "Sensation Blue Castle", "itemDesc" => "Mediterranean style suite", "itemType" => "2", "itemValidTime" => "2592000", "price" => "18999", "FBPrice" => "19", "setId" => "7" ),
+				"38" => array( "itemId" => "38", "itemName" => "Pak Sha Wai Gallery", "itemDesc" => "Mediterranean style suite", "itemType" => "3", "itemValidTime" => "2592000", "price" => "11499", "FBPrice" => "11", "setId" => "7" ),
+				"39" => array( "itemId" => "39", "itemName" => "Beirut kennel", "itemDesc" => "Mediterranean style suite", "itemType" => "4", "itemValidTime" => "2592000", "price" => "9199", "FBPrice" => "9", "setId" => "7" ),
+				"41" => array( "itemId" => "41", "itemName" => "Blurred Night", "itemDesc" => "Halloween Set", "itemType" => "1", "itemValidTime" => "2592000", "price" => "20999", "FBPrice" => "21", "setId" => "8" ),
+				"42" => array( "itemId" => "42", "itemName" => "House of Frankenstein", "itemDesc" => "Halloween Set", "itemType" => "2", "itemValidTime" => "2592000", "price" => "14999", "FBPrice" => "15", "setId" => "8" ),
+				"43" => array( "itemId" => "43", "itemName" => "Rot rust column", "itemDesc" => "Halloween Set", "itemType" => "3", "itemValidTime" => "2592000", "price" => "6999", "FBPrice" => "7", "setId" => "8" ),
+				"44" => array( "itemId" => "44", "itemName" => "Jack's house", "itemDesc" => "Halloween Set", "itemType" => "4", "itemValidTime" => "2592000", "price" => "5999", "FBPrice" => "6", "setId" => "8" ),
+				"46" => array( "itemId" => "46", "itemName" => "Golden wilderness", "itemDesc" => "Golden Holiday Set", "itemType" => "1", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "40", "setId" => "9" ),
+				"47" => array( "itemId" => "47", "itemName" => "Windmill house", "itemDesc" => "Golden Holiday Set", "itemType" => "2", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "28", "setId" => "9" ),
+				"48" => array( "itemId" => "48", "itemName" => "Wood fence", "itemDesc" => "Golden Holiday Set", "itemType" => "3", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "17", "setId" => "9" ),
+				"49" => array( "itemId" => "49", "itemName" => "Timber kennel", "itemDesc" => "Golden Holiday Set", "itemType" => "4", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "14", "setId" => "9" ),
+				"1" => array( "itemId" => "1", "itemName" => "Canh nong trai", "itemDesc" => "Canh nong trai thiết lập", "itemType" => "1", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "0", "setId" => "1" ),
+				"2" => array( "itemId" => "2", "itemName" => "Leu tranh", "itemDesc" => "Leu tranh thiết lập", "itemType" => "2", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "0", "setId" => "1" ),
+				"3" => array( "itemId" => "3", "itemName" => "Hang rao", "itemDesc" => "Hang rao thiết lập", "itemType" => "3", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "0", "setId" => "1" ),
+				"4" => array( "itemId" => "4", "itemName" => "Chuong cho", "itemDesc" => "Chuong cho thiết lập", "itemType" => "4", "itemValidTime" => "2592000", "price" => "0", "FBPrice" => "0", "setId" => "1" ),
+				"76" => array( "itemId" => "76", "itemName" => "Glass Tianwaitian", "itemDesc" => "Mid-Autumn Scene", "itemType" => "1", "itemValidTime" => "2592000", "price" => "22999", "FBPrice" => "23", "setId" => "15" ),
+				"77" => array( "itemId" => "77", "itemName" => "Alice eaves and the Temple", "itemDesc" => "Mid-Autumn Scene", "itemType" => "2", "itemValidTime" => "2592000", "price" => "15999", "FBPrice" => "16", "setId" => "15" ),
+				"78" => array( "itemId" => "78", "itemName" => "Tile walls", "itemDesc" => "Mid-Autumn Scene", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7999", "FBPrice" => "8", "setId" => "15" ),
+				"79" => array( "itemId" => "79", "itemName" => "Laurel Kennel", "itemDesc" => "Mid-Autumn Scene", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6999", "FBPrice" => "7", "setId" => "15" ),
+				"66" => array( "itemId" => "66", "itemName" => "Beaulieu-side Yunshan", "itemDesc" => "Sin domain dream scenario", "itemType" => "1", "itemValidTime" => "2592000", "price" => "21999", "FBPrice" => "22", "setId" => "13" ),
+				"67" => array( "itemId" => "67", "itemName" => "Magnificent Golden Pavilion Temple", "itemDesc" => "Sin domain dream scenario", "itemType" => "2", "itemValidTime" => "2592000", "price" => "14999", "FBPrice" => "15", "setId" => "13" ),
+				"68" => array( "itemId" => "68", "itemName" => "Protect the city red cut-off bar", "itemDesc" => "Sin domain dream scenario", "itemType" => "3", "itemValidTime" => "2592000", "price" => "8999", "FBPrice" => "9", "setId" => "13" ),
+				"69" => array( "itemId" => "69", "itemName" => "Incense Dog Temple", "itemDesc" => "Sin domain dream scenario", "itemType" => "4", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "13" ),
+				"71" => array( "itemId" => "71", "itemName" => "The Wizard of Oz", "itemDesc" => "Jungle suite", "itemType" => "1", "itemValidTime" => "2592000", "price" => "23999", "FBPrice" => "24", "setId" => "14" ),
+				"72" => array( "itemId" => "72", "itemName" => "Oak wooden", "itemDesc" => "Jungle suite", "itemType" => "2", "itemValidTime" => "2592000", "price" => "16999", "FBPrice" => "17", "setId" => "14" ),
+				"73" => array( "itemId" => "73", "itemName" => "Thorns column", "itemDesc" => "Jungle suite", "itemType" => "3", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "14" ),
+				"74" => array( "itemId" => "74", "itemName" => "Small log homes", "itemDesc" => "Jungle suite", "itemType" => "4", "itemValidTime" => "2592000", "price" => "5199", "FBPrice" => "5", "setId" => "14" ),
+				"81" => array( "itemId" => "81", "itemName" => "Star Ground", "itemDesc" => "Star suite", "itemType" => "1", "itemValidTime" => "2592000", "price" => "33999", "FBPrice" => "34", "setId" => "16" ),
+				"82" => array( "itemId" => "82", "itemName" => "Extraterrestrial", "itemDesc" => "Star suite", "itemType" => "2", "itemValidTime" => "2592000", "price" => "26999", "FBPrice" => "27", "setId" => "16" ),
+				"83" => array( "itemId" => "83", "itemName" => "Form the fence", "itemDesc" => "Star suite", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "16" ),
+				"84" => array( "itemId" => "84", "itemName" => "Shell kennel", "itemDesc" => "Star suite", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "16" ),
+				"85" => array( "itemId" => "85", "itemName" => "Ice and snow", "itemDesc" => "Snow Prairie suite", "itemType" => "1", "itemValidTime" => "2592000", "price" => "33999", "FBPrice" => "34", "setId" => "17" ),
+				"86" => array( "itemId" => "86", "itemName" => "Prairie house", "itemDesc" => "Snow Prairie suite", "itemType" => "2", "itemValidTime" => "2592000", "price" => "26999", "FBPrice" => "27", "setId" => "17" ),
+				"87" => array( "itemId" => "87", "itemName" => "Wood fence", "itemDesc" => "Snow Prairie suite", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "17" ),
+				"88" => array( "itemId" => "88", "itemName" => "Villa kennel", "itemDesc" => "Snow Prairie suite", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "17" ),
+				"89" => array( "itemId" => "89", "itemName" => "Land of Peach Blossoms", "itemDesc" => "Peach Blossom Set", "itemType" => "1", "itemValidTime" => "2592000", "price" => "33999", "FBPrice" => "34", "setId" => "18" ),
+				"90" => array( "itemId" => "90", "itemName" => "Peach Blossom house", "itemDesc" => "Peach Blossom Set", "itemType" => "2", "itemValidTime" => "2592000", "price" => "26999", "FBPrice" => "27", "setId" => "18" ),
+				"91" => array( "itemId" => "91", "itemName" => "Peach Blossom wall", "itemDesc" => "Peach Blossom Set", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "18" ),
+				"92" => array( "itemId" => "92", "itemName" => "Peach Blossom Set", "itemDesc" => "Peach Blossom Set", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "18" ),
+				"93" => array( "itemId" => "93", "itemName" => "Simple in the world", "itemDesc" => "Simply the world's suite", "itemType" => "1", "itemValidTime" => "2592000", "price" => "33999", "FBPrice" => "34", "setId" => "19" ),
+				"94" => array( "itemId" => "94", "itemName" => "Simple house", "itemDesc" => "Simply the world's suite", "itemType" => "2", "itemValidTime" => "2592000", "price" => "26999", "FBPrice" => "27", "setId" => "19" ),
+				"95" => array( "itemId" => "95", "itemName" => "Simple fence", "itemDesc" => "Simply the world's suite", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "19" ),
+				"96" => array( "itemId" => "96", "itemName" => "Simple kennel", "itemDesc" => "Simply the world's suite", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "19" ),
+				"97" => array( "itemId" => "97", "itemName" => "Happy New Year", "itemDesc" => "New Year's package", "itemType" => "1", "itemValidTime" => "2592000", "price" => "33999", "FBPrice" => "34", "setId" => "20" ),
+				"98" => array( "itemId" => "98", "itemName" => "New Year's hut", "itemDesc" => "New Year's package", "itemType" => "2", "itemValidTime" => "2592000", "price" => "26999", "FBPrice" => "27", "setId" => "20" ),
+				"99" => array( "itemId" => "99", "itemName" => "New Year's wall", "itemDesc" => "New Year's package", "itemType" => "3", "itemValidTime" => "2592000", "price" => "7199", "FBPrice" => "7", "setId" => "20" ),
+				"100" => array( "itemId" => "100", "itemName" => "New Year's kennel", "itemDesc" => "New Year's package", "itemType" => "4", "itemValidTime" => "2592000", "price" => "6199", "FBPrice" => "6", "setId" => "20" )
+);
+$makenosegay = array(
+				"1" => array( "neednum" => 11, "cid" => 101, "charm" => 13 ),
+				"2" => array( "neednum" => 11, "cid" => 102, "charm" => 13 ),
+				"3" => array( "neednum" => 11, "cid" => 103, "charm" => 13 ),
+				"4" => array( "neednum" => 11, "cid" => 104, "charm" => 13 ),
+				"5" => array( "neednum" => 33, "cid" => 101, "charm" => 41 ),
+				"6" => array( "neednum" => 33, "cid" => 102, "charm" => 41 ),
+				"7" => array( "neednum" => 33, "cid" => 103, "charm" => 41 ),
+				"8" => array( "neednum" => 33, "cid" => 104, "charm" => 41 ),
+				"9" => array( "neednum" => 99, "cid" => 101, "charm" => 123 ),
+				"10" => array( "neednum" => 99, "cid" => 102, "charm" => 123 ),
+				"11" => array( "neednum" => 99, "cid" => 103, "charm" => 123 ),
+				"12" => array( "neednum" => 99, "cid" => 104, "charm" => 123 ),
+				"13" => array( "neednum" => 11, "cid" => 105, "charm" => 27 ),
+				"14" => array( "neednum" => 11, "cid" => 106, "charm" => 27 ),
+				"15" => array( "neednum" => 11, "cid" => 107, "charm" => 27 ),
+				"16" => array( "neednum" => 11, "cid" => 108, "charm" => 27 ),
+				"17" => array( "neednum" => 22, "cid" => 105, "charm" => 55 ),
+				"18" => array( "neednum" => 22, "cid" => 106, "charm" => 55 ),
+				"19" => array( "neednum" => 22, "cid" => 107, "charm" => 55 ),
+				"20" => array( "neednum" => 22, "cid" => 108, "charm" => 55 ),
+				"21" => array( "neednum" => 123, "cid" => 105, "charm" => 307 ),
+				"22" => array( "neednum" => 123, "cid" => 106, "charm" => 307 ),
+				"23" => array( "neednum" => 123, "cid" => 107, "charm" => 307 ),
+				"24" => array( "neednum" => 123, "cid" => 108, "charm" => 307 ),
+				"25" => array( "neednum" => 8, "cid" => 109, "charm" => 14 ),
+				"26" => array( "neednum" => 8, "cid" => 110, "charm" => 14 ),
+				"27" => array( "neednum" => 8, "cid" => 111, "charm" => 14 ),
+				"28" => array( "neednum" => 8, "cid" => 112, "charm" => 14 ),
+				"29" => array( "neednum" => 36, "cid" => 109, "charm" => 63 ),
+				"30" => array( "neednum" => 36, "cid" => 110, "charm" => 63 ),
+				"31" => array( "neednum" => 36, "cid" => 111, "charm" => 63 ),
+				"32" => array( "neednum" => 36, "cid" => 112, "charm" => 63 ),
+				"33" => array( "neednum" => 88, "cid" => 109, "charm" => 154 ),
+				"34" => array( "neednum" => 88, "cid" => 110, "charm" => 154 ),
+				"35" => array( "neednum" => 88, "cid" => 111, "charm" => 154 ),
+				"36" => array( "neednum" => 88, "cid" => 112, "charm" => 154 ),
+				"37" => array( "neednum" => 12, "cid" => 113, "charm" => 33 ),
+				"38" => array( "neednum" => 12, "cid" => 114, "charm" => 33 ),
+				"39" => array( "neednum" => 12, "cid" => 115, "charm" => 33 ),
+				"40" => array( "neednum" => 12, "cid" => 116, "charm" => 33 ),
+				"41" => array( "neednum" => 44, "cid" => 113, "charm" => 121 ),
+				"42" => array( "neednum" => 44, "cid" => 114, "charm" => 121 ),
+				"43" => array( "neednum" => 44, "cid" => 115, "charm" => 121 ),
+				"44" => array( "neednum" => 44, "cid" => 116, "charm" => 121 ),
+				"45" => array( "neednum" => 100, "cid" => 113, "charm" => 275 ),
+				"46" => array( "neednum" => 100, "cid" => 114, "charm" => 275 ),
+				"47" => array( "neednum" => 100, "cid" => 115, "charm" => 275 ),
+				"48" => array( "neednum" => 100, "cid" => 116, "charm" => 275 ),
+				"49" => array( "neednum" => 6, "cid" => 117, "charm" => 10 ),
+				"50" => array( "neednum" => 6, "cid" => 118, "charm" => 10 ),
+				"51" => array( "neednum" => 6, "cid" => 119, "charm" => 10 ),
+				"52" => array( "neednum" => 6, "cid" => 120, "charm" => 10 ),
+				"53" => array( "neednum" => 22, "cid" => 117, "charm" => 38 ),
+				"54" => array( "neednum" => 22, "cid" => 118, "charm" => 38 ),
+				"55" => array( "neednum" => 22, "cid" => 119, "charm" => 38 ),
+				"56" => array( "neednum" => 22, "cid" => 120, "charm" => 38 ),
+				"57" => array( "neednum" => 66, "cid" => 117, "charm" => 115 ),
+				"58" => array( "neednum" => 66, "cid" => 118, "charm" => 115 ),
+				"59" => array( "neednum" => 66, "cid" => 119, "charm" => 115 ),
+				"60" => array( "neednum" => 66, "cid" => 120, "charm" => 115 ),
+				"61" => array( "neednum" => 8, "cid" => 121, "charm" => 26 ),
+				"62" => array( "neednum" => 8, "cid" => 122, "charm" => 26 ),
+				"63" => array( "neednum" => 8, "cid" => 123, "charm" => 26 ),
+				"64" => array( "neednum" => 8, "cid" => 124, "charm" => 26 ),
+				"65" => array( "neednum" => 58, "cid" => 121, "charm" => 188 ),
+				"66" => array( "neednum" => 58, "cid" => 122, "charm" => 188 ),
+				"67" => array( "neednum" => 58, "cid" => 123, "charm" => 188 ),
+				"68" => array( "neednum" => 58, "cid" => 124, "charm" => 188 ),
+				"69" => array( "neednum" => 88, "cid" => 121, "charm" => 286 ),
+				"70" => array( "neednum" => 88, "cid" => 122, "charm" => 286 ),
+				"71" => array( "neednum" => 88, "cid" => 123, "charm" => 286 ),
+				"72" => array( "neednum" => 88, "cid" => 124, "charm" => 286 ),
+				"73" => array( "neednum" => 5, "cid" => 125, "charm" => 13 ),
+				"74" => array( "neednum" => 5, "cid" => 126, "charm" => 13 ),
+				"75" => array( "neednum" => 5, "cid" => 127, "charm" => 13 ),
+				"76" => array( "neednum" => 5, "cid" => 128, "charm" => 13 ),
+				"77" => array( "neednum" => 20, "cid" => 125, "charm" => 55 ),
+				"78" => array( "neednum" => 20, "cid" => 126, "charm" => 55 ),
+				"79" => array( "neednum" => 20, "cid" => 127, "charm" => 55 ),
+				"80" => array( "neednum" => 20, "cid" => 128, "charm" => 55 ),
+				"81" => array( "neednum" => 77, "cid" => 125, "charm" => 211 ),
+				"82" => array( "neednum" => 77, "cid" => 126, "charm" => 211 ),
+				"83" => array( "neednum" => 77, "cid" => 127, "charm" => 211 ),
+				"84" => array( "neednum" => 77, "cid" => 128, "charm" => 211 ),
+				"85" => array( "neednum" => 8, "cid" => 129, "charm" => 46 ),
+				"86" => array( "neednum" => 8, "cid" => 130, "charm" => 46 ),
+				"87" => array( "neednum" => 8, "cid" => 131, "charm" => 46 ),
+				"88" => array( "neednum" => 8, "cid" => 132, "charm" => 46 ),
+				"89" => array( "neednum" => 33, "cid" => 129, "charm" => 189 ),
+				"90" => array( "neednum" => 33, "cid" => 130, "charm" => 189 ),
+				"91" => array( "neednum" => 33, "cid" => 131, "charm" => 189 ),
+				"92" => array( "neednum" => 33, "cid" => 132, "charm" => 189 ),
+				"93" => array( "neednum" => 77, "cid" => 129, "charm" => 442 ),
+				"94" => array( "neednum" => 77, "cid" => 130, "charm" => 442 ),
+				"95" => array( "neednum" => 77, "cid" => 131, "charm" => 365 ),
+				"96" => array( "neednum" => 77, "cid" => 132, "charm" => 365 ),
+				"2001" => array( "neednum" => 77, "cid" => 2001, "charm" => 365 ),
+				"2002" => array( "neednum" => 77, "cid" => 2002, "charm" => 365 ),
+				"2003" => array( "neednum" => 77, "cid" => 2003, "charm" => 365 ),
+				"3001" => array( "neednum" => 77, "cid" => 3001, "charm" => 365 ),
+				"3002" => array( "neednum" => 77, "cid" => 3002, "charm" => 365 ),
+				"3003" => array( "neednum" => 77, "cid" => 3003, "charm" => 365 ),
+				"3004" => array( "neednum" => 77, "cid" => 3004, "charm" => 365 ),
+				"3005" => array( "neednum" => 77, "cid" => 3005, "charm" => 365 ),
+				"3006" => array( "neednum" => 77, "cid" => 3006, "charm" => 365 ),
+				"3007" => array( "neednum" => 77, "cid" => 3007, "charm" => 365 ),
+				"3008" => array( "neednum" => 77, "cid" => 3008, "charm" => 365 ),
+				"3009" => array( "neednum" => 77, "cid" => 3009, "charm" => 365 )
+);
+
+?>

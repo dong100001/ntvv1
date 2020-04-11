@@ -1,0 +1,80 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+<h2 class="title"><img src="image/app/blog.gif" />Blog</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="cp.php?ac=blog"><span>Viết blog</span></a></li>
+		<li class="active"><a href="cp.php?ac=import"><span>Nhập blog</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=blog&view=me"><span>Blog của tôi</span></a></li>
+	</ul>
+</div>
+
+<!--{if $results}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+<caption>
+	<h2><!--{if $incount}-->Kết quả<!--{else}-->Lựa chọn blog để nhập<!--{/if}--></h2>
+	<!--{if $paycredit}-->
+	<p>Số tiền cần thiết: $paycredit Gyn (hiện tại bạn có <a href="cp.php?ac=credit">$space[credit]</a>)</p>
+	<!--{/if}-->
+</caption>
+
+<!--{loop $results $key $value}-->
+<tr>
+	<td><!--{if !$incount}--><input type="checkbox" name="ids[]" value="$key"><!--{/if}--> <!--{if $value[blogid]}--><a href="space.php?uid=$space[uid]&do=blog&id=$value[blogid]" target="_blank">$value[title]</a><!--{else}-->$value[title]<!--{/if}--></td>
+	<td>$value[dateCreated]</td>
+	<!--{if $incount}--><td>$value[status]</td><!--{/if}-->
+</tr>
+<!--{/loop}-->
+
+<!--{if !$incount}-->
+<tr>
+	<td colspan="3">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">Tất cả
+	<input type="submit" name="import2submit" value="Import" class="submit" />
+	<input type="submit" name="resubmit" value="Reset" class="submit" />
+	</td>
+</tr>
+<!--{/if}-->
+
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+<!--{else}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>Hướng dẫn</h2>
+		<p>Hỗ trợ dạng file XML-RPC được định dạng MetaWeblog API<br />
+		Địa chỉ: {$siteurl}xmlrpc.php<br />
+		
+		Bạn có thể chuyển dữ liệu blog từ 1 site khác về Nhà Tui thật dể dàng.<br/>
+		Điền địa chỉ blog cũ dạng xmlrpc.php để chuyễn dữ liệu. Chi tiết liên hệ quản trị viên.
+		</p>
+	</caption>
+	<!--{if $paycredit}-->
+	<tr><th width="120">Số tiền cần thiết </th><td>là: $paycredit gyn (Hiện tại bạn có <a href="cp.php?ac=credit">$space[credit]</a>)</td></tr>
+	<!--{/if}-->
+	<tr><th width="120">Địa chỉ API blog cũ</th><td><input type="text" class="t_input" name="url" value="http://" size="40" />
+		<br />Ví dụ http://www.gohooh.com/nhatui/xmlrpc.php 
+		</td></tr>
+	<tr><th>User Name</th><td><input type="text" class="t_input" name="username" value="" /></td></tr>
+	<tr><th>Mật khẩu</th><td><input type="password" class="t_input" name="password" value="" /></td></tr>
+	<tr><th>Chỉ nhập các entry</th><td><!--{eval echo $_SCONFIG['importnum'];}--></td></tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="importsubmit" value="Bắt đầu" class="submit" /></td></tr>
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+	
+
+<!--{/if}-->
+
+<!--{template footer}-->

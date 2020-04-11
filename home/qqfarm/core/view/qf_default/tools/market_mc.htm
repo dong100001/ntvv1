@@ -1,0 +1,82 @@
+<!--{tpl inc_header}-->
+
+<div id="main">
+	<div class="menu">
+		<!--{php $actives[$mod_name.'_'.$type] = ' class="actives"';}-->
+		<a{:$actives[market_nc_index]} href="tools.php?mod=market&act=nc&type=index">Chợ trồng trọt</a>
+		<a{:$actives[market_nc_myitem]} href="tools.php?mod=market&act=nc&type=myitem">Item của tôi</a>
+		<a{:$actives[market_nc_myproduct]} href="tools.php?mod=market&act=nc&type=myproduct">San phẩm trồng trọt</a>
+		<a{:$actives[market_mc_index]} href="tools.php?mod=market&act=mc&type=index">Chỡ chăn nuôi</a>
+		<a{:$actives[market_mc_myproduct]} href="tools.php?mod=market&act=mc&type=myproduct">Sản phẩm chăn nuôi</a>
+	</div>
+	<div id="help_tabs"></div>
+	<div class="list">
+		<table>
+			<tr style="font-size:12px; height:20px">
+				<th width="80">Mã Giao dịch</th>
+				<th width="50">Phân loại</th>
+				<th width="80">Tên</th>
+				<th width="30">Kiểu</th>
+				<th width="40">Hạng mục</th>
+				<th width="100">Đơn vị Chăn nuôi</th>
+				<th width="100">Đơn vị bán</th>
+				<th width="70">Số lượng</th>
+				<th width="80">Người bán</th>
+				<th width="100">Số lượng</th>
+				<th width="100">Hành động</th>
+				<th width="100"><font color="#ff0000">Giá</font></th>
+			</tr>
+	<!--{foreach $list as $key=>$value}-->
+			<tr style=" font-size:12px; height:20px">
+				<td>{:$value[id]}</td>
+				<td><!--{if $value[cid] > 10000}--><font color="#0000ff">Toàn bộ</font><!--{else}--><font color="#ff00ff"><b>Sản phẩm</b></font><!--{/if}--></td>
+				<td>{:$value[cname]}</td>
+				<!--{if $value[cid] > 10000}-->
+				<td><img src="module/mc/farm/icon/a{:$value[cid]-10000}.png" height="24px" /></td> 
+				<!--{else}-->
+				<td><img src="module/mc/farm/icon/p{:$value[cid]}.png" height="24px" /></td>
+				<!--{/if}-->
+				<td><!--{if $value[cid] > 10000 }-->{:$animaltype[$value[cid]-10000]['cLevel']}<!--{else}-->{:$animaltype[$value[cid]]['cLevel']}<!--{/if}--></td>
+				<td><!--{if $value[cid] > 10000 }-->{:$animaltype[$value[cid]-10000]['productprice']} Vàng<!--{else}-->{:$animaltype[$value[cid]]['byproductprice']} Vàng<!--{/if}--></td>
+				<td><font color="#ff0000">{:$value[cprice]}</font> Vàng</td>
+				<td><font color="#ff00ff">{:$value[cnumber]}</font> Đơn vị</td>
+				<td><font color="#0000ff">{:$value[username]}</font></td>
+				<td><input type='text' id='number{:$value[id]}' size='10' value="{:$value[cnumber]}"/></td>
+				<!--{if $_QFG['uid'] == $value[selluid]}-->
+				<td><input type="button" onclick='request("tools.php?mod=market&act=mc&type=cancelitem&id={:$value[id]}", "state{:$value[id]}");' value='Hủy' /><span id="state{:$value[id]}"></span></td>
+				<!--{else}-->
+				<td><input type="button" onclick='request("tools.php?mod=market&act=mc&type=buyitem&id={:$value[id]}&number="+SQuery("#number{:$value[id]}").value, "state{:$value[id]}");' value='Mua' /><span id="state{:$value[id]}"></span></td>
+				<!--{/if}-->
+		<!--{if $value[cid] > 10000 }-->
+			<!--{if $animaltype[$value[cid]-10000]['productprice']-$value[cprice]<>0}-->
+				<!--{if $animaltype[$value[cid]-10000]['productprice']-$value[cprice]>0}-->
+				<td>跌<font color=#0000ff>{:$animaltype[$value[cid]-10000]['productprice']-$value[cprice]}</font>金币</td> 
+				<!--{else}-->
+				<td>涨<font color="#ff0000">{:$value[cprice]-$animaltype[$value[cid]-10000]['productprice']}</font>金币</td>
+				<!--{/if}-->
+			<!--{else}-->
+				<td><font color="#ff00ff">价钱一样</font></td> 
+			<!--{/if}-->
+		<!--{else}-->
+			<!--{if $animaltype[$value[cid]]['byproductprice']-$value[cprice]<>0}-->
+				<!--{if $animaltype[$value[cid]]['byproductprice']-$value[cprice]>0}-->
+				<td>跌<font color="#0000ff">{:$animaltype[$value[cid]]['byproductprice']-$value[cprice]}</font>金币</td> 
+				<!--{else}-->
+				<td>涨<font color="#ff0000">{:$value[cprice]-$animaltype[$value[cid]]['byproductprice']}</font>金币</td> 
+				<!--{/if}-->
+			<!--{else}-->
+				<td><font color="#ff00ff">价钱一样</font></td> 
+			<!--{/if}-->
+		<!--{/if}-->
+			</tr>
+	<!--{/foreach}-->
+		</table>
+	</div>
+<div id="pages" class="multiPage"></div>
+</div>
+
+<script type="text/javascript">
+	$('#pages').innerHTML = multiPage({pid:"{:$pid}",purl:"{:$purl}",psize:"{:$psize}",count:"{:$count}"});
+</script>
+
+<!--{tpl inc_footer}-->

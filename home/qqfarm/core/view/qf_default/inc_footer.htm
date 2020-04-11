@@ -1,0 +1,29 @@
+</div>
+
+
+<img src="index.php?mod=cron" style="width:0;height:0;" />
+
+<script type="text/javascript">
+
+try {
+	if(window.parent.curQFWindow == 'myfarm_full') {
+		$('#info').style.display = 'none';
+	}
+} catch(e) {
+}
+
+try {
+
+	$('#qfversion', window.parent.document).style.display = 'block';
+	$('#qfversion', window.parent.document).innerHTML = '<a href="http://www.gohooh.com/" target="blank">QFarm GoHooH Gold 1</a>';
+
+	var viewPlayer = "{:$_QSC['view']['player']}";
+	if(viewPlayer > 0) {
+		$('#qfplayer', window.parent.document).style.display = 'block';
+	}
+} catch(e) {
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!--Game siêu thị bạn bè được phát triển bởi GoHooH.CoM. Vui lòng giữ bản quyền Việt hóa của GoHooH.CoM. Cám ơn bạn đã sử dụng sản phẩm của GoHooH.CoM-->
+<!--{eval $_TPL['titles'] = array('Ủy quyền game Siêu thị Goer - Phát triển bởi GoHooH.CoM');}-->
+<!--{template header}-->
+
+<div class="c_header a_header">
+	<a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],small)}--></a>
+	<h1>Giấy phép</h1>
+	<span class="spacelink"><a href="space.php?uid=$space[uid]">$space[username]</a></span>
+</div>
+
+<div class="tabs_header">
+        <ul class="tabs">
+                <li class=active><a href="#">Ủy quyền</a></li>
+        </ul>
+</div>
+
+<div class="c_form" style="padding: 30px 30px 30px 30px;">
+
+<!--{if $space[groupid]==1}-->
+		<form action="sieuthigoer.php?com=license" method="POST">
+		<table cellpadding=5 cellspacing=0>
+		<tr>
+			<td>
+				Plugins
+			</td>
+			<td>
+				Giấy phép
+			</td>
+		</tr>
+		<!--{loop $licenses $value}-->
+		<tr>
+			<td>
+				<input type="hidden" name="id[{$value[id]}]" value="$value[id]" size=30>
+				<input type="text" name="name[{$value[id]}]" value="$value[name]" size=30>
+			</td>
+			<td>
+				<input type="text" name="key[{$value[id]}]" value="$value[key]" size=50>
+			</td>
+		</tr>
+		<!--{/loop}-->
+		<tr>
+			<td>
+				<input type="text" name="newname" value="" size=30>
+			</td>
+			<td>
+				<input type="text" name="newkey" value="" size=50>
+			</td>
+		</tr>
+		</table>
+		<br>
+		 
+		 <input type=submit name="submitsetup" value="OK" class="submit">
+
+		</form>
+<!--{else}-->
+Vui lòng đăng nhập bằng tài khoản quản trị viên
+<!--{/if}-->
+</div>
+
+
+<!--{template footer}-->

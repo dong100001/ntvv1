@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /home
+RewriteRule ^(space|network)\-(.+)\.html$ $1.php?rewrite=$2 [L]
+RewriteRule ^(space|network)\.html$ $1.php [L]
+RewriteRule ^([a-zA-z0-9]+)$ space.php?username=$1 [L]

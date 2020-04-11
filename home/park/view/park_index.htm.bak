@@ -1,0 +1,212 @@
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<!--{if $_GET['ac'] == 'index'}-->
+<div class=div_layout>
+	<div class=left>
+			<div id=app_park>
+				<div id=parkid overflow="hidden" height="250" width="570">
+				<SCRIPT type=text/javascript>
+					park_swf = new SWFObject("car_stop.swf", "park_swf", "570", "250", "5.0.0", "");
+					park_swf.addParam("allowScriptAccess", "never");
+					park_swf.addParam("myjs", "_id_70b25405fae49a48ad63063ad2aea5d7");
+					park_swf.addParam("wmode", "transparent");
+					park_swf.addVariable("my_local_connection", "");
+					park_swf.addVariable("my_myjs_connection", "");
+					park_swf.addVariable("my_sig_user", "$_SGLOBAL['supe_uid']");
+					park_swf.addVariable("my_sig_session_key", "");
+					park_swf.addVariable("my_sig_profile", "");
+					park_swf.addVariable("my_sig_time", "");
+					park_swf.addVariable("my_sig_expires", "");
+					park_swf.addVariable("my_sig_added", "0");
+					park_swf.addVariable("my_sig_api_key", "");
+					park_swf.addVariable("my_sig", "");
+					park_swf.addVariable("swf_id", "park_swf");
+					park_swf.addVariable("my_sig_uId", "$_SGLOBAL['supe_uid']");
+					park_swf.addVariable("my_sig_sId", "100");
+					park_swf.addVariable("my_sig_time", "");
+					park_swf.addVariable("my_sig_sessionId", "");
+					park_swf.addVariable("my_sig_friends", "");
+					park_swf.addVariable("my_sig_added", "1");
+					park_swf.addVariable("my_sig_prefix", "");
+					park_swf.addVariable("my_sig_appId", "");
+					park_swf.addVariable("my_sig_in_canvas", "1");
+					park_swf.addVariable("my_sig_v", "0.1");
+					park_swf.addVariable("my_sig_key", "");
+					park_swf.addVariable("fId", "$fId");
+					park_swf.addVariable("friendsId", "");
+					park_swf.addVariable("uIcon", "park/images/no_icon.jpg");
+					park_swf.fallback_js_fcn = spawn_flash_update_dialog;
+					park_swf.fallback_html = "\x3cdiv class=\x22flash_fallback\x22\x3e\x3cdiv class=\x22flash_fallback_border\x22\x3e\x3cdiv class=\x22flash_fallback_header\x22\x3eUpgrade your Flash player\x3c/div\x3e\x3cdiv class=\x22flash_fallback_explanation\x22 id=\x22flash_fallback_488580aed36791748257182\x22\x3eYou must install the latest Adobe Flash Player.\x3c/div\x3e\x3cdiv class=\x22flash_fallback_button\x22\x3e\x3cinput type=\x22button\x22 class=\x22inputbutton\x22 onclick=\x22this.disabled=true;getFlashPlayer();\x22 id=\x22\x22 name=\x22\x22 value=\x22Download\x22 /\x3e\x3c/div\x3e\x3c/div\x3e\x3c/div\x3e";
+					park_swf.write("parkid");
+				</SCRIPT>
+				</div>			
+			</div>
+			<div class=mycar>
+				<div class=title>
+               <!--{if empty($_GET[fId]) }-->				
+				     My cars 
+				<!--{else}-->  
+				   {$fusername}'s cars				 
+					<a style="float:right; margin-top:-22px;" href="parkApp.php?ac=index">Back</a>					 
+				<!--{/if}-->
+				  
+				</div>
+			<!--{loop $myCarInfo $value}-->
+				<div class=info>
+					<div style="WIDTH: 220px; TEXT-ALIGN: center">
+					<A style="DISPLAY: block; BACKGROUND: url($value[carimgbig]) no-repeat left top; HEIGHT: 120px; TEXT-DECORATION: none" onclick='' href="parkApp.php?ac=index&fId={$value[parkWhoID]}"></A>
+					</div>
+					<div style="WIDTH: 180px">
+					<P style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px; HEIGHT: 25px">
+					<IMG src="$value[carsign]" align=absMiddle> $value[cardesc]</P>
+					<P>$value[parkStatus]</P>
+					<P>Timer: $value[parktime]</P>
+					<P>$value[parkCredit]</P>
+					</div>
+					<div class=info_part_3>
+				<!--{if empty($_GET[fId]) }-->	
+					<P><A href="parkApp.php?ac=market" target=_top >Shopping</A></P>
+				<!--{if $value[isSale] }-->		
+					<P><A style="color:#FF0000" href="cpPark.php?ac=park&op=stopsale&carid={$value[carid]}" target=_top id="c_sale_$value[carid]" ">STOPPED</A></P>				
+				<!--{else}-->						
+					<P><A  href="cpPark.php?ac=park&op=sale&carid={$value[carid]}" target=_top id="c_sale_$value[carid]" ">40% discount</A></P>							
+				<!--{/if}-->
+					<P><A  href="cpPark.php?ac=park&op=saleout&carid={$value[carid]}" target=_top id="c_saleout_$value[carid]"">Half-price</A></P>							
+					<P><A href="cpPark.php?ac=park&op=sendfriend&carid={$value[carid]}" target=_top id="c_edit_$value[carid]"">Gift friend</A></P>
+<!--					<P><A href="cpPark.php?ac=park&op=away&carid={$value[carid]}" target=_top id="c_edit_$value[carid]" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Scrap It</A></P>
+					<P><A href="cpPark.php?ac=park&op=team&carid={$value[carid]}" target=_top id="c_edit_$value[carid]" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Join Motorcade</A></P>
+					<P><A href="cpPark.php?ac=park&op=race&carid={$value[carid]}" target=_top id="c_edit_$value[carid]" onclick="ajaxmenu(event, this.id, 99999, '', -1)">Race</A></P>-->
+				<!--{/if}-->					
+					</div>
+				</div>
+			  <!--{/loop}-->  
+			</div>
+		<div>
+			<div class="menucar">
+				<ul>
+				  <LI><A class=selected id=parklog  onclick='get_park_info(1)'   href="javascript:void(0)">My Logs</A></LI>
+				  <LI><A id=friend_parklog   onclick='get_park_info(2)'   href="javascript:void(0)">Friends' Logs</A></LI>
+				  <LI><A id=myparklog   onclick='get_park_info(3)'  href="javascript:void(0)">Park Status</A><!--<li><a id="onroad" href="#" onclick="myParkLog('onroad')">Road Info</a></li>--></LI>
+				</ul>
+			</div>
+			<div id=text >
+				<ul>
+		<!--{if $feedlist}-->						
+				<!--{loop $feedlist $value}-->
+					  <li style="CLEAR: both; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; PADDING-TOP: 5px; BORDER-BOTTOM: #f0f0f0 1px dotted">
+						  <label  style="PADDING-LEFT: 20px; BACKGROUND: url($value[icon_image]) no-repeat left center; FLOAT: left; WIDTH: 450px">$value[title_template]
+						  </label> 
+						  <label  style="FLOAT: right; COLOR: gray">
+							 <!--{if empty($notime)}--> <span class="time"><!--{date('m-d H:i',$value[dateline],1)}--></span><!--{/if}-->
+						
+						  </label>				
+					  </li>
+				<!--{/loop}-->
+		<!--{/if}-->				  
+				</ul>
+			</div>
+		
+		</div>
+	</div>
+	<div class=right>
+			<div class=mycash>
+				<div class=pic>
+				<!--{avatar($space[uid],big)}-->
+								    <a href="space.php?uid=$space[uid]"  title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a> - Parking Gold:$P_Credit
+				</div>
+			</div>
+		<div>
+			<div style="PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-SIZE: 14px; BACKGROUND: #ccc; PADDING-BOTTOM: 2px; PADDING-TOP: 2px">Friends' Park</div>
+			<div class=friendlist><!-- div><input type="text"></div -->
+				<div class=list>
+					<ul>
+                  <!--{loop $friendList $value}-->					
+					  <li>
+					    <label class=lname><A  onclick='' href="parkApp.php?ac=index&fId=$value[uid]">$value[username]</A></label>
+						<label class=lpark>
+						  <A title=$value[username] href="parkApp.php?ac=index&fId={$value[uid]}" target=_top><IMG src="park/images/car.gif"></A>
+						  <A title=$value[username] href="space.php?uid={$value[uid]}"><IMG  src="park/images/home.gif"></A>
+						</label>
+					    <label style="FLOAT: right">
+          				  <IMG title=$value[username] style="WIDTH: 23px; HEIGHT: 11px" src="park/images/{$value[parkNum]}_park.gif">
+					    </label>
+					  </li>
+				<!--{/loop}-->
+					</ul>
+				</div>
+			</div>
+		 </div>
+	</div>
+</div>
+
+<!--{/if}-->
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">TOP</a>
+</div>
+<script>
+function send_request(url) {
+http_request = false;
+
+if (window.XMLHttpRequest) { 
+http_request = new XMLHttpRequest();
+if (http_request.overrideMimeType) {
+http_request.overrideMimeType('text/xml');
+}
+} else if (window.ActiveXObject) { 
+try {
+http_request = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+try {
+http_request = new ActiveXObject("Microsoft.XMLHTTP");
+} catch (e) {}
+}
+}
+if (!http_request) {
+alert('Can not create XMLHttpRequest object!');
+return false;
+}
+
+http_request.onreadystatechange = processRequest;
+http_request.open('GET', url, true);
+http_request.send(null);
+
+}
+
+
+//处理返回信息
+function processRequest() {
+
+	if (http_request.readyState == 1) {
+	  document.getElementById('text').innerHTML= "Download data, please wait.........."
+	}
+	if (http_request.readyState == 4) {
+		if (http_request.status == 200) {
+			document.getElementById('text').innerHTML= http_request.responseText;
+		}
+	}
+}
+
+
+function get_park_info(param1){
+
+	  document.getElementById('parklog').className="";
+	  document.getElementById('friend_parklog').className="";
+	  document.getElementById('myparklog').className="";
+	    
+	if(param1==1){
+	  document.getElementById('parklog').className="selected";
+  	  send_request("park/jsApp.php?op=1&time="+Math.random());
+	}
+	if(param1==2){
+	  document.getElementById('friend_parklog').className="selected";
+  	  send_request("park/jsApp.php?op=2&time="+Math.random());	  
+	}
+	if(param1==3){
+	  document.getElementById('myparklog').className="selected";
+  	  send_request("park/jsApp.php?op=3&time="+Math.random());	  
+	}
+	
+	
+}
+</script>	
+<!--{template footer}-->

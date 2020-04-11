@@ -1,0 +1,41 @@
+
+<!--{template happyfarm/view/admin/header}-->
+
+<div class="bdrcontent">
+<form id="myform" name="myform" method="post" action="">
+	<table width="100%" cellpadding=5 cellspacing=0>
+		<tr>
+			<td width="80px">Tên đăng nhập</td>
+			<td>$allvalue[username] <!--{if $allvalue[truename]}-->($allvalue[truename])<!--{/if}--></td>
+		</tr>
+		<tr>
+			<td width="80px">VIP</td>
+			<td><input name="vip" type="text" class="text1" value="$allvalue[vip]" /></td>
+		</tr>
+		<tr>
+			<td width="80px">EXP nông trại</td>
+			<td><input name="nc_exp" type="text" class="text1" value="$ncvalue[exp]" /> $ncvalue['expexp'] điểm</td>
+		</tr>
+		<tr>
+			<td width="80px">EXP trang trại</td>
+			<td><input name="mc_exp" type="text" class="text1" value="$mcvalue[exp]" /> $mcvalue['expexp'] điểm</td>
+		</tr>
+		<tr>
+			<td width="80px">Đất trồng</td>
+			<td><input name="nc_reclaim" type="text" class="text1" value="$ncvalue[reclaim]" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Tiền</td>
+			<td><input name="money" type="text" class="text1" value="$allvalue[money]" /></td>
+		</tr>
+		<tr>
+			<td width="80px">Gee</td>
+			<td><input name="YB" type="text" class="text1" value="$allvalue[YB]" /></td>
+		</tr>
+	</table>
+	<input type="button" onclick='request("admin.php?do=edit&op=save&id={$id}","state",$.getForm("#myform", true));' value="Lưu" />
+	<span id="state"></span>
+</form>
+</div>
+
+<!--{template happyfarm/view/admin/footer}-->

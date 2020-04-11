@@ -1,0 +1,46 @@
+/* ͶƱ */
+ul.slave { margin:3px 0px; border-top:1px solid #2682d5 }
+ul.slave li { padding: 0 10px 2px 0;}
+ul.slave li label { clear:both; float:left; display: block; padding-top:0px; }
+
+.slave_block { overflow: hidden; zoom: 1;}
+	.slave_block span {}
+		.slave_block span p { padding-left: 25px; color:#999;}
+		.slave_block span em { font-style: normal; font-size: 11px; color:#999;}
+	.slave_block span.left_col{ float:left; width: 500px;  padding: 5px 5px 5px 5px;}
+		.slave_block span.left_col h1{ font-style: normal; font-size: 15px; color: #2682d5;}
+		.slave_block span.left_col h2{ font-style: normal; font-size: 15px; color: #2682d5; border-bottom: 1px solid #2682d5;}
+	.slave_block span.right_col{ float:right; width: 260px; padding: 5px 5px 5px 5px;}
+		.slave_block span.right_col em { padding-left: 2px; color:#999;}
+		.slave_block span.right_col h1{ font-style: normal; font-size: 15px; color: #2682d5;}
+
+.slavetitle { padding: 5px; line-height: 12px; border-top: 1px solid #2782D6; border-bottom: 1px solid #DDD; background: #FCF9E6; }
+
+.slave_list { padding: 10px; }
+	.slave_list li { margin-bottom: 6px; padding: 10px; border: 1px solid #CCC; background: #FFF; overflow: hidden; zoom: 1; }
+		.slave_list .avatar { float: left; margin-right: 10px; width: 100px; }
+		.slave_list table { float: left; width: 150px; }
+			.slave_list caption { padding-left: 1.3em; background: url(image/online.gif) no-repeat 0 -38px; }
+				.slave_list .online caption { background-position: 0 2px; }
+		.slave_list ul { float: right; width: 7em; }
+			.slave_list li li { margin-bottom: 0; padding: 0; border-width: 0 0 1px; }
+
+.slaveblocklink { display: block; margin:0 0 0 0px; padding:2px 5px 2px 0px; }
+.slaveblocklink a:hover { background: #2782D6; color: #FFF; text-decoration: none; }
+
+.marketsortlink { display: block; padding:5px 5px 20px 5px; }
+.marketsortlink a { display: block; padding-left: 0.5em; line-height: 2em; width:150px;}
+	.marketsortlink a:hover { background: #2782D6; color: #FFF; text-decoration: none;  width:150px;}
+	.marketsortlink li {width: 150px; margin:3px 0 3px 0;}
+	.marketsortlink li.active {border: 1px solid #888;}
+
+.wide { float: left; margin: 0 20px 0 0; width: 560px; overflow: hidden; }
+.narrow { float: right; padding: 0; width: 230px; overflow: hidden; }
+    #sidebar .ye_r_t { margin: 0 0 20px; }
+.box { padding-bottom: 1em; }
+.box_action { position: relative; height: 1.8em; border-top: 1px solid #DDD; background: #F5F5F5; color: #666; line-height: 1.8em; text-indent: 0.8em; }
+.box_action .action { position: absolute; top: 0; right: 0.8em; }
+.box_action .r_option { padding-right: 0.8em; }
+.box h3 { padding: 0 8px; border-top: 1px solid #B0B0B0; background: #F8F3CE; font-size: 1em; line-height: 2em; }
+.box h3 .float_del { position: relative; right: 6px; }
+.box_content { padding: 0.8em 0 0; }

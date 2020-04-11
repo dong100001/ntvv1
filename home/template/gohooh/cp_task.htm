@@ -1,0 +1,235 @@
+﻿<!--Code Ucenter Home GoHooH Full - Full mod - full game - full skin hack by GoHooH.CoM-->
+<!--More template, game, mod, plugins for Discuz!, Ucenter Home at http://www.gohooh.com/forum/-->
+<!--{eval $_TPL['titles'] = array('Nhiệm vụ nhận thưởng, kiếm tiền trên mạng xã hội Nhà Tui - GoHooH.Com');}-->
+<!--{template header}-->
+<!--Việt hóa bởi http://www.gohooh.com - hỗ trợ Ucenter Home số 1 Việt Nam-->
+
+
+<h2 class="title"><img src="image/icon/task.gif">Nhiệm vụ</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[task]><a href="cp.php?ac=task"><span>Chờ duyệt</span></a></li>
+		<li$actives[done]><a href="cp.php?ac=task&view=done"><span>Hoàn thành</span></a></li>
+		<!--{if $task}-->
+		<li$actives[do]><a href="cp.php?ac=task&taskid=$task[taskid]"><span>Xem nhiệm vụ</span></a></li>
+		<!--{/if}-->
+	</ul>
+</div>
+
+<!--{if $task}-->
+
+<!--{if $_GET['view']=='member'}-->
+
+	<div class="h_status">
+		Thành viên đã hoàn thành nhiệm vụ
+	</div>
+	<!--{template space_list}-->
+
+<!--{else}-->
+
+<div id="content">
+	<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+		<table cellspacing="0" cellpadding="0" width="100%" class="task_notice">
+			<tr>
+				<td width="70"><img src="$task[image]" width="64" height="64" alt="Icon" /></td>
+				<td>
+					<h3>Điểm thưởng cho nhiệm vụ $task[name]</h3>
+					<!--{if $task[starttime]}--><p>Bắt đầu: <!--{date('d-m-Y H:i',$task[starttime])}--></p><!--{/if}-->
+					<!--{if $task[endtime]}--><p>Kết thúc: <!--{date('d-m-Y H:i',$task[endtime])}--></p><!--{/if}-->
+					<p>$task[note]</p>
+					<!--{if $task[credit]}--><p>Điểm thưởng: <strong class="num">$task[credit]</strong></p><!--{/if}-->
+				</td>
+			</tr>
+		</table>
+	</div></div></div></div>
+				
+	<div style="padding-top:20px;">
+	<!--{if $task['done']}-->
+		
+		
+
+		<!--{if $task['ignore']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Nhiệm vụ dỡ dang</h2>
+					<p>Nhiệm vụ này chưa thực hiện xong nên không có điểm thưởng..</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task&taskid=$task[taskid]&op=redo" class="submit">Bắt đầu lại</a></td>
+				</tr>
+			</table>
+		<!--{elseif $_SGLOBAL['task_maxnum']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Giới hạn tham gia</h2>
+					<p>Số lượng thành viên tham gia nhiệm vụ đã đầy. Hãy quay lại sau để hoàn thành nhiệm vụ và nhận tiền thưởng!</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task" class="submit">Nhiệm vụ khác</a></td>
+				</tr>
+			</table>
+		<!--{elseif $_SGLOBAL['task_available']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Nhiệm vụ thất bại</h2>
+					<p>Phần thưởng nhiệm vụ đã kết thúc.</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task" class="submit">Nhiệm vụ khác</a></td>
+				</tr>
+			</table>
+		<!--{else}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Nhiệm vụ hoàn thành</h2>
+					<p>Chúc mừng bạn đã hoàn thành nhiệm vụ.</p>
+				</caption>
+				<tr>
+					<td>
+					<!--{if $task[credit]}--><p style="color:red;font-size:14px;padding:0 0 5px 0;font-weight:bold;">Điểm thưởng $task[credit] điểm. Bạn đang có $space[credit] điểm! </p><!--{/if}-->
+					<p>Thời gian hoàn thành: <!--{date('d-m H:i',$task[dateline],1)}--></p>
+					<p>Thành viên tham gia:<a href="cp.php?ac=task&taskid=$task[taskid]&view=member">$task[num]</a></p>
+					</td>
+				</tr>
+			</table>
+			<!--{if $task[result]}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Nhiệm vụ thưởng</h2>
+				</caption>
+				<tr>
+					<td>$task[result]</td>
+				</tr>
+			</table>
+			<!--{/if}-->
+		<!--{/if}-->
+	<!--{else}-->
+			
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>Hướng dẫn</h2>
+					<p>Vui lòng đọc kỹ để thực hiện nhiệm vụ <br /><b>Hoàn thành nhiệm vụ bạn sẽ được nhận thưởng.</b> </p>
+				</caption>
+				<tr>
+					<td class="article l_status">$task[guide]</td>
+				</tr>
+			</table><br>
+			
+			<!--{if $_GET['view']=='result'}-->
+			<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+				<div class="task_notice">Chú ý: Hãy làm theo hướng dẫn trên để hoàn thành nhiệm vu. Click vào link ở trên để thực hiện nhiệm vụ.</div>
+			</div></div></div></div>
+			<!--{/if}-->
+				
+			<div style="text-align:center;padding:10px;">
+				<a href="cp.php?ac=task&taskid=$task[taskid]&view=result" class="submit">Nhận nhiệm vụ</a>
+				<a href="cp.php?ac=task&taskid=$task[taskid]&op=ignore" class="button">Bỏ qua</a>
+			</div>
+			
+	<!--{/if}-->
+	</div>
+	
+</div>
+
+<div id="sidebar">
+	<div class="sidebox">
+		<h2 class="title">
+			<a href="cp.php?ac=task&taskid=$taskid&view=member" class="r_option">Tất cả</a>
+			 Thành viên hoàn thành
+		</h2>
+		<ul class="avatar_list">
+			<!--{loop $taskspacelist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+				<p class="gray"><!--{date('j ngày n tháng',$value[dateline],1)}--></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+
+<!--{/if}-->
+
+<!--{else}-->
+
+<div id="content">
+
+	<div class="h_status">
+		Để thực hiện nhiệm vụ này bạn cần thực hiên các nhiệm vụ điều kiện.
+	</div>
+
+
+	<!--{if $_GET['view'] != 'done'}-->
+	<div class="task_percent">
+		<div class="percent" style="width: {$done_per}%;">&nbsp;</div>
+		<div class="label">Đã hoàn thành {$done_per}% nhiệm vụ</div>
+	</div>
+	<!--{/if}-->
+		
+	<!--{if empty($tasklist)}-->
+		<div class="c_form">Bạn chưa nhận nhiệm vụ</div>
+	<!--{else}-->
+		<!--{loop $tasklist $value}-->
+		<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+			<table cellspacing="0" cellpadding="0" width="100%" class="task_notice">
+				<tr>
+					<td width="70"><img src="$value[image]" width="64" height="64" alt="Icon" class="icon" /></td>
+					<td>
+						<h3><a href="cp.php?ac=task&taskid=$value[taskid]">$value[name]</a></h3>
+						<!--{if $value[num]}-->
+							<p>
+								<a href="cp.php?ac=task&taskid=$value[taskid]&view=member">Có $value[num] thành viên tham gia</a>
+								<!--{if $value[maxnum]}-->
+								/ Nhiệm vụ này cho phép tối đa <!--{eval echo $value[maxnum]-$value[num];}--> thành viên tham gia.
+								<!--{/if}-->
+							</p>
+						<!--{/if}-->
+						<!--{if $value[starttime]}--><p>Bắt đầu: <!--{date('d-m-Y H:i',$value[starttime])}--></p><!--{/if}-->
+						<!--{if $value[endtime]}--><p>Kết thức: <!--{date('m-d-Y H:i',$value[endtime])}--></p><!--{/if}-->
+						$value[note]
+					</td>
+					<td width="150" style="text-align:right;">
+						<!--{if $value['done']}-->
+							<!--{if $value['ignore']}-->
+								Đã bỏ qua nhiệm vụ<br>
+								Bạn có thể chọn<a href="cp.php?ac=task&taskid=$value[taskid]&op=redo">hoàn thành nhiệm vụ</a>
+							<!--{else}-->
+								<!--{if $value[credit]}--><p>Điểm thưởng: <strong class="num">$value[credit]</strong></p><!--{/if}-->
+								<a href="cp.php?ac=task&taskid=$value[taskid]">Xem nhiệm vụ</a>
+							<!--{/if}-->
+						<!--{else}-->
+							<!--{if $value[credit]}--><p>Điểm thưởng: <strong class="num">$value[credit]</strong></p><!--{/if}-->
+							<a href="cp.php?ac=task&op=do&taskid=$value[taskid]"><img src="image/start_task.gif" alt="Tham gia" /></a>
+						<!--{/if}-->
+					</td>
+				</tr>
+			</table>
+		</div></div></div></div><br>
+		<!--{/loop}-->
+	<!--{/if}-->
+
+</div>
+
+<div id="sidebar">
+
+	<div class="sidebox">
+		<h2 class="title">
+			Bạn bè hoàn thành nhiệm vụ
+		</h2>
+		<ul class="avatar_list">
+			<!--{loop $taskspacelist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+				<p class="gray"><!--{date('j ngày n tháng',$value[dateline],1)}--></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	
+</div>
+
+<!--{/if}-->
+
+<!--{template footer}-->

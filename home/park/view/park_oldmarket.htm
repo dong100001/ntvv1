@@ -1,0 +1,54 @@
+<!--{eval $_TPL['titles'] = array('Chơi game cuộc chiến đỗ xe trên mạng xã hội Nhà Tui - GoHooH.CoM');}-->
+<!--{template header}-->
+<!--{template park/view/park_header}-->
+<!--{if $_GET['ac'] == 'oldmarket'}-->
+<div class="h_status">
+	<!--{loop $cfgCarType $key $value}-->
+	  <a href="parkApp.php?ac=market&type=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->
+	<!--{loop $cfgCarLevel $key $value}-->
+	  <a href="parkApp.php?ac=market&level=$key">$value</a><span class="pipe">|</span>
+	<!--{/loop}-->	
+	<a href="parkApp.php?ac=market">Tất cả</a><span class="pipe">|</span>
+	  <a href="parkApp.php?ac=market&level=$key">$value</a><span class="pipe">|</span>
+	  <span style=" margin-left:50px">Bạn có <b style="color:#FF0000">{$myCredit}</b> vàng</span>
+</div>
+<div class=div_layout style="padding-left:10px;">
+
+	<TABLE class=ttable cellSpacing=0>
+		<TBODY>
+		  <TR class=header>
+			<TH style="TEXT-ALIGN: center; width:300px">Xe</TH>
+			<TH>Người bán</TH>
+			<TH>Loại</TH>						
+			<TH>Giá gốc</TH>
+			<TH>Giá hiện tại</TH>
+			<TH>Tốc độ tối đa</TH>
+			<TH>&nbsp;</TH>
+		  </TR>
+	<!--{loop $list $item}-->		  
+		  <TR class=list>
+			<TD>
+			  <DIV  style="TEXT-ALIGN: center"><IMG src="$item[CarImgBig]"></DIV>
+			  <DIV style="TEXT-ALIGN: center">$item[CarDesc]</DIV></TD>
+			<TD><a href="parkApp.php?ac=index&fId={$item[uid]}">$item[username]</a></TD>			  
+			<TD>$cfgCarType[$item[CarType]]</TD>
+			<TD>$item[CarPrice]</TD>
+			<TD>$item[BuyCredit]</TD>
+			<TD>$item[CarMaxSpeed]</TD>
+			<TD><A  id="c_car_$item[ID]" href="cpPark.php?ac=index&op=buyold&myID=$item[ID]$urlReq">Mua</A></TD>		
+		  </TR>
+   <!--{/loop}-->  	  
+		  
+		</TBODY>
+	 </TABLE>
+  <div class="page">$multi[html]</div>    
+</div>
+
+
+<!--{/if}-->
+<div class="f_status f_status_w s_clear">
+	<a href="javascript:;" onClick="window.scrollTo(0,0);" id="a_top" title="TOP">Lên đầu trang</a>
+</div>
+<!--{template park/view/park_footer}-->
+<!--{template footer}-->
